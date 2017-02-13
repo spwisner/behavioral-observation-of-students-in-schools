@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>BOSS Application</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body class="container-fluid">
+      	<div class="login-button-container">
+          <button class="login-button" id="sign-up-button">Sign-Up</button>
+          <button class="login-button" id="sign-in-button">Sign-In</button>
+          <button class="login-button" id="change-password-button">Change Password</button>
+          <button class="login-button" id="sign-out-button">Sign-Out</button>
+        </div>
+      	<form class="login-form" id="sign-up" name="sign-up">
+      		<fieldset>
+      			<legend>Sign up!</legend>
+      			<!-- <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p> -->
+            <p class="field-description">Email</p>
+      			<input name="credentials[email]" placeholder="email" type="text" value="">
+            <p class="field-description">Password</p>
+      			<input name="credentials[password]" placeholder="password" type="password" value="">
+            <p class="field-description">Confirm Password</p>
+      			<input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
+            <br>
+            <input name="submit" type="submit" value="Sign up!">
+      		</fieldset>
+      	</form>
+      	<form class="login-form" id="sign-in" name="sign-in">
+      		<fieldset>
+      			<legend>Sign in!</legend>
+      			<!-- <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p> -->
+            <p class="field-description">Email</p>
+      			<input name="credentials[email]" placeholder="email" type="text" value="">
+            <p class="field-description">Password</p>
+      			<input name="credentials[password]" placeholder="password" type="password" value="">
+            <br>
+            <input name="submit" type="submit" value="Sign in!">
+      		</fieldset>
+      	</form>
+      	<form class="login-form" id="change-password" name="change-password">
+      		<fieldset>
+      			<legend>Change Password</legend>
+            <p class="field-description">Old Password</p>
+            <input name="passwords[old]" placeholder="Old Password" type="password">
+            <p class="field-description">New Password</p>
+            <input name="passwords[new]" placeholder="New Password" type="password">
+            <br>
+            <input name="submit" type="submit" value="Change Password">
+      		</fieldset>
+      	</form>
+        <form class="login-form" id="sign-out" name="sign-out">
+          <fieldset>
+            <legend>Sign out!</legend>
+            <input name="submit" type="submit" value="Sign out!">
+          </fieldset>
+        </form>
+<div class="homepage-content">
+        <div class="primary-home-container">
+            <div class="primary-home-description sub-description float-l">
+              <h1>BOSS Application</h1>
+              <p class="float-l">The Behavioral Observation System (BOSS) is an observation
+                system designed to objectively and quantifiably record student
+                engagement, and multiple off-task behaviors within a school
+                setting. The BOSS allows for the observer to collect information
+                on the target child as well as information on a peer for
+                comparison and also teacher directed instruction. Behaviors are
+                observed during a total of 60, 15-second intervals.</p>
+            </div>
+            <div class="float-r" id="sign-up-homepage">
+              <fieldset>
+                <legend>Sign up!</legend>
+                <!-- <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p> -->
+                <p class="field-description">Email</p>
+                <input name="credentials[email]" placeholder="email" type="text" value="">
+                <p class="field-description">Password</p>
+                <input name="credentials[password]" placeholder="password" type="password" value="">
+                <p class="field-description">Confirm Password</p>
+                <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
+                <br>
+                <input name="submit" type="submit" value="Sign up!">
+              </fieldset>
+          </div>
+        </div>
+        <div class="sub-description-container">
+            <!-- <h1 class="sub-description-h1">Sub Description One</h1> -->
+            <div class="sub-image-container">
+              <img class="float-l sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
+            </div>
+            <div class="float-r sub-description">
+              <h3>Sub Description One</h3>
+              <p class="float-r">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
+                vim commodo laboramus ex. Propriae copiosae eam no, error putent
+                dolores ad has. Ex nibh partiendo usu, his eu augue suscipiantur.
+                Diceret appareat no has.  Et reque delenit molestie duo, fuisset
+                omnesque persequeris et eam. Apeirian consulatu sea an.
+                Tibique petentium eu eam, et sanctus nominavi sit. Id scripta
+                delicatissimi vis, et nisl utroque propriae eum.
+              </p>
+            </div>
+          </div>
+          <div class="sub-description-container sub-description-three">
+            <!-- <h1 class="sub-description-h1">Sub Description Three</h1> -->
+            <div class="sub-description float-l">
+              <h3>Sub Description Two</h3>
+              <p class="float-l">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
+                vim commodo laboramus ex. Propriae copiosae eam no, error putent
+                dolores ad has. Ex nibh partiendo usu, his eu augue suscipiantur.
+                Diceret appareat no has.  Et reque delenit molestie duo, fuisset
+                omnesque persequeris et eam. Apeirian consulatu sea an.
+                Tibique petentium eu eam, et sanctus nominavi sit. Id scripta
+                delicatissimi vis, et nisl utroque propriae eum.
+              </p>
+          </div>
+          <div class="sub-image-container float-r">
+            <img class="float-r sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
+          </div>
+        </div>
+          <div class="sub-description-container">
+            <!-- <h1 class="sub-description-h1">Sub Description Three</h1> -->
+            <div class="sub-image-container">
+              <img class="float-l sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
+            </div>
+            <div class="sub-description float-r">
+              <h3>Sub Description Three</h3>
+              <p class="float-r">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
+                vim commodo laboramus ex. Propriae copiosae eam no, error putent
+                dolores ad has. Ex nibh partiendo usu, his eu augue suscipiantur.
+                Diceret appareat no has.  Et reque delenit molestie duo, fuisset
+                omnesque persequeris et eam. Apeirian consulatu sea an.
+                Tibique petentium eu eam, et sanctus nominavi sit. Id scripta
+                delicatissimi vis, et nisl utroque propriae eum.
+              </p>
+            </div>
+          </div>
+          <div class="sub-description-container sub-description-three">
+            <!-- <h1 class="sub-description-h1">Sub Description Four</h1> -->
+            <div class="sub-description float-l">
+              <h3>Sub Description Four</h3>
+              <p class="float-l">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
+                vim commodo laboramus ex. Propriae copiosae eam no, error putent
+                dolores ad has. Ex nibh partiendo usu, his eu augue suscipiantur.
+                Diceret appareat no has.  Et reque delenit molestie duo, fuisset
+                omnesque persequeris et eam. Apeirian consulatu sea an.
+                Tibique petentium eu eam, et sanctus nominavi sit. Id scripta
+                delicatissimi vis, et nisl utroque propriae eum.
+              </p>
+          </div>
+          <div class="sub-image-container float-r">
+            <img class="float-r sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
