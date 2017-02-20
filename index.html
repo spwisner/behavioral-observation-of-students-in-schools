@@ -57,7 +57,108 @@
             <input name="submit" type="submit" value="Sign out!">
           </fieldset>
         </form>
-<div class="homepage-content">
+
+
+        <form class="login-form" id="new-student-form" name="new-student-form">
+      		<fieldset>
+      			<legend>New Student Form</legend>
+            <p class="field-description">First Name</p>
+            <input name="students[first_name]" placeholder="First Name" type="text">
+            <br>
+            <p class="field-description">Last Name</p>
+            <input name="students[last_name]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">Date of Birth</p>
+            <input name="students[born_on]" placeholder="Born On" type="text">
+            <br>
+            <p class="field-description">School</p>
+            <input name="students[school]" placeholder="School" type="text">
+            <br>
+            <p class="field-description">Teacher</p>
+            <input name="students[teacher]" placeholder="Teacher" type="text">
+            <br>
+            <p class="field-description">Grade</p>
+            <input name="students[grade]" placeholder="Last Name" type="text">
+            <br>
+            <input name="submit" type="submit" value="New Student">
+      		</fieldset>
+      	</form>
+
+        <form class="login-form" id="new-observation-form" name="new-observation-form">
+          <fieldset>
+            <legend>New Observation Form</legend>
+            <p class="field-description">Observation Number</p>
+            <input name="observations[obs_num]" placeholder="First Name" type="text">
+            <br>
+            <p class="field-description">Date of Observation</p>
+            <input name="observations[obs_on]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">Observation Setting</p>
+            <input name="observations[obs_setting]" placeholder="Born On" type="text">
+            <br>
+            <p class="field-description">Observation Task</p>
+            <input name="observations[obs_task]" placeholder="School" type="text">
+            <br>
+            <p class="field-description">Observation Time</p>
+            <input name="observations[obs_time]" placeholder="Teacher" type="text">
+            <br>
+            <p class="field-description">AET</p>
+            <input name="observations[aet]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">PET</p>
+            <input name="observations[pet]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">OFT_M</p>
+            <input name="observations[oft_m]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">OFT_V</p>
+            <input name="observations[oft_v]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">OFT_P</p>
+            <input name="observations[oft_p]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">Observation Comment</p>
+            <input name="observations[obs_comment]" placeholder="Last Name" type="text">
+            <br>
+            <p class="field-description">Student ID</p>
+            <input name="observations[student_id]" placeholder="Last Name" type="text">
+            <br>
+            <input name="submit" type="submit" value="New Observation">
+          </fieldset>
+        </form>
+
+        <form class="login-form" id="get-students-form" name="get-students-form">
+          <fieldset>
+            <legend>Get Students Form</legend>
+            <input name="submit" type="submit" value="Get Students">
+          </fieldset>
+        </form>
+
+        <form class="login-form" id="delete-student-form" name="delete-student-form">
+          <fieldset>
+            <legend>Delete Student Form</legend>
+            <input name="submit" type="submit" value="Get Students">
+          </fieldset>
+        </form>
+
+        <form class="login-form" id="get-observations-form" name="get-observations-form">
+          <fieldset>
+            <legend>Get Observations Form</legend>
+            <input name="submit" type="submit" value="Get Observations">
+          </fieldset>
+        </form>
+
+        <form class="login-form" id="delete-observation-form" name="delete-observation-form">
+          <fieldset>
+            <legend>Delete Observation Form</legend>
+            <input name="submit" type="submit" value="Get Students">
+          </fieldset>
+        </form>
+
+
+
+
+<!-- <div class="homepage-content">
         <div class="primary-home-container">
             <div class="primary-home-description sub-description float-l">
               <h1>BOSS Application</h1>
@@ -72,7 +173,7 @@
             <div class="float-r" id="sign-up-homepage">
               <fieldset>
                 <legend>Sign up!</legend>
-                <!-- <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p> -->
+
                 <p class="field-description">Email</p>
                 <input name="credentials[email]" placeholder="email" type="text" value="">
                 <p class="field-description">Password</p>
@@ -85,7 +186,7 @@
           </div>
         </div>
         <div class="sub-description-container">
-            <!-- <h1 class="sub-description-h1">Sub Description One</h1> -->
+
             <div class="sub-image-container">
               <img class="float-l sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
             </div>
@@ -102,7 +203,7 @@
             </div>
           </div>
           <div class="sub-description-container sub-description-three">
-            <!-- <h1 class="sub-description-h1">Sub Description Three</h1> -->
+
             <div class="sub-description float-l">
               <h3>Sub Description Two</h3>
               <p class="float-l">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
@@ -119,7 +220,7 @@
           </div>
         </div>
           <div class="sub-description-container">
-            <!-- <h1 class="sub-description-h1">Sub Description Three</h1> -->
+
             <div class="sub-image-container">
               <img class="float-l sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
             </div>
@@ -136,7 +237,6 @@
             </div>
           </div>
           <div class="sub-description-container sub-description-three">
-            <!-- <h1 class="sub-description-h1">Sub Description Four</h1> -->
             <div class="sub-description float-l">
               <h3>Sub Description Four</h3>
               <p class="float-l">Lorem ipsum dolor sit amet, quis fuisset invidunt sea ut,
@@ -152,6 +252,6 @@
             <img class="float-r sub-image" src="http://designbatonrouge.com/wp-content/uploads/2015/09/black-white.png" alt="empty_image">
           </div>
         </div>
-      </div>
+      </div> -->
     </body>
 </html>
