@@ -66,6 +66,14 @@ const onCreateStudent = function(event) {
   .fail(ui.createStudentFailure);
 };
 
+const onDeleteStudent = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.deleteStudent(data)
+  .done(ui.deleteStudentSuccess)
+  .fail(ui.deleteStudentFailure);
+};
+
 const onUpdateStudent = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -98,6 +106,14 @@ const onCreateSetting = function(event) {
   .fail(ui.createSettingFailure);
 };
 
+const onDeleteSetting = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.deleteSetting(data)
+  .done(ui.deleteSettingSuccess)
+  .fail(ui.deleteSettingFailure);
+};
+
 const onUpdateSetting = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -105,7 +121,6 @@ const onUpdateSetting = function(event) {
   .done(ui.updateSettingSuccess)
   .fail(ui.updateSettingFailure);
 };
-
 
 // OBSERVATION EVENTS
 
@@ -131,6 +146,14 @@ const onCreateObservation = function(event) {
   .fail(ui.createObservationFailure);
 };
 
+const onDeleteObservation = function(event) {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.deleteObservation(data)
+  .done(ui.deleteObservationSuccess)
+  .fail(ui.deleteObservationFailure);
+};
+
 const onUpdateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -143,6 +166,8 @@ const addHandlers = () => {
 	$('#get-students-form').on('submit', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
   $('#new-student-form').on('submit', onCreateStudent);
+  $('#delete-student-form').on('submit', onDeleteStudent);
+  $('#delete-setting-form').on('submit', onDeleteSetting);
   $('#update-student-form').on('submit', onUpdateStudent);
   $('#get-settings-form').on('submit', onGetSettings);
   $('#show-setting-form').on('submit', onShowSetting);
@@ -151,6 +176,7 @@ const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
   $('#new-observation-form').on('submit', onCreateObservation);
+  $('#delete-observation-form').on('submit', onDeleteObservation);
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
