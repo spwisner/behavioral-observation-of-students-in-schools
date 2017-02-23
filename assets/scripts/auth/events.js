@@ -3,6 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
+const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -14,7 +15,7 @@ const onSignIn = function(event) {
 		store.user = response.user;
 		return store.user;
 	})
-  .done(ui.success)
+  .done(ui.signInSuccess)
   .catch(ui.onSignInFailure);
 };
 
@@ -162,6 +163,14 @@ const onUpdateObservation = function(event) {
   .fail(ui.updateObservationFailure);
 };
 
+const startSession = function() {
+  $("#new-student-form").show();
+};
+
+// const timerStart = function() {
+//   logic.observationTimer(2);
+// };
+
 const addHandlers = () => {
 	$('#get-students-form').on('submit', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
@@ -182,6 +191,8 @@ const addHandlers = () => {
   $('#sign-in').on('submit', onSignIn);
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+  $('#new-session-btn').on('click', startSession);
+  $('#observation-timer-btn').on('click', logic.runAutoSubmit(1));
 };
 
 module.exports = {

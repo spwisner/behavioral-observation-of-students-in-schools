@@ -10,6 +10,11 @@ const failure = (error) => {
   console.log('error');
 };
 
+const signInSuccess = function() {
+  $("#sign-in").hide();
+  $("#sign-out").show();
+};
+
 // Student UI
 const getStudentSuccess = (data) => {
   console.log('get student success');
@@ -34,6 +39,8 @@ const showStudentFailure = (data) => {
 const createStudentSuccess = (data) => {
   console.log('create student success');
   console.log(data);
+  $("#new-student-form").hide();
+  $("#new-setting-form").show();
 };
 
 const createStudentFailure = (data) => {
@@ -86,6 +93,8 @@ const showSettingFailure = (data) => {
 const createSettingSuccess = (data) => {
   console.log('create setting success');
   console.log(data);
+  $("#new-setting-form").hide();
+  $("#new-observation-form").show();
 };
 
 const createSettingFailure = (data) => {
@@ -138,6 +147,7 @@ const showObservationFailure = (data) => {
 const createObservationSuccess = (data) => {
   console.log('create observation success');
   console.log(data);
+  $(".field-checkbox").prop("checked", false);
 };
 
 const createObservationFailure = (data) => {
@@ -198,4 +208,5 @@ module.exports = {
   deleteSettingFailure,
   deleteObservationSuccess,
   deleteObservationFailure,
+  signInSuccess,
 };

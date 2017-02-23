@@ -1,307 +1,349 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>BOSS Application</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-        <form class="form credential-form" id="sign-up" name="sign-up">
-      		<fieldset>
-      			<legend>Sign up!</legend>
-      			<p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p>
-            <p class="field-description">Email</p>
-      			<input name="credentials[email]" placeholder="email" type="text" value="">
-            <p class="field-description">Password</p>
-      			<input name="credentials[password]" placeholder="password" type="password" value="">
-            <p class="field-description">Confirm Password</p>
-      			<input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
-            <br>
-            <input name="submit" type="submit" value="Sign up!">
-      		</fieldset>
-      	</form>
-      	<form class="form credential-form" id="sign-in" name="sign-in">
-      		<fieldset>
-      			<legend>Sign in!</legend>
-      			<p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
-            <p class="field-description">Email</p>
-      			<input name="credentials[email]" placeholder="email" type="text" value="">
-            <p class="field-description">Password</p>
-      			<input name="credentials[password]" placeholder="password" type="password" value="">
-            <br>
-            <input name="submit" type="submit" value="Sign in!">
-      		</fieldset>
-      	</form>
-      	<form class="form credential-form" id="sign-out" name="sign-out">
-      		<fieldset>
-      			<legend>Sign out!</legend>
-            <input name="submit" type="submit" value="Sign out!">
-      		</fieldset>
-      	</form>
-      	<form class="form credential-form" id="change-password" name="change-password">
-      		<fieldset>
-      			<legend>Change Password</legend>
-            <p class="field-description">Old Password</p>
-            <input name="passwords[old]" placeholder="Old Password" type="password">
-            <p class="field-description">New Password</p>
-            <input name="passwords[new]" placeholder="New Password" type="password">
-            <br>
-            <input name="submit" type="submit" value="Change Password">
-      		</fieldset>
-      	</form>
 
-        <form class="form student-form" id="get-students-form" name="get-students-form">
-          <fieldset>
-            <legend>Get Students Form</legend>
-            <input name="submit" type="submit" value="View All Students">
-          </fieldset>
-        </form>
+<head>
+  <title>BOSS Application</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
 
-        <form class="form student-form" id="show-student-form" name="show-student-form">
-          <fieldset>
-            <legend>Show Students Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="student[id]" id="show-student-stud-id" placeholder="Student ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="View Student">
-          </fieldset>
-        </form>
+<body class="container-fluid">
+  <form class="form credential-form" id="sign-up" name="sign-up">
+    <fieldset>
+      <legend>Sign up!</legend>
+      <p id="sign-up-warning" class="password-warning">Error. Please Try Again.</p>
+      <p class="field-description">Email</p>
+      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <p class="field-description">Confirm Password</p>
+      <input name="credentials[password_confirmation]" placeholder="password confirmation" type="password" value="">
+      <br>
+      <input name="submit" type="submit" value="Sign up!">
+    </fieldset>
+  </form>
+  <form class="credential-form" id="sign-in" name="sign-in">
+    <fieldset>
+      <legend>Sign in!</legend>
+      <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
+      <p class="field-description">Email</p>
+      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <p class="field-description">Password</p>
+      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <br>
+      <input name="submit" type="submit" value="Sign in!">
+    </fieldset>
+  </form>
+  <form class="form credential-form" id="sign-out" name="sign-out">
+    <fieldset>
+      <legend>Sign out!</legend>
+      <input name="submit" type="submit" value="Sign out!">
+    </fieldset>
+  </form>
+  <form class="form credential-form" id="change-password" name="change-password">
+    <fieldset>
+      <legend>Change Password</legend>
+      <p class="field-description">Old Password</p>
+      <input name="passwords[old]" placeholder="Old Password" type="password">
+      <p class="field-description">New Password</p>
+      <input name="passwords[new]" placeholder="New Password" type="password">
+      <br>
+      <input name="submit" type="submit" value="Change Password">
+    </fieldset>
+  </form>
 
-        <form class="form student-form" id="new-student-form" name="new-student-form">
-      		<fieldset>
-      			<legend>Create Student Form</legend>
-            <p class="field-description">First Name</p>
-            <input name="student[first_name]" placeholder="First Name" type="text">
-            <br>
-            <p class="field-description">Last Name</p>
-            <input name="student[last_name]" placeholder="Last Name" type="text">
-            <br>
-            <p class="field-description">Date of Birth</p>
-            <input name="student[born_on]" placeholder="Date of Birth" type="date">
-            <br>
-            <p class="field-description">School</p>
-            <input name="student[school]" placeholder="School" type="text">
-            <br>
-            <p class="field-description">Teacher</p>
-            <input name="student[teacher]" placeholder="Teacher" type="text">
-            <br>
-            <p class="field-description">Grade</p>
-            <input name="student[grade]" placeholder="Grade" type="text">
-            <br>
-            <input name="submit" type="submit" value="Create Student">
-      		</fieldset>
-      	</form>
+  <form class="form student-form" id="get-students-form" name="get-students-form">
+    <fieldset>
+      <legend>Get Students Form</legend>
+      <input name="submit" type="submit" value="View All Students">
+    </fieldset>
+  </form>
 
-        <form class="form student-form" id="delete-student-form" name="delete-student-form">
-          <fieldset>
-            <legend>Delete Students Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="student[student_id]" id="delete-student-stud-id" placeholder="Student ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Delete Student">
-          </fieldset>
-        </form>
+  <form class="form student-form" id="show-student-form" name="show-student-form">
+    <fieldset>
+      <legend>Show Students Form</legend>
+      <p class="field-description">Student ID</p>
+      <input name="student[id]" id="show-student-stud-id" placeholder="Student ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="View Student">
+    </fieldset>
+  </form>
 
-        <form class="form student-form" id="update-student-form" name="update-student-form">
-          <fieldset>
-            <legend>Update Student Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="student[id]" id="update-student-student-id" placeholder="Student ID" type="text">
-            <br>
-            <p class="field-description">First Name</p>
-            <input name="student[first_name]" placeholder="First Name" type="text">
-            <br>
-            <p class="field-description">Last Name</p>
-            <input name="student[last_name]" placeholder="Last Name" type="text">
-            <br>
-            <p class="field-description">Date of Birth</p>
-            <input name="student[born_on]" placeholder="Date of Birth" type="date">
-            <br>
-            <p class="field-description">School</p>
-            <input name="student[school]" placeholder="School" type="text">
-            <br>
-            <p class="field-description">Teacher</p>
-            <input name="student[teacher]" placeholder="Teacher" type="text">
-            <br>
-            <p class="field-description">Grade</p>
-            <input name="student[grade]" placeholder="Grade" type="text">
-            <br>
-            <input name="submit" type="submit" value="Update Student">
-          </fieldset>
-        </form>
+  <form class="form student-form" id="new-student-form" name="new-student-form">
+    <fieldset>
+      <legend>Create Student Form</legend>
+      <p class="field-description">First Name</p>
+      <input name="student[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input name="student[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Date of Birth</p>
+      <input name="student[born_on]" placeholder="Date of Birth" type="date">
+      <br>
+      <p class="field-description">School</p>
+      <input name="student[school]" placeholder="School" type="text">
+      <br>
+      <p class="field-description">Teacher</p>
+      <input name="student[teacher]" placeholder="Teacher" type="text">
+      <br>
+      <p class="field-description">Grade</p>
+      <input name="student[grade]" placeholder="Grade" type="text">
+      <br>
+      <input name="submit" id="create-student-btn" type="submit" value="Create Student">
+    </fieldset>
+  </form>
 
-        <form class="form settings-form" id="get-settings-form" name="get-settings-form">
-          <fieldset>
-            <legend>Get All Settings Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="setting[student_id]" id="get-setting-stud-id" placeholder="Student ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Get All Settings">
-          </fieldset>
-        </form>
+  <form class="form student-form" id="delete-student-form" name="delete-student-form">
+    <fieldset>
+      <legend>Delete Students Form</legend>
+      <p class="field-description">Student ID</p>
+      <input name="student[student_id]" id="delete-student-stud-id" placeholder="Student ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Delete Student">
+    </fieldset>
+  </form>
 
-        <form class="form settings-form" id="show-setting-form" name="show-setting-form">
-          <fieldset>
-            <legend>Show Setting Form</legend>
-            <p class="field-description">Setting ID</p>
-            <input name="setting[id]" id="show-setting-setting-id" placeholder="Setting ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Show Setting">
-          </fieldset>
-        </form>
+  <form class="form student-form" id="update-student-form" name="update-student-form">
+    <fieldset>
+      <legend>Update Student Form</legend>
+      <p class="field-description">Student ID</p>
+      <input name="student[id]" id="update-student-student-id" placeholder="Student ID" type="text">
+      <br>
+      <p class="field-description">First Name</p>
+      <input name="student[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description">Last Name</p>
+      <input name="student[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Date of Birth</p>
+      <input name="student[born_on]" placeholder="Date of Birth" type="date">
+      <br>
+      <p class="field-description">School</p>
+      <input name="student[school]" placeholder="School" type="text">
+      <br>
+      <p class="field-description">Teacher</p>
+      <input name="student[teacher]" placeholder="Teacher" type="text">
+      <br>
+      <p class="field-description">Grade</p>
+      <input name="student[grade]" placeholder="Grade" type="text">
+      <br>
+      <input name="submit" type="submit" value="Update Student">
+    </fieldset>
+  </form>
 
-        <form class="form settings-form" id="new-setting-form" name="new-setting-form">
-      		<fieldset>
-      			<legend>Create Setting Form</legend>
-            <p class="field-description">Observation Date</p>
-            <input name="setting[obs_on]" placeholder="Observation Date" type="date">
-            <br>
-            <p class="field-description">Observation Setting</p>
-            <input name="setting[obs_setting]" placeholder="Observation Setting" type="text">
-            <br>
-            <p class="field-description">Observation Task</p>
-            <input name="setting[obs_task]" placeholder="Observation Task" type="text">
-            <br>
-            <p class="field-description">Observation Time Interval</p>
-            <input name="setting[obs_time]" placeholder="Observation Time" type="text">
-            <br>
-            <p class="field-description">Student ID</p>
-            <input name="setting[student_id]" id="create-setting-stud-id" placeholder="Student ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Create Setting">
-      		</fieldset>
-      	</form>
+  <form class="form settings-form" id="get-settings-form" name="get-settings-form">
+    <fieldset>
+      <legend>Get All Settings Form</legend>
+      <p class="field-description">Student ID</p>
+      <input name="setting[student_id]" id="get-setting-stud-id" placeholder="Student ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Get All Settings">
+    </fieldset>
+  </form>
 
-        <form class="form settings-form" id="delete-setting-form" name="delete-setting-form">
-          <fieldset>
-            <legend>Delete Setting Form</legend>
-            <p class="field-description">Setting ID</p>
-            <input name="setting[setting_id]" id="delete-setting-setting-id" placeholder="Setting ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Delete Setting">
-          </fieldset>
-        </form>
+  <form class="form settings-form" id="show-setting-form" name="show-setting-form">
+    <fieldset>
+      <legend>Show Setting Form</legend>
+      <p class="field-description">Setting ID</p>
+      <input name="setting[id]" id="show-setting-setting-id" placeholder="Setting ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Show Setting">
+    </fieldset>
+  </form>
 
-        <form class="form settings-form" id="update-setting-form" name="update-setting-form">
-          <fieldset>
-            <legend>Update Setting Form</legend>
-            <p class="field-description">Setting ID</p>
-            <input name="setting[id]" id="update-setting-setting-id" placeholder="Setting ID" type="text">
-            <br>
-            <p class="field-description">Observation Date</p>
-            <input name="setting[obs_on]" placeholder="Observation Date" type="date">
-            <br>
-            <p class="field-description">Observation Setting</p>
-            <input name="setting[obs_setting]" placeholder="Observation Setting" type="text">
-            <br>
-            <p class="field-description">Observation Task</p>
-            <input name="setting[obs_task]" placeholder="Observation Task" type="text">
-            <br>
-            <p class="field-description">Observation Time Interval</p>
-            <input name="setting[obs_time]" placeholder="Observation Time" type="text">
-            <br>
-            <input name="submit" type="submit" value="Update Setting">
-          </fieldset>
-        </form>
+  <form class="form settings-form" id="new-setting-form" name="new-setting-form">
+    <fieldset>
+      <legend>Create Session Form</legend>
+      <p class="field-description">Session Date</p>
+      <input name="setting[obs_on]" placeholder="Session Date" type="date">
+      <br>
+      <p class="field-description">Session Setting</p>
+      <input name="setting[obs_setting]" placeholder="Session Setting" type="text">
+      <br>
+      <p class="field-description">Session Task</p>
+      <input name="setting[obs_task]" placeholder="Session Task" type="text">
+      <br>
+      <p class="field-description">Session Time Interval</p>
+      <input name="setting[obs_time]" placeholder="Session Time" type="text">
+      <br>
+      <p class="field-description">Session ID</p>
+      <input name="setting[student_id]" id="create-setting-stud-id" placeholder="Student ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Create Setting">
+    </fieldset>
+  </form>
 
-        <form class="form observation-form" id="get-observations-form" name="get-observations-form">
-          <fieldset>
-            <legend>Get Observations Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="observation[student_id]" id="get-obs-stud-id" placeholder="Student ID" type="text">
-            <br>
-            <p class="field-description">Setting ID</p>
-            <input name="observation[setting_id]" id="get-obs-setting-id" placeholder="Setting ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Get Observations">
-          </fieldset>
-        </form>
+  <form class="form settings-form" id="delete-setting-form" name="delete-setting-form">
+    <fieldset>
+      <legend>Delete Setting Form</legend>
+      <p class="field-description">Setting ID</p>
+      <input name="setting[setting_id]" id="delete-setting-setting-id" placeholder="Setting ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Delete Setting">
+    </fieldset>
+  </form>
 
-        <form class="form observation-form" id="show-observation-form" name="show-observation-form">
-          <fieldset>
-            <legend>Show Observation Form</legend>
-            <p class="field-description">Observation ID</p>
-            <input name="observation[id]" id="show-obs-setting-id" placeholder="Observation ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Show Setting">
-          </fieldset>
-        </form>
+  <form class="form settings-form" id="update-setting-form" name="update-setting-form">
+    <fieldset>
+      <legend>Update Setting Form</legend>
+      <p class="field-description">Setting ID</p>
+      <input name="setting[id]" id="update-setting-setting-id" placeholder="Setting ID" type="text">
+      <br>
+      <p class="field-description">Observation Date</p>
+      <input name="setting[obs_on]" placeholder="Observation Date" type="date">
+      <br>
+      <p class="field-description">Observation Setting</p>
+      <input name="setting[obs_setting]" placeholder="Observation Setting" type="text">
+      <br>
+      <p class="field-description">Observation Task</p>
+      <input name="setting[obs_task]" placeholder="Observation Task" type="text">
+      <br>
+      <p class="field-description">Observation Time Interval</p>
+      <input name="setting[obs_time]" placeholder="Observation Time" type="text">
+      <br>
+      <input name="submit" type="submit" value="Update Setting">
+    </fieldset>
+  </form>
 
-        <form class="form observation-form" id="new-observation-form" name="new-observation-form">
-          <fieldset>
-            <legend>New Observation Form</legend>
-            <p class="field-description">Student ID</p>
-            <input name="observation[student_id]" id="create-observation-stud-id" placeholder="Student ID" type="number">
-            <br>
-            <p class="field-description">Setting ID</p>
-            <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number">
-            <br>
-            <p class="field-description">AET</p>
-            <input name="observation[aet]" placeholder="AET" type="number">
-            <br>
-            <p class="field-description">PET</p>
-            <input name="observation[pet]" placeholder="PET" type="number">
-            <br>
-            <p class="field-description">OFT_M</p>
-            <input name="observation[oft_m]" placeholder="OFT_M" type="number">
-            <br>
-            <p class="field-description">OFT_V</p>
-            <input name="observation[oft_v]" placeholder="OFT_V" type="number">
-            <br>
-            <p class="field-description">OFT_P</p>
-            <input name="observation[oft_p]" placeholder="OFT_P" type="number">
-            <br>
-            <p class="field-description">Observation Comment</p>
-            <input name="observation[obs_comment]" placeholder="Observation Comment" type="text">
-            <br>
-            <input name="submit" type="submit" value="New Observation">
-          </fieldset>
-        </form>
+  <form class="form observation-form" id="get-observations-form" name="get-observations-form">
+    <fieldset>
+      <legend>Get Observations Form</legend>
+      <p class="field-description">Student ID</p>
+      <input name="observation[student_id]" id="get-obs-stud-id" placeholder="Student ID" type="text">
+      <br>
+      <p class="field-description">Setting ID</p>
+      <input name="observation[setting_id]" id="get-obs-setting-id" placeholder="Setting ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Get Observations">
+    </fieldset>
+  </form>
 
-        <form class="form observation-form" id="delete-observation-form" name="delete-observation-form">
-          <fieldset>
-            <legend>Delete Observation Form</legend>
-            <p class="field-description">Observation ID</p>
-            <input name="observation[id]" id="delete-observation-obs-id" placeholder="Observation ID" type="text">
-            <br>
-            <input name="submit" type="submit" value="Delete Observation">
-          </fieldset>
-        </form>
+  <form class="form observation-form" id="show-observation-form" name="show-observation-form">
+    <fieldset>
+      <legend>Show Observation Form</legend>
+      <p class="field-description">Observation ID</p>
+      <input name="observation[id]" id="show-obs-setting-id" placeholder="Observation ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Show Setting">
+    </fieldset>
+  </form>
 
-        <form class="form observation-form" id="update-observation-form" name="update-observation-form">
-          <fieldset>
-            <legend>Update Observation Form</legend>
-            <p class="field-description">Observation ID</p>
-            <input name="observation[id]" id="update-observation-obs-id" placeholder="Observation ID" type="text">
-            <br>
-            <p class="field-description">AET</p>
-            <input name="observation[aet]" placeholder="AET" type="number">
-            <br>
-            <p class="field-description">PET</p>
-            <input name="observation[pet]" placeholder="PET" type="number">
-            <br>
-            <p class="field-description">OFT_M</p>
-            <input name="observation[oft_m]" placeholder="OFT_M" type="number">
-            <br>
-            <p class="field-description">OFT_V</p>
-            <input name="observation[oft_v]" placeholder="OFT_V" type="number">
-            <br>
-            <p class="field-description">OFT_P</p>
-            <input name="observation[oft_p]" placeholder="OFT_P" type="number">
-            <br>
-            <p class="field-description">Observation Comment</p>
-            <input name="observation[obs_comment]" placeholder="Observation Comment" type="text">
-            <br>
-            <input name="submit" type="submit" value="Update Observation">
-          </fieldset>
-        </form>
+  <div class="timer-container">
+    <div class="session-time-container">
+      <p>Time Remaining for Session: <span id="observation-timer"></span></p>
+      <button id="observation-timer-btn">Observation Timer Button</button>
+    </div>
 
+    <div class="interval-time-count-container">
+      <p>Time Remaining in Interval: <span id="interval-timer"></span></p>
+      <p>Current Interval: <span id="interval-count"></span></p>
+    </div>
+  </div>
 
+  <form class="form observation-form" id="new-observation-form" name="new-observation-form">
+    <fieldset>
+      <legend>Record Interval Form</legend>
+      <div class="field-desc-container field-text">
+        <p class="field-description">Student ID</p>
+        <input name="observation[student_id]" id="create-observation-stud-id" placeholder="Student ID" type="number">
+      </div>
+      <div class="field-desc-container field-text">
+        <p class="field-description">Setting ID</p>
+        <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number">
+      </div>
+      <div class="clearfix"></div>
+      <div class="field-desc-container check-left">
+        <p class="field-description">AET</p>
+        <input name="observation[aet]" type="hidden" value="0">
+        <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="1">
+      </div>
 
+      <div class="field-desc-container check-right">
+        <p class="field-description">OFT_M</p>
+        <input name="observation[oft_m]" type="hidden" value="0">
+        <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="1">
+      </div>
+      <div class="clearfix"></div>
+      <div class="field-desc-container check-left">
+        <p class="field-description">PET</p>
+        <input name="observation[pet]" type="hidden" value="0">
+        <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="1">
+      </div>
 
-<!-- <div class="homepage-content">
+      <div class="field-desc-container check-right">
+        <p class="field-description">OFT_V</p>
+        <input name="observation[oft_v]" type="hidden" value="0">
+        <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="1">
+      </div>
+      <div class="clearfix"></div>
+      <div class="field-desc-container check-right">
+        <p class="field-description">OFT_P</p>
+        <input name="observation[oft_p]" type="hidden" value="0">
+        <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="1">
+      </div>
+      <div class="clearfix"></div>
+      <div class="field-desc-container field-text">
+        <p class="field-description">Interval Comment</p>
+        <input name="observation[obs_comment]" placeholder="Observation Comment" type="text">
+      </div>
+      <div class="field-button-container">
+        <input name="submit" type="submit" value="Submit Observation">
+      </div>
+    </fieldset>
+  </form>
+
+  <form class="form observation-form" id="delete-observation-form" name="delete-observation-form">
+    <fieldset>
+      <legend>Delete Observation Form</legend>
+      <p class="field-description">Observation ID</p>
+      <input name="observation[id]" id="delete-observation-obs-id" placeholder="Observation ID" type="text">
+      <br>
+      <input name="submit" type="submit" value="Delete Observation">
+    </fieldset>
+  </form>
+
+  <form class="form observation-form" id="update-observation-form" name="update-observation-form">
+    <fieldset>
+      <legend>Update Observation Form</legend>
+      <p class="field-description">Observation ID</p>
+      <input name="observation[id]" id="update-observation-obs-id" placeholder="Observation ID" type="text">
+      <br>
+      <p class="field-description">AET</p>
+      <input name="observation[aet]" placeholder="AET" type="number">
+      <br>
+      <p class="field-description">PET</p>
+      <input name="observation[pet]" placeholder="PET" type="number">
+      <br>
+      <p class="field-description">OFT_M</p>
+      <input name="observation[oft_m]" placeholder="OFT_M" type="number">
+      <br>
+      <p class="field-description">OFT_V</p>
+      <input name="observation[oft_v]" placeholder="OFT_V" type="number">
+      <br>
+      <p class="field-description">OFT_P</p>
+      <input name="observation[oft_p]" placeholder="OFT_P" type="number">
+      <br>
+      <p class="field-description">Interval Comment</p>
+      <input name="observation[obs_comment]" placeholder="Observation Comment" type="text">
+      <br>
+      <input name="submit" type="submit" value="Update Observation">
+    </fieldset>
+  </form>
+
+  <div class="dashboard-container">
+    <h1>Dashboard</h1>
+    <button>Records</button>
+    <button id="new-session-btn">New Session</button>
+  </div>
+
+  <div class="session-container">
+
+  </div>
+
+  <!-- <div class="homepage-content">
         <div class="primary-home-container">
             <div class="primary-home-description sub-description float-l">
               <h1>BOSS Application</h1>
@@ -396,5 +438,6 @@
           </div>
         </div>
       </div> -->
-    </body>
+</body>
+
 </html>
