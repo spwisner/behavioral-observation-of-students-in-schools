@@ -43,7 +43,7 @@ const displayIntervalTime = function() {
   }, 1000);
 };
 
-displayIntervalTime();
+
 
 //
 // const runAutoSubmit = function(minutes) {
@@ -68,10 +68,12 @@ displayIntervalTime();
 // };
 //
 //
-// module.exports = {
+
+$('#begin-session-btn').on('click', displayIntervalTime);
+module.exports = {
 // //   observationTimer,
 // //   submitForm,
 //   displayIntervalTime,
 //   runAutoSubmit,
 // //   runAutoSubmit,
-// };
+};
