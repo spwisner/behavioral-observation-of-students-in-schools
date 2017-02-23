@@ -1,6 +1,74 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+
+
+.timer-container {
+  display: none;
+}
+
+.field-button-container {
+  text-align: center;
+}
+
+.field-button-container button {
+  margin: 0 auto;
+}
+
+.field-desc-container {
+  text-align: center;
+  padding: 5px;
+  margin: 5px 10px;
+}
+
+.field-desc-container input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(1.5); /* IE */
+  -moz-transform: scale(1.5); /* FF */
+  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  padding: 10px;
+}
+
+.field-text {
+  width: 100%;
+  border: 1px solid green;
+}
+
+.field-comment input {
+  width: 300px;
+}
+
+.field-comment:-moz-placeholder,
+.field-comment:-ms-input-placeholder,
+.field-comment::-moz-placeholder,
+.field-comment::-webkit-input-placeholder {
+  text-align: center;
+}
+
+.check-left {
+  float: left;
+  border: 1px solid green;
+  width: 100px;
+}
+
+.clearfix:after {
+  content: ".";
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.check-right {
+  float: right;
+  border: 1px solid green;
+  width: 100px;
+}
+
+.check-clear {
+  clear: both;
+}
 // Header
 // h1
 // .sub-description-h1 {

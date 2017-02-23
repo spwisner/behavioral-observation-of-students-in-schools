@@ -75,6 +75,16 @@ const createStudent = function(data) {
   });
 };
 
+const deleteStudent = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + document.getElementById("delete-student-stud-id").value,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 const updateStudent = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/students/' + document.getElementById("update-student-student-id").value,
@@ -116,6 +126,16 @@ const createSetting = function(data) {
       Authorization: 'Token token=' + store.user.token,
     },
     data,
+  });
+};
+
+const deleteSetting = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/settings/' + document.getElementById("delete-setting-setting-id").value,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
   });
 };
 
@@ -163,6 +183,16 @@ const createObservation = function(data) {
   });
 };
 
+const deleteObservation = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/observations/' + document.getElementById("delete-observation-obs-id").value,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 const updateObservation = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/observations/' + document.getElementById("update-observation-obs-id").value,
@@ -181,6 +211,7 @@ module.exports = {
   signOut,
   changePassword,
   createStudent,
+  deleteStudent,
   createSetting,
   createObservation,
   showStudent,
@@ -191,4 +222,6 @@ module.exports = {
   updateSetting,
   updateStudent,
   updateObservation,
+  deleteSetting,
+  deleteObservation,
 };
