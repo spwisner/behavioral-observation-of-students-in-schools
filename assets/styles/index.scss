@@ -1,14 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-
-
-.timer-container {
-  display: none;
-}
-
 .field-button-container {
   text-align: center;
+}
+
+.session-time-container {
+  display:none;
+}
+
+.interval-time-count-container {
+  color: green;
+  font-weight: 600;
+  text-align: center;
+  font-size:16px;
+}
+
+#interval-timer, #interval-count {
+  color:red;
 }
 
 .field-button-container button {

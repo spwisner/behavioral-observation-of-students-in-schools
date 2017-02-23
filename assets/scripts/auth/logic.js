@@ -1,4 +1,4 @@
-// 'use strict';
+'use strict';
 //
 // // const observationTimer = function(minutes) {
 // //   let seconds = 60;
@@ -23,20 +23,28 @@
 // //   tick();
 // // };
 // //
-// const displayIntervalTime = function() {
-//   let x = 12;
-//   let y = document.getElementById("interval-timer");
-//   // Display count down for 20 seconds
-//   setInterval(function() {
-//     if (x <= 13 && x >= 1) {
-//       x--;
-//       y.innerHTML = '' + x + '';
-//       if (x === 1) {
-//         x = 13;
-//       }
-//     }
-//   }, 1000);
-// };
+
+const displayIntervalTime = function() {
+  let count = 0;
+  let x = 12;
+  let y = document.getElementById("interval-timer");
+  let z = document.getElementById("interval-count");
+  // Display count down for 20 seconds
+  setInterval(function() {
+    if (x <= 13 && x >= 1) {
+      x--;
+      y.innerHTML = '' + x + '';
+      z.innerHTML = '' + count + '';
+      if (x === 1) {
+        x = 13;
+        count++;
+      }
+    }
+  }, 1000);
+};
+
+displayIntervalTime();
+
 //
 // const runAutoSubmit = function(minutes) {
 //   let totalIntervals = (minutes * 5);
