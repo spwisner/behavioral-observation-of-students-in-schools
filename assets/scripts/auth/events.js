@@ -3,7 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-const logic = require('./logic');
+// const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -192,7 +192,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#new-session-btn').on('click', startSession);
-  $('#observation-timer-btn').on('click', logic.runAutoSubmit(1));
+  // $('#observation-timer-btn').on('click', logic.runAutoSubmit(1));
 };
 
 module.exports = {

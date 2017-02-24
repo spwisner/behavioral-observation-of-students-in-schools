@@ -1,50 +1,50 @@
-'use strict';
+// 'use strict';
 //
-// // const observationTimer = function(minutes) {
-// //   let seconds = 60;
-// //   let mins = minutes;
-// //
-// //   function tick() {
-// //     let counter = document.getElementById("observation-timer");
-// //     let current_minutes = mins - 1;
-// //     seconds--;
-// //     counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-// //     if (seconds > 0) {
-// //       setTimeout(tick, 1000);
-// //     } else {
-// //
-// //       if (mins > 1) {
-// //
-// //         observationTimer(mins - 1);
-// //
-// //       }
-// //     }
-// //   }
-// //   tick();
-// // };
-// //
-
-const displayIntervalTime = function() {
-  let count = 0;
-  let x = 12;
-  let y = document.getElementById("interval-timer");
-  let z = document.getElementById("interval-count");
-  // Display count down for 20 seconds
-  setInterval(function() {
-    if (x <= 13 && x >= 1) {
-      x--;
-      y.innerHTML = '' + x + '';
-      z.innerHTML = '' + count + '';
-      if (x === 1) {
-        x = 13;
-        count++;
-      }
-    }
-  }, 1000);
-};
-
-
-
+// const observationTimer = function(minutes) {
+//   let seconds = 60;
+//   let mins = minutes;
+//
+//   function tick() {
+//     let counter = document.getElementById("observation-timer");
+//     let current_minutes = mins - 1;
+//     seconds--;
+//     counter.innerHTML = current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+//     if (seconds > 0) {
+//       setTimeout(tick, 1000);
+//     } else {
+//
+//       if (mins > 1) {
+//
+//         observationTimer(mins - 1);
+//
+//       }
+//     }
+//   }
+//   tick();
+// };
+//
+//
+// const displayIntervalTime = function() {
+//   let count = 0;
+//   let x = 12;
+//   let y = document.getElementById("interval-timer");
+//   let z = document.getElementById("interval-count");
+//   // Display count down for 20 seconds
+//   setInterval(function() {
+//     if (x <= 13 && x >= 1) {
+//       x--;
+//       y.innerHTML = '' + x + '';
+//       z.innerHTML = '' + count + '';
+//       if (x === 1) {
+//         x = 13;
+//         count++;
+//       }
+//     }
+//   }, 1000);
+// };
+//
+//
+//
 //
 // const runAutoSubmit = function(minutes) {
 //   let totalIntervals = (minutes * 5);
@@ -68,12 +68,12 @@ const displayIntervalTime = function() {
 // };
 //
 //
-
-$('#begin-session-btn').on('click', displayIntervalTime);
-module.exports = {
-// //   observationTimer,
-// //   submitForm,
+//
+// $('#begin-session-btn').on('click', displayIntervalTime);
+// module.exports = {
+//   observationTimer,
+//   submitForm,
 //   displayIntervalTime,
 //   runAutoSubmit,
-// //   runAutoSubmit,
-};
+//   runAutoSubmit,
+// };
