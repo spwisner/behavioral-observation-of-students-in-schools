@@ -1,4 +1,15 @@
-// 'use strict';
+'use strict';
+
+const store = require('../store');
+
+const withinObsInterval = function() {
+  if (store.currentObsNum < store.currentNumofIntervals) {
+      return true;
+  } else {
+      return false;
+  }
+};
+
 //
 // const observationTimer = function(minutes) {
 //   let seconds = 60;
@@ -70,10 +81,11 @@
 //
 //
 // $('#begin-session-btn').on('click', displayIntervalTime);
-// module.exports = {
+module.exports = {
+  withinObsInterval,
 //   observationTimer,
 //   submitForm,
 //   displayIntervalTime,
 //   runAutoSubmit,
 //   runAutoSubmit,
-// };
+};

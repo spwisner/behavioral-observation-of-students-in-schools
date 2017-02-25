@@ -8,159 +8,175 @@ const store = require('../store');
 // LOGIN EVENTS
 
 const onSignIn = function(event) {
-	event.preventDefault();
-	let data = getFormFields(event.target);
-	api.signIn(data)
-  .then((response) => {
-		store.user = response.user;
-		return store.user;
-	})
-  .done(ui.signInSuccess)
-  .catch(ui.onSignInFailure);
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signIn(data)
+    .then((response) => {
+      store.user = response.user;
+      return store.user;
+    })
+    .done(ui.signInSuccess)
+    .catch(ui.onSignInFailure);
 };
 
 const onSignUp = function(event) {
-	event.preventDefault();
-	let data = getFormFields(event.target);
-	api.signUp(data)
-  .done(ui.success)
-  .catch(ui.failure);
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signUp(data)
+    .done(ui.success)
+    .catch(ui.failure);
 };
 
 const onSignOut = function(event) {
-	event.preventDefault();
-	let data = getFormFields(event.target);
-	api.signOut(data)
-  .done(ui.success)
-  .fail(ui.failure);
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signOut(data)
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
 const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.changePassword(data)
-  .done(ui.success)
-  .fail(ui.failure);
+    .done(ui.success)
+    .fail(ui.failure);
 };
 
 // STUDENT EVENTS
 
 const onGetStudents = function(event) {
   event.preventDefault();
-	api.getStudents()
-  .done(ui.getStudentSuccess)
-  .fail(ui.getStudentFailure);
+  api.getStudents()
+    .done(ui.getStudentSuccess)
+    .fail(ui.getStudentFailure);
 };
 
 const onShowStudent = function(event) {
   event.preventDefault();
-	api.showStudent()
-  .done(ui.showStudentSuccess)
-  .fail(ui.showStudentFailure);
+  api.showStudent()
+    .done(ui.showStudentSuccess)
+    .fail(ui.showStudentFailure);
 };
 
 const onCreateStudent = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createStudent(data)
-  .done(ui.createStudentSuccess)
-  .fail(ui.createStudentFailure);
+    .then((response) => {
+      store.currentStudentId = response.student.id;
+      return store.currentStudentId;
+    })
+    .done(ui.createStudentSuccess)
+    .fail(ui.createStudentFailure);
 };
 
 const onDeleteStudent = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deleteStudent(data)
-  .done(ui.deleteStudentSuccess)
-  .fail(ui.deleteStudentFailure);
+    .done(ui.deleteStudentSuccess)
+    .fail(ui.deleteStudentFailure);
 };
 
 const onUpdateStudent = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.updateStudent(data)
-  .done(ui.updateStudentSuccess)
-  .fail(ui.updateStudentFailure);
+    .done(ui.updateStudentSuccess)
+    .fail(ui.updateStudentFailure);
 };
 
 // SETTING EVENTS
 
 const onGetSettings = function(event) {
   event.preventDefault();
-	api.getSettings()
-  .done(ui.getSettingSuccess)
-  .fail(ui.getSettingFailure);
+  api.getSettings()
+    .done(ui.getSettingSuccess)
+    .fail(ui.getSettingFailure);
 };
 
 const onShowSetting = function(event) {
   event.preventDefault();
-	api.showSetting()
-  .done(ui.showSettingSuccess)
-  .fail(ui.showSettingFailure);
+  api.showSetting()
+    .done(ui.showSettingSuccess)
+    .fail(ui.showSettingFailure);
 };
 
 const onCreateSetting = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createSetting(data)
-  .done(ui.createSettingSuccess)
-  .fail(ui.createSettingFailure);
+    .then((response) => {
+      store.currentSettingId = response.setting.id;
+      store.currentNumofIntervals = response.setting.num_of_int;
+      store.currentObsIntervalTime = response.setting.obs_time;
+      store.currentObsNum = 1;
+      // return store.currentSetting;
+    })
+    .done(ui.createSettingSuccess)
+    .fail(ui.createSettingFailure);
 };
 
 const onDeleteSetting = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deleteSetting(data)
-  .done(ui.deleteSettingSuccess)
-  .fail(ui.deleteSettingFailure);
+    .done(ui.deleteSettingSuccess)
+    .fail(ui.deleteSettingFailure);
 };
 
 const onUpdateSetting = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.updateSetting(data)
-  .done(ui.updateSettingSuccess)
-  .fail(ui.updateSettingFailure);
+    .done(ui.updateSettingSuccess)
+    .fail(ui.updateSettingFailure);
 };
 
 // OBSERVATION EVENTS
 
 const onGetObservations = function(event) {
   event.preventDefault();
-	api.getObservations()
-  .done(ui.getObservationSuccess)
-  .fail(ui.getObservationFailure);
+  api.getObservations()
+    .done(ui.getObservationSuccess)
+    .fail(ui.getObservationFailure);
 };
 
 const onShowObservation = function(event) {
   event.preventDefault();
-	api.showObservation()
-  .done(ui.showObservationSuccess)
-  .fail(ui.showObservationFailure);
+  api.showObservation()
+    .done(ui.showObservationSuccess)
+    .fail(ui.showObservationFailure);
 };
 
 const onCreateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createObservation(data)
-  .done(ui.createObservationSuccess)
-  .fail(ui.createObservationFailure);
+  .then((response) => {
+    store.currentObsNum = response.observation.obs_num;
+
+    // return store.currentSetting;
+  })
+    .done(ui.createObservationSuccess)
+    .fail(ui.createObservationFailure);
 };
 
 const onDeleteObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.deleteObservation(data)
-  .done(ui.deleteObservationSuccess)
-  .fail(ui.deleteObservationFailure);
+    .done(ui.deleteObservationSuccess)
+    .fail(ui.deleteObservationFailure);
 };
 
 const onUpdateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.updateObservation(data)
-  .done(ui.updateObservationSuccess)
-  .fail(ui.updateObservationFailure);
+    .done(ui.updateObservationSuccess)
+    .fail(ui.updateObservationFailure);
 };
 
 const startSession = function() {
@@ -172,7 +188,7 @@ const startSession = function() {
 // };
 
 const addHandlers = () => {
-	$('#get-students-form').on('submit', onGetStudents);
+  $('#get-students-form').on('submit', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
   $('#new-student-form').on('submit', onCreateStudent);
   $('#delete-student-form').on('submit', onDeleteStudent);
@@ -196,5 +212,5 @@ const addHandlers = () => {
 };
 
 module.exports = {
-	addHandlers,
+  addHandlers,
 };

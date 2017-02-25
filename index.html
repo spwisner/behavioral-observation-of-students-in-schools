@@ -168,11 +168,16 @@
       <p class="field-description">Session Task</p>
       <input name="setting[obs_task]" placeholder="Session Task" type="text">
       <br>
-      <p class="field-description">Session Time Interval</p>
+      <p class="field-description">Number of Intervals</p>
+      <input name="setting[num_of_int]" placeholder="Session Time" type="text">
+      <br>
+      <p class="field-description">Time of Intervals (in seconds)</p>
       <input name="setting[obs_time]" placeholder="Session Time" type="text">
       <br>
-      <p class="field-description">Session ID</p>
-      <input name="setting[student_id]" id="create-setting-stud-id" placeholder="Student ID" type="text">
+      <p class="Total Session Time">This session will last <span id="total-session-time"></span> minutes.</p>
+      <!-- <input name="setting[student_id]" id="create-setting-stud-id" placeholder="Student ID" type="text"> -->
+      <input name="setting[student_id]" id="create-setting-stud-id" type="hidden" value="">
+      <br>
       <br>
       <input name="submit" type="submit" value="Create Setting">
     </fieldset>
@@ -249,14 +254,15 @@
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">
     <fieldset>
       <legend>Record Interval Form</legend>
-      <div class="field-desc-container field-text">
-        <p class="field-description">Student ID</p>
+        <input name="observation[student_id]" id="create-observation-stud-id" type="hidden">
+        <input name="observation[setting_id]" id="create-observation-setting-id" type="hidden">
+        <input name="observation[obs_num]" id="create-observation-number" type="hidden">
+        <!-- <p class="field-description">Student ID</p>
         <input name="observation[student_id]" id="create-observation-stud-id" placeholder="Student ID" type="number">
       </div>
       <div class="field-desc-container field-text">
         <p class="field-description">Setting ID</p>
-        <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number">
-      </div>
+        <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number"> -->
       <div class="clearfix"></div>
       <div class="field-desc-container check-left">
         <p class="field-description">AET</p>

@@ -1,5 +1,8 @@
 'use strict';
 
+const store = require('../store');
+const logic = require('./logic');
+
 const success = (data) => {
   console.log('success completed');
   console.log(data);
@@ -41,6 +44,7 @@ const createStudentSuccess = (data) => {
   console.log(data);
   $("#new-student-form").hide();
   $("#new-setting-form").show();
+  $("#create-setting-stud-id").attr("value", store.currentStudentId);
 };
 
 const createStudentFailure = (data) => {
@@ -95,6 +99,9 @@ const createSettingSuccess = (data) => {
   console.log(data);
   $("#new-setting-form").hide();
   $("#new-observation-form").show();
+  $("#create-observation-stud-id").attr("value", store.currentStudentId);
+  $("#create-observation-setting-id").attr("value", store.currentSettingId);
+  $("#create-observation-number").attr("value", store.currentObsNum);
 };
 
 const createSettingFailure = (data) => {
@@ -144,10 +151,20 @@ const showObservationFailure = (data) => {
   console.log(data);
 };
 
-const createObservationSuccess = (data) => {
+const createObservationSuccess = function() {
   console.log('create observation success');
-  console.log(data);
-  $(".field-checkbox").prop("checked", false);
+
+  console.log("logic.withinObsInterval");
+  console.log(logic.withinObsInterval());
+  let continueWithInterval = logic.withinObsInterval();
+
+  if ( continueWithInterval ) {
+    store.currentObsNum += 1;
+    $("#create-observation-number").attr("value", store.currentObsNum);
+    $(".field-checkbox").prop("checked", false);
+  } else {
+    $("#new-observation-form").hide();
+  }
 };
 
 const createObservationFailure = (data) => {

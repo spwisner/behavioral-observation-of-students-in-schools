@@ -183,6 +183,17 @@ const createObservation = function(data) {
   });
 };
 
+const preCreateObservation = function(data) {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + store.createSettingId + '/settings/' + document.getElementById("create-observation-setting-id").value + '/observations',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data,
+  });
+};
+
 const deleteObservation = function() {
   return $.ajax({
     url: config.apiOrigin + '/observations/' + document.getElementById("delete-observation-obs-id").value,
@@ -224,4 +235,5 @@ module.exports = {
   updateObservation,
   deleteSetting,
   deleteObservation,
+  preCreateObservation,
 };

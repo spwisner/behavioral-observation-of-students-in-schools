@@ -1,23 +1,45 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// Temp Hide
+#new-observation-form,
+#change-password,
+#delete-observation-form,
+#delete-setting-form,
+#delete-student-form,
+#get-observations-form,
+#get-settings-form,
+// #new-setting-form,
+#show-observation-form,
+#show-setting-form,
+#show-student-form,
+#sign-out,
+#sign-up,
+#update-observation-form,
+#update-setting-form,
+#update-student-form,
+.dashboard-container,
+.timer-container {
+  display: none;
+}
 
 .field-button-container {
   text-align: center;
 }
 
 .session-time-container {
-  display:none;
+  display: none;
 }
 
 .interval-time-count-container {
   color: green;
   font-weight: 600;
   text-align: center;
-  font-size:16px;
+  font-size: 16px;
 }
 
-#interval-timer, #interval-count {
-  color:red;
+#interval-count,
+#interval-timer {
+  color: red;
 }
 
 .field-button-container button {
@@ -30,12 +52,14 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   margin: 5px 10px;
 }
 
-.field-desc-container input[type=checkbox]
-{
+.field-desc-container input[type=checkbox] {
   /* Double-sized Checkboxes */
-  -ms-transform: scale(1.5); /* IE */
-  -moz-transform: scale(1.5); /* FF */
-  -webkit-transform: scale(1.5); /* Safari and Chrome */
+  -ms-transform: scale(1.5);
+  /* IE */
+  -moz-transform: scale(1.5);
+  /* FF */
+  -webkit-transform: scale(1.5);
+  /* Safari and Chrome */
   padding: 10px;
 }
 
