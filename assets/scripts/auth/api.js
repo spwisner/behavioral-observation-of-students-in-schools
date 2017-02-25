@@ -162,6 +162,16 @@ const getObservations = function() {
   });
 };
 
+const getObservationsCreate = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/settings/' + store.currentSettingId + '/observations',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 const showObservation = function() {
   return $.ajax({
     url: config.apiOrigin + '/observations/' + document.getElementById("show-obs-setting-id").value,
@@ -236,4 +246,5 @@ module.exports = {
   deleteSetting,
   deleteObservation,
   preCreateObservation,
+  getObservationsCreate,
 };

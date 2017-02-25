@@ -109,6 +109,8 @@ const onCreateSetting = function(event) {
   api.createSetting(data)
     .then((response) => {
       store.currentSettingId = response.setting.id;
+      console.log("settingid");
+      console.log(store.currentSettingId);
       store.currentNumofIntervals = response.setting.num_of_int;
       store.currentObsIntervalTime = response.setting.obs_time;
       store.currentObsNum = 1;
@@ -150,13 +152,23 @@ const onShowObservation = function(event) {
     .fail(ui.showObservationFailure);
 };
 
+const onGetObservationNums = function() {
+  api.getObservationsCreate()
+    .then((response) => {
+      store.currentObsNum = response.observations.length;
+      return store.currentObsNum;
+    })
+    .done(ui.getObservationNumsSuccess)
+    .fail(ui.getObservationNumsFailure);
+};
+
 const onCreateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createObservation(data)
-  .then((response) => {
-    store.currentObsNum = response.observation.obs_num;
-
+  .then(() => {
+    // store.currentObsNum = response.observation.obs_num;
+    onGetObservationNums();
     // return store.currentSetting;
   })
     .done(ui.createObservationSuccess)

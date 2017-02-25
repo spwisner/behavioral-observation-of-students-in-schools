@@ -136,6 +136,14 @@ const getObservationSuccess = (data) => {
   console.log(data);
 };
 
+const getObservationNumsSuccess = function() {
+  console.log('get next obs number success');
+};
+
+const getObservationNumsFailure = function() {
+  console.log('get next obs number failure');
+};
+
 const getObservationFailure = (data) => {
   console.log('update observation failure');
   console.log(data);
@@ -226,4 +234,6 @@ module.exports = {
   deleteObservationSuccess,
   deleteObservationFailure,
   signInSuccess,
+  getObservationNumsSuccess,
+  getObservationNumsFailure,
 };
