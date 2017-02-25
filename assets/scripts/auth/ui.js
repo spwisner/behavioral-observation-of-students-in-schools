@@ -137,7 +137,20 @@ const getObservationSuccess = (data) => {
 };
 
 const getObservationNumsSuccess = function() {
-  console.log('get next obs number success');
+    console.log('get next obs number success');
+    //
+    // console.log("logic.withinObsInterval");
+    // console.log(logic.withinObsInterval());
+    let continueWithInterval = logic.withinObsInterval();
+
+    if ( continueWithInterval ) {
+      $("#create-observation-number").attr("value", store.currentObsNum);
+      $(".field-checkbox").prop("checked", false);
+      console.log('continue');
+    } else {
+      console.log('done')
+      $("#new-observation-form").hide();
+    }
 };
 
 const getObservationNumsFailure = function() {
@@ -161,18 +174,18 @@ const showObservationFailure = (data) => {
 
 const createObservationSuccess = function() {
   console.log('create observation success');
-
-  console.log("logic.withinObsInterval");
-  console.log(logic.withinObsInterval());
-  let continueWithInterval = logic.withinObsInterval();
-
-  if ( continueWithInterval ) {
-    store.currentObsNum += 1;
-    $("#create-observation-number").attr("value", store.currentObsNum);
-    $(".field-checkbox").prop("checked", false);
-  } else {
-    $("#new-observation-form").hide();
-  }
+    //
+    // console.log("logic.withinObsInterval");
+    // console.log(logic.withinObsInterval());
+    // let continueWithInterval = logic.withinObsInterval();
+    //
+    // if ( continueWithInterval ) {
+    //   store.currentObsNum += 1;
+    //   $("#create-observation-number").attr("value", store.currentObsNum);
+    //   $(".field-checkbox").prop("checked", false);
+    // } else {
+    //   $("#new-observation-form").hide();
+    // }
 };
 
 const createObservationFailure = (data) => {
