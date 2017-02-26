@@ -246,7 +246,7 @@
 
     <div class="interval-time-count-container">
       <p>Time Remaining in Interval: <span id="interval-timer"></span></p>
-      <p>Current Interval: <span id="interval-count"></span></p>
+      <p>Interval: <span id="interval-count"></span> / <span id="interval-total"></span></p>
       <button id="begin-session-btn">Begin Session</button>
     </div>
   </div>
@@ -254,6 +254,10 @@
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">
     <fieldset>
       <legend>Record Interval Form</legend>
+
+      <div class="student-observered-container">
+        <div class="student-interval">Student to Observe: <span id="student-observed"></span></div>
+      </div>
         <input name="observation[student_id]" id="create-observation-stud-id" type="hidden">
         <input name="observation[setting_id]" id="create-observation-setting-id" type="hidden">
         <input name="observation[obs_num]" id="create-observation-number" type="hidden">
@@ -263,6 +267,9 @@
       <div class="field-desc-container field-text">
         <p class="field-description">Setting ID</p>
         <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number"> -->
+
+
+<!-- Testing HTML -->
         <!-- <div class="clearfix"></div>
         <div class="field-desc-container check-left">
           <p class="field-description">OBSNUM</p>
@@ -272,7 +279,7 @@
         <div class="clearfix"></div>
         <div class="field-desc-container check-left">
           <p class="field-description">STUDID</p>
-          <input name="observation[student_id]" class="field-checkbox" placeholder="STUDID" type="`text`">
+          <input name="observation[student_id]" class="field-checkbox" placeholder="STUDID" type="text">
         </div>
 
         <div class="clearfix"></div>
@@ -280,6 +287,8 @@
           <p class="field-description">SETTINGID</p>
           <input name="observation[setting_id]" class="field-checkbox" placeholder="SETTINGID" type="text">
         </div> -->
+
+
 
       <div class="clearfix"></div>
       <div class="field-desc-container check-left">

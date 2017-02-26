@@ -155,7 +155,9 @@ const onShowObservation = function(event) {
 const onGetObservationNums = function() {
   api.getObservationsCreate()
     .then((response) => {
-      store.currentObsNum = response.observations.length;
+      store.currentObsNumCount = response.observations.length;
+      store.currentObsNum = store.currentObsNumCount + 1;
+      // store.currentObsNumCount = currentObsNum
       return store.currentObsNum;
     })
     .done(ui.getObservationNumsSuccess)

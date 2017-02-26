@@ -102,6 +102,9 @@ const createSettingSuccess = (data) => {
   $("#create-observation-stud-id").attr("value", store.currentStudentId);
   $("#create-observation-setting-id").attr("value", store.currentSettingId);
   $("#create-observation-number").attr("value", store.currentObsNum);
+  $("#interval-total").text(store.currentNumofIntervals);
+  $("#interval-count").text(store.currentObsNum);
+  $("#student-observed").html('<span id="target-student">Target Student</span>');
 };
 
 const createSettingFailure = (data) => {
@@ -138,17 +141,18 @@ const getObservationSuccess = (data) => {
 
 const getObservationNumsSuccess = function() {
     console.log('get next obs number success');
-    //
     // console.log("logic.withinObsInterval");
     // console.log(logic.withinObsInterval());
     let continueWithInterval = logic.withinObsInterval();
 
     if ( continueWithInterval ) {
       $("#create-observation-number").attr("value", store.currentObsNum);
+      $("#interval-count").text(store.currentObsNum);
+      logic.studentToObserve(store.currentObsNum);
       $(".field-checkbox").prop("checked", false);
       console.log('continue');
     } else {
-      console.log('done')
+      console.log('done');
       $("#new-observation-form").hide();
     }
 };
