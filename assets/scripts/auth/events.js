@@ -3,7 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-// const logic = require('./logic');
+const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -109,10 +109,10 @@ const onCreateSetting = function(event) {
   api.createSetting(data)
     .then((response) => {
       store.currentSettingId = response.setting.id;
-      console.log("settingid");
-      console.log(store.currentSettingId);
       store.currentNumofIntervals = response.setting.num_of_int;
       store.currentObsIntervalTime = response.setting.obs_time;
+      console.log("currentObsIntervalTime");
+      console.log(store.currentObsIntervalTime);
       store.currentObsNum = 1;
       // return store.currentSetting;
     })
@@ -152,27 +152,25 @@ const onShowObservation = function(event) {
     .fail(ui.showObservationFailure);
 };
 
-const onGetObservationNums = function() {
+const onCreateObservationNums = function() {
   api.getObservationsCreate()
     .then((response) => {
-      store.currentObsNumCount = response.observations.length;
-      store.currentObsNum = store.currentObsNumCount + 1;
-      // store.currentObsNumCount = currentObsNum
+      store.currentObsNum = response.observations.length + 1;
       return store.currentObsNum;
     })
-    .done(ui.getObservationNumsSuccess)
-    .fail(ui.getObservationNumsFailure);
+    .done(ui.onCreateObservationNumsSuccess)
+    .fail(ui.onCreateObservationNumsFailure);
 };
 
 const onCreateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   api.createObservation(data)
-  .then(() => {
-    // store.currentObsNum = response.observation.obs_num;
-    onGetObservationNums();
-    // return store.currentSetting;
-  })
+    .then(() => {
+      // store.currentObsNum = response.observation.obs_num;
+      onCreateObservationNums();
+      // return store.currentSetting;
+    })
     .done(ui.createObservationSuccess)
     .fail(ui.createObservationFailure);
 };
@@ -197,9 +195,38 @@ const startSession = function() {
   $("#new-student-form").show();
 };
 
+//////////////////
+//////////////////
+
+const defineTimerInterval = function() {
+  console.log('running');
+  debugger;
+  const convertTimeToJquery = parseInt(store.currentObsIntervalTime) * 1000;
+  setInterval(logic.observationTimer, convertTimeToJquery);
+};
+
+
+// const defineObsSubmitInterval = function(interval) {
+//   setInterval(autoSubmitObs, interval);
+// }
+
+// const beginObsSession = function() {
+//   let continueToNext = logic.withinObsInterval();
+//   if (continueToNext) {
+//     const convertTimeToJquery = store.currentObsIntervalTime;
+//     logic.observationTimer();
+//     setInterval(function() {
+//       $("#new-observation-form").submit();
+//     }, convertTimeToJquery);
+//   } else {
+//     return;
+//   }
+// };
+
 // const timerStart = function() {
 //   logic.observationTimer(2);
 // };
+
 
 const addHandlers = () => {
   $('#get-students-form').on('submit', onGetStudents);
@@ -222,7 +249,9 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#new-session-btn').on('click', startSession);
-  // $('#observation-timer-btn').on('click', logic.runAutoSubmit(1));
+  $('#begin-session-btn').on('click', defineTimerInterval);
+
+  // $("#begin-session-btn").on("click", beginObsSession);
 };
 
 module.exports = {

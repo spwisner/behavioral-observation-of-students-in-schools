@@ -139,28 +139,6 @@ const getObservationSuccess = (data) => {
   console.log(data);
 };
 
-const getObservationNumsSuccess = function() {
-    console.log('get next obs number success');
-    // console.log("logic.withinObsInterval");
-    // console.log(logic.withinObsInterval());
-    let continueWithInterval = logic.withinObsInterval();
-
-    if ( continueWithInterval ) {
-      $("#create-observation-number").attr("value", store.currentObsNum);
-      $("#interval-count").text(store.currentObsNum);
-      logic.studentToObserve(store.currentObsNum);
-      $(".field-checkbox").prop("checked", false);
-      console.log('continue');
-    } else {
-      console.log('done');
-      $("#new-observation-form").hide();
-    }
-};
-
-const getObservationNumsFailure = function() {
-  console.log('get next obs number failure');
-};
-
 const getObservationFailure = (data) => {
   console.log('update observation failure');
   console.log(data);
@@ -178,23 +156,33 @@ const showObservationFailure = (data) => {
 
 const createObservationSuccess = function() {
   console.log('create observation success');
-    //
+};
+
+const onCreateObservationNumsSuccess = function() {
+    console.log('onCreateObservationNumsSuccess success');
     // console.log("logic.withinObsInterval");
     // console.log(logic.withinObsInterval());
-    // let continueWithInterval = logic.withinObsInterval();
-    //
-    // if ( continueWithInterval ) {
-    //   store.currentObsNum += 1;
-    //   $("#create-observation-number").attr("value", store.currentObsNum);
-    //   $(".field-checkbox").prop("checked", false);
-    // } else {
-    //   $("#new-observation-form").hide();
-    // }
+    let continueWithInterval = logic.withinObsInterval();
+
+    if ( continueWithInterval ) {
+      $("#create-observation-number").attr("value", store.currentObsNum);
+      $("#interval-count").text(store.currentObsNum);
+      logic.studentToObserve(store.currentObsNum);
+      $(".field-checkbox").prop("checked", false);
+      console.log('continue');
+    } else {
+      console.log('done');
+      $("#new-observation-form").hide();
+    }
 };
 
 const createObservationFailure = (data) => {
   console.log('create observation failure');
   console.log(data);
+};
+
+const onCreateObservationNumsFailure = function() {
+  console.log('onCreateObservationNumsFailure failure');
 };
 
 const deleteObservationSuccess = (data) => {
@@ -251,6 +239,6 @@ module.exports = {
   deleteObservationSuccess,
   deleteObservationFailure,
   signInSuccess,
-  getObservationNumsSuccess,
-  getObservationNumsFailure,
+  onCreateObservationNumsSuccess,
+  onCreateObservationNumsFailure,
 };

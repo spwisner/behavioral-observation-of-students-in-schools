@@ -4,9 +4,9 @@ const store = require('../store');
 
 const withinObsInterval = function() {
   if (store.currentObsNum <= store.currentNumofIntervals) {
-      return true;
+    return true;
   } else {
-      return false;
+    return false;
   }
 };
 
@@ -24,7 +24,45 @@ const studentToObserve = function(obs_num) {
   }
 };
 
-//
+/////////////
+/////////////
+/////////////
+
+const observationTimer = function() {
+  let x = parseInt(store.currentObsIntervalTime);
+  let max = parseInt(store.currentObsIntervalTime) + 1;
+  let y = document.getElementById("interval-timer");
+  // Display count down for 20 seconds
+  setInterval(function() {
+    if (x <= max && x >= 1) {
+      x--;
+      y.innerHTML = '' + x + '';
+      if (x === 1) {
+        x = max;
+        $("#new-observation-form").submit();
+      }
+    }
+  }, 1000);
+};
+
+
+// const observationTimer = function() {
+//   const max = store.currentObsIntervalTime + 1;
+//   let timeRemaining = store.currentObsIntervalTime;
+//   const intervalTimerDiv = document.getElementById("interval-timer");
+//     setInterval(function() {
+//       if (timeRemaining <= max && timeRemaining >= 1) {
+//         timeRemaining--;
+//         console.log("timeRemaining");
+//         console.log(timeRemaining);
+//         intervalTimerDiv.innerHTML = '' + timeRemaining + '';
+//         if (timeRemaining === 1) {
+//           timeRemaining = max;
+//         }
+//       }
+//     }, 1000);
+// };
+
 // const observationTimer = function(minutes) {
 //   let seconds = 60;
 //   let mins = minutes;
@@ -47,60 +85,14 @@ const studentToObserve = function(obs_num) {
 //   }
 //   tick();
 // };
-//
-//
-// const displayIntervalTime = function() {
-//   let count = 0;
-//   let x = 12;
-//   let y = document.getElementById("interval-timer");
-//   let z = document.getElementById("interval-count");
-//   // Display count down for 20 seconds
-//   setInterval(function() {
-//     if (x <= 13 && x >= 1) {
-//       x--;
-//       y.innerHTML = '' + x + '';
-//       z.innerHTML = '' + count + '';
-//       if (x === 1) {
-//         x = 13;
-//         count++;
-//       }
-//     }
-//   }, 1000);
-// };
-//
-//
-//
-//
-// const runAutoSubmit = function(minutes) {
-//   let totalIntervals = (minutes * 5);
-//   let count = 0;
-//   while (count <= totalIntervals) {
-//
-//   }
-// };
-// //
-//
-// const submitFormInterval = function(minutes) {
-//   let totalIntervals = (minutes * 1);
-//   let count = 0;
-//   setInterval(function() {
-//     document.getElementById("new-observation-form").submit();
-//     count += 1;
-//   }, 12000);
-//   if (count > totalIntervals) {
-//     return;
-//   }
-// };
-//
-//
-//
-// $('#begin-session-btn').on('click', displayIntervalTime);
+
 module.exports = {
   withinObsInterval,
   studentToObserve,
-//   observationTimer,
-//   submitForm,
-//   displayIntervalTime,
-//   runAutoSubmit,
-//   runAutoSubmit,
+  observationTimer,
+  //   observationTimer,
+  //   submitForm,
+  //   displayIntervalTime,
+  //   runAutoSubmit,
+  //   runAutoSubmit,
 };
