@@ -28,22 +28,22 @@ const studentToObserve = function(obs_num) {
 /////////////
 /////////////
 
-const observationTimer = function() {
-  let x = parseInt(store.currentObsIntervalTime);
-  let max = parseInt(store.currentObsIntervalTime) + 1;
-  let y = document.getElementById("interval-timer");
-  // Display count down for 20 seconds
-  setInterval(function() {
-    if (x <= max && x >= 1) {
-      x--;
-      y.innerHTML = '' + x + '';
-      if (x === 1) {
-        x = max;
-        $("#new-observation-form").submit();
-      }
-    }
-  }, 1000);
-};
+// const observationTimer = function() {
+//   let x = parseInt(store.currentObsIntervalTime);
+//   let max = parseInt(store.currentObsIntervalTime) + 1;
+//   let y = document.getElementById("interval-timer");
+//   // Display count down for 20 seconds
+//   setInterval(function() {
+    // if (x <= max && x >= 1) {
+    //   x--;
+    //   y.innerHTML = '' + x + '';
+    //   if (x === 1) {
+    //     x = max;
+    //     $("#new-observation-form").submit();
+    //   }
+    // }
+//   }, 1000);
+// };
 
 
 // const observationTimer = function() {
@@ -89,7 +89,7 @@ const observationTimer = function() {
 module.exports = {
   withinObsInterval,
   studentToObserve,
-  observationTimer,
+  // observationTimer,
   //   observationTimer,
   //   submitForm,
   //   displayIntervalTime,

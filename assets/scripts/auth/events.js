@@ -3,7 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-// const logic = require('./logic');
+const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -242,6 +242,38 @@ const startSession = function() {
 //   setInterval(logic.observationTimer, convertTimeToJquery);
 // };
 
+const endObservationTimer = function(runTimer) {
+  clearInterval(runTimer);
+  console.log("interval cleared");
+};
+
+const observationTimer = function() {
+  let x = parseInt(store.currentObsIntervalTime);
+  let max = parseInt(store.currentObsIntervalTime) + 1;
+  let y = document.getElementById("interval-timer");
+  // Display count down for 20 seconds
+  const runTimer = setInterval(function() {
+    if (x <= max && x >= 1) {
+      x--;
+      y.innerHTML = '' + x + '';
+      if (x === 1) {
+        x = max;
+        if (store.currentObsNum <= store.currentNumofIntervals) {
+          $("#new-observation-form").submit();
+        } else {
+          endObservationTimer(runTimer);
+        }
+      }
+    }
+  }, 1000);
+
+  // let withinObsInterval = logic.withinObsInterval();
+  //
+  // if (!withinObsInterval) {
+  //   clearInterval(runTimer);
+  //   return;
+  // }
+};
 
 const addHandlers = () => {
   $('#get-students-form').on('submit', onGetStudents);
@@ -264,7 +296,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#new-session-btn').on('click', startSession);
-  // $('#begin-session-btn').on('click', defineTimerInterval);
+  $('#begin-session-btn').on('click', observationTimer);
 
   // $("#begin-session-btn").on("click", beginObsSession);
 };
