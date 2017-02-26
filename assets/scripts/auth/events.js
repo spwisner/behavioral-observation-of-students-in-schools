@@ -3,7 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-const logic = require('./logic');
+// const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -108,9 +108,9 @@ const onCreateSetting = function(event) {
   let data = getFormFields(event.target);
   api.createSetting(data)
     .then((response) => {
-      store.currentSettingId = response.setting.id;
-      store.currentNumofIntervals = response.setting.num_of_int;
-      store.currentObsIntervalTime = response.setting.obs_time;
+      store.currentSettingId = parseInt(response.setting.id);
+      store.currentNumofIntervals = parseInt(response.setting.num_of_int);
+      store.currentObsIntervalTime = parseInt(response.setting.obs_time);
       console.log("currentObsIntervalTime");
       console.log(store.currentObsIntervalTime);
       store.currentObsNum = 1;
@@ -152,28 +152,65 @@ const onShowObservation = function(event) {
     .fail(ui.showObservationFailure);
 };
 
-const onCreateObservationNums = function() {
+const onCreateObservation = function(event) {
+  console.log('running onCreateObs in Events.js');
+  event.preventDefault();
+  let data = getFormFields(event.target);
   api.getObservationsCreate()
     .then((response) => {
       store.currentObsNum = response.observations.length + 1;
       return store.currentObsNum;
     })
-    .done(ui.onCreateObservationNumsSuccess)
-    .fail(ui.onCreateObservationNumsFailure);
-};
-
-const onCreateObservation = function(event) {
-  event.preventDefault();
-  let data = getFormFields(event.target);
+    // .then(() => {
+    //   onCreateObservation();
+    // })
+    .done(ui.getPastObsNumSuccess)
+    .fail(ui.getPastObsNumFailure);
   api.createObservation(data)
-    .then(() => {
-      // store.currentObsNum = response.observation.obs_num;
-      onCreateObservationNums();
-      // return store.currentSetting;
-    })
+    // .then((response) => {
+    //   store.currentObsNum = response.observations.length + 1;
+    //
+    // })
     .done(ui.createObservationSuccess)
     .fail(ui.createObservationFailure);
 };
+
+// const onGetPastObsNum = function(event) {
+//   event.preventDefault();
+//   api.getObservationsCreate()
+//     .then((response) => {
+//       store.currentObsNum = parseInt(response.observations.length) + 1;
+//       return store.currentObsNum;
+//     })
+//     .then(() => {
+//       onCreateObservation();
+//     })
+//     .done(ui.getPastObsNumSuccess)
+//     .fail(ui.getPastObsNumFailure);
+//   };
+
+// const onCreateObservationNums = function() {
+//   api.getObservationsCreate()
+//     .then((response) => {
+//       store.currentObsNum = response.observations.length + 1;
+//       return store.currentObsNum;
+//     })
+//     .done(ui.onCreateObservationNumsSuccess)
+//     .fail(ui.onCreateObservationNumsFailure);
+// };
+
+// const onCreateObservation = function(event) {
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//   api.createObservation(data)
+//     .then(() => {
+//       // store.currentObsNum = response.observation.obs_num;
+//       onCreateObservationNums();
+//       // return store.currentSetting;
+//     })
+//     .done(ui.createObservationSuccess)
+//     .fail(ui.createObservationFailure);
+// };
 
 const onDeleteObservation = function(event) {
   event.preventDefault();
@@ -198,33 +235,11 @@ const startSession = function() {
 //////////////////
 //////////////////
 
-const defineTimerInterval = function() {
-  console.log('running');
-  debugger;
-  const convertTimeToJquery = parseInt(store.currentObsIntervalTime) * 1000;
-  setInterval(logic.observationTimer, convertTimeToJquery);
-};
-
-
-// const defineObsSubmitInterval = function(interval) {
-//   setInterval(autoSubmitObs, interval);
-// }
-
-// const beginObsSession = function() {
-//   let continueToNext = logic.withinObsInterval();
-//   if (continueToNext) {
-//     const convertTimeToJquery = store.currentObsIntervalTime;
-//     logic.observationTimer();
-//     setInterval(function() {
-//       $("#new-observation-form").submit();
-//     }, convertTimeToJquery);
-//   } else {
-//     return;
-//   }
-// };
-
-// const timerStart = function() {
-//   logic.observationTimer(2);
+// const defineTimerInterval = function() {
+//   console.log('running');
+//   debugger;
+//   const convertTimeToJquery = parseInt(store.currentObsIntervalTime) * 1000;
+//   setInterval(logic.observationTimer, convertTimeToJquery);
 // };
 
 
@@ -249,7 +264,7 @@ const addHandlers = () => {
   $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
   $('#new-session-btn').on('click', startSession);
-  $('#begin-session-btn').on('click', defineTimerInterval);
+  // $('#begin-session-btn').on('click', defineTimerInterval);
 
   // $("#begin-session-btn").on("click", beginObsSession);
 };
