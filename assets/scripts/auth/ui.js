@@ -102,9 +102,9 @@ const createSettingSuccess = (data) => {
   $("#new-observation-form").show();
   $("#create-observation-stud-id").attr("value", store.currentStudentId);
   $("#create-observation-setting-id").attr("value", store.currentSettingId);
-  $("#create-observation-number").attr("value", store.currentObsNum);
+  // $("#create-observation-number").attr("value", store.currentObsNum);
   $("#interval-total").text(store.currentNumofIntervals);
-  $("#interval-count").text(store.currentObsNum);
+  // $("#interval-count").text(store.currentObsNum);
   $("#student-observed").html('<span id="target-student">Target Student</span>');
 };
 
@@ -166,7 +166,6 @@ const getPastObsNumFailure = function() {
 
 const createObservationSuccess = function() {
   console.log('create observation success');
-  console.log('onCreateObservationNumsSuccess success');
   // console.log("logic.withinObsInterval");
   // console.log(logic.withinObsInterval());
   let continueWithInterval = logic.withinObsInterval();

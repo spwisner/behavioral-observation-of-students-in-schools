@@ -3,7 +3,7 @@ const api = require('./api');
 const ui = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-const logic = require('./logic');
+// const logic = require('./logic');
 
 // LOGIN EVENTS
 
@@ -111,9 +111,9 @@ const onCreateSetting = function(event) {
       store.currentSettingId = parseInt(response.setting.id);
       store.currentNumofIntervals = parseInt(response.setting.num_of_int);
       store.currentObsIntervalTime = parseInt(response.setting.obs_time);
-      console.log("currentObsIntervalTime");
-      console.log(store.currentObsIntervalTime);
-      store.currentObsNum = 1;
+      console.log("settid id");
+      console.log(store.currentSettingId);
+      // store.currentObsNum = 1;
       // return store.currentSetting;
     })
     .done(ui.createSettingSuccess)
@@ -153,13 +153,12 @@ const onShowObservation = function(event) {
 };
 
 const onCreateObservation = function(event) {
-  console.log('running onCreateObs in Events.js');
+  // console.log('running onCreateObs in Events.js');
   event.preventDefault();
   let data = getFormFields(event.target);
   api.getObservationsCreate()
     .then((response) => {
       store.currentObsNum = response.observations.length + 1;
-      return store.currentObsNum;
     })
     // .then(() => {
     //   onCreateObservation();
@@ -167,6 +166,17 @@ const onCreateObservation = function(event) {
     .done(ui.getPastObsNumSuccess)
     .fail(ui.getPastObsNumFailure);
   api.createObservation(data)
+    .then(() => {
+      // store.currentObsNum = store.currentObsNum + 1;
+      // let obsListLenth = store.currentObsNum;
+      // if ( obsListLenth === 0 ) {
+      //   store.currentObsNum = 1;
+      //   return store.currentObsNum;
+      // } else {
+      //   store.currentObsNum = response.observations.length + 1;
+      //   return store.currentObsNum;
+      // }
+    })
     // .then((response) => {
     //   store.currentObsNum = response.observations.length + 1;
     //
@@ -248,19 +258,34 @@ const endObservationTimer = function(runTimer) {
 };
 
 const observationTimer = function() {
+  let currentObsNum;
   let x = parseInt(store.currentObsIntervalTime);
   let max = parseInt(store.currentObsIntervalTime) + 1;
   let y = document.getElementById("interval-timer");
   // Display count down for 20 seconds
   const runTimer = setInterval(function() {
+    if (store.currentObsNum === undefined) {
+      currentObsNum = 1;
+    } else {
+      currentObsNum = store.currentObsNum;
+    }
     if (x <= max && x >= 1) {
       x--;
       y.innerHTML = '' + x + '';
       if (x === 1) {
         x = max;
-        if (store.currentObsNum <= store.currentNumofIntervals) {
+        console.log("TOTAL INTERVALS");
+        console.log(store.currentNumofIntervals);
+        console.log("CURRENT OBSERVATION NUM");
+        console.log(currentObsNum);
+        console.log("relationship store.currentObsNum <= store.currentNumofIntervals");
+        console.log(currentObsNum <= store.currentNumofIntervals);
+
+        if (currentObsNum <= store.currentNumofIntervals) {
+          console.log('inside submit part');
           $("#new-observation-form").submit();
         } else {
+          console.log('inside end part');
           endObservationTimer(runTimer);
         }
       }

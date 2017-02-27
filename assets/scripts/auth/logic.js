@@ -11,10 +11,6 @@ const withinObsInterval = function() {
 };
 
 const studentToObserve = function(obs_num) {
-  console.log("obs_num");
-  console.log(obs_num);
-  console.log("obs_num%5");
-  console.log(obs_num);
   if (obs_num % 5 === 0) {
     $("#student-observed").text("Random Peer");
     $("#student-observed").addClass("random-peer");
