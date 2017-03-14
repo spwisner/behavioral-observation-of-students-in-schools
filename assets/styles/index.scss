@@ -22,6 +22,30 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   display: none;
 // }
 
+// hide for testing:
+#change-password,
+#delete-observation-form,
+#delete-setting-form,
+#delete-student-form,
+#get-observations-form,
+#get-settings-form,
+#new-setting-form,
+#show-observation-form,
+#show-setting-form,
+#show-student-form,
+#sign-out,
+#sign-up,
+#sign-in,
+#new-student-form,
+#get-students-form,
+#update-observation-form,
+#update-setting-form,
+#update-student-form,
+.dashboard-container {
+  display: none;
+}
+///////////////////////
+
 #interval-timer {
   font-size:20px;
   color: red;

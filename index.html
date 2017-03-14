@@ -31,11 +31,11 @@
       <legend>Sign in!</legend>
       <p id="sign-in-warning" class="password-warning">Error. Please Try Again.</p>
       <p class="field-description">Email</p>
-      <input name="credentials[email]" placeholder="email" type="text" value="">
+      <input name="credentials[email]" placeholder="email" type="text" value="z@z">
       <p class="field-description">Password</p>
-      <input name="credentials[password]" placeholder="password" type="password" value="">
+      <input name="credentials[password]" placeholder="password" type="password" value="z">
       <br>
-      <input name="submit" type="submit" value="Sign in!">
+      <input id="test-sign-in" name="submit" type="submit" value="Sign in!">
     </fieldset>
   </form>
   <form class="form credential-form" id="sign-out" name="sign-out">
@@ -160,26 +160,25 @@
     <fieldset>
       <legend>Create Session Form</legend>
       <p class="field-description">Session Date</p>
-      <input name="setting[obs_on]" placeholder="Session Date" type="date">
+      <input name="setting[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
       <br>
       <p class="field-description">Session Setting</p>
-      <input name="setting[obs_setting]" placeholder="Session Setting" type="text">
+      <input name="setting[obs_setting]" placeholder="Session Setting" type="text" value="running">
       <br>
       <p class="field-description">Session Task</p>
-      <input name="setting[obs_task]" placeholder="Session Task" type="text">
+      <input name="setting[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals</p>
-      <input name="setting[num_of_int]" placeholder="Number of Intervals" type="text">
+      <input name="setting[num_of_int]" placeholder="Number of Intervals" type="text" value="3">
       <br>
       <p class="field-description">Time of Intervals (in seconds)</p>
-      <input name="setting[obs_time]" placeholder="Time" type="text">
+      <input name="setting[obs_time]" placeholder="Time" type="text" value="3">
       <br>
       <p class="Total Session Time">This session will last <span id="total-session-time"></span> minutes.</p>
-      <!-- <input name="setting[student_id]" id="create-setting-stud-id" placeholder="Student ID" type="text"> -->
-      <input name="setting[student_id]" id="create-setting-stud-id" type="hidden">
+      <input name="setting[student_id]" id="create-setting-stud-id" type="hidden" value="6">
       <br>
       <br>
-      <input name="submit" type="submit" value="Create Setting">
+      <input id="testing-create-session" name="submit" type="submit" value="Create Setting">
     </fieldset>
   </form>
 
@@ -249,6 +248,10 @@
       <p>Interval: <span id="interval-count">1</span> / <span id="interval-total"></span></p>
       <button id="begin-session-btn">Begin Session</button>
     </div>
+  </div>
+
+  <div class="test-container">
+    <button id="test-button-submit" type="submit">Click Before Testing</button>
   </div>
 
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">

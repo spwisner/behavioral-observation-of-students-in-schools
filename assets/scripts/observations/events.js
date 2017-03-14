@@ -162,6 +162,12 @@ const observationTimer = function() {
   }, 1000);
 };
 
+// Test Button for Webpage Testing
+const testButton = function() {
+  $("#test-sign-in").click();
+}
+
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -170,6 +176,8 @@ const addHandlers = () => {
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
+  // Test Button
+  $('#test-button-submit').on('click', testButton);
 };
 
 module.exports = {
