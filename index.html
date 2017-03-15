@@ -175,7 +175,7 @@
       <input name="session[obs_time]" placeholder="Time" type="text" value="3">
       <br>
       <p class="Total Session Time">This session will last <span id="total-session-time"></span> minutes.</p>
-      <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="6">
+      <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
       <br>
       <br>
       <input id="testing-create-session" name="submit" type="submit" value="Create session">
@@ -198,17 +198,20 @@
       <p class="field-description">session ID</p>
       <input name="session[id]" id="update-session-session-id" placeholder="session ID" type="text">
       <br>
-      <p class="field-description">Observation Date</p>
-      <input name="session[obs_on]" placeholder="Observation Date" type="date">
+      <p class="field-description">Session Date</p>
+      <input name="session[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
       <br>
-      <p class="field-description">Observation session</p>
-      <input name="session[obs_session]" placeholder="Observation session" type="text">
+      <p class="field-description">Session session</p>
+      <input name="session[obs_setting]" placeholder="Session session" type="text" value="running">
       <br>
-      <p class="field-description">Observation Task</p>
-      <input name="session[obs_task]" placeholder="Observation Task" type="text">
+      <p class="field-description">Session Task</p>
+      <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
-      <p class="field-description">Observation Time Interval</p>
-      <input name="session[obs_time]" placeholder="Observation Time" type="text">
+      <p class="field-description">Number of Intervals</p>
+      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="3">
+      <br>
+      <p class="field-description">Time of Intervals (in seconds)</p>
+      <input name="session[obs_time]" placeholder="Time" type="text" value="3">
       <br>
       <input name="submit" type="submit" value="Update session">
     </fieldset>
