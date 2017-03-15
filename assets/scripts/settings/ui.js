@@ -32,7 +32,9 @@ const createSettingSuccess = (data) => {
   $("#create-observation-stud-id").attr("value", store.currentStudentId);
   $("#create-observation-setting-id").attr("value", store.currentSettingId);
   // $("#create-observation-number").attr("value", store.currentObsNum);
-  $("#interval-total").text(store.currentNumofIntervals);
+  console.log("store.currentObsNum");
+  console.log(store.currentObsNum)
+  $("#interval-total").text(store.currentObsNum);
   // $("#interval-count").text(store.currentObsNum);
   $("#student-observed").html('<span id="target-student">Target Student</span>');
 };

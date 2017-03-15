@@ -29,8 +29,9 @@ const onCreateSetting = function(event) {
       store.currentSettingId = parseInt(response.setting.id);
       store.currentNumofIntervals = parseInt(response.setting.num_of_int);
       store.currentObsIntervalTime = parseInt(response.setting.obs_time);
-      console.log("settid id");
-      console.log(store.currentSettingId);
+      console.log(response.setting.num_of_int);
+      console.log("response");
+      console.log(response);
       // store.currentObsNum = 1;
       // return store.currentSetting;
     })

@@ -176,7 +176,7 @@ const addHandlers = () => {
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
-  // Test Button
+
   $('#test-button-submit').on('click', testButton);
 };
 
