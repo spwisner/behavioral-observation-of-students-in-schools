@@ -27,9 +27,9 @@ const onCreateSession = function(event) {
   sessionsApi.createSession(data)
     .then((response) => {
       store.currentSessionId = parseInt(response.session.id);
-      store.currentNumofIntervals = parseInt(response.session.num_of_int);
+      store.currentNumofIntervals = parseInt(response.session.int_num);
       store.currentObsIntervalTime = parseInt(response.session.obs_time);
-      console.log(response.session.num_of_int);
+      console.log(store.currentNumofIntervals);
       console.log("response");
       console.log(response);
       // store.currentObsNum = 1;

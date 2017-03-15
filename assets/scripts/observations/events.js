@@ -165,7 +165,7 @@ const observationTimer = function() {
 // Test Button for Webpage Testing
 const testButton = function() {
   $("#test-sign-in").click();
-}
+};
 
 
 const addHandlers = () => {

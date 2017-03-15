@@ -31,10 +31,7 @@ const createSessionSuccess = (data) => {
   $("#new-observation-form").show();
   $("#create-observation-stud-id").attr("value", store.currentStudentId);
   $("#create-observation-session-id").attr("value", store.currentSessionId);
-  // $("#create-observation-number").attr("value", store.currentObsNum);
-  console.log("store.currentObsNum");
-  console.log(store.currentObsNum)
-  $("#interval-total").text(store.currentObsNum);
+  $("#interval-total").text(store.currentNumofIntervals);
   // $("#interval-count").text(store.currentObsNum);
   $("#student-observed").html('<span id="target-student">Target Student</span>');
 };
