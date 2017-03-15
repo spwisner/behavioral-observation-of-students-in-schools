@@ -27,8 +27,8 @@ const createStudentSuccess = (data) => {
   console.log('create student success');
   console.log(data);
   $("#new-student-form").hide();
-  $("#new-setting-form").show();
-  $("#create-setting-stud-id").attr("value", store.currentStudentId);
+  $("#new-session-form").show();
+  $("#create-session-stud-id").attr("value", store.currentStudentId);
 };
 
 const createStudentFailure = (data) => {

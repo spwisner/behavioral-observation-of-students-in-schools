@@ -7,7 +7,7 @@ const store = require('../store');
 
 const getObservations = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("get-obs-stud-id").value + '/settings/' + document.getElementById("get-obs-setting-id").value + '/observations',
+    url: config.apiOrigin + '/students/' + document.getElementById("get-obs-stud-id").value + '/sessions/' + document.getElementById("get-obs-session-id").value + '/observations',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -17,7 +17,7 @@ const getObservations = function() {
 
 const getObservationsCreate = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + store.currentStudentId + '/settings/' + store.currentSettingId + '/observations',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -27,7 +27,7 @@ const getObservationsCreate = function() {
 
 const showObservation = function() {
   return $.ajax({
-    url: config.apiOrigin + '/observations/' + document.getElementById("show-obs-setting-id").value,
+    url: config.apiOrigin + '/observations/' + document.getElementById("show-obs-session-id").value,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -37,7 +37,7 @@ const showObservation = function() {
 
 const createObservation = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("create-observation-stud-id").value + '/settings/' + document.getElementById("create-observation-setting-id").value + '/observations',
+    url: config.apiOrigin + '/students/' + document.getElementById("create-observation-stud-id").value + '/sessions/' + document.getElementById("create-observation-session-id").value + '/observations',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -48,7 +48,7 @@ const createObservation = function(data) {
 
 const preCreateObservation = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + store.createSettingId + '/settings/' + document.getElementById("create-observation-setting-id").value + '/observations',
+    url: config.apiOrigin + '/students/' + store.createSessionId + '/sessions/' + document.getElementById("create-observation-session-id").value + '/observations',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,

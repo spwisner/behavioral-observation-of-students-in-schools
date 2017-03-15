@@ -136,81 +136,81 @@
     </fieldset>
   </form>
 
-  <form class="form settings-form" id="get-settings-form" name="get-settings-form">
+  <form class="form sessions-form" id="get-sessions-form" name="get-sessions-form">
     <fieldset>
-      <legend>Get All Settings Form</legend>
+      <legend>Get All sessions Form</legend>
       <p class="field-description">Student ID</p>
-      <input name="setting[student_id]" id="get-setting-stud-id" placeholder="Student ID" type="text">
+      <input name="session[student_id]" id="get-session-stud-id" placeholder="Student ID" type="text">
       <br>
-      <input name="submit" type="submit" value="Get All Settings">
+      <input name="submit" type="submit" value="Get All sessions">
     </fieldset>
   </form>
 
-  <form class="form settings-form" id="show-setting-form" name="show-setting-form">
+  <form class="form sessions-form" id="show-session-form" name="show-session-form">
     <fieldset>
-      <legend>Show Setting Form</legend>
-      <p class="field-description">Setting ID</p>
-      <input name="setting[id]" id="show-setting-setting-id" placeholder="Setting ID" type="text">
+      <legend>Show session Form</legend>
+      <p class="field-description">session ID</p>
+      <input name="session[id]" id="show-session-session-id" placeholder="session ID" type="text">
       <br>
-      <input name="submit" type="submit" value="Show Setting">
+      <input name="submit" type="submit" value="Show session">
     </fieldset>
   </form>
 
-  <form class="form settings-form" id="new-setting-form" name="new-setting-form">
+  <form class="form sessions-form" id="new-session-form" name="new-session-form">
     <fieldset>
       <legend>Create Session Form</legend>
       <p class="field-description">Session Date</p>
-      <input name="setting[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
+      <input name="session[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
       <br>
-      <p class="field-description">Session Setting</p>
-      <input name="setting[obs_setting]" placeholder="Session Setting" type="text" value="running">
+      <p class="field-description">Session session</p>
+      <input name="session[obs_setting]" placeholder="Session session" type="text" value="running">
       <br>
       <p class="field-description">Session Task</p>
-      <input name="setting[obs_task]" placeholder="Session Task" type="text" value="testing">
+      <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals</p>
-      <input name="setting[num_of_int]" placeholder="Number of Intervals" type="text" value="3">
+      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="3">
       <br>
       <p class="field-description">Time of Intervals (in seconds)</p>
-      <input name="setting[obs_time]" placeholder="Time" type="text" value="3">
+      <input name="session[obs_time]" placeholder="Time" type="text" value="3">
       <br>
       <p class="Total Session Time">This session will last <span id="total-session-time"></span> minutes.</p>
-      <input name="setting[student_id]" id="create-setting-stud-id" type="hidden" value="6">
+      <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="6">
       <br>
       <br>
-      <input id="testing-create-session" name="submit" type="submit" value="Create Setting">
+      <input id="testing-create-session" name="submit" type="submit" value="Create session">
     </fieldset>
   </form>
 
-  <form class="form settings-form" id="delete-setting-form" name="delete-setting-form">
+  <form class="form sessions-form" id="delete-session-form" name="delete-session-form">
     <fieldset>
-      <legend>Delete Setting Form</legend>
-      <p class="field-description">Setting ID</p>
-      <input name="setting[setting_id]" id="delete-setting-setting-id" placeholder="Setting ID" type="text">
+      <legend>Delete session Form</legend>
+      <p class="field-description">session ID</p>
+      <input name="session[session_id]" id="delete-session-session-id" placeholder="session ID" type="text">
       <br>
-      <input name="submit" type="submit" value="Delete Setting">
+      <input name="submit" type="submit" value="Delete session">
     </fieldset>
   </form>
 
-  <form class="form settings-form" id="update-setting-form" name="update-setting-form">
+  <form class="form sessions-form" id="update-session-form" name="update-session-form">
     <fieldset>
-      <legend>Update Setting Form</legend>
-      <p class="field-description">Setting ID</p>
-      <input name="setting[id]" id="update-setting-setting-id" placeholder="Setting ID" type="text">
+      <legend>Update session Form</legend>
+      <p class="field-description">session ID</p>
+      <input name="session[id]" id="update-session-session-id" placeholder="session ID" type="text">
       <br>
       <p class="field-description">Observation Date</p>
-      <input name="setting[obs_on]" placeholder="Observation Date" type="date">
+      <input name="session[obs_on]" placeholder="Observation Date" type="date">
       <br>
-      <p class="field-description">Observation Setting</p>
-      <input name="setting[obs_setting]" placeholder="Observation Setting" type="text">
+      <p class="field-description">Observation session</p>
+      <input name="session[obs_session]" placeholder="Observation session" type="text">
       <br>
       <p class="field-description">Observation Task</p>
-      <input name="setting[obs_task]" placeholder="Observation Task" type="text">
+      <input name="session[obs_task]" placeholder="Observation Task" type="text">
       <br>
       <p class="field-description">Observation Time Interval</p>
-      <input name="setting[obs_time]" placeholder="Observation Time" type="text">
+      <input name="session[obs_time]" placeholder="Observation Time" type="text">
       <br>
-      <input name="submit" type="submit" value="Update Setting">
+      <input name="submit" type="submit" value="Update session">
     </fieldset>
   </form>
 
@@ -220,8 +220,8 @@
       <p class="field-description">Student ID</p>
       <input name="observation[student_id]" id="get-obs-stud-id" placeholder="Student ID" type="text">
       <br>
-      <p class="field-description">Setting ID</p>
-      <input name="observation[setting_id]" id="get-obs-setting-id" placeholder="Setting ID" type="text">
+      <p class="field-description">session ID</p>
+      <input name="observation[session_id]" id="get-obs-session-id" placeholder="session ID" type="text">
       <br>
       <input name="submit" type="submit" value="Get Observations">
     </fieldset>
@@ -231,9 +231,9 @@
     <fieldset>
       <legend>Show Observation Form</legend>
       <p class="field-description">Observation ID</p>
-      <input name="observation[id]" id="show-obs-setting-id" placeholder="Observation ID" type="text">
+      <input name="observation[id]" id="show-obs-session-id" placeholder="Observation ID" type="text">
       <br>
-      <input name="submit" type="submit" value="Show Setting">
+      <input name="submit" type="submit" value="Show session">
     </fieldset>
   </form>
 
@@ -262,14 +262,14 @@
         <div class="student-interval">Student to Observe: <span id="student-observed"></span></div>
       </div>
         <input name="observation[student_id]" id="create-observation-stud-id" type="hidden">
-        <input name="observation[setting_id]" id="create-observation-setting-id" type="hidden">
+        <input name="observation[session_id]" id="create-observation-session-id" type="hidden">
         <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
         <!-- <p class="field-description">Student ID</p>
         <input name="observation[student_id]" id="create-observation-stud-id" placeholder="Student ID" type="number">
       </div>
       <div class="field-desc-container field-text">
-        <p class="field-description">Setting ID</p>
-        <input name="observation[setting_id]" id="create-observation-setting-id" placeholder="Setting ID" type="number"> -->
+        <p class="field-description">session ID</p>
+        <input name="observation[session_id]" id="create-observation-session-id" placeholder="session ID" type="number"> -->
 
 
 <!-- Testing HTML -->
@@ -287,8 +287,8 @@
 
         <div class="clearfix"></div>
         <div class="field-desc-container check-left">
-          <p class="field-description">SETTINGID</p>
-          <input name="observation[setting_id]" class="field-checkbox" placeholder="SETTINGID" type="text">
+          <p class="field-description">sessionID</p>
+          <input name="observation[session_id]" class="field-checkbox" placeholder="sessionID" type="text">
         </div> -->
 
 
@@ -389,7 +389,7 @@
               <p class="float-l">The Behavioral Observation System (BOSS) is an observation
                 system designed to objectively and quantifiably record student
                 engagement, and multiple off-task behaviors within a school
-                setting. The BOSS allows for the observer to collect information
+                session. The BOSS allows for the observer to collect information
                 on the target child as well as information on a peer for
                 comparison and also teacher directed instruction. Behaviors are
                 observed during a total of 60, 15-second intervals.</p>

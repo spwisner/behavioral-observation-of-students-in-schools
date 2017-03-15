@@ -85,7 +85,7 @@ const onCreateObservation = function(event) {
 //     .then(() => {
 //       // store.currentObsNum = response.observation.obs_num;
 //       onCreateObservationNums();
-//       // return store.currentSetting;
+//       // return store.currentSession;
 //     })
 //     .done(uiObservations.createObservationSuccess)
 //     .fail(uiObservations.createObservationFailure);
