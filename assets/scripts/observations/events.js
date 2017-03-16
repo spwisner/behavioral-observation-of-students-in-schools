@@ -22,37 +22,67 @@ const onShowObservation = function(event) {
 };
 
 const onCreateObservation = function(event) {
-  // console.log('running onCreateObs in Events.js');
-  event.preventDefault();
-  let data = getFormFields(event.target);
-  apiObservations.getObservationsCreate()
-    .then((response) => {
-      store.currentObsNum = response.observations.length + 1;
-    })
-    // .then(() => {
-    //   onCreateObservation();
-    // })
-    .done(uiObservations.getPastObsNumSuccess)
-    .fail(uiObservations.getPastObsNumFailure);
-  apiObservations.createObservation(data)
-    .then(() => {
-      // store.currentObsNum = store.currentObsNum + 1;
-      // let obsListLenth = store.currentObsNum;
-      // if ( obsListLenth === 0 ) {
-      //   store.currentObsNum = 1;
-      //   return store.currentObsNum;
-      // } else {
-      //   store.currentObsNum = response.observations.length + 1;
-      //   return store.currentObsNum;
-      // }
-    })
-    // .then((response) => {
-    //   store.currentObsNum = response.observations.length + 1;
-    //
-    // })
-    .done(uiObservations.createObservationSuccess)
-    .fail(uiObservations.createObservationFailure);
+    event.preventDefault();
+    let data = getFormFields(event.target);
+    apiObservations.createObservation(data)
+      .done(uiObservations.createObservationSuccess)
+      .fail(uiObservations.createObservationFailure);
+
+    apiObservations.getObservations()
+      .then((response) => {
+        store.currentObsNum = response.observations.length + 1;
+        console.log('important - store.currentObsNum');
+        console.log(store.currentObsNum);
+        let obsListLenth = store.currentObsNum;
+        if ( obsListLenth === 0 ) {
+          store.currentObsNum = 1;
+          return store.currentObsNum;
+        } else {
+          store.currentObsNum = response.observations.length + 1;
+          return store.currentObsNum;
+        }
+      })
+      .done(uiObservations.createObservationSuccess)
+      .fail(uiObservations.createObservationFailure);
 };
+
+// const onCreateObservation = function(event) {
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//   apiObservations.getObservationsCreate()
+//   .done(uiObservations.createObservationSuccess)
+//   .fail(uiObservations.createObservationFailure);
+//
+//   // Archive
+//   // console.log('running onCreateObs in Events.js');
+//   event.preventDefault();
+//   let data = getFormFields(event.target);
+//   apiObservations.getObservationsCreate()
+//     .then((response) => {
+//       store.currentObsNum = response.observations.length + 1;
+//       console.log('important - store.currentObsNum');
+//       console.log(store.currentObsNum);
+//     })
+//     .done(uiObservations.getPastObsNumSuccess)
+//     .fail(uiObservations.getPastObsNumFailure);
+//   apiObservations.createObservation(data)
+//     .then((response) => {
+//       store.currentObsNum = store.currentObsNum + 1;
+//       let obsListLenth = store.currentObsNum;
+//       if ( obsListLenth === 0 ) {
+//         store.currentObsNum = 1;
+//         return store.currentObsNum;
+//       } else {
+//         store.currentObsNum = response.observations.length + 1;
+//         return store.currentObsNum;
+//       }
+//     })
+//     .then((response) => {
+//       store.currentObsNum = response.observations.length + 1;
+//     })
+//     .done(uiObservations.createObservationSuccess)
+//     .fail(uiObservations.createObservationFailure);
+// };
 
 // const onGetPastObsNum = function(event) {
 //   event.preventDefault();
@@ -123,7 +153,7 @@ const startSession = function() {
 
 const endObservationTimer = function(runTimer) {
   clearInterval(runTimer);
-  console.log("interval cleared");
+  console.log("interval done");
 };
 
 const observationTimer = function() {
@@ -143,18 +173,16 @@ const observationTimer = function() {
       y.innerHTML = '' + x + '';
       if (x === 1) {
         x = max;
-        console.log("TOTAL INTERVALS");
-        console.log(store.currentNumofIntervals);
         console.log("CURRENT OBSERVATION NUM");
         console.log(currentObsNum);
         console.log("relationship store.currentObsNum <= store.currentNumofIntervals");
         console.log(currentObsNum <= store.currentNumofIntervals);
 
         if (currentObsNum <= store.currentNumofIntervals) {
-          console.log('inside submit part');
+          console.log('submitting...');
           $("#new-observation-form").submit();
         } else {
-          console.log('inside end part');
+          console.log('endObservationTimer(runTimer)');
           endObservationTimer(runTimer);
         }
       }

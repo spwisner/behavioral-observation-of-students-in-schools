@@ -52,23 +52,23 @@ const createObservationSuccess = function() {
   }
 };
 
-const onCreateObservationNumsSuccess = function() {
-    console.log('onCreateObservationNumsSuccess success archive');
-    // console.log("logic.withinObsInterval");
-    // console.log(logic.withinObsInterval());
-    // let continueWithInterval = logic.withinObsInterval();
-    //
-    // if ( continueWithInterval ) {
-    //   $("#create-observation-number").attr("value", store.currentObsNum);
-    //   $("#interval-count").text(store.currentObsNum);
-    //   logic.studentToObserve(store.currentObsNum);
-    //   $(".field-checkbox").prop("checked", false);
-    //   console.log('continue');
-    // } else {
-    //   console.log('done');
-    //   $("#new-observation-form").hide();
-    // }
-};
+// const onCreateObservationNumsSuccess = function() {
+//     console.log('onCreateObservationNumsSuccess success archive');
+//     // console.log("logic.withinObsInterval");
+//     // console.log(logic.withinObsInterval());
+//     // let continueWithInterval = logic.withinObsInterval();
+//     //
+//     // if ( continueWithInterval ) {
+//     //   $("#create-observation-number").attr("value", store.currentObsNum);
+//     //   $("#interval-count").text(store.currentObsNum);
+//     //   logic.studentToObserve(store.currentObsNum);
+//     //   $(".field-checkbox").prop("checked", false);
+//     //   console.log('continue');
+//     // } else {
+//     //   console.log('done');
+//     //   $("#new-observation-form").hide();
+//     // }
+// };
 
 const createObservationFailure = (data) => {
   console.log('create observation failure');
@@ -100,7 +100,6 @@ const updateObservationFailure = (data) => {
 };
 
 module.exports = {
-  createObservationSuccess,
   createObservationFailure,
   getObservationSuccess,
   getObservationFailure,
@@ -110,8 +109,8 @@ module.exports = {
   updateObservationFailure,
   deleteObservationSuccess,
   deleteObservationFailure,
-  onCreateObservationNumsSuccess,
   onCreateObservationNumsFailure,
   getPastObsNumSuccess,
   getPastObsNumFailure,
+  createObservationSuccess,
 };
