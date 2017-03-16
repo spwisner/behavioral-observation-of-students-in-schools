@@ -25,10 +25,12 @@ const onCreateObservation = function(event) {
     event.preventDefault();
     let data = getFormFields(event.target);
     apiObservations.createObservation(data)
-      .done(uiObservations.createObservationSuccess)
-      .fail(uiObservations.createObservationFailure);
+    .then((response) => {
+      console.log(response);
+    })
+    .done(uiObservations.createObservationSuccess)
+    .fail(uiObservations.createObservationFailure);
 };
-
 
 const onDeleteObservation = function(event) {
   event.preventDefault();
@@ -75,6 +77,8 @@ const observationTimer = function() {
         $("#interval-count").text(intervalPrint);
         x = max;
         if (intervalCount <= endInterval) {
+          store.observationIdNum = store.observationIdNum + 1;
+          $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
           if (intervalCount === endInterval) {
             endObservationTimer(runTimer);
@@ -92,7 +96,6 @@ const testButton = function() {
   $("#test-sign-in").click();
 };
 
-
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -101,7 +104,6 @@ const addHandlers = () => {
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
-
   $('#test-button-submit').on('click', testButton);
 };
 

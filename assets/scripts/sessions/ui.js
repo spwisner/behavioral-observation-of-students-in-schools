@@ -27,6 +27,7 @@ const showSessionFailure = (data) => {
 const createSessionSuccess = (data) => {
   console.log('create session success');
   console.log(data);
+  store.observationIdNum = 0;
   $("#new-session-form").hide();
   $("#new-observation-form").show();
   $("#create-observation-stud-id").attr("value", store.currentStudentId);
