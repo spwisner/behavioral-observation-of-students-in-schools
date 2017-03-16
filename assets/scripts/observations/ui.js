@@ -36,39 +36,8 @@ const getPastObsNumFailure = function() {
 
 const createObservationSuccess = function() {
   console.log('create observation success');
-  // console.log("logic.withinObsInterval");
-  // console.log(logic.withinObsInterval());
-  // let continueWithInterval = logic.withinObsInterval();
-//
-  // if ( continueWithInterval ) {
-  //   $("#create-observation-number").attr("value", store.currentObsNum);
-  //   $("#interval-count").text(store.currentObsNum);
-  //   logic.studentToObserve(store.currentObsNum);
-  //   $(".field-checkbox").prop("checked", false);
-  //   console.log('continue');
-  // } else {
-  //   console.log('done');
-  //   // $("#new-observation-form").hide();
-  // }
+   $("#new-observation-form .field-checkbox").prop("checked", false);
 };
-
-// const onCreateObservationNumsSuccess = function() {
-//     console.log('onCreateObservationNumsSuccess success archive');
-//     // console.log("logic.withinObsInterval");
-//     // console.log(logic.withinObsInterval());
-//     // let continueWithInterval = logic.withinObsInterval();
-//     //
-//     // if ( continueWithInterval ) {
-//     //   $("#create-observation-number").attr("value", store.currentObsNum);
-//     //   $("#interval-count").text(store.currentObsNum);
-//     //   logic.studentToObserve(store.currentObsNum);
-//     //   $(".field-checkbox").prop("checked", false);
-//     //   console.log('continue');
-//     // } else {
-//     //   console.log('done');
-//     //   $("#new-observation-form").hide();
-//     // }
-// };
 
 const createObservationFailure = (data) => {
   console.log('create observation failure');

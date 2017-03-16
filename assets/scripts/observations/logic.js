@@ -2,14 +2,6 @@
 
 const store = require('../store');
 
-// const withinObsInterval = function() {
-//   if (store.currentObsNum <= store.currentNumofIntervals) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// };
-
 const studentToObserve = function(obs_num) {
   if (obs_num % 5 === 0) {
     $("#student-observed").text("Random Peer");
@@ -21,6 +13,5 @@ const studentToObserve = function(obs_num) {
 };
 
 module.exports = {
-  // withinObsInterval,
   studentToObserve,
 };
