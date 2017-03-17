@@ -2,12 +2,17 @@
 
 const store = require('../store');
 const logic = require('./logic');
+const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 
 // Observation UI
 
 const getObservationSuccess = (data) => {
   console.log('update observation success');
   console.log(data);
+  let showObservations = displayObservationsTemplate({
+    observations: data.observations
+  });
+  $('.display-observation-container').empty().append(showObservations);
 };
 
 const getObservationFailure = (data) => {

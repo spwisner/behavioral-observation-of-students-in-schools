@@ -1,0 +1,28 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Interval</th>
+      <th>AET</th>
+      <th>PET</th>
+      <th>OFT-M</th>
+      <th>OFT-V</th>
+      <th>OFT-P</th>
+      <th>Comment</th>
+      <th>Update</th>
+    </tr>
+  </thead>
+  {{#each observations as |observation|}}
+    <tr>
+      <tbody>
+        <td class="display-obs-num">{{observation.obs_num}}</td>
+        <td class="display-obs-aet">{{observation.aet}}</td>
+        <td class="display-obs-pet">{{observation.pet}}</td>
+        <td class="display-obs-oft-m">{{observation.oft_m}}</td>
+        <td class="display-obs-oft-v">{{observation.oft_v}}</td>
+        <td class="display-obs-oft-p">{{observation.oft_p}}</td>
+        <td class="display-obs-obs-comment">{{observation.obs_comment}}</td>
+        <td><button data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Edit</button></td>
+    </tr>
+    </tbody>
+  {{/each}}
+</table>
