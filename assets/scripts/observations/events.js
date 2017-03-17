@@ -78,6 +78,15 @@ const observationTimer = function() {
         x = max;
         if (intervalCount <= endInterval) {
           store.observationIdNum = store.observationIdNum + 1;
+
+          if (store.observationIdNum % 5 === 0) {
+            $("#student-observed").text("Random Peer");
+            $("#student-observed").addClass("random-peer");
+          } else {
+            $("#student-observed").text("Target Student");
+            $("#student-observed").addClass("target-student");
+          }
+
           $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
           if (intervalCount === endInterval) {
@@ -85,7 +94,7 @@ const observationTimer = function() {
             $("#interval-count").text(endInterval);
             return;
           }
-          }
+        }
       }
     }
   }, 1000);
