@@ -59,7 +59,7 @@ const endObservationTimer = function(runTimer) {
 
 const observationTimer = function() {
   let x = parseInt(store.currentObsIntervalTime);
-  let max = parseInt(store.currentObsIntervalTime) + 1;
+  let max = parseInt(store.currentObsIntervalTime);
   let y = document.getElementById("interval-timer");
   // Display count down for 20 seconds
 
@@ -68,10 +68,10 @@ const observationTimer = function() {
   const runTimer = setInterval(function() {
     let endInterval = parseInt(store.currentNumofIntervals);
 
-    if (x <= max && x >= 1) {
+    if (x <= max && x >= 0) {
       x--;
       y.innerHTML = '' + x + '';
-      if (x === 1) {
+      if (x === 0) {
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
         $("#interval-count").text(intervalPrint);
