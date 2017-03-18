@@ -7,9 +7,8 @@ const store = require('../store');
 
 // OBSERVATION EVENTS
 
-const onGetObservations = function(event) {
-  event.preventDefault();
-  apiObservations.getObservations()
+const onGetObservations = function(id) {
+  apiObservations.getObservations(id)
     .done(uiObservations.getObservationSuccess)
     .fail(uiObservations.getObservationFailure);
 };
@@ -25,11 +24,11 @@ const onCreateObservation = function(event) {
     event.preventDefault();
     let data = getFormFields(event.target);
     apiObservations.createObservation(data)
-    .then((response) => {
-      console.log(response);
+    .catch(uiObservations.createObservationFailure)
+    .then(() => {
+      onGetObservations(store.currentSessionIdStr);
     })
-    .done(uiObservations.createObservationSuccess)
-    .fail(uiObservations.createObservationFailure);
+    .done(uiObservations.createObservationSuccess);
 };
 
 const onDeleteObservation = function(event) {
@@ -118,4 +117,5 @@ const addHandlers = () => {
 
 module.exports = {
   addHandlers,
+  onGetObservations,
 };

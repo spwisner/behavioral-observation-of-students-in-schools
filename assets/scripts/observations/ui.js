@@ -1,13 +1,14 @@
 'use strict';
 
 const store = require('../store');
-const logic = require('./logic');
+const eventsObservations = require('./events');
+const apiObservations = require('./api');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 
 // Observation UI
 
 const getObservationSuccess = (data) => {
-  console.log('update observation success');
+  console.log('get observation success');
   console.log(data);
   let showObservations = displayObservationsTemplate({
     observations: data.observations
@@ -16,7 +17,7 @@ const getObservationSuccess = (data) => {
 };
 
 const getObservationFailure = (data) => {
-  console.log('update observation failure');
+  console.log('get observation failure');
   console.log(data);
 };
 
@@ -39,9 +40,12 @@ const getPastObsNumFailure = function() {
   console.log("getPastObsNumFailure Failure");
 };
 
-const createObservationSuccess = function() {
+const createObservationSuccess = (data) => {
   console.log('create observation success');
    $("#new-observation-form .field-checkbox").prop("checked", false);
+  //  apiObservations.getObservations(store.currentSessionIdStr)
+  //    .done(getObservationSuccess(data))
+  //    .fail(getObservationFailure(data));
 };
 
 const createObservationFailure = (data) => {
