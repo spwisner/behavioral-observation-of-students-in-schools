@@ -34,19 +34,19 @@ $one-hundred-color: rgba(231,24,24,1);
   @include timer-gradient($zero-color, $twenty-color, $forty-color);
 }
 
-.obs-stg-one {
+.obs-stg-two {
   @include timer-gradient($twenty-color, $forty-color, $sixty-color);
 }
 
-.obs-stg-one {
+.obs-stg-three {
   @include timer-gradient($forty-color, $sixty-color, $eighty-color);
 }
 
-.obs-stg-one {
+.obs-stg-four {
   @include timer-gradient($sixty-color, $eighty-color, $one-hundred-color);
 }
 
-.obs-stg-one {
+.obs-stg-five {
   @include timer-gradient($eighty-color, $one-hundred-color, $one-hundred-color);
 }
 // Temp Hide
