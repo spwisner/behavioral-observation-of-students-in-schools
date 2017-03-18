@@ -1,31 +1,54 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 $experimental-support-for-svg: true;
-
-$zero-color: rgba(62,119,34,1);
-$twenty-color: rgba(144,231,29,1);
+$zero-color: rgba(62,117,34,1);
+$twenty-color: rgba(113,231,29,1);
 $forty-color: rgba(235,235,20,1);
-$eighty-color: rgba(255,166,0,1);
+$sixty-color: rgba(240,135,24,1);
+$eighty-color: rgba(207,47,19,0.89);
 $one-hundred-color: rgba(231,24,24,1);
-
 @mixin timer-gradient($color-one, $color-two, $color-three) {
-  // background: linear-gradient(left, $color-one 0%, $color-two 50%, $forty-color 100%);
+  // default color
   background: white;
-  background: linear-gradient(to right, $color-one 0%, $color-two 50%, $color-three 100%);/* W3C */
-  background: -ms-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* IE 10+ */
-  background: -o-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* Opera 11.10+ */
-  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* FF3.6+ */
-  background: -webkit-gradient(left top, right top, color-stop(0%, $color-one), color-stop(50%, $color-two), color-stop(100%, $color-three));/* Chrome, Safari4+ */
-  background: -webkit-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* Chrome10+,Safari5.1+ */
-  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* FF3.6+ */
+  background: linear-gradient(to right, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* W3C */
+  background: -ms-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* IE 10+ */
+  background: -o-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* Opera 11.10+ */
+  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(left top, right top, color-stop(0%, $color-one), color-stop(50%, $color-two), color-stop(100%, $color-three));
+  /* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%);
+  /* FF3.6+ */
 }
 
 #new-observation-form {
-  max-width:100%;
+  max-width: 100%;
+}
+
+.obs-stg-one {
   @include timer-gradient($zero-color, $twenty-color, $forty-color);
 }
 
+.obs-stg-one {
+  @include timer-gradient($twenty-color, $forty-color, $sixty-color);
+}
 
+.obs-stg-one {
+  @include timer-gradient($forty-color, $sixty-color, $eighty-color);
+}
+
+.obs-stg-one {
+  @include timer-gradient($sixty-color, $eighty-color, $one-hundred-color);
+}
+
+.obs-stg-one {
+  @include timer-gradient($eighty-color, $one-hundred-color, $one-hundred-color);
+}
 // Temp Hide
 // #new-observation-form,
 // #change-password,
@@ -47,7 +70,6 @@ $one-hundred-color: rgba(231,24,24,1);
 // .timer-container {
 //   display: none;
 // }
-
 // hide for testing:
 // #change-password,
 // #delete-observation-form,
@@ -73,7 +95,7 @@ $one-hundred-color: rgba(231,24,24,1);
 ///////////////////////
 
 #interval-timer {
-  font-size:20px;
+  font-size: 20px;
   color: red;
 }
 
@@ -197,5 +219,4 @@ $one-hundred-color: rgba(231,24,24,1);
 // .float-l {
 //   float: left;
 // }
-
 //Timer Gradient
