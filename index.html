@@ -271,37 +271,37 @@
       <div class="clearfix"></div>
       <div class="field-desc-container check-left">
         <p class="field-description">AET</p>
-        <input name="observation[aet]" type="hidden" value="0">
-        <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="1">
+        <input name="observation[aet]" type="hidden" value="false">
+        <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true">
       </div>
 
       <div class="field-desc-container check-right">
         <p class="field-description">OFT_M</p>
-        <input name="observation[oft_m]" type="hidden" value="0">
-        <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="1">
+        <input name="observation[oft_m]" type="hidden" value="false">
+        <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
       </div>
       <div class="clearfix"></div>
       <div class="field-desc-container check-left">
         <p class="field-description">PET</p>
-        <input name="observation[pet]" type="hidden" value="0">
-        <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="1">
+        <input name="observation[pet]" type="hidden" value="false">
+        <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
       </div>
 
       <div class="field-desc-container check-right">
         <p class="field-description">OFT_V</p>
-        <input name="observation[oft_v]" type="hidden" value="0">
-        <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="1">
+        <input name="observation[oft_v]" type="hidden" value="false">
+        <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
       </div>
       <div class="clearfix"></div>
       <div class="field-desc-container check-right">
         <p class="field-description">OFT_P</p>
-        <input name="observation[oft_p]" type="hidden" value="0">
-        <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="1">
+        <input name="observation[oft_p]" type="hidden" value="false">
+        <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
       </div>
       <div class="clearfix"></div>
       <div class="field-desc-container field-text">
         <p class="field-description">Interval Comment</p>
-        <input name="observation[obs_comment]" placeholder="Observation Comment" type="text">
+        <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
       </div>
       <div class="field-button-container">
         <input name="submit" type="submit" value="Submit Observation">
@@ -309,8 +309,9 @@
     </fieldset>
   </form>
 
-  <div class="display-observation-container"></div>
-
+  <div class="display-observation-container">
+    <h2 class="display-observation-desc">Summary Table</h2>
+  </div>
   <form class="form observation-form" id="delete-observation-form" name="delete-observation-form">
     <fieldset>
       <legend>Delete Observation Form</legend>

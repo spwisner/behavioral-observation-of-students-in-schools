@@ -44,6 +44,7 @@ const createObservationSuccess = (data) => {
   console.log('create observation success');
   console.log(data);
    $("#new-observation-form .field-checkbox").prop("checked", false);
+   $("#create-obs-comment").val('');
 };
 
 const createObservationFailure = (data) => {

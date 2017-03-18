@@ -1,5 +1,54 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$experimental-support-for-svg: true;
+// @import '~compass';
+
+// @mixin my-input-bc($color-one, $color-two, $color-three) {
+
+  // background: background-image(linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%));
+// };
+// //
+$zero-color: rgba(62,119,34,1);
+$twenty-color: rgba(144,231,29,1);
+$forty-color: rgba(235,235,20,1);
+$eighty-color: rgba(255,166,0,1);
+$one-hundred-color: rgba(231,24,24,1);
+
+@mixin timer-gradient($color-one, $color-two, $color-three) {
+  // background: linear-gradient(left, $color-one 0%, $color-two 50%, $forty-color 100%);
+  background: white;
+  background: linear-gradient(to right, $color-one 0%, $color-two 50%, $color-three 100%);/* W3C */
+  background: -ms-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* IE 10+ */
+  background: -o-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* Opera 11.10+ */
+  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* FF3.6+ */
+  background: -webkit-gradient(left top, right top, color-stop(0%, $color-one), color-stop(50%, $color-two), color-stop(100%, $color-three));/* Chrome, Safari4+ */
+  background: -webkit-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* Chrome10+,Safari5.1+ */
+  background: -moz-linear-gradient(left, $color-one 0%, $color-two 50%, $color-three 100%); /* FF3.6+ */
+}
+
+// needs latest Compass, add '@import "compass"' to your scssbackground-color: rgba(62,119,34,1);
+// IE6-9 fallback on horizontal gradient// IE9 SVG, needs conditional override of 'filter' to 'none'$experimental-support-for-svg: true;
+
+
+#new-observation-form {
+  max-width:100%;
+  @include timer-gradient($zero-color, $twenty-color, $forty-color);
+}
+
+// needs latest Compass, add '@import "compass"' to your scss
+
+// #new-observation-form {
+  // @include my-gradient-three($zeroColor, $twentyColor, $fortyColor);
+  // background-color: rgba(78, 186 , 23, 1);/* Old Browsers */
+  // background: @include filter-gradient(#4eba17, #ff8c00, horizontal);// IE6-9 fallback on horizontal gradient
+  // IE9 SVG, needs conditional override of 'filter' to 'none'
+  // $experimental-support-for-svg: true;
+  // @include my-input-bc(linear-gradient(left, rgba(78,186,23,1) 0%, rgba(78,186,23,1) 20%, rgba(147,255,5,1) 40%, rgba(255,234,5,1) 60%, rgba(255,140,0,1) 75%, rgba(255,0,0,1) 100%));
+//   @include my-input-bc($zero-color, $twenty-color, $forty-color)
+// }
+
+
+
 // Temp Hide
 // #new-observation-form,
 // #change-password,
@@ -171,3 +220,5 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // .float-l {
 //   float: left;
 // }
+
+//Timer Gradient
