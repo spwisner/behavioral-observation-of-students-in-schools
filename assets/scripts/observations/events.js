@@ -3,7 +3,7 @@ const apiObservations = require('./api');
 const uiObservations = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-// const logic = require('./logic');
+const logicObservations = require('./logic');
 
 // OBSERVATION EVENTS
 
@@ -57,6 +57,28 @@ const endObservationTimer = function(runTimer) {
 };
 
 const observationTimer = function() {
+  // Countup stopwatch for gradients
+
+  // Define Countup
+  let countUp = 0;
+  $("#new-observation-form").addClass("obs-stg-one");
+  let totalIntervalLength = store.currentObsIntervalTime;
+  // Define gradient intervals
+  let stageOneTime = 0;
+  let stageTwoTime = logicObservations.gradientLogic(1, totalIntervalLength) + stageOneTime;
+  console.log("stageTwoTime");
+  console.log(stageTwoTime);
+  let stageThreeTime = logicObservations.gradientLogic(2, totalIntervalLength) + stageTwoTime;
+  console.log("stageThreeTime");
+  console.log(stageThreeTime);
+  let stageFourTime = logicObservations.gradientLogic(3, totalIntervalLength) + stageThreeTime;
+  console.log("stageFourTime");
+  console.log(stageFourTime);
+  let stageFiveTime = logicObservations.gradientLogic(4, totalIntervalLength) + stageFourTime;
+  console.log("stageFiveTime");
+  console.log(stageFiveTime);
+
+  // Countdown Timer
   let x = parseInt(store.currentObsIntervalTime);
   let max = parseInt(store.currentObsIntervalTime);
   let y = document.getElementById("interval-timer");
@@ -69,6 +91,8 @@ const observationTimer = function() {
 
     if (x <= max && x >= 0) {
       x--;
+      countUp++;
+      logicObservations.changeGradientClass(stageOneTime, stageTwoTime, stageThreeTime, stageFourTime, stageFiveTime, countUp);
       y.innerHTML = '' + x + '';
       if (x === 0) {
         intervalCount = intervalCount + 1;
@@ -88,7 +112,13 @@ const observationTimer = function() {
 
           $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
+          countUp = 0;
+          $("#new-observation-form").removeClass("obs-stg-five");
+          $("#new-observation-form").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
+            $("#new-observation-form").removeClass("obs-stg-five");
+            $("#new-observation-form").removeClass("obs-stg-one");
+            $("#new-observation-form").addClass("obs-stg-done");
             endObservationTimer(runTimer);
             $("#interval-count").text(endInterval);
             return;

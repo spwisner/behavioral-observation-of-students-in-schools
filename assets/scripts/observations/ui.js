@@ -45,6 +45,7 @@ const createObservationSuccess = (data) => {
   console.log(data);
    $("#new-observation-form .field-checkbox").prop("checked", false);
    $("#create-obs-comment").val('');
+   $("#interval-submitted-successfully").fadeIn(500).delay(1000).fadeOut(500);
 };
 
 const createObservationFailure = (data) => {

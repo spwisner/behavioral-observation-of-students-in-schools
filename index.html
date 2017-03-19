@@ -169,10 +169,10 @@
       <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals</p>
-      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="3">
+      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="2">
       <br>
       <p class="field-description">Time of Intervals (in seconds)</p>
-      <input name="session[obs_time]" placeholder="Time" type="text" value="3">
+      <input name="session[obs_time]" placeholder="Time" type="text" value="15">
       <br>
       <p class="Total Session Time">This session will last <span id="total-session-time"></span> minutes.</p>
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
@@ -208,10 +208,10 @@
       <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals</p>
-      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="3">
+      <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="6">
       <br>
       <p class="field-description">Time of Intervals (in seconds)</p>
-      <input name="session[obs_time]" placeholder="Time" type="text" value="3">
+      <input name="session[obs_time]" placeholder="Time" type="text" value="16">
       <br>
       <input name="submit" type="submit" value="Update session">
     </fieldset>
@@ -247,7 +247,7 @@
     </div>
 
     <div class="interval-time-count-container">
-      <p>Time Remaining in Interval: <span id="interval-timer"></span></p>
+      <p>Time Until Submission: <span id="interval-timer"></span> <span id="interval-submitted-successfully">Interval Submitted</span></p>
       <p>Interval: <span id="interval-count">1</span> / <span id="interval-total"></span></p>
       <button id="begin-session-btn">Begin Session</button>
     </div>
@@ -257,7 +257,7 @@
     <button id="test-button-submit" type="submit">Click Before Testing</button>
   </div>
 
-  <form class="form observation-form obs-stg-four" id="new-observation-form" name="new-observation-form">
+  <form class="form observation-form" id="new-observation-form" name="new-observation-form">
     <fieldset>
       <legend>Record Interval Form</legend>
 
@@ -304,14 +304,15 @@
         <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
       </div>
       <div class="field-button-container">
-        <input name="submit" type="submit" value="Submit Observation">
+        <input name="submit" id="submit-observation-btn" type="submit" value="Submit Observation">
       </div>
     </fieldset>
   </form>
 
   <div class="display-observation-container">
-    <h2 class="display-observation-desc">Summary Table</h2>
+    <!-- <h2 class="display-observation-desc">Summary Table</h2> -->
   </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <form class="form observation-form" id="delete-observation-form" name="delete-observation-form">
     <fieldset>
       <legend>Delete Observation Form</legend>

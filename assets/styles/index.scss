@@ -7,6 +7,7 @@ $forty-color: rgba(235,235,20,1);
 $sixty-color: rgba(240,135,24,1);
 $eighty-color: rgba(207,47,19,0.89);
 $one-hundred-color: rgba(231,24,24,1);
+
 @mixin timer-gradient($color-one, $color-two, $color-three) {
   // default color
   background: white;
@@ -43,12 +44,31 @@ $one-hundred-color: rgba(231,24,24,1);
 }
 
 .obs-stg-four {
-  @include timer-gradient($sixty-color, $eighty-color, $one-hundred-color);
+  @include timer-gradient($sixty-color, $eighty-color, $eighty-color);
 }
 
 .obs-stg-five {
   @include timer-gradient($eighty-color, $one-hundred-color, $one-hundred-color);
 }
+
+.obs-stg-done {
+  background-color: #D3D3D3;
+}
+
+#interval-submitted-successfully {
+  color: green;
+  border: 1px dotted green;
+  margin-left: 5px;
+  display: none;
+  padding: 2px;
+  font-size: 12px;
+}
+
+// Hides submit button
+#submit-observation-btn {
+  display: none;
+}
+
 // Temp Hide
 // #new-observation-form,
 // #change-password,

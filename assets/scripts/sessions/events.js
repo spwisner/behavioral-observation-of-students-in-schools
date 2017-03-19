@@ -32,7 +32,7 @@ const onCreateSession = function(event) {
       // console.log(store.currentNumofIntervals);
       store.currentObsIntervalTime = parseInt(response.session.obs_time);
       console.log("sessionid");
-      console.log(response.session.id)
+      console.log(response.session.id);
       // store.currentObsNum = 1;
       // return store.currentSession;
     })
