@@ -114,6 +114,15 @@ $one-hundred-color: rgba(231,24,24,1);
 // }
 ///////////////////////
 
+/// Chart CSS
+
+.results-chart {
+  max-width: 250px;
+  float: left;
+}
+
+///
+
 #interval-timer {
   font-size: 20px;
   color: red;
