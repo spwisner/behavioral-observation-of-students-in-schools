@@ -25,7 +25,7 @@ const onCreateObservation = function(event) {
     let data = getFormFields(event.target);
     apiObservations.createObservation(data)
     .catch(uiObservations.createObservationFailure)
-    .then(() => {
+    .then((response) => {
       onGetObservations(store.currentSessionIdStr);
     })
     .done(uiObservations.createObservationSuccess);
@@ -117,7 +117,6 @@ const observationTimer = function() {
           $("#new-observation-form").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
             $("#new-observation-form").removeClass("obs-stg-five");
-            $("#new-observation-form").removeClass("obs-stg-one");
             $("#new-observation-form").addClass("obs-stg-done");
             endObservationTimer(runTimer);
             $("#interval-count").text(endInterval);

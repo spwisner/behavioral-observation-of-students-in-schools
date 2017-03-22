@@ -4,12 +4,14 @@
 // const eventsObservations = require('./events');
 // const apiObservations = require('./api');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
-
+const store = require('../store');
+const chart = require('../chart/mychart');
 // Observation UI
 
 const getObservationSuccess = (data) => {
   console.log('get observation success');
-  console.log(data);
+  chart.getColumnSums(data);
+  console.log(store.chartData);
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
