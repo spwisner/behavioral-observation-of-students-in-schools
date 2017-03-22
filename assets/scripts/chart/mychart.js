@@ -4,30 +4,49 @@ const store = require('../store');
 
 let chartDataObject = store.chartData;
 
-const etChart = document.getElementById("et-chart").getContext('2d');
-const oftChart = document.getElementById("oft-chart").getContext('2d');
-
 const createChart = function(data) {
-  console.log(data);
-  let temparr = [];
-  temparr.push(data[2]);
-  temparr.push(data[3]);
-  temparr.push(data[4]);
-  let myChart = new Chart(etChart, {
-    type: 'bar',
-    data: {
-      labels: ["Oft-V", "Oft-M", "Oft-P"],
-      datasets: [{
-        label: 'Target',
-        data: temparr,
-        backgroundColor: "rgba(153,255,51,1)"
-      }, {
-        label: 'Random',
-        data: temparr,
-        backgroundColor: "rgba(255,153,0,1)"
-      }]
+  const etChart = document.getElementById("et-chart").getContext('2d');
+  const oftChart = document.getElementById("oft-chart").getContext('2d');
+  let etArr = [data[0], data[1]];
+  let oftArr = [data[2], data[3], data[4]];
+
+  const buildChart = function(arr) {
+    let dataArr;
+    let label;
+    let chartType;
+    let etArr = [data[0], data[1]];
+    let oftArr = [data[2], data[3], data[4]];
+    let etLabels = ["AET", "PET"];
+    let oftLabels = ["Oft-V", "Oft-M", "Oft-P"];
+
+    if (arr.length === 3) {
+      dataArr = oftArr;
+      label = oftLabels;
+      chartType = oftChart;
+    } else {
+      dataArr = etArr;
+      label = etLabels;
+      chartType = etChart;
     }
-  });
+
+    let myChart = new Chart(chartType, {
+      type: 'bar',
+      data: {
+        labels: label,
+        datasets: [{
+          label: 'Target',
+          data: dataArr,
+          backgroundColor: "rgba(153,255,51,1)"
+        }, {
+          label: 'Random',
+          data: dataArr,
+          backgroundColor: "rgba(255,153,0,1)"
+        }]
+      }
+    });
+  };
+  buildChart(etArr);
+  buildChart(oftArr);
 };
 
 const getColumnSums = function(data) {
