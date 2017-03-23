@@ -7,7 +7,6 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.js"></script> -->
 </head>
 
 <body class="container-fluid">
@@ -263,9 +262,9 @@
       <div class="student-observered-container">
         <div class="student-interval">Student to Observe: <span id="student-observed"></span></div>
       </div>
-        <input name="observation[student_id]" id="create-observation-stud-id" type="hidden" value="1">
-        <input name="observation[session_id]" id="create-observation-session-id" type="hidden" value="1">
-        <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
+      <input name="observation[student_id]" id="create-observation-stud-id" type="hidden" value="1">
+      <input name="observation[session_id]" id="create-observation-session-id" type="hidden" value="1">
+      <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
 
       <div class="clearfix"></div>
       <div class="field-desc-container check-left">
@@ -304,6 +303,17 @@
       </div>
       <div class="field-button-container">
         <input name="submit" id="submit-observation-btn" type="submit" value="Submit Observation">
+      </div>
+      <div class="sound-container">
+        <audio id="timer-alert">
+          <source src="assets/scripts/sounds/beep.wav" type="audio/wav">
+          <source src="assets/scripts/sounds/submit.wav" type="audio/wav">
+              Your browser does not support the audio element.
+        </audio>
+        <audio id="submit-alert">
+          <source src="assets/scripts/sounds/submit.wav" type="audio/wav">
+              Your browser does not support the audio element.
+        </audio>
       </div>
     </fieldset>
   </form>
@@ -469,6 +479,7 @@
           </div>
         </div>
       </div> -->
+
 </body>
 
 </html>
