@@ -1,0 +1,45 @@
+<table class="table table-hover">
+  <tr>
+    <th colspan="2">Last Submission</th>
+  </tr>
+  <tr>
+    <td>Interval</td>
+    <td>{{observation.obs_num}}</td>
+  </tr>
+  <tr>
+    <td>AET</td>
+    <td>
+      {{#if observation.aet}} &#10004; {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>PET</td>
+    <td> {{#if observation.pet}} &#10004; {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Oft-M</td>
+    <td>{{#if observation.oft_m}} &#10004; {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Oft-V</td>
+    <td>{{#if observation.oft_v}} &#10004; {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Oft-P</td>
+    <td>{{#if observation.oft_p}} &#10004; {{/if}}
+    </td>
+  </tr>
+  <tr>
+    <td>Comment</td>
+    <td>{{observation.obs_comment}}</td>
+  </tr>
+  <tr>
+    <td colspan="2">
+    <button data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Edit</button>
+
+    </td>
+  </tr>
+</table>

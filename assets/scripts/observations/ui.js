@@ -4,6 +4,7 @@
 // const eventsObservations = require('./events');
 // const apiObservations = require('./api');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
+const displayLastSubmit = require('../templates/last-submission.handlebars');
 const store = require('../store');
 const chart = require('../chart/mychart');
 // Observation UI
@@ -15,7 +16,11 @@ const getObservationSuccess = (data) => {
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
+  let showLastSubmission = displayLastSubmit({
+    observations: data.observations
+  });
   $('.display-observation-container').empty().append(showObservations);
+  $('.last-submission-container').empty().append(showLastSubmission);
 };
 
 const getObservationFailure = (data) => {
