@@ -38,12 +38,15 @@
     <td>{{observation.obs_comment}}</td>
   </tr>
   <tr class="edit-last-submit-tr">
-    <td class="edit-last-submit-btn" colspan="2">
+    <td class="edit-last-submit-btn-td" colspan="2">
       <button class="edit-last-submission" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Edit</button>
+      <button class="cancel-last-submission-edit" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Submit</button>
+      <!-- <button class="submit-last-edit-btn" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Submit</button> -->
+      <input id="submit-last-edit-btn" type="button" value="Submit Observation" data-id="{{observation.id}}">
     </td>
   </tr>
   <tr>
     <td class="cancel-edit-td" colspan="2">
-      <button "cancel-last-submission-edit" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Cancel</button>
+      <button class="cancel-last-submission-edit" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Cancel</button>
   </tr>
 </table>
