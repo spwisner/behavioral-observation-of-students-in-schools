@@ -17,12 +17,20 @@ const getObservationSuccess = (data) => {
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
-  $('.display-observation-container').empty().append(showObservations);
+  $('.display-observation-container').append(showObservations);
 };
 
 const getObservationFailure = (data) => {
   console.log('get observation failure');
   console.log(data);
+};
+
+const isDataSubmissionBlank = function(dataValue) {
+  if (dataValue === false) {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 const showObservationSuccess = (data) => {
@@ -32,6 +40,22 @@ const showObservationSuccess = (data) => {
     observation: data.observation
   });
   $('.last-submission-container').append(showLastSubmission);
+
+  // Testing for Blank and False Values
+
+  let aetValue = isDataSubmissionBlank(data.observation.aet);
+  let petValue = isDataSubmissionBlank(data.observation.pet);
+  let oftvValue = isDataSubmissionBlank(data.observation.oft_v);
+  let oftmValue = isDataSubmissionBlank(data.observation.oft_m);
+  let oftpValue = isDataSubmissionBlank(data.observation.oft_p);
+
+  if ( aetValue && petValue && oftvValue && oftmValue && oftpValue) {
+    $(".no-submission-warning").text("Warning: Empty Submission");
+    $(".last-submission-table").addClass("warning");
+  } else {
+    $(".no-submission-warning").text("");
+    $(".last-submission-table").removeClass("warning");
+  }
 };
 
 const showObservationFailure = (data) => {

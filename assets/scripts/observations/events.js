@@ -149,6 +149,48 @@ const testButton = function() {
   $("#test-sign-in").click();
 };
 
+const generateWithCheck = function(dataLocation, inputHtml) {
+  let trimText = dataLocation.text().trim();
+  $(dataLocation).empty().append(inputHtml);
+  if ( trimText === "" ) {
+    $(dataLocation).children("input").prop('checked', false);
+  } else {
+    $(dataLocation).children("input").prop('checked', true);
+  }
+};
+
+const updateFormGenerator = function(event) {
+  event.preventDefault();
+  let dataId = $(this).attr("data-id");
+  let dataObsNum = $(this).attr("data-obs-num");
+  let dataAet = $(this).attr("data-aet");
+  let dataPet = $(this).attr("data-pet");
+  let dataOftM = $(this).attr("data-oft_m");
+  let dataOftV = $(this).attr("data-oft_v");
+  let dataOftP = $(this).attr("data-oft-p");
+  let dataComment = $(this).attr("data-obs-comment");
+
+  let dataAetEditHtml = $('<input class="edit-input-aet" name="observation[aet]" placeholder="aet" type="checkbox">');
+  let dataPetEditHtml = $('<input class="edit-input-pet" name="observation[pet]" placeholder="pet" type="checkbox">');
+  let dataOftmEditHtml = $('<input class="edit-input-oft-m" name="observation[oft_m]" placeholder="oftm" type="checkbox">');
+  let dataOftvEditHtml = $('<input class="edit-input-oft-v" name="observation[oft_v]" placeholder="oftv" type="checkbox">');
+  let dataOftpEditHtml = $('<input class="edit-input-oft-p" name="observation[oft_p]" placeholder="oftp" type="checkbox">');
+
+  let table = $(this).parent().parent().parent();
+
+  let aetDataLocation = table.children(".last-aet-tr").children(".last-submission-aet");
+  let petDataLocation = table.children(".last-pet-tr").children(".last-submission-pet");
+  let oftmDataLocation = table.children(".last-oft-m-tr").children(".last-submission-oft-m");
+  let oftvDataLocation = table.children(".last-oft-v-tr").children(".last-submission-oft-v");
+  let oftpDataLocation = table.children(".last-oft-p-tr").children(".last-submission-oft-p");
+
+  generateWithCheck(aetDataLocation, dataAetEditHtml);
+  generateWithCheck(petDataLocation, dataPetEditHtml);
+  generateWithCheck(oftmDataLocation, dataOftmEditHtml);
+  generateWithCheck(oftvDataLocation, dataOftvEditHtml);
+  generateWithCheck(oftpDataLocation, dataOftpEditHtml);
+};
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -158,6 +200,8 @@ const addHandlers = () => {
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
   $('#test-button-submit').on('click', testButton);
+  $(".edit-last-submission").on('click', updateFormGenerator);
+  $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
 };
 
 module.exports = {

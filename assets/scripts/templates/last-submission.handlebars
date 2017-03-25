@@ -7,39 +7,43 @@
     <td>Interval</td>
     <td>{{observation.obs_num}}</td>
   </tr>
-  <tr>
+  <tr class="last-aet-tr">
     <td>AET</td>
-    <td>
+    <td class="last-submission-aet">
       {{#if observation.aet}} &#10004; {{/if}}
     </td>
   </tr>
-  <tr>
+  <tr class="last-pet-tr">
     <td>PET</td>
-    <td> {{#if observation.pet}} &#10004; {{/if}}
+    <td class="last-submission-pet"> {{#if observation.pet}} &#10004; {{/if}}
     </td>
   </tr>
-  <tr>
+  <tr class="last-oft-m-tr">
     <td>Oft-M</td>
-    <td>{{#if observation.oft_m}} &#10004; {{/if}}
+    <td class="last-submission-oft-m">{{#if observation.oft_m}} &#10004; {{/if}}
     </td>
   </tr>
-  <tr>
+  <tr class="last-oft-v-tr">
     <td>Oft-V</td>
-    <td>{{#if observation.oft_v}} &#10004; {{/if}}
+    <td class="last-submission-oft-v">{{#if observation.oft_v}} &#10004; {{/if}}
     </td>
   </tr>
-  <tr>
+  <tr class="last-oft-p-tr">
     <td>Oft-P</td>
-    <td>{{#if observation.oft_p}} &#10004; {{/if}}
+    <td class="last-submission-oft-p">{{#if observation.oft_p}} &#10004; {{/if}}
     </td>
   </tr>
   <tr>
     <td>Comment</td>
     <td>{{observation.obs_comment}}</td>
   </tr>
-  <tr>
-    <td colspan="2">
-    <button data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Edit</button>
+  <tr class="edit-last-submit-tr">
+    <td class="edit-last-submit-btn" colspan="2">
+      <button class="edit-last-submission" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Edit</button>
     </td>
+  </tr>
+  <tr>
+    <td class="cancel-edit-td" colspan="2">
+      <button "cancel-last-submission-edit" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}">Cancel</button>
   </tr>
 </table>
