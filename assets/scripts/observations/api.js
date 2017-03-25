@@ -67,6 +67,26 @@ const updateObservation = function(data) {
   });
 };
 
+const updateLastObservation = function(id, aet, pet, oftm, oftv, oftp, comment) {
+  return $.ajax({
+    url: config.apiOrigin + '/observations/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data: {
+      "observation": {
+        "aet": aet,
+        "pet": pet,
+        "oft_m": oftm,
+        "oft_v": oftv,
+        "oft_p": oftp,
+        "obs_comment": comment,
+      }
+    }
+  });
+};
+
 module.exports = {
   createObservation,
   getObservations,
@@ -74,4 +94,5 @@ module.exports = {
   updateObservation,
   deleteObservation,
   showLastObservation,
+  updateLastObservation,
 };

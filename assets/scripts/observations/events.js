@@ -59,15 +59,17 @@ const onUpdateObservation = function(event) {
 const onUpdateLastSubmission = function(event) {
   event.preventDefault();
   let table = $(this).parent().parent().parent();
+  let id = $(this).attr("data-id");
+  let comment = $(this).attr("data-obs-comment");
   let aetValue = table.children(".last-aet-tr").children(".last-submission-aet").children("input").prop('checked');
-  let petValue = table.children(".last-pet-tr").children(".last-submission-pet").children("input");
-  let oftmValue = table.children(".last-oft-m-tr").children("last-submission-oft-m").children("input");
-  let oftvValue = table.children(".last-oft-v-tr").children("last-submission-oft-v").children("input");
-  let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input");
-  alert();
-  console.log("aetValue");
-  console.log(aetValue);
-}
+  let petValue = table.children(".last-pet-tr").children(".last-submission-pet").children("input").prop('checked');
+  let oftmValue = table.children(".last-oft-m-tr").children("last-submission-oft-m").children("input").prop('checked');
+  let oftvValue = table.children(".last-oft-v-tr").children("last-submission-oft-v").children("input").prop('checked');
+  let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input").prop('checked');
+  apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
+    .done(uiObservations.updateObservationSuccess)
+    .fail(uiObservations.updateObservationFailure);
+};
 
 const startSession = function() {
   $("#new-student-form").show();
