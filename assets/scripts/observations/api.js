@@ -25,6 +25,16 @@ const showObservation = function() {
   });
 };
 
+const showLastObservation = function(id) {
+  return $.ajax({
+    url: config.apiOrigin + '/observations/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 const createObservation = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/students/1' + '/sessions/' + store.currentSessionIdStr + '/observations',
@@ -63,4 +73,5 @@ module.exports = {
   showObservation,
   updateObservation,
   deleteObservation,
+  showLastObservation,
 };

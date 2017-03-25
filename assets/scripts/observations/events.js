@@ -21,6 +21,12 @@ const onShowObservation = function(event) {
     .fail(uiObservations.showObservationFailure);
 };
 
+const onShowLastObservation = function(id) {
+  apiObservations.showLastObservation(id)
+    .done(uiObservations.showObservationSuccess)
+    .fail(uiObservations.showObservationFailure);
+};
+
 const onCreateObservation = function(event) {
     event.preventDefault();
     let data = getFormFields(event.target);
@@ -28,6 +34,8 @@ const onCreateObservation = function(event) {
     .catch(uiObservations.createObservationFailure)
     .then((response) => {
       onGetObservations(store.currentSessionIdStr);
+      console.log(response.observation.id);
+      onShowLastObservation(response.observation.id);
     })
     .done(uiObservations.createObservationSuccess);
 };
@@ -97,11 +105,11 @@ const observationTimer = function() {
       y.innerHTML = '' + x + '';
 
       if (x > 0 && x <= 3) {
-        audio.playAudio();
+        // audio.playAudio();
       }
 
       if (x === 0) {
-        audio.submitAudio();
+        // audio.submitAudio();
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
 

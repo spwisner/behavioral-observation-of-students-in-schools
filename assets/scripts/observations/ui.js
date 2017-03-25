@@ -10,17 +10,14 @@ const chart = require('../chart/mychart');
 // Observation UI
 
 const getObservationSuccess = (data) => {
-  console.log('get observation success');
+  // console.log('get observation success');
   chart.getColumnSums(data);
-  console.log(store.chartData);
+  // console.log(store.chartData);
+  $(".obs-summary-table").remove();
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
-  let showLastSubmission = displayLastSubmit({
-    observations: data.observations
-  });
   $('.display-observation-container').empty().append(showObservations);
-  $('.last-submission-container').empty().append(showLastSubmission);
 };
 
 const getObservationFailure = (data) => {
@@ -29,8 +26,12 @@ const getObservationFailure = (data) => {
 };
 
 const showObservationSuccess = (data) => {
-  console.log('show observation success');
-  console.log(data);
+
+  $('.last-submission-table').remove();
+  let showLastSubmission = displayLastSubmit({
+    observation: data.observation
+  });
+  $('.last-submission-container').append(showLastSubmission);
 };
 
 const showObservationFailure = (data) => {
