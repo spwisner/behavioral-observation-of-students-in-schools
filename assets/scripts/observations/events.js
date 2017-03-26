@@ -184,6 +184,9 @@ const generateWithCheck = function(dataLocation, inputHtml) {
 
 const updateFormGenerator = function(event) {
   event.preventDefault();
+
+  store.lastFormHtml = $(".last-submission-container").html();
+
   let dataId = $(this).attr("data-id");
   let dataObsNum = $(this).attr("data-obs-num");
   let dataAet = $(this).attr("data-aet");
@@ -214,6 +217,11 @@ const updateFormGenerator = function(event) {
   generateWithCheck(oftpDataLocation, dataOftpEditHtml);
 };
 
+const cancelUpdateLastSubmission = function(event) {
+  event.preventDefault();
+  alert(store.lastFormHtml);
+  $(".last-submission-container").empty().append(store.lastFormHtml);
+};
 
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
@@ -225,9 +233,10 @@ const addHandlers = () => {
   $('#begin-session-btn').on('click', observationTimer);
   // $('#cancel-session-btn').on('click', cancelObservationTimer);
   $('#test-button-submit').on('click', testButton);
-  $(".edit-last-submission").on('click', updateFormGenerator);
+  // $(".edit-last-submission").on('click', updateFormGenerator);
   $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
   $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
+  $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
 };
 
 module.exports = {
