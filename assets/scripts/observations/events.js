@@ -214,6 +214,7 @@ const updateFormGenerator = function(event) {
   generateWithCheck(oftpDataLocation, dataOftpEditHtml);
 };
 
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);

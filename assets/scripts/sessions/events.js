@@ -56,12 +56,40 @@ const onUpdateSession = function(event) {
     .fail(sessionsUi.updateSessionFailure);
 };
 
+// Calculates total time of session
+
+const totalTime = function(numberOfIntervalsEntry, intervalLengthEntry) {
+  let totalTimeinSeconds = numberOfIntervalsEntry * intervalLengthEntry;
+  let totalTimeinMins = totalTimeinSeconds / 60;
+
+  if (totalTimeinSeconds % 60 === 0) {
+    $("#total-session-time-m").text(totalTimeinMins);
+    $("#total-session-time-s").text("0");
+  } else {
+    let totalMinsFloor = Math.floor(totalTimeinMins);
+    $("#total-session-time-m").text(totalMinsFloor);
+    let secondsRemainder = totalTimeinSeconds % 60;
+    $("#total-session-time-s").text(secondsRemainder);
+  }
+};
+
+const totalTimeCalculator = function() {
+  let numberOfIntervalsEntry = $("#interval-number-entry").val();
+  let intervalLengthEntry = $("#interval-length-entry").val();
+  // alert(intervalLengthEntry);
+  $(".number-of-intervals-entry").text(numberOfIntervalsEntry);
+  $(".length-of-intervals-entry").text(intervalLengthEntry);
+  totalTime(numberOfIntervalsEntry, intervalLengthEntry);
+};
+
 const addHandlers = () => {
   $('#delete-session-form').on('submit', onDeleteSession);
   $('#get-sessions-form').on('submit', onGetSessions);
   $('#show-session-form').on('submit', onShowSession);
   $('#new-session-form').on('submit', onCreateSession);
   $('#update-session-form').on('submit', onUpdateSession);
+  $('#interval-number-entry').on('keyup', totalTimeCalculator);
+  $('#interval-length-entry').on('keyup', totalTimeCalculator);
 };
 
 module.exports = {
