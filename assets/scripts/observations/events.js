@@ -80,6 +80,8 @@ const endObservationTimer = function(runTimer) {
 };
 
 const observationTimer = function() {
+
+
   // Countup stopwatch for gradients
 
   // Define Countup
@@ -156,6 +158,13 @@ const observationTimer = function() {
       }
     }
   }, 1000);
+  // if cancel button clicked
+  $("#cancel-session-btn").click(function () {
+    endObservationTimer(runTimer);
+    $(".time-until-submission").hide();
+    $(".interval-remaining").hide();
+    $(".cancel-session-notification").show();
+  });
 };
 
 // Test Button for Webpage Testing
@@ -205,8 +214,6 @@ const updateFormGenerator = function(event) {
   generateWithCheck(oftpDataLocation, dataOftpEditHtml);
 };
 
-
-
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -215,6 +222,7 @@ const addHandlers = () => {
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
+  // $('#cancel-session-btn').on('click', cancelObservationTimer);
   $('#test-button-submit').on('click', testButton);
   $(".edit-last-submission").on('click', updateFormGenerator);
   $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);

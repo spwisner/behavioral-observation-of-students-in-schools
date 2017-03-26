@@ -212,6 +212,15 @@ $one-hundred-color: rgba(231,24,24,1);
 .check-clear {
   clear: both;
 }
+
+// Default hide session canceled notification
+.cancel-session-notification {
+  display: none;
+}
+
+
+
+
 // Header
 // h1
 // .sub-description-h1 {
