@@ -34,7 +34,6 @@ const onCreateObservation = function(event) {
     .catch(uiObservations.createObservationFailure)
     .then((response) => {
       onGetObservations(store.currentSessionIdStr);
-      console.log(response.observation.id);
       onShowLastObservation(response.observation.id);
     })
     .done(uiObservations.createObservationSuccess);
@@ -52,8 +51,8 @@ const onUpdateObservation = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   apiObservations.updateObservation(data)
-    .done(uiObservations.updateObservationSuccess)
-    .fail(uiObservations.updateObservationFailure);
+    .done(uiObservations.getLastObservationSuccess)
+    .fail(uiObservations.getLastObservationFailure);
 };
 
 const onUpdateLastSubmission = function(event) {
@@ -67,8 +66,8 @@ const onUpdateLastSubmission = function(event) {
   let oftvValue = table.children(".last-oft-v-tr").children("last-submission-oft-v").children("input").prop('checked');
   let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input").prop('checked');
   apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
-    .done(uiObservations.updateObservationSuccess)
-    .fail(uiObservations.updateObservationFailure);
+    .done(uiObservations.getLastObservationSuccess)
+    .fail(uiObservations.getLastObservationFailure);
 };
 
 const startSession = function() {

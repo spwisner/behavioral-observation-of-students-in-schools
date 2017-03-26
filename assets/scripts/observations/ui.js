@@ -7,6 +7,7 @@ const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 const displayLastSubmit = require('../templates/last-submission.handlebars');
 const store = require('../store');
 const chart = require('../chart/mychart');
+const apiObservations = require('./api');
 // Observation UI
 
 const getObservationSuccess = (data) => {
@@ -19,6 +20,12 @@ const getObservationSuccess = (data) => {
   });
   $('.display-observation-container').append(showObservations);
 };
+
+const getLastObservationFailure = (data) => {
+  console.log("update last entry failure");
+  console.log(data);
+};
+
 
 const getObservationFailure = (data) => {
   console.log('get observation failure');
@@ -61,6 +68,17 @@ const showObservationSuccess = (data) => {
 const showObservationFailure = (data) => {
   console.log('show observation failure');
   console.log(data);
+};
+
+const getLastObservationSuccess = (data) => {
+  console.log("successfully updated last entry");
+  console.log(data);
+  console.log(data.observation.id);
+  let obsId = data.observation.id;
+  alert();
+  apiObservations.showLastObservation(obsId)
+    .done(showObservationSuccess)
+    .fail(showObservationFailure);
 };
 
 const getPastObsNumSuccess = function() {
@@ -123,4 +141,6 @@ module.exports = {
   getPastObsNumSuccess,
   getPastObsNumFailure,
   createObservationSuccess,
+  getLastObservationSuccess,
+  getLastObservationFailure,
 };
