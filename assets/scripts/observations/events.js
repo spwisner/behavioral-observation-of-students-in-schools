@@ -33,7 +33,7 @@ const onCreateObservation = function(event) {
     apiObservations.createObservation(data)
     .catch(uiObservations.createObservationFailure)
     .then((response) => {
-      onGetObservations(store.currentSessionIdStr);
+      // onGetObservations(store.currentSessionIdStr);
       onShowLastObservation(response.observation.id);
     })
     .done(uiObservations.createObservationSuccess);
@@ -91,17 +91,9 @@ const observationTimer = function() {
   // Define gradient intervals
   let stageOneTime = 0;
   let stageTwoTime = logicObservations.gradientLogic(1, totalIntervalLength) + stageOneTime;
-  console.log("stageTwoTime");
-  console.log(stageTwoTime);
   let stageThreeTime = logicObservations.gradientLogic(2, totalIntervalLength) + stageTwoTime;
-  console.log("stageThreeTime");
-  console.log(stageThreeTime);
   let stageFourTime = logicObservations.gradientLogic(3, totalIntervalLength) + stageThreeTime;
-  console.log("stageFourTime");
-  console.log(stageFourTime);
   let stageFiveTime = logicObservations.gradientLogic(4, totalIntervalLength) + stageFourTime;
-  console.log("stageFiveTime");
-  console.log(stageFiveTime);
 
   // Countdown Timer
   let x = parseInt(store.currentObsIntervalTime);

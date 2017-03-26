@@ -6,19 +6,18 @@
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 const displayLastSubmit = require('../templates/last-submission.handlebars');
 const store = require('../store');
-const chart = require('../chart/mychart');
+const chart = require('../report/mychart');
 const apiObservations = require('./api');
 // Observation UI
 
 const getObservationSuccess = (data) => {
-  // console.log('get observation success');
-  chart.getColumnSums(data);
-  // console.log(store.chartData);
-  $(".obs-summary-table").remove();
-  let showObservations = displayObservationsTemplate({
-    observations: data.observations
-  });
-  $('.display-observation-container').append(showObservations);
+  console.log('get observation success');
+  // chart.getColumnSums(data);
+  // $(".obs-summary-table").remove();
+  // let showObservations = displayObservationsTemplate({
+  //   observations: data.observations
+  // });
+  // $('.display-observation-container').append(showObservations);
 };
 
 const getLastObservationFailure = (data) => {

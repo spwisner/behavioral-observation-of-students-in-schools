@@ -15,6 +15,17 @@ const getChartData = function() {
   });
 };
 
+const getObservationTable = function(id) {
+  return $.ajax({
+    url: config.apiOrigin + '/students/1' + '/sessions/' + id + '/observations',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 module.exports = {
   getChartData,
+  getObservationTable
 };
