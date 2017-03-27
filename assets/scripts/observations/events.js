@@ -211,7 +211,6 @@ const updateFormGenerator = function(event) {
 
 const cancelUpdateLastSubmission = function(event) {
   event.preventDefault();
-  alert(store.lastFormHtml);
   $(".last-submission-container").empty().append(store.lastFormHtml);
 };
 

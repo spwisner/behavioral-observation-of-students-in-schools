@@ -10,7 +10,7 @@ const createChart = function(targetFinalArr, randomFinalArr) {
   const etChart = document.getElementById("et-chart").getContext('2d');
   const oftChart = document.getElementById("oft-chart").getContext('2d');
 
-  const buildChart = function() {
+  const buildChart = function(targetFinalArr, randomFinalArr) {
     let targetEtArr = [targetFinalArr[0], targetFinalArr[1]];
     let targetOftArr = [targetFinalArr[2], targetFinalArr[3], targetFinalArr[4]];
     let randomEtArr = [randomFinalArr[0], randomFinalArr[1]];
@@ -51,7 +51,7 @@ const createChart = function(targetFinalArr, randomFinalArr) {
     });
 
   };
-  buildChart();
+  buildChart(targetFinalArr, randomFinalArr);
 };
 
 const getColumnSums = function(data) {
@@ -76,8 +76,11 @@ const getColumnSums = function(data) {
   for (let i = 0; i < dataArr.length; i++) {
 
     let aetData = dataArr[i].aet;
+
+    let obsNum = dataArr[i].obs_num;
+
     if (aetData === true) {
-      if ( (i+1) % 5 === 0 ) {
+      if ( obsNum % 5 === 0 ) {
         randomAetDataCount += 1;
       } else {
         targetAetDataCount += 1;
@@ -86,7 +89,7 @@ const getColumnSums = function(data) {
 
     let petData = dataArr[i].pet;
     if (petData === true) {
-      if ( (i+1) % 5 === 0 ) {
+      if ( obsNum % 5 === 0 ) {
         randomPetDataCount += 1;
       } else {
         targetPetDataCount += 1;
@@ -96,7 +99,7 @@ const getColumnSums = function(data) {
 
     let oftVData = dataArr[i].oft_v;
     if (oftVData === true) {
-      if ( (i+1) % 5 === 0 ) {
+      if ( obsNum % 5 === 0 ) {
         randomOftVDataCount += 1;
       } else {
         targetOftVDataCount += 1;
@@ -106,7 +109,7 @@ const getColumnSums = function(data) {
 
     let oftMData = dataArr[i].oft_m;
     if (oftMData === true) {
-      if ( (i+1) % 5 === 0 ) {
+      if ( obsNum % 5 === 0 ) {
         randomOftMDataCount += 1;
       } else {
         targetOftMDataCount += 1;
@@ -115,7 +118,7 @@ const getColumnSums = function(data) {
 
     let oftPData = dataArr[i].oft_p;
     if (oftPData === true) {
-      if ( (i+1) % 5 === 0 ) {
+      if ( obsNum % 5 === 0 ) {
         randomOftPDataCount += 1;
       } else {
         targetOftPDataCount += 1;
@@ -134,6 +137,11 @@ const getColumnSums = function(data) {
   randomFinalArr.push(randomOftVDataCount);
   randomFinalArr.push(randomOftMDataCount);
   randomFinalArr.push(randomOftPDataCount);
+
+  console.log("targetFinalArr");
+  console.log(targetFinalArr);
+  console.log("randomFinalArr");
+  console.log(randomFinalArr);
 
   createChart(targetFinalArr, randomFinalArr);
 };

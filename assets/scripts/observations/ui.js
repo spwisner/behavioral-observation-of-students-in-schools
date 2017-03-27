@@ -75,7 +75,6 @@ const getLastObservationSuccess = (data) => {
   console.log(data);
   console.log(data.observation.id);
   let obsId = data.observation.id;
-  alert();
   apiObservations.showLastObservation(obsId)
     .done(showObservationSuccess)
     .fail(showObservationFailure);

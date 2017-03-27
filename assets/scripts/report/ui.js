@@ -21,7 +21,6 @@ const onGetChartDataFailure = (data) => {
 
 const onGetObservationTableSuccess = (data) => {
   console.log('get observation table success');
-  alert();
   console.log(data);
   // console.log('get observation success');
   chart.getColumnSums(data);
