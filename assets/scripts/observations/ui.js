@@ -89,12 +89,21 @@ const getPastObsNumFailure = function() {
   console.log("getPastObsNumFailure Failure");
 };
 
-const createObservationSuccess = (data) => {
-  console.log('create observation success');
-  console.log(data);
+const createObservationSuccess = (response) => {
+   console.log(response);
+   console.log('create observation success');
    $("#new-observation-form .field-checkbox").prop("checked", false);
    $("#create-obs-comment").val('');
    $("#interval-submitted-successfully").fadeIn(500).delay(1000).fadeOut(500);
+
+   if (store.studentToObserve % 5 === 0) {
+     $("#student-observed").text("Random Peer");
+     $("#student-observed").addClass("random-peer");
+   } else {
+     $("#student-observed").text("Target Student");
+     $("#student-observed").addClass("target-student");
+   }
+
 };
 
 const createObservationFailure = (data) => {

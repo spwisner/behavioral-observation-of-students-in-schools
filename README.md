@@ -36,7 +36,7 @@ The following is a sample of user stories that were considered in the production
 ### Wireframes
 Based on the user-stories, mulitiple wireframes were created for this application.  They can be found at the followings links:
 
-[Homepage](https://drive.google.com/open?id=0B_Hv9u6cm8IVY1dIV2ZWMTlteWs)
+[Homepage ](https://drive.google.com/open?id=0B_Hv9u6cm8IVY1dIV2ZWMTlteWs)
 [Post Sign-In ](https://drive.google.com/open?id=0B_Hv9u6cm8IVUU9rb0hoMnpudlk)
 [Start New Session ](https://drive.google.com/open?id=0B_Hv9u6cm8IVeXA2NWtsek00UVk)
 [Past Session Report ](https://drive.google.com/open?id=0B_Hv9u6cm8IVR2loY054dkJHV1U)
