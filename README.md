@@ -34,12 +34,12 @@ The following is a sample of user stories that were considered in the production
 5. As a user, I would like to have a graph displayed of the results
 
 ### Wireframes
-Based on the user-stories, mulitiple wireframes were created for this application.  They can be found at the followings links
+Based on the user-stories, mulitiple wireframes were created for this application.  They can be found at the followings links:
 
--     [Homepage](https://drive.google.com/open?id=0B_Hv9u6cm8IVY1dIV2ZWMTlteWs)
--   [Post Sign-In ](https://drive.google.com/open?id=0B_Hv9u6cm8IVUU9rb0hoMnpudlk)
--   [Start New Session ](https://drive.google.com/open?id=0B_Hv9u6cm8IVeXA2NWtsek00UVk)
--   [Past Session Report ](https://drive.google.com/open?id=0B_Hv9u6cm8IVR2loY054dkJHV1U)
+[Homepage](https://drive.google.com/open?id=0B_Hv9u6cm8IVY1dIV2ZWMTlteWs)
+[Post Sign-In ](https://drive.google.com/open?id=0B_Hv9u6cm8IVUU9rb0hoMnpudlk)
+[Start New Session ](https://drive.google.com/open?id=0B_Hv9u6cm8IVeXA2NWtsek00UVk)
+[Past Session Report ](https://drive.google.com/open?id=0B_Hv9u6cm8IVR2loY054dkJHV1U)
 
 ### Application Limitations & Unresolved Problems
 
