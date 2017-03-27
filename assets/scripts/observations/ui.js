@@ -12,6 +12,7 @@ const apiObservations = require('./api');
 
 const getObservationSuccess = (data) => {
   console.log('get observation success');
+  console.log(data);
   // chart.getColumnSums(data);
   // $(".obs-summary-table").remove();
   // let showObservations = displayObservationsTemplate({
