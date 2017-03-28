@@ -81,13 +81,13 @@
       <p class="field-description">Last Name</p>
       <input name="student[last_name]" placeholder="Last Name" type="text" value="z">
       <br>
-      <p class="field-description">Date of Birth</p>
+      <p class="field-description">Date of Birth (optional)</p>
       <input name="student[born_on]" placeholder="Date of Birth" type="date" value="2016-05-05">
       <br>
-      <p class="field-description">School</p>
+      <p class="field-description">School (optional)</p>
       <input name="student[school]" placeholder="School" type="text" value="z">
       <br>
-      <p class="field-description">Teacher</p>
+      <p class="field-description">Teacher (optional)</p>
       <input name="student[teacher]" placeholder="Teacher" type="text" value="z">
       <br>
       <p class="field-description">Grade</p>
@@ -162,16 +162,16 @@
       <p class="field-description">Session Date</p>
       <input name="session[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
       <br>
-      <p class="field-description">Session session</p>
-      <input name="session[obs_setting]" placeholder="Session session" type="text" value="running">
+      <p class="field-description">Session Setting</p>
+      <input name="session[obs_setting]" placeholder="Session Setting" type="text" value="running">
       <br>
       <p class="field-description">Session Task</p>
       <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
-      <p class="field-description">Number of Intervals* <br>(between 1 and 60)</p>
+      <p class="field-description">Number of Intervals (required) <br>(between 1 and 60)</p>
       <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals (1-60)" type="text" value="6">
       <br>
-      <p class="field-description">Length of Each Interval (in seconds)* <br>(between 10 and 30)</p>
+      <p class="field-description">Length of Each Interval - in seconds (required)  <br>(between 10 and 30)</p>
       <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text" value="6">
       <br><br>
       <p class="total-session-time">A session with <span class="number-of-intervals-entry"></span> intervals measured every <span class="length-of-intervals-entry"></span> seconds will take <span id="total-session-time-m"></span> minutes and <span id="total-session-time-s"></span>        seconds to complete.</p>
@@ -249,7 +249,7 @@
 
     <div class="interval-time-count-container">
       <p class="time-until-submission">Time Until Submission: <span id="interval-timer"></span> <span id="interval-submitted-successfully">Interval Submitted</span></p>
-      <p class="interval-remaining">Interval: <span id="interval-count">1</span> / <span id="interval-total"></span></p>
+      <p class="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span></p>
       <p class="cancel-session-notification">Your Session has been cancelled</p>
 
       <button id="begin-session-btn">Begin Session</button>

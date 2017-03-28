@@ -123,7 +123,7 @@ const observationTimer = function() {
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
 
-        $("#interval-count").text(intervalPrint);
+        $(".interval-count").text(intervalPrint);
         x = max;
         if (intervalCount <= endInterval) {
           store.observationIdNum = store.observationIdNum + 1;
@@ -137,7 +137,7 @@ const observationTimer = function() {
             $("#new-observation-form").removeClass("obs-stg-five");
             $("#new-observation-form").addClass("obs-stg-done");
             endObservationTimer(runTimer);
-            $("#interval-count").text(endInterval);
+            $(".interval-count").text(endInterval);
             return;
           }
         }
