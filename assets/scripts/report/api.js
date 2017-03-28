@@ -5,6 +5,17 @@ const store = require('../store');
 
 // Sessions API
 
+const createWriteup = function(data) {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/reports',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data,
+  });
+};
+
 const getChartData = function() {
   return $.ajax({
     url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
@@ -25,6 +36,17 @@ const getObservationTable = function() {
   });
 };
 
+const getWriteup = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/reports',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
+
 const getStudentSummary = function() {
   return $.ajax({
     url: config.apiOrigin + '/students/' + store.currentStudentId,
@@ -39,4 +61,6 @@ module.exports = {
   getChartData,
   getObservationTable,
   getStudentSummary,
+  createWriteup,
+  getWriteup,
 };

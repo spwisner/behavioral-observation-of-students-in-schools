@@ -9,6 +9,30 @@ const reportLogic = require('./logic');
 
 // Report UI
 
+//Writeup
+
+const getWriteupSuccess = (data) => {
+  console.log('create writeup successful');
+  console.log(data);
+};
+
+const getWriteupFailure = (data) => {
+  console.log('create writeup successful');
+  console.log(data);
+};
+
+const createWriteupSuccess = (data) => {
+  console.log('create writeup successful');
+  console.log(data);
+};
+
+const createWriteupFailure = (data) => {
+  console.log('create writeup successful');
+  console.log(data);
+};
+//
+
+
 const onGetChartDataSuccess = (data) => {
   console.log('get chart data success');
   console.log(data);
@@ -63,4 +87,8 @@ module.exports = {
   onGetObservationTableFailure,
   showStudentSummarySuccess,
   showStudentSummaryFailure,
+  createWriteupSuccess,
+  createWriteupFailure,
+  getWriteupSuccess,
+  getWriteupFailure,
 };

@@ -158,7 +158,7 @@
   <form class="form sessions-form" id="new-session-form" name="new-session-form">
     <fieldset>
       <legend>Create Session Form</legend>
-      <p class="warning">Error creating session.  Please check if all required fields are entered and number values fall within the listed range.</p>
+      <p class="warning">Error creating session. Please check if all required fields are entered and number values fall within the listed range.</p>
       <p class="field-description">Session Date</p>
       <input name="session[obs_on]" placeholder="Session Date" type="date" value="2016-05-05">
       <br>
@@ -174,7 +174,7 @@
       <p class="field-description">Length of Each Interval (in seconds)* <br>(between 10 and 30)</p>
       <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text">
       <br><br>
-      <p class="total-session-time">A session with <span class="number-of-intervals-entry"></span> intervals measured every <span class="length-of-intervals-entry"></span> seconds will take <span id="total-session-time-m"></span> minutes and <span id="total-session-time-s"></span> seconds to complete.</p>
+      <p class="total-session-time">A session with <span class="number-of-intervals-entry"></span> intervals measured every <span class="length-of-intervals-entry"></span> seconds will take <span id="total-session-time-m"></span> minutes and <span id="total-session-time-s"></span>        seconds to complete.</p>
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
       <br>
       <br>
@@ -328,8 +328,76 @@
     </fieldset>
   </form>
 
+  <form id="report-writeup-form" name="report-writeup-form">
+    <fieldset>
+      <h1 class="form-h1">Create Writeup Form</h1>
+
+      <p class="field-description">Presenting Issues</p>
+      <textarea class="field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>
+      <br>
+
+      <p class="field-description">Class Behavioral Assessment</p>
+      <textarea class="field-input comments-input" name="report[class_behav_assess]" placeholder="Class Behavioral Assessment"></textarea>
+      <br>
+
+      <p class="field-description">Session Setting</p>
+      <textarea class="field-input comments-input" name="report[r_setting]" placeholder="Session Setting"></textarea>
+      <br>
+
+      <p class="field-description">Active Engaged Time</p>
+      <textarea class="field-input comments-input" name="report[r_aet]" placeholder="Active Engaged Time"></textarea>
+      <br>
+
+      <p class="field-description">Passive Engaged Time</p>
+      <textarea class="field-input comments-input" name="report[r_pet]" placeholder="Passive Engaged Time"></textarea>
+      <br>
+
+      <p class="field-description">Off-Task Motor Behavior</p>
+      <textarea class="field-input comments-input" name="report[r_oftm]" placeholder="Off-Task Motor Behavior"></textarea>
+      <br>
+
+      <p class="field-description">Off-Task Verbal Behavior</p>
+      <textarea class="field-input comments-input" name="report[r_oftv]" placeholder="Off-Task Verbal Behavior"></textarea>
+      <br>
+
+      <p class="field-description">Off-Task Passive Behavior</p>
+      <textarea class="field-input comments-input" name="report[r_oftp]" placeholder="Off-Task Passive Behavior"></textarea>
+      <br>
+
+      <p class="field-description">Findings</p>
+      <textarea class="field-input comments-input" name="report[r_finding]" placeholder="Findings"></textarea>
+      <br>
+
+      <p class="field-description">Custom Field One</p>
+      <textarea class="field-input comments-input" name="report[r_customone]" placeholder="Custom Field One"></textarea>
+      <br>
+
+      <p class="field-description">Custom Field Two</p>
+      <textarea class="field-input comments-input" name="report[r_customtwo]" placeholder="Custom Field Two"></textarea>
+      <br>
+
+      <p class="field-description">Custom Field Three</p>
+      <textarea class="field-input comments-input" name="report[r_customthree]" placeholder="Custom Field Three"></textarea>
+      <br>
+
+      <p class="field-description">Recommendation</p>
+      <textarea class="field-input comments-input" name="report[r_recommendation]" placeholder="Recommendation"></textarea>
+      <br>
+
+      <p class="field-description">Observer's Name (i.e. Your Name)</p>
+      <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name"></textarea>
+      <br>
+
+      <input class="submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Generate Writeup" data-current-student-id="" data-current-session-id="">
+    </fieldset>
+  </form>
+
+  <div class="get-writeup-btn-container">
+    <input id="get-writeup-report-btn" class="current" type="button" value="Click to Generate Report" data-current-student-id="" data-current-session-id="">
+  </div>
+
   <div class="get-report-btn-container">
-    <input id="get-report-btn" type="button" value="Click to Generate Report" data-current-student-id="" data-current-session-id="">
+    <input id="get-report-btn" class="current" type="button" value="Click to Generate Report" data-current-student-id="" data-current-session-id="">
   </div>
 
   <div class="chart-container">
