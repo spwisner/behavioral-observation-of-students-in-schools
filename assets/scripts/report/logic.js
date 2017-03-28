@@ -20,9 +20,19 @@ const calculateTablePercentage = function(arr, intervals) {
   return percentageArr;
 };
 
-const generateStatsTable = function(countArrTS, percentageArrTS, countArrRP, percentageArrRP) {
+const appendTablejQuery = function(divClass, completeArr) {
+  for ( let i = 0; i < completeArr.length; i++ ) {
+    divClass.children('td').eq(i+1).text(completeArr[i]);
+  }
+};
+
+const generateStatsTable = function(countArrTS, percentageArrTS, countArrRP, percentageArrRP, totalTSIntervals, totalRPIntervals) {
 
   let aetCompleteArr = [countArrTS[0], percentageArrTS[0], countArrRP[0], percentageArrRP[0]];
+  let petCompleteArr = [countArrTS[1], percentageArrTS[1], countArrRP[1], percentageArrRP[1]];
+  let oftmCompleteArr = [countArrTS[2], percentageArrTS[2], countArrRP[2], percentageArrRP[2]];
+  let oftvCompleteArr = [countArrTS[3], percentageArrTS[3], countArrRP[3], percentageArrRP[3]];
+  let oftpCompleteArr = [countArrTS[4], percentageArrTS[4], countArrRP[4], percentageArrRP[4]];
 
   let aetTr = $(".report-stats-aet-tr");
   let petTr = $(".report-stats-pet-tr");
@@ -30,9 +40,16 @@ const generateStatsTable = function(countArrTS, percentageArrTS, countArrRP, per
   let oftvTr = $(".report-stats-oft-v-tr");
   let oftpTr = $(".report-stats-oft-p-tr");
 
-  for ( let i = 0; i < aetCompleteArr.length; i++ ) {
-    $(".report-stats-aet-tr").children('td').eq(i+1).text(aetCompleteArr[i]);
-  }
+  appendTablejQuery(aetTr, aetCompleteArr);
+  appendTablejQuery(petTr, petCompleteArr);
+  appendTablejQuery(oftmTr, oftmCompleteArr);
+  appendTablejQuery(oftvTr, oftvCompleteArr);
+  appendTablejQuery(oftpTr, oftpCompleteArr);
+
+
+  $("#report-target-interval-count").text(totalTSIntervals);
+  $("#report-random-interval-count").text(totalRPIntervals);
+
 };
 
 const statsTableCountPercent = function(data) {
@@ -124,7 +141,7 @@ const statsTableCountPercent = function(data) {
   let finalRPPercentArr = calculateTablePercentage(finalRPCountArr, totalRPIntervals);
   let finalTSPercentArr = calculateTablePercentage(finalTSCountArr, totalTSIntervals);
 
-  generateStatsTable(finalTSCountArr, finalTSPercentArr, finalRPCountArr, finalRPPercentArr);
+  generateStatsTable(finalTSCountArr, finalTSPercentArr, finalRPCountArr, finalRPPercentArr, totalTSIntervals, totalRPIntervals);
 };
 
 module.exports = {
