@@ -3,11 +3,10 @@
 // const store = require('../store');
 const chart = require('./mychart');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
-// const displayLastSubmit = require('../templates/last-submission.handlebars');
-// const store = require('../store');
-// const apiObservations = require('./api');
+const displayReportStats = require('../templates/report-stats.handlebars');
+const reportLogic = require('./logic');
 
-// Session UI
+// Report UI
 
 const onGetChartDataSuccess = (data) => {
   console.log('get chart data success');
@@ -20,17 +19,18 @@ const onGetChartDataFailure = (data) => {
 };
 
 const onGetObservationTableSuccess = (data) => {
-  console.log('get observation table success');
-  console.log(data);
-  // console.log('get observation success');
+  // console.log('get observation table success');
   chart.getColumnSums(data);
-  // console.log(store.chartData);
+  reportLogic.statsTableCountPercent(data);
   $(".obs-summary-table").remove();
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
+  let showStatistics = displayReportStats({
+    observations: data.observations
+  });
   $('.display-observation-container').append(showObservations);
-  // onGetChartData();
+  $('.display-stats-table-container').append(showStatistics);
 };
 
 const onGetObservationTableFailure = (data) => {

@@ -138,10 +138,10 @@ const getColumnSums = function(data) {
   randomFinalArr.push(randomOftMDataCount);
   randomFinalArr.push(randomOftPDataCount);
 
-  console.log("targetFinalArr");
-  console.log(targetFinalArr);
-  console.log("randomFinalArr");
-  console.log(randomFinalArr);
+  // console.log("targetFinalArr");
+  // console.log(targetFinalArr);
+  // console.log("randomFinalArr");
+  // console.log(randomFinalArr);
 
   createChart(targetFinalArr, randomFinalArr);
 };
