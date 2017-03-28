@@ -35,6 +35,8 @@ const createSessionSuccess = (data) => {
   $("#interval-total").text(store.currentNumofIntervals);
   // $("#interval-count").text(store.currentObsNum);
   $("#student-observed").html('<span id="target-student">Target Student</span>');
+
+  $(".current").attr("data-current-session-id", store.currentSessionId);
 };
 
 const createSessionFailure = (data) => {

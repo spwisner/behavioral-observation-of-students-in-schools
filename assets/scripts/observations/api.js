@@ -37,7 +37,7 @@ const showLastObservation = function(id) {
 
 const createObservation = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/students/1' + '/sessions/' + store.currentSessionIdStr + '/observations',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,

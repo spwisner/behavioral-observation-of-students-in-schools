@@ -33,7 +33,7 @@ const onCreateObservation = function(event) {
     apiObservations.createObservation(data)
     .catch(uiObservations.createObservationFailure)
     .then((response) => {
-      // onGetObservations(store.currentSessionIdStr);
+      // onGetObservations(store.currentSessionId);
       let submittedObsNum = response.observation.obs_num;
       store.studentToObserve = submittedObsNum + 1;
       onShowLastObservation(response.observation.id);
@@ -154,9 +154,9 @@ const observationTimer = function() {
 };
 
 // Test Button for Webpage Testing
-const testButton = function() {
-  $("#test-sign-in").click();
-};
+// const testButton = function() {
+//   $("#test-sign-in").click();
+// };
 
 const generateWithCheck = function(dataLocation, inputHtml) {
   let trimText = dataLocation.text().trim();
@@ -217,7 +217,7 @@ const addHandlers = () => {
   $('#new-session-btn').on('click', startSession);
   $('#begin-session-btn').on('click', observationTimer);
   // $('#cancel-session-btn').on('click', cancelObservationTimer);
-  $('#test-button-submit').on('click', testButton);
+  // $('#test-button-submit').on('click', testButton);
   // $(".edit-last-submission").on('click', updateFormGenerator);
   $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
   $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);

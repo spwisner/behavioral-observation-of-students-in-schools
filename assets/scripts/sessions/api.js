@@ -27,7 +27,7 @@ const showSession = function() {
 
 const createSession = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("create-session-stud-id").value + '/sessions',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token,

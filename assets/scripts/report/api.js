@@ -7,7 +7,7 @@ const store = require('../store');
 
 const getChartData = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + store.chartStudentId + '/sessions/' + store.chartSessionId + '/observations',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -15,9 +15,9 @@ const getChartData = function() {
   });
 };
 
-const getObservationTable = function(id) {
+const getObservationTable = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/1' + '/sessions/' + id + '/observations',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -27,7 +27,7 @@ const getObservationTable = function(id) {
 
 const getStudentSummary = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("show-student-stud-id").value,
+    url: config.apiOrigin + '/students/' + store.currentStudentId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,

@@ -34,6 +34,7 @@
       <input name="credentials[password]" placeholder="password" type="password" value="z">
       <br>
       <input id="test-sign-in" name="submit" type="submit" value="Sign in!">
+      <input name="submit" type="submit" value="Sign In!">
     </fieldset>
   </form>
   <form class="form credential-form" id="sign-out" name="sign-out">
@@ -177,7 +178,8 @@
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
       <br>
       <br>
-      <input id="testing-create-session" name="submit" type="submit" value="Create session">
+      <input class="current" name="submit" type="submit" value="Create session" data-current-student-id="">
+      <!-- <input id="testing-create-session" name="submit" type="submit" value="Create session" data-student-id=""> -->
     </fieldset>
   </form>
 
@@ -310,7 +312,7 @@
         <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
       </div>
       <div class="field-button-container">
-        <input name="submit" id="submit-observation-btn" type="submit" value="Submit Observation">
+        <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
       </div>
       <div class="sound-container">
         <!-- <audio id="timer-alert">
@@ -327,7 +329,7 @@
   </form>
 
   <div class="get-report-btn-container">
-    <input id="get-report-btn" type="button" value="Click to Generate Report">
+    <input id="get-report-btn" type="button" value="Click to Generate Report" data-current-student-id="" data-current-session-id="">
   </div>
 
   <div class="chart-container">
