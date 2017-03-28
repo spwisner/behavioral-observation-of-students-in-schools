@@ -7,7 +7,7 @@ const store = require('../store');
 
 const getSessions = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("get-session-stud-id").value + '/sessions',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -17,7 +17,7 @@ const getSessions = function() {
 
 const showSession = function() {
   return $.ajax({
-    url: config.apiOrigin + '/sessions/' + document.getElementById("show-session-session-id").value,
+    url: config.apiOrigin + '/sessions/' + store.currentSessionId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -38,7 +38,7 @@ const createSession = function(data) {
 
 const deleteSession = function() {
   return $.ajax({
-    url: config.apiOrigin + '/sessions/' + document.getElementById("delete-session-session-id").value,
+    url: config.apiOrigin + '/sessions/' + store.currentSessionId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -48,7 +48,7 @@ const deleteSession = function() {
 
 const updateSession = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/sessions/' + document.getElementById("update-session-session-id").value,
+    url: config.apiOrigin + '/sessions/' + store.currentSessionId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,

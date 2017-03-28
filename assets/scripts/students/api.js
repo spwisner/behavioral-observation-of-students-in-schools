@@ -17,7 +17,7 @@ const getStudents = function() {
 
 const showStudent = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("show-student-stud-id").value,
+    url: config.apiOrigin + '/students/' + store.currentStudentId,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -38,7 +38,7 @@ const createStudent = function(data) {
 
 const deleteStudent = function() {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("delete-student-stud-id").value,
+    url: config.apiOrigin + '/students/' + store.currentStudentId,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,
@@ -48,7 +48,7 @@ const deleteStudent = function() {
 
 const updateStudent = function(data) {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + document.getElementById("update-student-student-id").value,
+    url: config.apiOrigin + '/students/' + store.currentStudentId,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token,

@@ -8,8 +8,8 @@ const audio = require('./audio');
 
 // OBSERVATION EVENTS
 
-const onGetObservations = function(id) {
-  apiObservations.getObservations(id)
+const onGetObservations = function() {
+  apiObservations.getObservations()
     .done(uiObservations.getObservationSuccess)
     .fail(uiObservations.getObservationFailure);
 };
@@ -173,14 +173,14 @@ const updateFormGenerator = function(event) {
 
   store.lastFormHtml = $(".last-submission-container").html();
 
-  let dataId = $(this).attr("data-id");
-  let dataObsNum = $(this).attr("data-obs-num");
-  let dataAet = $(this).attr("data-aet");
-  let dataPet = $(this).attr("data-pet");
-  let dataOftM = $(this).attr("data-oft_m");
-  let dataOftV = $(this).attr("data-oft_v");
-  let dataOftP = $(this).attr("data-oft-p");
-  let dataComment = $(this).attr("data-obs-comment");
+  // let dataId = $(this).attr("data-id");
+  // let dataObsNum = $(this).attr("data-obs-num");
+  // let dataAet = $(this).attr("data-aet");
+  // let dataPet = $(this).attr("data-pet");
+  // let dataOftM = $(this).attr("data-oft_m");
+  // let dataOftV = $(this).attr("data-oft_v");
+  // let dataOftP = $(this).attr("data-oft-p");
+  // let dataComment = $(this).attr("data-obs-comment");
 
   let dataAetEditHtml = $('<input class="edit-input-aet" name="observation[aet]" placeholder="aet" type="checkbox">');
   let dataPetEditHtml = $('<input class="edit-input-pet" name="observation[pet]" placeholder="pet" type="checkbox">');

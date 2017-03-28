@@ -169,10 +169,10 @@
       <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals* <br>(between 1 and 60)</p>
-      <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals (1-60)" type="text" value="5">
+      <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals (1-60)" type="text">
       <br>
       <p class="field-description">Length of Each Interval (in seconds)* <br>(between 10 and 30)</p>
-      <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text" value="5">
+      <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text">
       <br><br>
       <p class="total-session-time">A session with <span class="number-of-intervals-entry"></span> intervals measured every <span class="length-of-intervals-entry"></span> seconds will take <span id="total-session-time-m"></span> minutes and <span id="total-session-time-s"></span> seconds to complete.</p>
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
@@ -272,8 +272,8 @@
       <div class="student-observered-container">
         <div class="student-interval">Student to Observe: <span id="student-observed"></span></div>
       </div>
-      <input name="observation[student_id]" id="create-observation-stud-id" type="hidden" value="1">
-      <input name="observation[session_id]" id="create-observation-session-id" type="hidden" value="1">
+      <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
+      <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
       <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
 
       <div class="clearfix"></div>

@@ -7,7 +7,7 @@ const store = require('../store');
 
 const getObservations = function(id) {
   return $.ajax({
-    url: config.apiOrigin + '/students/1' + '/sessions/' + id + '/observations',
+    url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/observations',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token,

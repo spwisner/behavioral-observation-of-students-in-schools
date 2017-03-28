@@ -28,15 +28,14 @@ const createSessionSuccess = (data) => {
   console.log('create session success');
   console.log(data);
   store.observationIdNum = 0;
-  $("#new-session-form").hide();
+  // $("#new-session-form").hide();
   $("#new-observation-form").show();
-  $("#create-observation-stud-id").attr("value", store.currentStudentId);
-  $("#create-observation-session-id").attr("value", store.currentSessionId);
   $("#interval-total").text(store.currentNumofIntervals);
   // $("#interval-count").text(store.currentObsNum);
   $("#student-observed").html('<span id="target-student">Target Student</span>');
 
   $(".current").attr("data-current-session-id", store.currentSessionId);
+  $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
 const createSessionFailure = (data) => {
