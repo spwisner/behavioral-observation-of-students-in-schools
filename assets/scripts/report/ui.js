@@ -23,6 +23,8 @@ const onGetObservationTableSuccess = (data) => {
   // console.log('get observation table success');
   chart.getColumnSums(data);
   $(".obs-summary-table").remove();
+  console.log("getdata");
+  console.log(data);
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });

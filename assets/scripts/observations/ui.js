@@ -41,7 +41,8 @@ const isDataSubmissionBlank = function(dataValue) {
 };
 
 const showObservationSuccess = (data) => {
-
+  data.observation.current_student_id = store.currentStudentId;
+  data.observation.current_session_id = store.currentSessionId;
   $('.last-submission-table').remove();
   let showLastSubmission = displayLastSubmit({
     observation: data.observation
