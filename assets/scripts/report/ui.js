@@ -21,7 +21,6 @@ const onGetChartDataFailure = (data) => {
 const onGetObservationTableSuccess = (data) => {
   // console.log('get observation table success');
   chart.getColumnSums(data);
-  reportLogic.statsTableCountPercent(data);
   $(".obs-summary-table").remove();
   let showObservations = displayObservationsTemplate({
     observations: data.observations
@@ -31,6 +30,7 @@ const onGetObservationTableSuccess = (data) => {
   });
   $('.display-observation-container').append(showObservations);
   $('.display-stats-table-container').append(showStatistics);
+  reportLogic.statsTableCountPercent(data);
 };
 
 const onGetObservationTableFailure = (data) => {

@@ -20,6 +20,21 @@ const calculateTablePercentage = function(arr, intervals) {
   return percentageArr;
 };
 
+const generateStatsTable = function(countArrTS, percentageArrTS, countArrRP, percentageArrRP) {
+
+  let aetCompleteArr = [countArrTS[0], percentageArrTS[0], countArrRP[0], percentageArrRP[0]];
+
+  let aetTr = $(".report-stats-aet-tr");
+  let petTr = $(".report-stats-pet-tr");
+  let oftmTr = $(".report-stats-oft-m-tr");
+  let oftvTr = $(".report-stats-oft-v-tr");
+  let oftpTr = $(".report-stats-oft-p-tr");
+
+  for ( let i = 0; i < aetCompleteArr.length; i++ ) {
+    $(".report-stats-aet-tr").children('td').eq(i+1).text(aetCompleteArr[i]);
+  }
+};
+
 const statsTableCountPercent = function(data) {
   // console.log("generateStatsTableData");
   // console.log(data);
@@ -109,10 +124,7 @@ const statsTableCountPercent = function(data) {
   let finalRPPercentArr = calculateTablePercentage(finalRPCountArr, totalRPIntervals);
   let finalTSPercentArr = calculateTablePercentage(finalTSCountArr, totalTSIntervals);
 
-  console.log("finalRPPercentArr");
-  console.log(finalRPPercentArr);
-  console.log("finalTSPercentArr");
-  console.log(finalTSPercentArr);
+  generateStatsTable(finalTSCountArr, finalTSPercentArr, finalRPCountArr, finalRPPercentArr);
 };
 
 module.exports = {
