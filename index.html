@@ -169,10 +169,10 @@
       <input name="session[obs_task]" placeholder="Session Task" type="text" value="testing">
       <br>
       <p class="field-description">Number of Intervals* <br>(between 1 and 60)</p>
-      <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals (1-60)" type="text">
+      <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals (1-60)" type="text" value="6">
       <br>
       <p class="field-description">Length of Each Interval (in seconds)* <br>(between 10 and 30)</p>
-      <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text">
+      <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text" value="6">
       <br><br>
       <p class="total-session-time">A session with <span class="number-of-intervals-entry"></span> intervals measured every <span class="length-of-intervals-entry"></span> seconds will take <span id="total-session-time-m"></span> minutes and <span id="total-session-time-s"></span>        seconds to complete.</p>
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
@@ -405,7 +405,7 @@
   </form>
 
   <div class="get-writeup-btn-container">
-    <input id="get-writeup-report-btn" class="current" type="button" value="Click to Generate Report" data-current-student-id="" data-current-session-id="">
+    <input id="get-writeup-report-btn" class="current" type="button" value="Click to Generate Writeup" data-current-student-id="" data-current-session-id="">
   </div>
 
   <div class="get-report-btn-container">
@@ -430,6 +430,10 @@
     <!-- <h2 class="display-observation-desc">Summary Table</h2> -->
   </div>
   <div class="display-stats-table-container">
+  </div>
+
+  <div class="report-writeup-container">
+
   </div>
   <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
   <form class="form observation-form" id="delete-observation-form" name="delete-observation-form">

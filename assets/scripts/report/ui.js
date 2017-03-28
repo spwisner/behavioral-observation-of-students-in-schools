@@ -2,18 +2,28 @@
 
 // const store = require('../store');
 const chart = require('./mychart');
+const store = require('../store');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 const displayReportStats = require('../templates/report-stats.handlebars');
 const displayReportStudent = require('../templates/report-student-summary.handlebars');
+const displayWriteupReport = require('../templates/report-writeup.handlebars');
 const reportLogic = require('./logic');
 
 // Report UI
 
 //Writeup
 
-const getWriteupSuccess = (data) => {
+const getWriteupSuccess = () => {
   console.log('create writeup successful');
+  let data = store.getWriteupObject;
   console.log(data);
+
+  // $('.report-writeup-table').remove();
+  let showWriteup = displayWriteupReport({
+    report: data.report
+  });
+  $('.report-writeup-container').append(showWriteup);
+
 };
 
 const getWriteupFailure = (data) => {

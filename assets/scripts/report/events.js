@@ -43,6 +43,10 @@ const onCreateWriteup = function(event) {
 const onGetWriteup = function(event) {
   event.preventDefault();
   apiReport.getWriteup()
+    .then((response) => {
+      // onGetObservations(store.currentSessionId);
+      store.getWriteupObject = response;
+    })
     .done(uiReport.getWriteupSuccess)
     .catch(uiReport.getWriteupFailure);
 };

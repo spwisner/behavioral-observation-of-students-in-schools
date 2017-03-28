@@ -64,6 +64,12 @@ $one-hundred-color: rgba(231,24,24,1);
   font-size: 12px;
 }
 
+.write-section-header {
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 // Hides submit button
 #submit-observation-btn {
   display: none;
