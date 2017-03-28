@@ -25,7 +25,18 @@ const getObservationTable = function(id) {
   });
 };
 
+const getStudentSummary = function() {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + document.getElementById("show-student-stud-id").value,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 module.exports = {
   getChartData,
-  getObservationTable
+  getObservationTable,
+  getStudentSummary,
 };

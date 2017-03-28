@@ -4,6 +4,7 @@
 const chart = require('./mychart');
 const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 const displayReportStats = require('../templates/report-stats.handlebars');
+const displayReportStudent = require('../templates/report-student-summary.handlebars');
 const reportLogic = require('./logic');
 
 // Report UI
@@ -38,10 +39,26 @@ const onGetObservationTableFailure = (data) => {
   console.log(data);
 };
 
+const showStudentSummarySuccess = (data) => {
+  console.log('show student success');
+  console.log(data);
+  let showStudentSummary = displayReportStudent({
+    student: data.student
+  });
+  $('.display-student-summary-container').append(showStudentSummary);
+};
+
+const showStudentSummaryFailure = (data) => {
+  console.log('show student failure');
+  console.log(data);
+};
+
 
 module.exports = {
   onGetChartDataSuccess,
   onGetChartDataFailure,
   onGetObservationTableSuccess,
   onGetObservationTableFailure,
+  showStudentSummarySuccess,
+  showStudentSummaryFailure,
 };
