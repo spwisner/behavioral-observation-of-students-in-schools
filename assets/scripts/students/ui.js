@@ -32,6 +32,9 @@ const showStudentCreateForm = () => {
 
 const getStudentSuccess = (data) => {
   console.log('get student dashboard success');
+  store.currentStudentId = 0;
+  store.currentSessionId = 0;
+
   // $(".student-summary-table").remove();
   $(".content").children().remove();
   let studentDashboard = displayStudentDashboard({
@@ -107,6 +110,16 @@ const deleteStudentFailure = (data) => {
 const updateStudentSuccess = (data) => {
   console.log('update student success');
   console.log(data);
+  store.currentStudentId = data.student.id;
+  console.log('stude id');
+  console.log(store.currentStudentId);
+  $(".content").children().remove();
+  let studentDetails = displayStudentDetails({
+    student: data.student
+  });
+  // $('.student-details-container').append(studentDetails);
+  $('.content').append(studentDetails);
+
 };
 
 const updateStudentFailure = (data) => {

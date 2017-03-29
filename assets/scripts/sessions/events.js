@@ -80,6 +80,12 @@ const totalTimeCalculator = function() {
   totalTime(numberOfIntervalsEntry, intervalLengthEntry);
 };
 
+const onGenerateCreateForm = function(event) {
+  event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  sessionsUi.generateCreateForm();
+};
+
 const addHandlers = () => {
   $('#delete-session-form').on('submit', onDeleteSession);
   $('#get-sessions-form').on('submit', onGetSessions);
@@ -88,6 +94,9 @@ const addHandlers = () => {
   $('#update-session-form').on('submit', onUpdateSession);
   $('#interval-number-entry').on('keyup', totalTimeCalculator);
   $('#interval-length-entry').on('keyup', totalTimeCalculator);
+  $('.content').on('click', '#student-record-create-session', onGenerateCreateForm);
+  $('.content').on('submit', '#new-session-form', onCreateSession);
+
 };
 
 module.exports = {

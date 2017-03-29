@@ -208,6 +208,12 @@ const cancelUpdateLastSubmission = function(event) {
   $(".last-submission-container").empty().append(store.lastFormHtml);
 };
 
+const onGenerateObsTable = function(event) {
+  event.preventDefault();
+  alert();
+  uiObservations.generateObservationForm();
+};
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -222,6 +228,7 @@ const addHandlers = () => {
   $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
   $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
   $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
+  $('.content').on('click', '#obs-landing-begin-observation', onGenerateObsTable);
 };
 
 module.exports = {

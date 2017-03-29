@@ -1,6 +1,8 @@
 'use strict';
 
 const store = require('../store');
+const displaySessionCreateForm = require('../templates/session/new-session-form.handlebars');
+const displayObservationLandingPage = require('../templates/observation/obs-landing.handlebars');
 
 // Session UI
 
@@ -24,18 +26,45 @@ const showSessionFailure = (data) => {
   console.log(data);
 };
 
-const createSessionSuccess = (data) => {
-  console.log('create session success');
-  console.log(data);
-  store.observationIdNum = 0;
-  // $("#new-session-form").hide();
-  $("#new-observation-form").show();
-  $("#interval-total").text(store.currentNumofIntervals);
-  // $(".interval-count").text(store.currentObsNum);
-  $("#student-observed").html('<span id="target-student">Target Student</span>');
+const generateCreateForm = () => {
+  $(".content").children().remove();
+  let showCreateForm = displaySessionCreateForm();
+  $('.content').append(showCreateForm);
+  $("#create-session-btn").attr("data-current-student-id", store.currentStudentId);
+};
 
+const createLandingPage = function() {
+  $(".content").children().remove();
+  console.log('landing-page success');
+  let landingPage = displayObservationLandingPage();
+  $('.content').append(landingPage);
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
+};
+
+// const beginObservations = (data) => {
+//   console.log(data);
+//   store.observationIdNum = 0;
+//   $("#new-observation-form").show();
+//   $("#interval-total").text(store.currentNumofIntervals);
+//   $("#student-observed").html('<span id="target-student">Target Student</span>');
+//   $(".current").attr("data-current-session-id", store.currentSessionId);
+//   $(".current").attr("data-current-student-id", store.currentStudentId);
+// }
+
+const createSessionSuccess = () => {
+  console.log('create session success');
+  createLandingPage();
+
+  // store.observationIdNum = 0;
+  // $("#new-session-form").hide();
+  // $("#new-observation-form").show();
+  // $("#interval-total").text(store.currentNumofIntervals);
+  // // $(".interval-count").text(store.currentObsNum);
+  // $("#student-observed").html('<span id="target-student">Target Student</span>');
+  //
+  // $(".current").attr("data-current-session-id", store.currentSessionId);
+  // $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
 const createSessionFailure = (data) => {
@@ -74,4 +103,5 @@ module.exports = {
   updateSessionFailure,
   deleteSessionSuccess,
   deleteSessionFailure,
+  generateCreateForm,
 };

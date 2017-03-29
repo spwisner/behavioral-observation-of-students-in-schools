@@ -54,14 +54,14 @@ const onGetWriteup = function(event) {
     .done(uiReport.getWriteupSuccess)
     .catch(uiReport.getWriteupFailure);
 };
-
-const onTestTwo = function() {
-  $("#create-session-btn").click();
-};
-
-const onTest = function() {
-  $("#testing-sign").click();
-};
+//
+// const onTestTwo = function() {
+//   $("#create-session-btn").click();
+// };
+//
+// const onTest = function() {
+//   $("#testing-sign").click();
+// };
 
 const onEditWriteup = function(event) {
   event.preventDefault();
@@ -160,8 +160,8 @@ const addHandlers = () => {
   $('.get-report-btn-container').on('click', '#get-report-btn', onGenerateReport);
   $('#report-writeup-form').on('submit', onCreateWriteup);
   $('.edit-report-writeup-container').on('submit', '#report-edit-writeup-form', onSubmitEdit);
-  $("#testing-btn").on("click", onTest);
-  $("#testing-btn-two").on("click", onTestTwo);
+  // $("#testing-btn").on("click", onTest);
+  // $("#testing-btn-two").on("click", onTestTwo);
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
 

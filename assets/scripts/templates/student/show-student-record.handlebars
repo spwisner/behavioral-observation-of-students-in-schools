@@ -37,18 +37,25 @@
           {{student.grade}}
         </td>
       </tr>
-      <tr>
-        <td class="student-record-btn">
-          <input id="student-record-btn-edit" type="button" value="Edit Student" data-current-student-id="{{student.id}}">
-        </td>
-        <td class="student-record-btn">
-          <input id="student-record-view-sessions" type="button" value="View Sessions" data-current-student-id="{{student.id}}">
-        </td>
-      </tr>
   </tbody>
 </table>
 
+<div class="dashboard-student-btn-container">
+  <div class="student-record-btn">
+    <input id="student-record-btn-edit" type="button" value="Edit Student" data-current-student-id="{{student.id}}">
+  </div>
+  <div class="student-record-btn">
+    <input id="student-record-view-sessions" type="button" value="View Sessions" data-current-student-id="{{student.id}}">
+  </div>
+  <div class="student-record-btn">
+    <input id="student-record-delete" type="button" value="Delete Student" data-current-student-id="{{student.id}}">
+  </div>
+  <div class="student-record-btn">
+    <input id="student-record-create-session" type="button" value="Create Session" data-current-student-id="{{student.id}}">
+  </div>
+</div>
+
 <div class="dashboard-container">
-  <input id="dashboard-home-btn" type="button" value="Dashboard Home">
-  <input id="dashboard-new-session-btn" type="button" value="Create Session">
+  <input id="dashboard-home-btn" type="button" value="View Records">
+  <!-- <input id="dashboard-new-session-btn" type="button" value="Create Record"> -->
 </div>

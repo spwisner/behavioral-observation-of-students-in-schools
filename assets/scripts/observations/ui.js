@@ -8,6 +8,7 @@ const displayLastSubmit = require('../templates/observation/last-submission.hand
 const store = require('../store');
 const chart = require('../report/mychart');
 const apiObservations = require('./api');
+const displayObsForm = require('../templates/observation/new-obs-form.handlebars');
 // Observation UI
 
 const getObservationSuccess = (data) => {
@@ -136,6 +137,18 @@ const updateObservationFailure = (data) => {
   console.log(data);
 };
 
+const generateObservationForm = () => {
+  $(".content").children().remove();
+  let generateObsForm = displayObsForm();
+  $(".content").append(generateObsForm);
+  store.observationIdNum = 0;
+  $("#new-observation-form").show();
+  $("#interval-total").text(store.currentNumofIntervals);
+  $("#student-observed").html('<span id="target-student">Target Student</span>');
+  $(".current").attr("data-current-session-id", store.currentSessionId);
+  $(".current").attr("data-current-student-id", store.currentStudentId);
+};
+
 module.exports = {
   createObservationFailure,
   getObservationSuccess,
@@ -152,4 +165,5 @@ module.exports = {
   createObservationSuccess,
   getLastObservationSuccess,
   getLastObservationFailure,
+  generateObservationForm,
 };
