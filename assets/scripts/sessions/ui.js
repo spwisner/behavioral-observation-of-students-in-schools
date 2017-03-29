@@ -30,7 +30,8 @@ const generateCreateForm = () => {
   $(".content").children().remove();
   let showCreateForm = displaySessionCreateForm();
   $('.content').append(showCreateForm);
-  $("#create-session-btn").attr("data-current-student-id", store.currentStudentId);
+  $(".current").attr("data-current-session-id", store.currentSessionId);
+  $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
 const createLandingPage = function() {

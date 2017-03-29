@@ -210,21 +210,22 @@ const cancelUpdateLastSubmission = function(event) {
 
 const onGenerateObsTable = function(event) {
   event.preventDefault();
-  alert();
   uiObservations.generateObservationForm();
 };
 
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
-  $('#new-observation-form').on('submit', onCreateObservation);
+  // $('#new-observation-form').on('submit', onCreateObservation);
   $('#delete-observation-form').on('submit', onDeleteObservation);
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
-  $('#begin-session-btn').on('click', observationTimer);
+  $('.content').on('click', '#begin-session-btn', observationTimer);
+  // $('#begin-session-btn').on('click', observationTimer);
   // $('#cancel-session-btn').on('click', cancelObservationTimer);
   // $('#test-button-submit').on('click', testButton);
   // $(".edit-last-submission").on('click', updateFormGenerator);
+  $('.content').on('submit', '#new-observation-form', onCreateObservation);
   $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
   $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
   $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
