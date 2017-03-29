@@ -8,11 +8,13 @@ const displayStudentDetails = require('../templates/student/show-student-record.
 // Student UI
 
 const viewStudentRecordSuccess = (data) => {
-  $(".student-record-table").remove();
+  $(".content").children().remove();
+  // $(".student-record-table").remove();
   let studentDetails = displayStudentDetails({
     student: data.student
   });
-  $('.student-details-container').append(studentDetails);
+  // $('.student-details-container').append(studentDetails);
+  $('.content').append(studentDetails);
 };
 
 const viewStudentRecordFailure = (data) => {
@@ -21,21 +23,23 @@ const viewStudentRecordFailure = (data) => {
 
 const getStudentSuccess = (data) => {
   console.log('get student dashboard success');
-  $(".student-summary-table").remove();
+  // $(".student-summary-table").remove();
+  $(".content").children().remove();
   let studentDashboard = displayStudentDashboard({
     students: data.students
   });
-  $('.student-dashboard-container').append(studentDashboard);
+  // $('.student-dashboard-container').append(studentDashboard);
+  $('.content').append(studentDashboard);
 };
 
 const editStudentSuccess = (data) => {
+  $(".content").children().remove();
   console.log('edit student success');
   console.log(data);
-  $("#update-student-form").remove();
   let editStudent = displayEditStudent({
     student: data.student
   });
-  $('.update-student-container').append(editStudent);
+  $('.content').append(editStudent);
 };
 
 const editStudentFailure = (data) => {
