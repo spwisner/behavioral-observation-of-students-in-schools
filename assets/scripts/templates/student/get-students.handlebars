@@ -1,0 +1,44 @@
+<table class="table student-summary-table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>DOB</th>
+      <th>School</th>
+      <th>Teacher</th>
+      <th>Grade</th>
+      <th>Update Student</th>
+      <th>View Sessions/Reports</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each students as |student|}}
+      <tr>
+        <td class="display-student-fn">
+          {{student.first_name}}
+        </td>
+        <td class="display-student-ln">
+          {{student.last_name}}
+        </td>
+        <td class="display-student-dob">
+          {{student.born_on}}
+        </td>
+        <td class="display-student-school">
+          {{student.school}}
+        </td>
+        <td class="display-student-teacher">
+          {{student.teacher}}
+        </td>
+        <td class="display-student-grade">
+          {{student.grade}}
+        </td>
+        <td class="display-obs-obs-comment">
+          <input class="update-student-btn" type="button" value="Click to Update Student" data-current-student-id="{{student.id}}">
+        </td>
+        <td class="display-obs-obs-comment">
+          <input class="view-sessions-btn" type="button" value="View Sessions/Reports" data-current-student-id="{{student.id}}">
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -2,11 +2,16 @@
 
 const store = require('../store');
 const displayEditStudent = require('../templates/student/edit-student.handlebars');
+const displayStudentDashboard = require('../templates/student/get-students.handlebars');
 
 // Student UI
 const getStudentSuccess = (data) => {
-  console.log('get student success');
-  console.log(data);
+  console.log('get student dashboard success');
+  $(".student-summary-table").remove();
+  let studentDashboard = displayStudentDashboard({
+    students: data.students
+  });
+  $('.student-dashboard-container').append(studentDashboard);
 };
 
 const editStudentSuccess = (data) => {

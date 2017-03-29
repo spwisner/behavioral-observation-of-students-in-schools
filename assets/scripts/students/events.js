@@ -57,7 +57,7 @@ const onUpdateStudent = function(event) {
 };
 
 const addHandlers = () => {
-  $('#get-students-form').on('submit', onGetStudents);
+  $('#dashboard-home-btn').on('click', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
   $('#new-student-form').on('submit', onCreateStudent);
   $('#delete-student-form').on('submit', onDeleteStudent);
