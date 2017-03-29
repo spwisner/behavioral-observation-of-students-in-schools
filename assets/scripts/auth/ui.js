@@ -1,6 +1,6 @@
 'use strict';
 
-const displayDashboard = require('../templates/dashboard/dashboard.handlebars');
+const displayDashboard = require('../templates/dashboard/dashboard-home.handlebars');
 
 const success = (data) => {
   console.log('success completed');
@@ -16,7 +16,7 @@ const signInSuccess = function() {
 
   $(".content").children().remove();
   // $(".student-record-table").remove();
-  let dashboardHome = displayDashboard({});
+  let dashboardHome = displayDashboard();
   // $('.student-details-container').append(studentDetails);
   $('.content').append(dashboardHome);
 
@@ -25,8 +25,8 @@ const signInSuccess = function() {
   $("#sign-out").show();
   console.log('sign-in success');
   // testing
-  $("#testing-create-session").click();
-  $("#create-student-btn").click();
+  // $("#testing-create-session").click();
+  // $("#create-student-btn").click();
 };
 
 module.exports = {

@@ -66,16 +66,22 @@ const onUpdateStudent = function(event) {
     .fail(uiStudents.updateStudentFailure);
 };
 
+const onShowStudentCreateForm = function(event) {
+  event.preventDefault();
+  uiStudents.showStudentCreateForm();
+};
+
 const addHandlers = () => {
   // $('#dashboard-home-btn').on('click', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
-  $('#new-student-form').on('submit', onCreateStudent);
+  // $('#new-student-form').on('submit', onCreateStudent);
+  $('.content').on('submit', '#new-student-form', onCreateStudent);
   $('#delete-student-form').on('submit', onDeleteStudent);
   $('#update-student-form').on('submit', onUpdateStudent);
   $('#update-student-btn').on('click', onEditStudent);
   $('.content').on('submit', '#update-student-form', onUpdateStudent);
   $('.content').on('click', '#student-record-btn-edit', onEditStudent);
-
+  $('.content').on('click', '#new-session-new-student', onShowStudentCreateForm);
   // $('.student-dashboard-container').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '#dashboard-home-btn', onGetStudents);

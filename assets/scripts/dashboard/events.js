@@ -11,7 +11,7 @@ const displayNewSessionDash = require('../templates/session/new-session-home.han
 const onShowCreateDash = function() {
   $(".content").children().remove();
   // $(".student-record-table").remove();
-  let showCreateDashHome = displayNewSessionDash({});
+  let showCreateDashHome = displayNewSessionDash();
   // $('.student-details-container').append(studentDetails);
   $('.content').append(showCreateDashHome);
 }
