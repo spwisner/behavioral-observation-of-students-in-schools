@@ -1,0 +1,24 @@
+<form class="form student-form" id="update-student-form" name="update-student-form">
+  <fieldset>
+    <legend>Update Student Form</legend>
+    <p class="field-description">First Name</p>
+    <input name="student[first_name]" placeholder="First Name" type="text" value={{student.first_name}}>
+    <br>
+    <p class="field-description">Last Name</p>
+    <input name="student[last_name]" placeholder="Last Name" type="text" value="{{student.last_name}}">
+    <br>
+    <p class="field-description">Date of Birth (optional)</p>
+    <input name="student[born_on]" placeholder="Date of Birth" type="date" value="{{student.born_on}}">
+    <br>
+    <p class="field-description">School (optional)</p>
+    <input name="student[school]" placeholder="School" type="text" value="{{student.school}}">
+    <br>
+    <p class="field-description">Teacher (optional)</p>
+    <input name="student[teacher]" placeholder="Teacher" type="text" value="{{student.teacher}}">
+    <br>
+    <p class="field-description">Grade</p>
+    <input name="student[grade]" placeholder="Grade" type="text" value="{{student.grade}}">
+    <br>
+    <input name="submit" id="submit-student-update-btn" type="submit" value="Submit Update">
+  </fieldset>
+</form>

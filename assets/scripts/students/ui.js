@@ -1,10 +1,26 @@
 'use strict';
 
 const store = require('../store');
+const displayEditStudent = require('../templates/student/edit-student.handlebars');
 
 // Student UI
 const getStudentSuccess = (data) => {
   console.log('get student success');
+  console.log(data);
+};
+
+const editStudentSuccess = (data) => {
+  console.log('edit student success');
+  console.log(data);
+  $("#update-student-form").remove();
+  let editStudent = displayEditStudent({
+    student: data.student
+  });
+  $('.update-student-container').append(editStudent);
+};
+
+const editStudentFailure = (data) => {
+  console.log('edit student failure');
   console.log(data);
 };
 
@@ -68,4 +84,6 @@ module.exports = {
   updateStudentFailure,
   deleteStudentSuccess,
   deleteStudentFailure,
+  editStudentSuccess,
+  editStudentFailure,
 };

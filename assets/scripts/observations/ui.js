@@ -3,8 +3,8 @@
 // const store = require('../store');
 // const eventsObservations = require('./events');
 // const apiObservations = require('./api');
-const displayObservationsTemplate = require('../templates/get-obs.handlebars');
-const displayLastSubmit = require('../templates/last-submission.handlebars');
+// const displayObservationsTemplate = require('../templates/get-obs.handlebars');
+const displayLastSubmit = require('../templates/observation/last-submission.handlebars');
 const store = require('../store');
 const chart = require('../report/mychart');
 const apiObservations = require('./api');

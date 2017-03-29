@@ -21,6 +21,13 @@ const onShowStudent = function(event) {
     .fail(uiStudents.showStudentFailure);
 };
 
+const onEditStudent = function(event) {
+  event.preventDefault();
+  apiStudents.showStudent()
+    .done(uiStudents.editStudentSuccess)
+    .fail(uiStudents.edithStudentFailure);
+};
+
 const onCreateStudent = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
@@ -55,6 +62,8 @@ const addHandlers = () => {
   $('#new-student-form').on('submit', onCreateStudent);
   $('#delete-student-form').on('submit', onDeleteStudent);
   $('#update-student-form').on('submit', onUpdateStudent);
+  $('#update-student-btn').on('click', onEditStudent);
+  $('.update-student-container').on('submit', '#update-student-form', onUpdateStudent);
 };
 
 module.exports = {

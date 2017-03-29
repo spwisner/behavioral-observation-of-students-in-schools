@@ -3,11 +3,11 @@
 // const store = require('../store');
 const chart = require('./mychart');
 const store = require('../store');
-const displayObservationsTemplate = require('../templates/get-obs.handlebars');
-const displayReportStats = require('../templates/report-stats.handlebars');
-const displayReportStudent = require('../templates/report-student-summary.handlebars');
-const displayWriteupReport = require('../templates/report-writeup.handlebars');
-const displayEditWriteupReport = require('../templates/report-edit-writeup.handlebars');
+const displayObservationsTemplate = require('../templates/observation/get-obs.handlebars');
+const displayReportStats = require('../templates/report/report-stats.handlebars');
+const displayReportStudent = require('../templates/report/report-student-summary.handlebars');
+const displayWriteupReport = require('../templates/report/report-writeup.handlebars');
+const displayEditWriteupReport = require('../templates/report/report-edit-writeup.handlebars');
 const reportLogic = require('./logic');
 
 // Report UI
