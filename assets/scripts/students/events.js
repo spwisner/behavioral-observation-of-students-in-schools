@@ -21,6 +21,16 @@ const onShowStudent = function(event) {
     .fail(uiStudents.showStudentFailure);
 };
 
+
+const onViewStudentRecord = function(event) {
+  event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  alert(store.currentStudentId);
+  apiStudents.showStudent()
+    .done(uiStudents.viewStudentRecordSuccess)
+    .fail(uiStudents.viewStudentRecordFailure);
+};
+
 const onEditStudent = function(event) {
   event.preventDefault();
   apiStudents.showStudent()
@@ -64,6 +74,7 @@ const addHandlers = () => {
   $('#update-student-form').on('submit', onUpdateStudent);
   $('#update-student-btn').on('click', onEditStudent);
   $('.update-student-container').on('submit', '#update-student-form', onUpdateStudent);
+  $('.student-dashboard-container').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
 };
 
 module.exports = {

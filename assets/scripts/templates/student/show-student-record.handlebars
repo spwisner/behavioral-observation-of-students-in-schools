@@ -1,0 +1,49 @@
+<table class="table student-record-table table-hover">
+  <thead>
+    <tr>
+      <th colspan="2">{{student.first_name}} {{student.last_name}}</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td class="student-record-title student-record-dob">
+          Date of Birth:
+        </td>
+        <td class="display-student-dob">
+          {{student.born_on}}
+        </td>
+      </tr>
+      <tr>
+        <td class="student-record-title student-record-school">
+          School:
+        </td>
+        <td class="display-student-school">
+          {{student.school}}
+        </td>
+      </tr>
+      <tr>
+        <td class="student-record-title student-record-teacher">
+          Teacher:
+        </td>
+        <td class="display-student-teacher">
+          {{student.teacher}}
+        </td>
+      </tr>
+      <tr>
+        <td class="student-record-title student-record-grade">
+          Grade:
+        </td>
+        <td class="display-student-grade">
+          {{student.grade}}
+        </td>
+      </tr>
+      <tr>
+        <td class="student-record-btn">
+          <input id="student-record-btn-edit" type="button" value="Edit Student" data-current-student-id="{{student.id}}">
+        </td>
+        <td class="student-record-btn">
+          <input id="student-record-view-sessions" type="button" value="View Sessions" data-current-student-id="{{student.id}}">
+        </td>
+      </tr>
+  </tbody>
+</table>

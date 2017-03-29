@@ -7,8 +7,8 @@
       <th>School</th>
       <th>Teacher</th>
       <th>Grade</th>
-      <th>Update Student</th>
-      <th>View Sessions/Reports</th>
+      <th>View Record</th>
+      <!-- <th>View Sessions/Reports</th> -->
     </tr>
   </thead>
   <tbody>
@@ -33,11 +33,11 @@
           {{student.grade}}
         </td>
         <td class="display-obs-obs-comment">
-          <input class="update-student-btn" type="button" value="Click to Update Student" data-current-student-id="{{student.id}}">
+          <input class="dashboard-student-record-btn" type="button" value="View Record" data-current-student-id="{{student.id}}">
         </td>
-        <td class="display-obs-obs-comment">
-          <input class="view-sessions-btn" type="button" value="View Sessions/Reports" data-current-student-id="{{student.id}}">
-        </td>
+        <!-- <td class="display-obs-obs-comment">
+          <input class="dashboard-new-sessions-btn" type="button" value="Create New Session" data-current-student-id="{{student.id}}">
+        </td> -->
       </tr>
     {{/each}}
   </tbody>

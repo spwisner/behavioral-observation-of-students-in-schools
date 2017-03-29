@@ -3,8 +3,22 @@
 const store = require('../store');
 const displayEditStudent = require('../templates/student/edit-student.handlebars');
 const displayStudentDashboard = require('../templates/student/get-students.handlebars');
+const displayStudentDetails = require('../templates/student/show-student-record.handlebars');
 
 // Student UI
+
+const viewStudentRecordSuccess = (data) => {
+  $(".student-record-table").remove();
+  let studentDetails = displayStudentDetails({
+    student: data.student
+  });
+  $('.student-details-container').append(studentDetails);
+};
+
+const viewStudentRecordFailure = (data) => {
+  console.log("view student record failure");
+}
+
 const getStudentSuccess = (data) => {
   console.log('get student dashboard success');
   $(".student-summary-table").remove();
@@ -91,4 +105,6 @@ module.exports = {
   deleteStudentFailure,
   editStudentSuccess,
   editStudentFailure,
+  viewStudentRecordSuccess,
+  viewStudentRecordFailure,
 };
