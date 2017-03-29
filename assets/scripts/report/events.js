@@ -61,10 +61,17 @@ const onTest = function() {
 
 const onSubmitEdit = function() {
   let finalArray = store.finalEditWriteupArray;
-  console.log(finalArray);
   let textAreaInput = $(this).parent().children(".revised-textarea-writeup").val();
-  alert(textAreaInput);
-  apiReport.updateWriteup(finalArray[0], textAreaInput, finalArray[2], finalArray[3], finalArray[4], finalArray[5], finalArray[6], finalArray[7], finalArray[8], finalArray[9], finalArray[10], finalArray[11], finalArray[12], finalArray[13], finalArray[14], finalArray[15], finalArray[16], finalArray[17])
+  let textValue = store.currentWriteupEditText;
+
+  for (let i = 0; i < finalArray.length; i++) {
+    console.log(finalArray[i]);
+    if (textValue === finalArray[i]) {
+      finalArray[i] = textAreaInput;
+      alert();
+    }
+  }
+  apiReport.updateWriteup(finalArray[0], finalArray[1], finalArray[2], finalArray[3], finalArray[4], finalArray[5], finalArray[6], finalArray[7], finalArray[8], finalArray[9], finalArray[10], finalArray[11], finalArray[12], finalArray[13], finalArray[14], finalArray[15], finalArray[16], finalArray[17])
     .then((response) => {
       // onGetObservations(store.currentSessionId);
       console.log(response);
@@ -75,6 +82,8 @@ const onSubmitEdit = function() {
 
 const onEditWriteup = function(event) {
   event.preventDefault();
+
+  store.currentWriteupEditText = $(this).parent().children(".write-up-section-text").text();
   let id = $(this).attr("data-id");
   let pi = $(this).attr("data-presenting-issue");
   let cba = $(this).attr("data-class-behav-assess");
@@ -94,16 +103,27 @@ const onEditWriteup = function(event) {
   let cfttwo = $(this).attr("data-custom-two-title");
   let cftthree = $(this).attr("data-custom-three-title");
 
-  let textValue = $(this).parent().children(".write-up-section-text").text();
   let textAreaHtml = $('<textarea class="revised-textarea-writeup field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>');
   let submitEditBtnHtml = $('<input class="submit-edit-btn current" name="submit" type="submit" value="Submit Edit">');
+  $(this).parent().append(textAreaHtml);
+  $(this).parent().append(submitEditBtnHtml);
 
-  if (textValue === pi) {
-    $(this).parent().append(textAreaHtml);
-    $(this).parent().append(submitEditBtnHtml);
-  }
+  // let textValue = $(this).parent().children(".write-up-section-text").text();
+  // let textAreaHtml = $('<textarea class="revised-textarea-writeup field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>');
+  // let submitEditBtnHtml = $('<input class="submit-edit-btn current" name="submit" type="submit" value="Submit Edit">');
+  //
+  // let tempAttributeArray = [id, pi, cba, ss, aet, pet, oftm, oftv, oftp, find, cfone, cftwo, cfthree, rec, cn, cftone, cfttwo, cftthree];
+  //
+  // for (let i = 0; i < tempAttributeArray; i++) {
+  //   if (textValue === tempAttributeArray[i]) {
+  //     tempAttributeArray[i] = null;
+  //     $(this).parent().append(textAreaHtml);
+  //     $(this).parent().append(submitEditBtnHtml);
+  //   }
+  // }
 
   store.finalEditWriteupArray = [id, pi, cba, ss, aet, pet, oftm, oftv, oftp, find, cfone, cftwo, cfthree, rec, cn, cftone, cfttwo, cftthree];
+  console.log(store.finalEditWriteupArray);
 };
 
 
