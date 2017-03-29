@@ -36,6 +36,17 @@ const updateWriteup = function(id, pi, cba, ss, aet, pet, oftm, oftv, oftp, find
   });
 };
 
+const submitEditWriteup = function(data) {
+  return $.ajax({
+    url: config.apiOrigin + '/reports/' + store.currentReportId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data,
+  });
+}
+
 const createWriteup = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/reports',
@@ -95,4 +106,5 @@ module.exports = {
   createWriteup,
   getWriteup,
   updateWriteup,
+  submitEditWriteup,
 };

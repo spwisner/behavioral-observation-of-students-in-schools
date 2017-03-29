@@ -7,19 +7,39 @@ const displayObservationsTemplate = require('../templates/get-obs.handlebars');
 const displayReportStats = require('../templates/report-stats.handlebars');
 const displayReportStudent = require('../templates/report-student-summary.handlebars');
 const displayWriteupReport = require('../templates/report-writeup.handlebars');
+const displayEditWriteupReport = require('../templates/report-edit-writeup.handlebars');
 const reportLogic = require('./logic');
 
 // Report UI
 
-//Writeup
+const editWriteupSubmitSuccess = () => {
+  console.log('submit edit writeup successful');
+
+  // $('.report-writeup-table').remove();
+};
+
+const editWriteupSubmitFailure = () => {
+  console.log('submit edit writeup failure');
+};
+
 
 const editWriteupSuccess = () => {
   console.log('edit writeup successful');
+  let data = store.editWriteupObject;
+  console.log(data);
+
+  // $('.report-writeup-table').remove();
+  let editWriteup = displayEditWriteupReport({
+    report: data.report
+  });
+  $('.edit-report-writeup-container').append(editWriteup);
+
 };
 
 const editWriteupFailure = () => {
   console.log('edit writeup failure');
 };
+//Writeup
 
 const getWriteupSuccess = () => {
   console.log('create writeup successful');
@@ -111,4 +131,6 @@ module.exports = {
   getWriteupFailure,
   editWriteupSuccess,
   editWriteupFailure,
+  editWriteupSubmitSuccess,
+  editWriteupSubmitFailure,
 };
