@@ -1,47 +1,78 @@
 <div class="report-writeup-table">
 
-  <p class="write-section-header"></p>
+  <div class="writeup-printer-friendly-container">
+    <input id="writeup-printer-friendly-btn" class="current" type="button" value="Printer Frindely" data-current-student-id="" data-current-session-id="">
+  </div>
+
+  <div class="writeup-presenting-issue-container">
+    <p class="write-section-header">Presenting Issues</p>
+    <p class="write-up-section-text">{{report.presenting_issue}}</p>
+    <button class="writeup-btn" data-id="{{report.id}}" data-presenting-issue="{{report.presenting_issue}}" data-class-behav-assess="{{report.class_behav_assess}}" data-r-setting="{{report.r_setting}}" data-r-aet="{{report.r_aet}}" data-r-pet="{{report.r_pet}}" data-r-oftm="{{report.r_oftm}}" data-r-oftv="{{report.r_oftv}}" data-r-oftp="{{report.r_oftp}}" data-r-finding="{{report.r_finding}}" data-custom-one-title="{{report.custom_one_title}}" data-r-customone="{{report.r_customone}}" data-custom-two-title="{{report.custom_two_title}}" data-r-customtwo="{{report.r_customtwo}}" data-custom-three-title="{{report.custom_three_title}}" data-r-customthree="{{report.r_customthree}}" data-r-recommendation="{{report.r_recommendation}}" data-counselor-name="{{report.counselor_name}}" data-current-student-id="{{report.student_id}}">Edit</button>
+  </div>
   <br>
-  <p class="write-section-header">Presenting Issues</p>
-  <p class="write-up-section-text">{{report.presenting_issue}}</p>
+  <div class="writeup-classroom-behavior-assessment-container">
+    <p class="write-section-header">Classroom Behavior Assessment</p>
+    <p class="write-up-section-text">{{report.class_behav_assess}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Classroom Behavior Assessment</p>
-  <p class="write-up-section-text">{{report.class_behav_assess}}</p>
+  <div class="writeup-setting-container">
+    <p class="write-section-header">Setting</p>
+    <p class="write-up-section-text">{{report.r_setting}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Setting</p>
-  <p class="write-up-section-text">{{report.r_setting}}</p>
+  <div class="writeup-aet-container">
+    <p class="write-section-header">Active Engaged Time</p>
+    <p class="write-up-section-text">{{report.r_aet}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Active Engaged Time</p>
-  <p class="write-up-section-text">{{report.r_aet}}</p>
+  <div class="writeup-pet-container">
+    <p class="write-section-header">Passive Engaged Time</p>
+    <p class="write-up-section-text">{{report.r_pet}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Passive Engaged Time</p>
-  <p class="write-up-section-text">{{report.r_pet}}</p>
+  <div class="writeup-oftm-container">
+    <p class="write-section-header">Off-Task Motor Behavior</p>
+    <p class="write-up-section-text">{{report.r_oftm}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Off-Task Motor Behavior</p>
-  <p class="write-up-section-text">{{report.r_oftm}}</p>
+  <div class="writeup-oftv-container">
+    <p class="write-section-header">Off-Task Verbal Behavior</p>
+    <p class="write-up-section-text">{{report.r_oftv}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Off-Task Verbal Behavior</p>
-  <p class="write-up-section-text">{{report.r_oftv}}</p>
+  <div class="writeup-oftp-container">
+    <p class="write-section-header">Off-Task Passive Behavior</p>
+    <p class="write-up-section-text">{{report.r_oftp}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Off-Task Passive Behavior</p>
-  <p class="write-up-section-text">{{report.r_oftp}}</p>
+  <div class="writeup-findings-container">
+    <p class="write-section-header">Findings</p>
+    <p class="write-up-section-text">{{report.r_finding}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Findings</p>
-  <p class="write-up-section-text">{{report.r_finding}}</p>
+  <div class="writeup-custom-one-container">
+    <p class="write-section-header">{{report.custom_one_title}}</p>
+    <p class="write-up-section-text">{{report.r_customone}}</p>
+  </div>
   <br>
-  <p class="write-section-header">{{report.custom_one_title}}</p>
-  <p class="write-up-section-text">{{report.r_customone}}</p>
+  <div class="writeup-custom-two-container">
+    <p class="write-section-header">{{report.custom_two_title}}</p>
+    <p class="write-up-section-text">{{report.r_customtwo}}</p>
+  </div>
   <br>
-  <p class="write-section-header">{{report.custom_two_title}}</p>
-  <p class="write-up-section-text">{{report.r_customtwo}}</p>
+  <div class="writeup-custom-three-container">
+    <p class="write-section-header">{{report.custom_three_title}}</p>
+    <p class="write-up-section-text">{{report.r_customthree}}</p>
+  </div>
   <br>
-  <p class="write-section-header">{{report.custom_three_title}}</p>
-  <p class="write-up-section-text">{{report.r_customthree}}</p>
+  <div class="writeup-recommendations-container">
+    <p class="write-section-header">Recommendations</p>
+    <p class="write-up-section-text">{{report.r_recommendation}}</p>
+  </div>
   <br>
-  <p class="write-section-header">Recommendations</p>
-  <p class="write-up-section-text">{{report.r_recommendation}}</p>
   <br>
-  <br>
-  <p class="write-up-section-text">{{report.counselor_name}}</p>
+  <div class="writeup-counselor-name-container">
+    <p class="write-up-section-text">{{report.counselor_name}}</p>
+  </div>
 
 </div>

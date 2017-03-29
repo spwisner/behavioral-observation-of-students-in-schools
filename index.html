@@ -34,7 +34,7 @@
       <input name="credentials[password]" placeholder="password" type="password" value="z">
       <br>
       <input id="test-sign-in" name="submit" type="submit" value="Sign in!">
-      <input name="submit" type="submit" value="Sign In!">
+      <input id="testing-sign" name="submit" type="submit" value="Sign In!">
     </fieldset>
   </form>
   <form class="form credential-form" id="sign-out" name="sign-out">
@@ -178,7 +178,7 @@
       <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="1">
       <br>
       <br>
-      <input class="current" name="submit" type="submit" value="Create session" data-current-student-id="">
+      <input id="create-session-btn" class="current" name="submit" type="submit" value="Create session" data-current-student-id="">
       <!-- <input id="testing-create-session" name="submit" type="submit" value="Create session" data-student-id=""> -->
     </fieldset>
   </form>
@@ -397,15 +397,23 @@
       <br>
 
       <p class="field-description">Observer's Name (i.e. Your Name)</p>
-      <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name"></textarea>
+      <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name" value="asldkfjasldkfj"></textarea>
       <br>
 
-      <input class="submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Generate Writeup" data-current-student-id="" data-current-session-id="">
+      <input class="submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Submit Writeup" data-current-student-id="" data-current-session-id="">
     </fieldset>
   </form>
+  <br><br>
+  <div class="testing-btn-container">
+    <input id="testing-btn" class="current" type="button" value="Testing Button" data-current-student-id="" data-current-session-id="">
+  </div>
+  <div class="testing-btn-container">
+    <input id="testing-btn-two" class="current" type="button" value="Testing Button" data-current-student-id="" data-current-session-id="">
+  </div>
+  <br><br>
 
   <div class="get-writeup-btn-container">
-    <input id="get-writeup-report-btn" class="current" type="button" value="Click to Generate Writeup" data-current-student-id="" data-current-session-id="">
+    <input id="get-writeup-report-btn" class="current" type="button" value="Click to View Writeup" data-current-student-id="" data-current-session-id="">
   </div>
 
   <div class="get-report-btn-container">

@@ -13,6 +13,14 @@ const reportLogic = require('./logic');
 
 //Writeup
 
+const editWriteupSuccess = () => {
+  console.log('edit writeup successful');
+};
+
+const editWriteupFailure = () => {
+  console.log('edit writeup failure');
+};
+
 const getWriteupSuccess = () => {
   console.log('create writeup successful');
   let data = store.getWriteupObject;
@@ -101,4 +109,6 @@ module.exports = {
   createWriteupFailure,
   getWriteupSuccess,
   getWriteupFailure,
+  editWriteupSuccess,
+  editWriteupFailure,
 };

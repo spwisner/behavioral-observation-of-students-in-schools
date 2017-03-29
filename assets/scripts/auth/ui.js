@@ -14,7 +14,9 @@ const signInSuccess = function() {
   $("#sign-in").hide();
   $("#sign-out").show();
   console.log('sign-in success');
-  // $("#testing-create-session").click();
+  // testing
+  $("#testing-create-session").click();
+  $("#create-student-btn").click();
 };
 
 module.exports = {

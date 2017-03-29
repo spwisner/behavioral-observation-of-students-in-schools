@@ -5,6 +5,37 @@ const store = require('../store');
 
 // Sessions API
 
+const updateWriteup = function(id, pi, cba, ss, aet, pet, oftm, oftv, oftp, find, cfone, cftwo, cfthree, rec, cn, cftone, cfttwo, cftthree) {
+  return $.ajax({
+    url: config.apiOrigin + '/reports/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+    data: {
+      "report": {
+        "presenting_issue": pi,
+        "class_behav_assess": cba,
+        "r_setting": ss,
+        "r_aet": aet,
+        "r_pet": pet,
+        "r_oftm": oftm,
+        "r_oftv": oftv,
+        "r_oftp": oftp,
+        "r_finding": find,
+        "r_customone": cfone,
+        "r_customtwo": cftwo,
+        "r_customthree": cfthree,
+        "r_recommendation": rec,
+        "counselor_name": cn,
+        "custom_one_title": cftone,
+        "custom_two_title": cfttwo,
+        "custom_three_title": cftthree
+      }
+    }
+  });
+};
+
 const createWriteup = function(data) {
   return $.ajax({
     url: config.apiOrigin + '/students/' + store.currentStudentId + '/sessions/' + store.currentSessionId + '/reports',
@@ -63,4 +94,5 @@ module.exports = {
   getStudentSummary,
   createWriteup,
   getWriteup,
+  updateWriteup,
 };
