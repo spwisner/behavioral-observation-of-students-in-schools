@@ -12,8 +12,8 @@
     </tr>
   </thead>
   {{#each observations as |observation|}}
-    <tr>
-      <tbody>
+    <tbody>
+      <tr>
         <td class="display-obs-num">{{observation.obs_num}}</td>
         <td class="display-obs-aet">
           {{#if observation.aet}}
@@ -43,8 +43,9 @@
         <td class="display-obs-obs-comment">
           {{observation.obs_comment}}
         </td>
-        <td><button data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.session_id}}" data-current-student-id="{{observation.student_id}}">Edit</button></td>
-    </tr>
+        <td><button data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}"
+              data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.session_id}}" data-current-student-id="{{observation.student_id}}">Edit</button></td>
+      </tr>
     </tbody>
   {{/each}}
 </table>

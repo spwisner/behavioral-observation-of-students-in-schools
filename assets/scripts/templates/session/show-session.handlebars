@@ -1,0 +1,86 @@
+
+
+<table class="table session-record-table table-hover">
+  <thead>
+    <tr>
+      <th colspan="2">Session Status: {{#if session.completed}}Complete{{else}}Incomplete{{/if}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="session-record-title session-record-dob">
+        Session Date:
+      </td>
+      <td class="display-session-dob">
+        {{session.obs_on}}
+      </td>
+    </tr>
+    <tr>
+      <td class="session-record-title session-record-school">
+        Observation Setting:
+      </td>
+      <td class="display-session-school">
+        {{session.obs_setting}}
+      </td>
+    </tr>
+    <tr>
+      <td class="session-record-title session-record-teacher">
+        Observation Task:
+      </td>
+      <td class="display-session-teacher">
+        {{session.obs_task}}
+      </td>
+    </tr>
+    <tr>
+      <td class="session-record-title session-record-grade">
+        Number of Interval:
+      </td>
+      <td class="display-session-grade">
+        {{session.int_num}}
+      </td>
+    </tr>
+
+
+    <tr>
+      <td class="session-record-title session-record-grade">
+        Interval Length (seconds):
+      </td>
+      <td class="display-session-grade">
+        {{session.obs_time}}
+      </td>
+    </tr>
+    <tr>
+      <td class="session-record-title session-record-grade">
+        Session Comments:
+      </td>
+      <td class="display-session-grade">
+        {{session.comment}}
+      </td>
+    </tr>
+    <!-- <tr>
+      <td class="session-record-title session-record-grade">
+        Session Completed:
+      </td>
+      <td class="display-session-grade">
+        {{#if session.completed}}Completed{{else}}Incomplete{{/if}}
+      </td>
+    </tr> -->
+  </tbody>
+</table>
+
+<div class="dashboard-session-btn-container">
+  <div class="session-record-btn">
+    <input id="session-record-btn-edit" class="current" type="button" value="Edit Session" data-current-student-id="" data-current-session-id="{{session.id}}">
+  </div>
+  <div class="session-record-btn">
+    <input id="session-record-view-sessions" class="current" type="button" value="View Reports" data-current-student-id="" data-current-session-id="{{session.id}}">
+  </div>
+  <div class="session-record-btn">
+    <input id="session-record-delete" class="current" type="button" value="Delete Session" data-current-student-id="" data-current-session-id="{{session.id}}">
+  </div>
+</div>
+
+<div class="dashboard-container">
+  <input id="dashboard-home-btn" type="button" value="View Records">
+  <input id="dashboard-new-session-btn" type="button" value="Create Record">
+</div>

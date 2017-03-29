@@ -3,12 +3,21 @@
 const store = require('../store');
 const displaySessionCreateForm = require('../templates/session/new-session-form.handlebars');
 const displayObservationLandingPage = require('../templates/observation/obs-landing.handlebars');
+const displaySessionsTable = require('../templates/session/get-sessions.handlebars');
+const displaySessionDetails = require('../templates/session/show-session.handlebars');
+const displaySessionUpdateForm = require('../templates/session/update-session-form.handlebars');
 
 // Session UI
 
 const getSessionSuccess = (data) => {
   console.log('get session success');
-  console.log(data);
+
+  $(".content").children().remove();
+  let sessionDashboard = displaySessionsTable({
+    sessions: data.sessions
+  });
+  // $('.student-dashboard-container').append(studentDashboard);
+  $('.content').append(sessionDashboard);
 };
 
 const getSessionFailure = (data) => {
@@ -19,6 +28,15 @@ const getSessionFailure = (data) => {
 const showSessionSuccess = (data) => {
   console.log('show session success');
   console.log(data);
+
+  $(".content").children().remove();
+  let sessionDetails = displaySessionDetails({
+    session: data.session
+  });
+  // $('.student-dashboard-container').append(studentDashboard);
+  $('.content').append(sessionDetails);
+
+  $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
 const showSessionFailure = (data) => {
@@ -33,6 +51,22 @@ const generateCreateForm = () => {
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
+
+const generateUpdateForm = (data) => {
+  $(".content").children().remove();
+  console.log('edit session success');
+  console.log(data);
+  let generatedUpdateForm = displaySessionUpdateForm({
+    session: data.session
+  });
+  $('.content').append(generatedUpdateForm);
+  $(".current").attr("data-current-session-id", store.currentSessionId);
+  $(".current").attr("data-current-student-id", store.currentStudentId);
+};
+
+const generateUpdateFormFailure = () => {
+  console.log("generate update form failure");
+}
 
 const createLandingPage = function() {
   $(".content").children().remove();
@@ -105,4 +139,6 @@ module.exports = {
   deleteSessionSuccess,
   deleteSessionFailure,
   generateCreateForm,
+  generateUpdateForm,
+  generateUpdateFormFailure
 };

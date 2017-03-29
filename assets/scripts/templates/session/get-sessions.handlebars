@@ -1,0 +1,53 @@
+<table class="table session-summary-table table-hover">
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Setting</th>
+      <th>Task</th>
+      <!-- <th>Number of Intervals</th>
+      <th>Interval Length</th>
+      <th>Comment</th> -->
+      <th>Completed</th>
+      <th>View</th>
+    </tr>
+  </thead>
+  {{#each sessions as |session|}}
+  <tbody>
+    <tr>
+        <td class="display-obs-num">
+          {{session.obs_on}}
+        </td>
+        <td class="display-obs-aet">
+          {{session.obs_setting}}
+        </td>
+        <td class="display-obs-pet">
+          {{session.obs_task}}
+        </td>
+        <!-- <td class="display-obs-pet">
+          {{session.int_num}}
+        </td> -->
+        <!-- <td class="display-obs-pet">
+          {{session.obs_time}}
+        </td> -->
+        <!-- <td class="display-obs-pet">
+          {{session.comment}}
+        </td> -->
+        <td>
+          {{#if session.completed}}
+          Completed
+          {{else}}
+          Incomplete
+          {{/if}}
+        </td>
+        <td>
+          <input id="view-session-details-btn" class="current" type="button" value="View Session" data-current-session-id="{{session.id}}" data-current-student-id="{{session.student_id}}">
+        </td>
+      </tr>
+    </tbody>
+  {{/each}}
+</table>
+
+<div class="dashboard-container">
+  <input id="dashboard-home-btn" type="button" value="View Records">
+  <input id="dashboard-new-session-btn" type="button" value="Create Record">
+</div>

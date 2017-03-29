@@ -9,6 +9,7 @@ const store = require('../store');
 
 const onGetSessions = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
   sessionsApi.getSessions()
     .done(sessionsUi.getSessionSuccess)
     .fail(sessionsUi.getSessionFailure);
@@ -16,6 +17,8 @@ const onGetSessions = function(event) {
 
 const onShowSession = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
   sessionsApi.showSession()
     .done(sessionsUi.showSessionSuccess)
     .fail(sessionsUi.showSessionFailure);
@@ -86,6 +89,15 @@ const onGenerateCreateForm = function(event) {
   sessionsUi.generateCreateForm();
 };
 
+const onEditSession = function(event) {
+  event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  sessionsApi.showSession()
+    .done(sessionsUi.generateUpdateForm)
+    .fail(sessionsUi.generateUpdateFormFailure);
+};
+
 const addHandlers = () => {
   $('#delete-session-form').on('submit', onDeleteSession);
   $('#get-sessions-form').on('submit', onGetSessions);
@@ -96,6 +108,9 @@ const addHandlers = () => {
   $('#interval-length-entry').on('keyup', totalTimeCalculator);
   $('.content').on('click', '#student-record-create-session', onGenerateCreateForm);
   $('.content').on('submit', '#new-session-form', onCreateSession);
+  $('.content').on('click', '#student-record-view-sessions', onGetSessions);
+  $('.content').on('click', '#view-session-details-btn', onShowSession);
+  $('.content').on('click', '#session-record-btn-edit', onEditSession);
 
 };
 

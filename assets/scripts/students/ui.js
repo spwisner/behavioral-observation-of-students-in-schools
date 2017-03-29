@@ -22,13 +22,13 @@ const viewStudentRecordSuccess = (data) => {
 
 const viewStudentRecordFailure = (data) => {
   console.log("view student record failure");
-}
+};
 
 const showStudentCreateForm = () => {
   $(".content").children().remove();
   let showCreateForm = displayStudentCreateForm();
   $('.content').append(showCreateForm);
-}
+};
 
 const getStudentSuccess = (data) => {
   console.log('get student dashboard success');

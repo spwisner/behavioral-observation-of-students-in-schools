@@ -1,0 +1,31 @@
+<div class="update-sessions-form-container">
+
+<form class="form sessions-form" id="update-session-form" name="update-session-form">
+  <fieldset>
+    <legend>Update session Form</legend>
+    <br>
+    <p class="field-description">Session Date</p>
+    <input name="session[obs_on]" placeholder="Session Date" type="date" value="{{session.obs_on}}">
+    <br>
+    <p class="field-description">Session Setting</p>
+    <input name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
+    <br>
+    <p class="field-description">Session Task</p>
+    <input name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
+    <br>
+    <p class="field-description">Number of Intervals</p>
+    <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="{{session.int_num}}">
+    <br>
+    <p class="field-description">Time of Intervals (in seconds)</p>
+    <input name="session[obs_time]" placeholder="Time" type="text" value="{{session.obs_time}}">
+    <br>
+    <input name="submit" type="submit" value="Submit Update">
+  </fieldset>
+</form>
+</div>
+
+<br><br>
+<div class="dashboard-container">
+  <input id="dashboard-home-btn" type="button" value="View Records">
+  <input id="dashboard-new-session-btn" type="button" value="Create Record">
+</div>
