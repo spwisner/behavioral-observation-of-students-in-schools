@@ -13,6 +13,7 @@ const apiStudents = require('../students/api');
 // Session UI
 
 const getSessionSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('get session success');
 
   $(".content").children().remove();
@@ -26,11 +27,13 @@ const getSessionSuccess = (data) => {
 };
 
 const getSessionFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('get session failure');
   console.log(data);
 };
 
 const showSessionSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('show session success');
   console.log(data);
 
@@ -45,6 +48,7 @@ const showSessionSuccess = (data) => {
 };
 
 const showSessionFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('show session failure');
   console.log(data);
 };
@@ -80,6 +84,7 @@ const generateCreateForm = () => {
 };
 
 const generateUpdateForm = (data) => {
+  $(".notification-container").children().text("");
   $(".content").children().remove();
   console.log('edit session success');
   data.session.student_id = store.currentStudentId;
@@ -94,6 +99,7 @@ const generateUpdateForm = (data) => {
 };
 
 const generateUpdateFormFailure = () => {
+  $(".notification-container").children().text("");
   console.log("generate update form failure");
 };
 
@@ -117,6 +123,7 @@ const createLandingPage = function() {
 // }
 
 const createSessionSuccess = () => {
+  $(".notification-container").children().text("");
   console.log('create session success');
   createLandingPage();
 
@@ -132,11 +139,13 @@ const createSessionSuccess = () => {
 };
 
 const createSessionFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('create session failure');
   console.log(data);
 };
 
 const deleteSessionSuccess = () => {
+  $(".notification-container").children().text("");
   console.log('delete session success');
   // sessionsApi.getSessions()
   //   .done(getSessionSuccess)
@@ -147,11 +156,13 @@ const deleteSessionSuccess = () => {
 };
 
 const deleteSessionFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('delete session failure');
   console.log(data);
 };
 
 const updateSessionSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('update session success');
   console.log(data);
   store.currentStudentId = data.session.id;
@@ -165,6 +176,7 @@ const updateSessionSuccess = (data) => {
 };
 
 const updateSessionFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('update session failure');
   console.log(data);
 };

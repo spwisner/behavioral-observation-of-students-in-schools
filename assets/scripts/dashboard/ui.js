@@ -6,6 +6,7 @@ const displayExistingStudents = require('../templates/dashboard/existing-student
 // Student UI
 
 const getExistingSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('get existing dashboard success');
   console.log(data);
   store.currentStudentId = 0;
@@ -18,6 +19,7 @@ const getExistingSuccess = (data) => {
 };
 
 const getExistingFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log("get existing failure");
   console.log(data);
 };

@@ -13,6 +13,7 @@ const reportLogic = require('./logic');
 // Report UI
 
 const editWriteupSubmitSuccess = () => {
+  $(".notification-container").children().text("");
   console.log('submit edit writeup successful');
   let generateBackToReportBtn = $('<input id="session-record-view-report" class="current" type="button" value="View Reports" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
   let generateSuccessMessage = $('<p>Your Report Has Been Successfully Updated</p>');
@@ -26,11 +27,13 @@ const editWriteupSubmitSuccess = () => {
 };
 
 const editWriteupSubmitFailure = () => {
+  $(".notification-container").children().text("");
   console.log('submit edit writeup failure');
 };
 
 
 const editWriteupSuccess = () => {
+  $(".notification-container").children().text("");
   console.log('edit writeup successful');
   $('.content').children().remove();
   let data = store.editWriteupObject;
@@ -47,11 +50,13 @@ const editWriteupSuccess = () => {
 };
 
 const editWriteupFailure = () => {
+  $(".notification-container").children().text("");
   console.log('edit writeup failure');
 };
 //Writeup
 
 const getWriteupSuccess = () => {
+  $(".notification-container").children().text("");
   console.log('create writeup successful');
   let data = store.getWriteupObject;
 
@@ -86,16 +91,19 @@ const getWriteupSuccess = () => {
 };
 
 const getWriteupFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('create writeup successful');
   console.log(data);
 };
 
 const createWriteupSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('create writeup successful');
   console.log(data);
 };
 
 const createWriteupFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('create writeup successful');
   console.log(data);
 };
@@ -103,16 +111,19 @@ const createWriteupFailure = (data) => {
 
 
 const onGetChartDataSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('get chart data success');
   console.log(data);
 };
 
 const onGetChartDataFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('get chart data failure');
   console.log(data);
 };
 
 const onGetObservationTableSuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log("tabledata")
   console.log(data);
   // console.log('get observation table success');
@@ -132,11 +143,13 @@ const onGetObservationTableSuccess = (data) => {
 };
 
 const onGetObservationTableFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('get observation table failure');
   console.log(data);
 };
 
 const showStudentSummarySuccess = (data) => {
+  $(".notification-container").children().text("");
   console.log('show student success');
   console.log(data);
   let showStudentSummary = displayReportStudent({
@@ -146,6 +159,7 @@ const showStudentSummarySuccess = (data) => {
 };
 
 const showStudentSummaryFailure = (data) => {
+  $(".notification-container").children().text("");
   console.log('show student failure');
   console.log(data);
 };
