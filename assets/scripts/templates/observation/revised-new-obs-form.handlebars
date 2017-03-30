@@ -15,10 +15,6 @@
   </div>
 </div>
 
-<div class="last-submission-container">
-  <p><span class="no-submission-warning"></span></p>
-</div>
-
 <div class="test-container">
   <button id="test-button-submit" type="submit">Click Before Testing</button>
 </div>
@@ -26,45 +22,55 @@
 <form class="form observation-form" id="new-observation-form" name="new-observation-form">
   <fieldset>
     <legend>Record Interval Form</legend>
-
-    <div class="student-observered-container">
-      <div class="student-interval">Student to Observe: <span id="student-observed"></span></div>
-    </div>
     <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
     <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
     <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
 
-    <div class="clearfix"></div>
-    <div class="field-desc-container check-left">
-      <p class="field-description">AET</p>
-      <input name="observation[aet]" type="hidden" value="false">
-      <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true">
-    </div>
+    <table>
+      <tr>
+        <td class="observation-form-side" rowspan="3">
+          <p class="field-description">AET</p>
+          <input name="observation[aet]" type="hidden" value="false">
+          <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true">
+        </td>
+        <td class="observation-form-center" rowspan="6">
+          <div class="last-submission-container">
+            <p><span class="no-submission-warning"></span></p>
+          </div>
+        </td>
+        <td class="observation-form-side" rowspan="2">
+          <p class="field-description">OFT_M</p>
+          <input name="observation[oft_m]" type="hidden" value="false">
+          <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
+        </td>
+      </tr>
+      <tr>
+      </tr>
+      <tr>
+        <td class="observation-form-side" rowspan="2">
+          <p class="field-description">OFT_V</p>
+          <input name="observation[oft_v]" type="hidden" value="false">
+          <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
+        </td>
+      </tr>
+      <tr>
+        <td class="observation-form-side" rowspan="3">
+          <p class="field-description">PET</p>
+          <input name="observation[pet]" type="hidden" value="false">
+          <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
 
-    <div class="field-desc-container check-right">
-      <p class="field-description">OFT_M</p>
-      <input name="observation[oft_m]" type="hidden" value="false">
-      <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
-    </div>
-    <div class="clearfix"></div>
-    <div class="field-desc-container check-left">
-      <p class="field-description">PET</p>
-      <input name="observation[pet]" type="hidden" value="false">
-      <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
-    </div>
-
-    <div class="field-desc-container check-right">
-      <p class="field-description">OFT_V</p>
-      <input name="observation[oft_v]" type="hidden" value="false">
-      <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
-    </div>
-    <div class="clearfix"></div>
-    <div class="field-desc-container check-right">
-      <p class="field-description">OFT_P</p>
-      <input name="observation[oft_p]" type="hidden" value="false">
-      <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
-    </div>
-    <div class="clearfix"></div>
+        </td>
+      </tr>
+      <tr>
+        <td class="observation-form-side" rowspan="2">
+          <p class="field-description">OFT_P</p>
+          <input name="observation[oft_p]" type="hidden" value="false">
+          <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
+        </td>
+      </tr>
+      <tr>
+      </tr>
+    </table>
     <div class="field-desc-container field-text">
       <p class="field-description">Interval Comment</p>
       <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
@@ -73,7 +79,7 @@
       <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
     </div>
     <div class="sound-container">
-      <audio id="timer-alert">
+      <!-- <audio id="timer-alert">
         <source src="assets/scripts/sounds/beep.wav" type="audio/wav">
         <source src="assets/scripts/sounds/submit.wav" type="audio/wav">
             Your browser does not support the audio element.
@@ -81,7 +87,7 @@
       <audio id="submit-alert">
         <source src="assets/scripts/sounds/submit.wav" type="audio/wav">
             Your browser does not support the audio element.
-      </audio>
+      </audio> -->
     </div>
   </fieldset>
 </form>
@@ -89,5 +95,4 @@
 <div class="dashboard-container">
   <input id="dashboard-home-btn" type="button" value="View Dashboard">
   <input id="dashboard-new-session-btn" type="button" value="Create Session">
-</div>
 </div>

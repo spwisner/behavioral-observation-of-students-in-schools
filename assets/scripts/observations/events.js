@@ -64,8 +64,8 @@ const onUpdateLastSubmission = function(event) {
   let comment = $(this).attr("data-obs-comment");
   let aetValue = table.children(".last-aet-tr").children(".last-submission-aet").children("input").prop('checked');
   let petValue = table.children(".last-pet-tr").children(".last-submission-pet").children("input").prop('checked');
-  let oftmValue = table.children(".last-oft-m-tr").children("last-submission-oft-m").children("input").prop('checked');
-  let oftvValue = table.children(".last-oft-v-tr").children("last-submission-oft-v").children("input").prop('checked');
+  let oftmValue = table.children(".last-oft-m-tr").children(".last-submission-oft-m").children("input").prop('checked');
+  let oftvValue = table.children(".last-oft-v-tr").children(".last-submission-oft-v").children("input").prop('checked');
   let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input").prop('checked');
   apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
     .done(uiObservations.getLastObservationSuccess)
@@ -226,9 +226,13 @@ const addHandlers = () => {
   // $('#test-button-submit').on('click', testButton);
   // $(".edit-last-submission").on('click', updateFormGenerator);
   $('.content').on('submit', '#new-observation-form', onCreateObservation);
-  $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
-  $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
-  $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
+  // $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
+  // $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
+  // $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
+
+  $('.content').on('click', '.edit-last-submission', updateFormGenerator);
+  $('.content').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
+  $('.content').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
   $('.content').on('click', '#obs-landing-begin-observation', onGenerateObsTable);
 };
 
