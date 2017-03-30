@@ -1,20 +1,22 @@
-
+<h1>Session Overview</h1>
+<p>Session Date: {{session.obs_on}}</p>
+<p>Session Status: {{#if session.completed}}Complete{{else}}Incomplete{{/if}}
 
 <table class="table session-record-table table-hover">
-  <thead>
+  <!-- <thead>
     <tr>
       <th colspan="2">Session Status: {{#if session.completed}}Complete{{else}}Incomplete{{/if}}</th>
     </tr>
-  </thead>
+  </thead> -->
   <tbody>
-    <tr>
+    <!-- <tr>
       <td class="session-record-title session-record-dob">
         Session Date:
       </td>
       <td class="display-session-dob">
         {{session.obs_on}}
       </td>
-    </tr>
+    </tr> -->
     <tr>
       <td class="session-record-title session-record-school">
         Observation Setting:

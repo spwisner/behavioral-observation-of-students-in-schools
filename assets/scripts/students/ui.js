@@ -18,8 +18,8 @@ const getSessionSuccess = (data) => {
   });
   // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(sessionDashboard);
-  $("#current-student-fn").text(store.currentStudentFn);
-  $("#current-student-ln").text(store.currentStudentLn);
+  $(".current-student-fn").text(store.currentStudentFn);
+  $(".current-student-ln").text(store.currentStudentLn);
   $("#create-session-student-btn").attr("data-current-student-id", store.currentStudentId);
 };
 
@@ -35,8 +35,8 @@ const viewStudentRecordSuccess = (data) => {
   });
   // $('.student-details-container').append(studentDetails);
   $('.content').append(studentDetails);
-  store.currentStudentFn = $(".student-name-tr").attr("data-current-student-fn");
-  store.currentStudentLn = $(".student-name-tr").attr("data-current-student-ln");
+  store.currentStudentFn = $(".student-name-header").attr("data-current-student-fn");
+  store.currentStudentLn = $(".student-name-header").attr("data-current-student-ln");
   sessionsApi.getSessions()
     .done(getSessionSuccess)
     .fail(getSessionFailure);
@@ -71,6 +71,7 @@ const editStudentSuccess = (data) => {
   $(".content").children().remove();
   console.log('edit student success');
   console.log(data);
+
   let editStudent = displayEditStudent({
     student: data.student
   });
@@ -136,11 +137,14 @@ const updateStudentSuccess = (data) => {
   console.log(data);
   store.currentStudentId = data.student.id;
   $(".content").children().remove();
-  let studentDetails = displayStudentDetails({
-    student: data.student
-  });
+  // let studentDetails = displayStudentDetails({
+  //   student: data.student
+  // });
   // $('.student-details-container').append(studentDetails);
-  $('.content').append(studentDetails);
+  // $('.content').append(studentDetails);
+  apiStudents.showStudent()
+    .done(viewStudentRecordSuccess)
+    .fail(viewStudentRecordFailure);
 
 };
 
