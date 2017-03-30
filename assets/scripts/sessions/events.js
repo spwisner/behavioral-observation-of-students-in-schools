@@ -52,6 +52,7 @@ const onDeleteSession = function(event) {
 const onUpdateSession = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+  console.log(data);
   sessionsApi.updateSession(data)
     .done(sessionsUi.updateSessionSuccess)
     .fail(sessionsUi.updateSessionFailure);
@@ -111,6 +112,7 @@ const addHandlers = () => {
   $('.content').on('click', '#student-record-view-sessions', onGetSessions);
   $('.content').on('click', '#view-session-details-btn', onShowSession);
   $('.content').on('click', '#session-record-btn-edit', onEditSession);
+  $('.content').on('submit', '#update-session-form', onUpdateSession);
 
 };
 

@@ -55,12 +55,12 @@ const generateCreateForm = () => {
 const generateUpdateForm = (data) => {
   $(".content").children().remove();
   console.log('edit session success');
+  data.session.student_id = store.currentStudentId;
   console.log(data);
   let generatedUpdateForm = displaySessionUpdateForm({
     session: data.session
   });
   $('.content').append(generatedUpdateForm);
-  $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
@@ -120,6 +120,14 @@ const deleteSessionFailure = (data) => {
 const updateSessionSuccess = (data) => {
   console.log('update session success');
   console.log(data);
+  store.currentStudentId = data.session.id;
+  $(".content").children().remove();
+  let sessionDetails = displaySessionDetails({
+    session: data.session
+  });
+  // $('.student-details-container').append(studentDetails);
+  $('.content').append(sessionDetails);
+
 };
 
 const updateSessionFailure = (data) => {

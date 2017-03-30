@@ -111,8 +111,6 @@ const updateStudentSuccess = (data) => {
   console.log('update student success');
   console.log(data);
   store.currentStudentId = data.student.id;
-  console.log('stude id');
-  console.log(store.currentStudentId);
   $(".content").children().remove();
   let studentDetails = displayStudentDetails({
     student: data.student
