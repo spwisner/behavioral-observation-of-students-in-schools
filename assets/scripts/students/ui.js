@@ -5,10 +5,24 @@ const displayEditStudent = require('../templates/student/edit-student.handlebars
 const displayStudentDashboard = require('../templates/student/get-students.handlebars');
 const displayStudentDetails = require('../templates/student/show-student-record.handlebars');
 const displayStudentCreateForm = require('../templates/student/create-student.handlebars');
+const displaySessionsTable = require('../templates/session/get-sessions.handlebars');
 // const displayDashboard = require('../templates/dashboard/dashboard-btn.handlebars');
 const apiStudents = require('./api');
+const sessionsApi = require('../sessions/api');
 
 // Student UI
+
+const getSessionSuccess = (data) => {
+  let sessionDashboard = displaySessionsTable({
+    sessions: data.sessions
+  });
+  // $('.student-dashboard-container').append(studentDashboard);
+  $('.content').append(sessionDashboard);
+};
+
+const getSessionFailure = () => {
+  console.log('could not retrive sessions table');
+};
 
 const viewStudentRecordSuccess = (data) => {
   $(".content").children().remove();
@@ -18,9 +32,13 @@ const viewStudentRecordSuccess = (data) => {
   });
   // $('.student-details-container').append(studentDetails);
   $('.content').append(studentDetails);
+
+  sessionsApi.getSessions()
+    .done(getSessionSuccess)
+    .fail(getSessionFailure);
 };
 
-const viewStudentRecordFailure = (data) => {
+const viewStudentRecordFailure = () => {
   console.log("view student record failure");
 };
 

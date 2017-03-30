@@ -4,8 +4,16 @@ const uiReport = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const displayStatsReportHtml = require('../templates/report/stats-report.handlebars');
+const displayWriteupCreateForm = require('../templates/report/report-create-form.handlebars');
 
 // OBSERVATION EVENTS
+
+const onGenerateWriteupForm = function(event) {
+  event.preventDefault();
+  $('.content').children().remove();
+  let createWriteupForm = displayWriteupCreateForm();
+  $(".content").append(createWriteupForm);
+}
 
 const onGetObservationData = function() {
   // event.preventDefault();
@@ -160,6 +168,8 @@ const onSubmitEdit = function(event) {
 //   // console.log(store.finalEditWriteupArray);
 // };
 
+
+
 const addHandlers = () => {
   // $('#get-report-btn').on('click', onGetObservationData);
   // $('.get-report-btn-container').on('click', '#get-report-btn', onGenerateReport);
@@ -170,9 +180,10 @@ const addHandlers = () => {
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
   $('.content').on('click', '#session-record-view-report', onCreateStatsReport);
-  $('.content').on('click', '#generate-written-form', onCreateWriteup);
+  $('.content').on('click', '#generate-written-form', onGenerateWriteupForm);
   // $('.report-writeup-container').on('click', '.writeup-btn', onEditWriteup);
   // $('.report-writeup-container').on('click', '.submit-edit-btn', onSubmitEdit);
+  $('.content').on('submit', '#report-writeup-form', onCreateWriteup);
 };
 
 module.exports = {

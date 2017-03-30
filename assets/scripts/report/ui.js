@@ -111,7 +111,7 @@ const showStudentSummarySuccess = (data) => {
   let showStudentSummary = displayReportStudent({
     student: data.student
   });
-  $('.display-student-summary-container').prepend(showStudentSummary);
+  $('.display-student-summary-container').append(showStudentSummary);
 };
 
 const showStudentSummaryFailure = (data) => {
