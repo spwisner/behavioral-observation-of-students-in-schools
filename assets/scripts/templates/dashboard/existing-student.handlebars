@@ -1,0 +1,51 @@
+<div class="existing-student-selection-container">
+
+<table class="table existing-student-selection-table table-hover">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>DOB</th>
+      <th>School</th>
+      <th>Teacher</th>
+      <th>Grade</th>
+      <th>Session Target</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each students as |student|}}
+      <tr>
+        <td class="display-student-fn">
+          {{student.first_name}}
+        </td>
+        <td class="display-student-ln">
+          {{student.last_name}}
+        </td>
+        <td class="display-student-dob">
+          {{student.born_on}}
+        </td>
+        <td class="display-student-school">
+          {{student.school}}
+        </td>
+        <td class="display-student-teacher">
+          {{student.teacher}}
+        </td>
+        <td class="display-student-grade">
+          {{student.grade}}
+        </td>
+        <td class="display-obs-obs-comment">
+          <input class="dashboard-existing-create-btn" type="button" value="Create Session" data-current-student-id="{{student.id}}">
+        </td>
+        <!-- <td class="display-obs-obs-comment">
+          <input class="dashboard-new-sessions-btn" type="button" value="Create New Session" data-current-student-id="{{student.id}}">
+        </td> -->
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+<br><br>
+<div class="dashboard-container">
+  <!-- <input id="dashboard-home-btn" type="button" value="View Records"> -->
+  <input id="dashboard-new-session-btn" type="button" value="Create Record">
+</div>
+</div>

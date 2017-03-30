@@ -82,19 +82,21 @@ const onGetChartDataFailure = (data) => {
 };
 
 const onGetObservationTableSuccess = (data) => {
+  console.log("tabledata")
+  console.log(data);
   // console.log('get observation table success');
   chart.getColumnSums(data);
   $(".obs-summary-table").remove();
-  console.log("getdata");
-  console.log(data);
+  // console.log("getdata");
+  // console.log(data);
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });
   let showStatistics = displayReportStats({
     observations: data.observations
   });
-  $('.display-observation-container').append(showObservations);
   $('.display-stats-table-container').append(showStatistics);
+  $('.display-observation-container').append(showObservations);
   reportLogic.statsTableCountPercent(data);
 };
 
@@ -109,7 +111,7 @@ const showStudentSummarySuccess = (data) => {
   let showStudentSummary = displayReportStudent({
     student: data.student
   });
-  $('.display-student-summary-container').append(showStudentSummary);
+  $('.display-student-summary-container').prepend(showStudentSummary);
 };
 
 const showStudentSummaryFailure = (data) => {

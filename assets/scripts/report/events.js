@@ -3,6 +3,7 @@ const apiReport = require('./api');
 const uiReport = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
+const displayStatsReportHtml = require('../templates/report/stats-report.handlebars');
 
 // OBSERVATION EVENTS
 
@@ -20,8 +21,13 @@ const onShowStudentSummary = function() {
     .fail(uiReport.showStudentSummaryFailure);
 };
 
-const onGenerateReport = function(event) {
+const onCreateStatsReport = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  $(".content").children().remove();
+  let showStatsReportHtml = displayStatsReportHtml();
+  $('.content').append(showStatsReportHtml);
   onShowStudentSummary();
   onGetObservationData();
 };
@@ -154,17 +160,17 @@ const onSubmitEdit = function(event) {
 //   // console.log(store.finalEditWriteupArray);
 // };
 
-
 const addHandlers = () => {
   // $('#get-report-btn').on('click', onGetObservationData);
-  $('.get-report-btn-container').on('click', '#get-report-btn', onGenerateReport);
+  // $('.get-report-btn-container').on('click', '#get-report-btn', onGenerateReport);
   $('#report-writeup-form').on('submit', onCreateWriteup);
   $('.edit-report-writeup-container').on('submit', '#report-edit-writeup-form', onSubmitEdit);
   // $("#testing-btn").on("click", onTest);
   // $("#testing-btn-two").on("click", onTestTwo);
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
-
+  $('.content').on('click', '#session-record-view-report', onCreateStatsReport);
+  $('.content').on('click', '#generate-written-form', onCreateWriteup);
   // $('.report-writeup-container').on('click', '.writeup-btn', onEditWriteup);
   // $('.report-writeup-container').on('click', '.submit-edit-btn', onSubmitEdit);
 };

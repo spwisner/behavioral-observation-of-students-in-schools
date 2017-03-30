@@ -45,12 +45,34 @@ const showSessionFailure = (data) => {
   console.log(data);
 };
 
+// const generateTodaysDate = function() {
+//   let today = new Date();
+//   let dd = today.getDate();
+//   let mm = today.getMonth()+1;
+//   let yyyy = today.getFullYear();
+//
+//   if (dd < 10) {
+//       dd='0'+dd;
+//     }
+//
+//   if(mm<10) {
+//       mm='0'+mm;
+//   }
+//
+//   today = yyyy+'/'+mm+'/'+dd;
+//   return today;
+// };
+
 const generateCreateForm = () => {
   $(".content").children().remove();
   let showCreateForm = displaySessionCreateForm();
   $('.content').append(showCreateForm);
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
+  // let today = generateTodaysDate();
+
+  // let today = moment().format('YYYY-MM-DD');
+  // document.getElementById("session-date-create-field").value = today;
 };
 
 const generateUpdateForm = (data) => {
@@ -63,6 +85,8 @@ const generateUpdateForm = (data) => {
   });
   $('.content').append(generatedUpdateForm);
   $(".current").attr("data-current-student-id", store.currentStudentId);
+  // let today = generateTodaysDate();
+  // $("#session-date-create-field").val(today);
 };
 
 const generateUpdateFormFailure = () => {
@@ -108,7 +132,7 @@ const createSessionFailure = (data) => {
   console.log(data);
 };
 
-const deleteSessionSuccess = (data) => {
+const deleteSessionSuccess = () => {
   console.log('delete session success');
   sessionsApi.getSessions()
     .done(getSessionSuccess)

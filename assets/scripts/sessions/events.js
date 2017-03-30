@@ -105,8 +105,10 @@ const addHandlers = () => {
   $('#show-session-form').on('submit', onShowSession);
   $('#new-session-form').on('submit', onCreateSession);
   $('#update-session-form').on('submit', onUpdateSession);
-  $('#interval-number-entry').on('keyup', totalTimeCalculator);
-  $('#interval-length-entry').on('keyup', totalTimeCalculator);
+  $('.content').on('keyup', '#interval-number-entry', totalTimeCalculator);
+  $('.content').on('keyup', '#interval-length-entry', totalTimeCalculator);
+  // $('#interval-number-entry').on('keyup', totalTimeCalculator);
+  // $('#interval-length-entry').on('keyup', totalTimeCalculator);
   $('.content').on('click', '#student-record-create-session', onGenerateCreateForm);
   $('.content').on('submit', '#new-session-form', onCreateSession);
   $('.content').on('click', '#student-record-view-sessions', onGetSessions);
