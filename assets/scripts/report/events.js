@@ -139,11 +139,9 @@ const onEditWriteup = function(event) {
 
 const onSubmitEdit = function(event) {
   event.preventDefault();
-  store.currentStudentId = $(this).attr("data-current-student-id");
-  store.currentSessionId = $(this).attr("data-current-session-id");
+  store.currentStudentId = $("#edit-report-writeup-btn").attr("data-current-student-id");
+  store.currentSessionId = $("#edit-report-writeup-btn").attr("data-current-session-id");
   store.currentReportId = $("#edit-report-writeup-btn").attr("data-current-report-id");
-
-  alert();
   let data = getFormFields(event.target);
   apiReport.submitEditWriteup(data)
     // .then((response) => {

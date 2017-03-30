@@ -14,7 +14,14 @@ const reportLogic = require('./logic');
 
 const editWriteupSubmitSuccess = () => {
   console.log('submit edit writeup successful');
-
+  let generateBackToReportBtn = $('<input id="session-record-view-report" class="current" type="button" value="View Reports" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
+  let generateSuccessMessage = $('<p>Your Report Has Been Successfully Updated</p>');
+  $("#report-edit-writeup-form").remove();
+  $(".successful-update-message-container").append(generateSuccessMessage);
+  $(".successful-update-message-container").append(generateBackToReportBtn);
+  $(".current").attr("data-current-student-id", store.currentStudentId );
+  $(".current").attr("data-current-session-id", store.currentSessionId);
+  $(".current").attr("data-current-report-id", store.currentReportId);
   // $('.report-writeup-table').remove();
 };
 
