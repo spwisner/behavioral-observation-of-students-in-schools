@@ -43,8 +43,8 @@ const onCreateSession = function(event) {
 
 const onDeleteSession = function(event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  sessionsApi.deleteSession(data)
+  store.currentSessionId= $("#session-record-delete").attr("data-current-session-id");
+  sessionsApi.deleteSession()
     .done(sessionsUi.deleteSessionSuccess)
     .fail(sessionsUi.deleteSessionFailure);
 };
@@ -113,6 +113,7 @@ const addHandlers = () => {
   $('.content').on('click', '#view-session-details-btn', onShowSession);
   $('.content').on('click', '#session-record-btn-edit', onEditSession);
   $('.content').on('submit', '#update-session-form', onUpdateSession);
+  $('.content').on('click', '#session-record-delete', onDeleteSession);
 
 };
 

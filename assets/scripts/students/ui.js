@@ -75,7 +75,7 @@ const showStudentFailure = (data) => {
   console.log(data);
 };
 
-const createStudentSuccess = (data) => {
+const createStudentSuccess = () => {
   $(".content").children().remove();
   console.log('create student success');
   // let studentDetails = displayStudentDetails({
@@ -97,9 +97,11 @@ const createStudentFailure = (data) => {
   console.log(data);
 };
 
-const deleteStudentSuccess = (data) => {
+const deleteStudentSuccess = () => {
   console.log('delete student success');
-  console.log(data);
+  apiStudents.getStudents()
+    .done(getStudentSuccess)
+    .fail(getStudentFailure);
 };
 
 const deleteStudentFailure = (data) => {

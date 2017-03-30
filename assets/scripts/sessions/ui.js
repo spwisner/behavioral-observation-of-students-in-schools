@@ -1,6 +1,7 @@
 'use strict';
 
 const store = require('../store');
+const sessionsApi = require('./api');
 const displaySessionCreateForm = require('../templates/session/new-session-form.handlebars');
 const displayObservationLandingPage = require('../templates/observation/obs-landing.handlebars');
 const displaySessionsTable = require('../templates/session/get-sessions.handlebars');
@@ -66,7 +67,7 @@ const generateUpdateForm = (data) => {
 
 const generateUpdateFormFailure = () => {
   console.log("generate update form failure");
-}
+};
 
 const createLandingPage = function() {
   $(".content").children().remove();
@@ -109,7 +110,9 @@ const createSessionFailure = (data) => {
 
 const deleteSessionSuccess = (data) => {
   console.log('delete session success');
-  console.log(data);
+  sessionsApi.getSessions()
+    .done(getSessionSuccess)
+    .fail(getSessionFailure);
 };
 
 const deleteSessionFailure = (data) => {

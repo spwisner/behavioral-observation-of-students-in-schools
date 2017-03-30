@@ -52,8 +52,9 @@ const onCreateStudent = function(event) {
 
 const onDeleteStudent = function(event) {
   event.preventDefault();
-  let data = getFormFields(event.target);
-  apiStudents.deleteStudent(data)
+  store.currentStudentId= $("#student-record-delete").attr("data-current-student-id");
+  // let data = getFormFields(event.target);
+  apiStudents.deleteStudent()
     .done(uiStudents.deleteStudentSuccess)
     .fail(uiStudents.deleteStudentFailure);
 };
@@ -85,6 +86,7 @@ const addHandlers = () => {
   // $('.student-dashboard-container').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '#dashboard-home-btn', onGetStudents);
+  $('.content').on('click', '#student-record-delete', onDeleteStudent);
 };
 
 module.exports = {
