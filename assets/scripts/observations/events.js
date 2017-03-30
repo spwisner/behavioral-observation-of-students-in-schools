@@ -82,7 +82,8 @@ const endObservationTimer = function(runTimer) {
 };
 
 const observationTimer = function() {
-
+  $(this).remove();
+  $("#cancel-session-btn").show();
 
   // Countup stopwatch for gradients
 
@@ -150,6 +151,7 @@ const observationTimer = function() {
     $(".time-until-submission").hide();
     $(".interval-remaining").hide();
     $(".cancel-session-notification").show();
+    $(this).remove();
   });
 };
 

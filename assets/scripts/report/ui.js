@@ -25,15 +25,18 @@ const editWriteupSubmitFailure = () => {
 
 const editWriteupSuccess = () => {
   console.log('edit writeup successful');
+  $('.content').children().remove();
   let data = store.editWriteupObject;
-  console.log(data);
 
   // $('.report-writeup-table').remove();
   let editWriteup = displayEditWriteupReport({
     report: data.report
   });
-  $('.edit-report-writeup-container').append(editWriteup);
+  $('.content').append(editWriteup);
 
+  $("#edit-report-writeup-btn").attr("data-current-student-id", store.currentStudentId );
+  $("#edit-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
+  $("#edit-report-writeup-btn").attr("data-current-report-id", store.currentReportId);
 };
 
 const editWriteupFailure = () => {
@@ -44,13 +47,34 @@ const editWriteupFailure = () => {
 const getWriteupSuccess = () => {
   console.log('create writeup successful');
   let data = store.getWriteupObject;
-  console.log(data);
 
+  if (data !== null) {
+    console.log(data);
+    let showWriteup = displayWriteupReport({
+      report: data.report
+    });
+    $('.display-written-report-container').append(showWriteup);
+    let generateWrittenHideBtn = $('<input id="generate-written-hide-empty-btn" class="current" type="button" value="Hide Written Report" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
+    let generateWrittenUpdateBtn = $('<input id="generate-written-update-btn" class="current" type="button" value="Click To Update" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
+    $(".create-written-report-btn").append(generateWrittenUpdateBtn);
+    $(".create-written-report-btn").append(generateWrittenHideBtn);
+
+
+
+    $("#generate-written-update-btn").attr("data-current-report-id", store.currentReportId);
+    $(".current").attr("data-current-report-id", store.currentReportId);
+  } else {
+    let generateWrittenFormBtn = $('<input id="generate-written-create-btn" class="current" type="button" value="Click To Create" data-current-student-id="" data-current-session-id="">');
+    $(".create-written-report-btn").append(generateWrittenFormBtn);
+  }
+
+  $(".current").attr("data-current-student-id", store.currentStudentId);
+  $(".current").attr("data-current-session-id", store.currentSessionId);
   // $('.report-writeup-table').remove();
-  let showWriteup = displayWriteupReport({
-    report: data.report
-  });
-  $('.report-writeup-container').append(showWriteup);
+  // let showWriteup = displayWriteupReport({
+  //   report: data.report
+  // });
+  // $('.report-writeup-container').append(showWriteup);
 
 };
 

@@ -8,12 +8,12 @@ const displayWriteupCreateForm = require('../templates/report/report-create-form
 
 // OBSERVATION EVENTS
 
-const onGenerateWriteupForm = function(event) {
-  event.preventDefault();
-  $('.content').children().remove();
-  let createWriteupForm = displayWriteupCreateForm();
-  $(".content").append(createWriteupForm);
-}
+const onShowStudentSummary = function() {
+  // event.preventDefault();
+  apiReport.getStudentSummary()
+    .done(uiReport.showStudentSummarySuccess)
+    .fail(uiReport.showStudentSummaryFailure);
+};
 
 const onGetObservationData = function() {
   // event.preventDefault();
@@ -22,15 +22,58 @@ const onGetObservationData = function() {
     .fail(uiReport.onGetObservationTableFailure);
 };
 
-const onShowStudentSummary = function() {
-  // event.preventDefault();
-  apiReport.getStudentSummary()
-    .done(uiReport.showStudentSummarySuccess)
-    .fail(uiReport.showStudentSummaryFailure);
+const onSuccessfulUpdate = function() {
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  store.currentReportId = $(this).attr("data-current-report-id");
+  //See if previous submission of writeup
+  apiReport.getWriteup()
+    .then((response) => {
+      // onGetObservations(store.currentSessionId);
+      store.getWriteupObject = response;
+      console.log("writeupdata");
+      store.currentReportId = response.report.id;
+    })
+    .done(uiReport.getWriteupSuccess)
+    .catch(uiReport.getWriteupFailure);
+
+  //
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  $(".content").children().remove();
+  let showStatsReportHtml = displayStatsReportHtml();
+  $('.content').append(showStatsReportHtml);
+  onShowStudentSummary();
+  onGetObservationData();
+};
+
+const onGenerateWriteupForm = function(event) {
+  event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  $('.content').children().remove();
+  let createWriteupForm = displayWriteupCreateForm();
+  $(".content").append(createWriteupForm);
+  $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
+  $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
 };
 
 const onCreateStatsReport = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  //See if previous submission of writeup
+  apiReport.getWriteup()
+    .then((response) => {
+      // onGetObservations(store.currentSessionId);
+      store.getWriteupObject = response;
+      console.log("writeupdata");
+      store.currentReportId = response.report.id;
+    })
+    .done(uiReport.getWriteupSuccess)
+    .catch(uiReport.getWriteupFailure);
+
+  //
   store.currentStudentId = $(this).attr("data-current-student-id");
   store.currentSessionId = $(this).attr("data-current-session-id");
   $(".content").children().remove();
@@ -42,6 +85,8 @@ const onCreateStatsReport = function(event) {
 
 const onCreateWriteup = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
   let data = getFormFields(event.target);
   apiReport.createWriteup(data)
     // .catch(uiReport.createWriteupFailure)
@@ -59,11 +104,12 @@ const onCreateWriteup = function(event) {
 
 const onGetWriteup = function(event) {
   event.preventDefault();
-  $(".report-writeup-table").remove();
   apiReport.getWriteup()
     .then((response) => {
       // onGetObservations(store.currentSessionId);
       store.getWriteupObject = response;
+      console.log("writeupdata");
+      console.log(response);
     })
     .done(uiReport.getWriteupSuccess)
     .catch(uiReport.getWriteupFailure);
@@ -79,7 +125,9 @@ const onGetWriteup = function(event) {
 
 const onEditWriteup = function(event) {
   event.preventDefault();
-  $("#report-edit-writeup-form").remove();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  store.currentReportId = $(this).attr("data-current-report-id");
   apiReport.getWriteup()
     .then((response) => {
       // onGetObservations(store.currentSessionId);
@@ -91,6 +139,11 @@ const onEditWriteup = function(event) {
 
 const onSubmitEdit = function(event) {
   event.preventDefault();
+  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentSessionId = $(this).attr("data-current-session-id");
+  store.currentReportId = $("#edit-report-writeup-btn").attr("data-current-report-id");
+
+  alert();
   let data = getFormFields(event.target);
   apiReport.submitEditWriteup(data)
     // .then((response) => {
@@ -100,7 +153,7 @@ const onSubmitEdit = function(event) {
     // })
     .done(uiReport.editWriteupSubmitSuccess)
     .catch(uiReport.editWriteupSubmitFailure);
-}
+};
 // const onSubmitEdit = function() {
 //   let finalArray = store.finalEditWriteupArray;
 //   let textAreaInput = $(this).parent().children(".revised-textarea-writeup").val();
@@ -168,22 +221,22 @@ const onSubmitEdit = function(event) {
 //   // console.log(store.finalEditWriteupArray);
 // };
 
-
-
 const addHandlers = () => {
   // $('#get-report-btn').on('click', onGetObservationData);
   // $('.get-report-btn-container').on('click', '#get-report-btn', onGenerateReport);
-  $('#report-writeup-form').on('submit', onCreateWriteup);
-  $('.edit-report-writeup-container').on('submit', '#report-edit-writeup-form', onSubmitEdit);
+  // $('#report-writeup-form').on('submit', onCreateWriteup);
+  $('.content').on('submit', '#report-writeup-form', onCreateWriteup);
+  // $('.edit-report-writeup-container').on('submit', '#report-edit-writeup-form', onSubmitEdit);
   // $("#testing-btn").on("click", onTest);
   // $("#testing-btn-two").on("click", onTestTwo);
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
   $('.content').on('click', '#session-record-view-report', onCreateStatsReport);
-  $('.content').on('click', '#generate-written-form', onGenerateWriteupForm);
+  $('.content').on('click', '#generate-written-create-btn', onGenerateWriteupForm);
   // $('.report-writeup-container').on('click', '.writeup-btn', onEditWriteup);
   // $('.report-writeup-container').on('click', '.submit-edit-btn', onSubmitEdit);
-  $('.content').on('submit', '#report-writeup-form', onCreateWriteup);
+  $('.content').on('click', '#generate-written-update-btn', onEditWriteup);
+  $('.content').on('submit', '#report-edit-writeup-form', onSubmitEdit);
 };
 
 module.exports = {
