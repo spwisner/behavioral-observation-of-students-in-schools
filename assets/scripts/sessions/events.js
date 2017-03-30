@@ -19,6 +19,8 @@ const onShowSession = function(event) {
   event.preventDefault();
   store.currentStudentId = $(this).attr("data-current-student-id");
   store.currentSessionId = $(this).attr("data-current-session-id");
+  // store.currentStudentFn = $(".student-name-tr").attr("data-current-student-fn");
+  // store.currentStudentLn = $(".student-name-tr").attr("data-current-student-ln");
   sessionsApi.showSession()
     .done(sessionsUi.showSessionSuccess)
     .fail(sessionsUi.showSessionFailure);
@@ -44,6 +46,7 @@ const onCreateSession = function(event) {
 const onDeleteSession = function(event) {
   event.preventDefault();
   store.currentSessionId= $("#session-record-delete").attr("data-current-session-id");
+  store.currentStudentId =$("#session-record-delete").attr("data-current-student-id");
   sessionsApi.deleteSession()
     .done(sessionsUi.deleteSessionSuccess)
     .fail(sessionsUi.deleteSessionFailure);
@@ -116,6 +119,7 @@ const addHandlers = () => {
   $('.content').on('click', '#session-record-btn-edit', onEditSession);
   $('.content').on('submit', '#update-session-form', onUpdateSession);
   $('.content').on('click', '#session-record-delete', onDeleteSession);
+  $('.content').on('click', '#create-session-student-btn', onGenerateCreateForm);
 
 };
 

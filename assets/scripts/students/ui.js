@@ -18,6 +18,9 @@ const getSessionSuccess = (data) => {
   });
   // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(sessionDashboard);
+  $("#current-student-fn").text(store.currentStudentFn);
+  $("#current-student-ln").text(store.currentStudentLn);
+  $("#create-session-student-btn").attr("data-current-student-id", store.currentStudentId);
 };
 
 const getSessionFailure = () => {
@@ -32,7 +35,8 @@ const viewStudentRecordSuccess = (data) => {
   });
   // $('.student-details-container').append(studentDetails);
   $('.content').append(studentDetails);
-
+  store.currentStudentFn = $(".student-name-tr").attr("data-current-student-fn");
+  store.currentStudentLn = $(".student-name-tr").attr("data-current-student-ln");
   sessionsApi.getSessions()
     .done(getSessionSuccess)
     .fail(getSessionFailure);

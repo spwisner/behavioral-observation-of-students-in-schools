@@ -47,7 +47,16 @@
   {{/each}}
 </table>
 <br><br>
+
+<div class="create-session-student-record-container">
+  <!-- <p>To Create a New Session For {{student.first_name}} {{student.last_name}}, <input id="create-session-student-btn" type="button" value="Click Here" data-current-student-id="{{student.id}}"> -->
+  <p>To create a new session for <span id="current-student-fn"></span> <span id="current-student-ln"></span>:
+    <input id="create-session-student-btn" class="current" type="button" value="Click Here" data-current-student-id="{{session.student_id}}">
+  </p>
+</div>
+
+<br><br>
 <div class="dashboard-container">
-  <input id="dashboard-home-btn" type="button" value="Existing Records">
+  <input id="dashboard-home-btn" type="button" value="View Dashboard">
   <input id="dashboard-new-session-btn" type="button" value="Create Session">
 </div>

@@ -7,6 +7,8 @@ const displayObservationLandingPage = require('../templates/observation/obs-land
 const displaySessionsTable = require('../templates/session/get-sessions.handlebars');
 const displaySessionDetails = require('../templates/session/show-session.handlebars');
 const displaySessionUpdateForm = require('../templates/session/update-session-form.handlebars');
+const uiStudents = require('../students/ui');
+const apiStudents = require('../students/api');
 
 // Session UI
 
@@ -19,6 +21,8 @@ const getSessionSuccess = (data) => {
   });
   // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(sessionDashboard);
+  // $("#current-student-fn").text(store.currentStudentFn);
+  // $("#current-student-ln").text(store.currentStudentLn);
 };
 
 const getSessionFailure = (data) => {
@@ -134,9 +138,12 @@ const createSessionFailure = (data) => {
 
 const deleteSessionSuccess = () => {
   console.log('delete session success');
-  sessionsApi.getSessions()
-    .done(getSessionSuccess)
-    .fail(getSessionFailure);
+  // sessionsApi.getSessions()
+  //   .done(getSessionSuccess)
+  //   .fail(getSessionFailure);
+  apiStudents.showStudent()
+    .done(uiStudents.viewStudentRecordSuccess)
+    .fail(uiStudents.viewStudentRecordFailure);
 };
 
 const deleteSessionFailure = (data) => {
