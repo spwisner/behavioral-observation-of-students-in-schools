@@ -10,7 +10,7 @@ Link to the API Source: [https://github.com/spw5235/behavioral-observation-of-st
 
 Application Screenshot
 Inline-style:
-![alt text](https://cloud.githubusercontent.com/assets/13546265/24553244/8fa80edc-15f7-11e7-86a9-a9802a95f52c.png "Application Screenshot")
+![alt text](https://cloud.githubusercontent.com/assets/13546265/24566758/bff45704-1628-11e7-9dcb-fd139a899935.png "Application Screenshot")
 
 ## Technologies Used
 
