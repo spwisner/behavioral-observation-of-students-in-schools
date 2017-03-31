@@ -29,6 +29,7 @@ const editWriteupSubmitSuccess = () => {
 const editWriteupSubmitFailure = () => {
   $(".notification-container").children().text("");
   console.log('submit edit writeup failure');
+  $("#update-report-error").text("Error: Report not updated. Please ensure all required fields have values.")
 };
 
 
@@ -104,6 +105,7 @@ const createWriteupSuccess = (data) => {
 
 const createWriteupFailure = (data) => {
   $(".notification-container").children().text("");
+  $("#create-report-error").text("Error: Report not created. Please ensure all required fields have values.")
   console.log('create writeup successful');
   console.log(data);
 };

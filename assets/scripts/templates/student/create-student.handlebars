@@ -1,29 +1,34 @@
-<form class="form student-form" id="new-student-form" name="new-student-form">
-  <fieldset>
-    <legend>Create Student Form</legend>
-    <p class="field-description">First Name</p>
-    <input name="student[first_name]" placeholder="First Name" type="text" value="z">
-    <br>
-    <p class="field-description">Last Name</p>
-    <input name="student[last_name]" placeholder="Last Name" type="text" value="z">
-    <br>
-    <p class="field-description">Date of Birth (optional)</p>
-    <input name="student[born_on]" placeholder="Date of Birth" type="date" value="2016-05-05">
-    <br>
-    <p class="field-description">School (optional)</p>
-    <input name="student[school]" placeholder="School" type="text" value="z">
-    <br>
-    <p class="field-description">Teacher (optional)</p>
-    <input name="student[teacher]" placeholder="Teacher" type="text" value="z">
-    <br>
-    <p class="field-description">Grade</p>
-    <input name="student[grade]" placeholder="Grade" type="text" value="z">
-    <br>
-    <input name="submit" id="create-student-btn" type="submit" value="Create Student">
-  </fieldset>
-</form>
-<br><br>
-<div class="dashboard-container">
-  <input id="dashboard-home-btn" type="button" value="View Dashboard">
-  <input id="dashboard-new-session-btn" type="button" value="Create Session">
+<div class="create-student-form-container form-container">
+  <p>Please note, in order to create an observation session, you must first create a student record.</p>
+
+  <form class="form student-form" id="new-student-form" name="new-student-form">
+    <fieldset>
+      <legend>Create Student Form</legend>
+      <p id="create-student-error" class="warning form-error"></p>
+      <p>All fields are <u>optional</u> unless otherwise indicated</p>
+      <p class="field-description required-title">First Name (required)</p>
+      <input class="required-field" name="student[first_name]" placeholder="First Name" type="text">
+      <br>
+      <p class="field-description required-title">Last Name (required)</p>
+      <input class="required-field" name="student[last_name]" placeholder="Last Name" type="text">
+      <br>
+      <p class="field-description">Date of Birth</p>
+      <input name="student[born_on]" placeholder="Date of Birth" type="date">
+      <br>
+      <p class="field-description">School</p>
+      <input name="student[school]" placeholder="School" type="text">
+      <br>
+      <p class="field-description">Teacher</p>
+      <input name="student[teacher]" placeholder="Teacher" type="text">
+      <br>
+      <p class="field-description required-title">Grade (required)</p>
+      <input class="required-field" name="student[grade]" placeholder="Grade" type="text">
+      <br>
+      <input name="submit" id="create-student-btn" type="submit" value="Submit">
+    </fieldset>
+  </form>
+  <br><br>
+  <div class="dashboard-container">
+    <input id="dashboard-home-btn" type="button" value="View Dashboard">
+  </div>
 </div>

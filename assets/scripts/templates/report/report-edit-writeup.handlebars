@@ -1,7 +1,8 @@
 <form id="report-edit-writeup-form" name="report-writeup-form">
   <fieldset>
     <h1 class="form-h1">Edit Writeup Form</h1>
-
+    <p id="update-report-error" class="warning form-error"></p>
+    <p>All fields are <u>optional</u> unless otherwise indicated</p>
     <p class="field-description">Presenting Issues</p>
     <textarea class="field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue">{{report.presenting_issue}}</textarea>
     <br>
@@ -66,7 +67,7 @@
     <textarea class="field-input comments-input" name="report[r_recommendation]" placeholder="Recommendation">{{report.r_recommendation}}</textarea>
     <br>
 
-    <p class="field-description">Observer's Name (i.e. Your Name)</p>
+    <p class="field-description">Observer's Name (required field)</p>
     <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name">{{report.counselor_name}}</textarea>
     <br>
 

@@ -67,11 +67,6 @@ const onChangePassword = function(event) {
     .fail(uiAuth.failure);
 };
 
-const onShowChangePassword = function(event) {
-  event.preventDefault();
-  $("change-password-container").addClass("open");
-}
-
 const addHandlers = () => {
   //   $('#sign-out').hide();
   // $('#change-password').hide();

@@ -121,6 +121,7 @@ const createObservationSuccess = (response) => {
 
 const createObservationFailure = (data) => {
   $(".notification-container").children().text("");
+  $(".failure-alert").text("Error: Observation Not Created.")
   console.log('create observation failure');
   console.log(data);
 };

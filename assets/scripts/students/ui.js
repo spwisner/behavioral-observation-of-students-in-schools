@@ -110,9 +110,10 @@ const showStudentFailure = (data) => {
 };
 
 const createStudentSuccess = () => {
+  $(".form-error").text("");
   $(".notification-container").children().text("");
   $(".content").children().remove();
-  console.log('create student success');
+  $(".success-alert").text("Student Has Been Successfully Created");
   // let studentDetails = displayStudentDetails({
   //   student: data.student
   // });
@@ -129,6 +130,8 @@ const createStudentSuccess = () => {
 
 const createStudentFailure = (data) => {
   $(".notification-container").children().text("");
+  $(".form-error").text("");
+  $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
   console.log('create student failure');
   console.log(data);
 };
@@ -149,6 +152,7 @@ const deleteStudentFailure = (data) => {
 
 const updateStudentSuccess = (data) => {
   $(".notification-container").children().text("");
+  $(".success-alert").text("Student Has Been Successfully Updated");
   console.log('update student success');
   console.log(data);
   store.currentStudentId = data.student.id;
@@ -166,6 +170,7 @@ const updateStudentSuccess = (data) => {
 
 const updateStudentFailure = (data) => {
   $(".notification-container").children().text("");
+  $("#update-student-error").text("Error: Student not updated.  Please ensure all required fields have values");
   console.log('update student failure');
   console.log(data);
 };

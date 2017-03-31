@@ -123,7 +123,9 @@ const createLandingPage = function() {
 // }
 
 const createSessionSuccess = () => {
+  $(".form-error").text("");
   $(".notification-container").children().text("");
+  $(".success-alert").text("Session Successfully Created");
   console.log('create session success');
   createLandingPage();
 
@@ -140,6 +142,7 @@ const createSessionSuccess = () => {
 
 const createSessionFailure = (data) => {
   $(".notification-container").children().text("");
+  $("#create-session-error").text("Error creating session. Please check if all required fields are entered and number values fall within the listed range.");
   console.log('create session failure');
   console.log(data);
 };
@@ -177,6 +180,7 @@ const updateSessionSuccess = (data) => {
 
 const updateSessionFailure = (data) => {
   $(".notification-container").children().text("");
+  $("#update-session-error").text("Error updating session. Please check if all required fields are entered and number values fall within the listed range.");
   console.log('update session failure');
   console.log(data);
 };

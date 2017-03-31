@@ -27,6 +27,24 @@ $one-hundred-color: rgba(231,24,24,1);
   /* FF3.6+ */
 }
 
+.dashboard-container {
+  border-top: 1px solid black;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.dashboard-container input {
+  margin: 0 auto;
+}
+
+#update-session-form > fieldset > input:nth-child(18) {
+  border: 1px solid gold;
+}
+
+#update-session-form > fieldset > input:nth-child(15) {
+  border: 1px solid gold;;
+}
+
 /////Testing new observation form styling
 
 #cancel-session-btn {

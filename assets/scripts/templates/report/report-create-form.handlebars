@@ -2,7 +2,8 @@
   <form id="report-writeup-form" name="report-writeup-form">
     <fieldset>
       <h1 class="form-h1">Create Writeup Form</h1>
-
+      <p id="create-report-error" class="warning form-error"></p>
+      <p>All fields are <u>optional</u> unless otherwise indicated</p>
       <p class="field-description">Presenting Issues</p>
       <textarea class="field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>
       <br>
@@ -67,7 +68,7 @@
       <textarea class="field-input comments-input" name="report[r_recommendation]" placeholder="Recommendation"></textarea>
       <br>
 
-      <p class="field-description">Observer's Name (i.e. Your Name)</p>
+      <p class="field-description">Observer's Name (required)</p>
       <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name"></textarea>
       <br>
 

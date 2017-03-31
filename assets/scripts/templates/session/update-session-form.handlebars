@@ -3,28 +3,27 @@
 <form class="form sessions-form" id="update-session-form" name="update-session-form">
   <fieldset>
     <legend>Update Session Form</legend>
+    <p id="update-session-error" class="warning form-error"></p>
+    <p>All fields are <u>optional</u> unless otherwise indicated</p>
     <br>
     <p class="field-description">Session Date</p>
     <input name="session[obs_on]" placeholder="Session Date" type="date" value="{{session.obs_on}}">
     <br>
-    <p class="field-description">Session Setting</p>
+    <p class="field-description">Session Setting (required)</p>
     <input name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
     <br>
-    <p class="field-description">Session Task</p>
+    <p class="field-description">Session Task (required)</p>
     <input name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
     <br>
-    <p class="field-description">Number of Intervals</p>
-    <input name="session[int_num]" placeholder="Number of Intervals" type="text" value="{{session.int_num}}" readonly>
+    <p class="field-description">Number of Intervals (read-only)</p>
+    <input class="read-only" name="session[int_num]" placeholder="Number of Intervals" type="text" value="{{session.int_num}}" readonly>
     <br>
-    <p class="field-description">Time of Intervals (in seconds)</p>
-    <!-- <p class="predefined-value">{{session.obs_time}}</p> -->
+    <p class="field-description">Time of Intervals (in seconds) (read-only)</p>
     <input class="read-only" name="session[obs_time]" type="text" placeholder="Time" value="{{session.obs_time}}" readonly>
     <br>
     <p class="field-description">Session Comment</p>
-    <!-- <p class="predefined-value">{{session.obs_time}}</p> -->
     <input name="session[comment]" placeholder="Comment" type="text" value="{{session.comment}}">
     <br>
-    <!-- <input name="session[student_id]" id="create-session-stud-id" type="hidden" value="{{session.student_id}}"> -->
     <input name="submit" class="current" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
   </fieldset>
 </form>

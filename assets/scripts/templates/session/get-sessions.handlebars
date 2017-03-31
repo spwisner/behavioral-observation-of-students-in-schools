@@ -1,4 +1,4 @@
-<!-- <h1><span class="current-student-fn"></span> <span class="current-student-ln"></span> Student Sessions</h1> -->
+
 <h3>Student Sessions</h3>
 
 <table class="table session-summary-table table-hover">
@@ -7,16 +7,13 @@
       <th>Date</th>
       <th>Setting</th>
       <th>Task</th>
-      <!-- <th>Number of Intervals</th>
-      <th>Interval Length</th>
-      <th>Comment</th> -->
       <th>Status</th>
       <th>View</th>
     </tr>
   </thead>
   {{#each sessions as |session|}}
-  <tbody>
-    <tr>
+    <tbody>
+      <tr>
         <td class="display-obs-num">
           {{session.obs_on}}
         </td>
@@ -26,20 +23,11 @@
         <td class="display-obs-pet">
           {{session.obs_task}}
         </td>
-        <!-- <td class="display-obs-pet">
-          {{session.int_num}}
-        </td> -->
-        <!-- <td class="display-obs-pet">
-          {{session.obs_time}}
-        </td> -->
-        <!-- <td class="display-obs-pet">
-          {{session.comment}}
-        </td> -->
         <td>
           {{#if session.completed}}
-          Completed
+            Completed
           {{else}}
-          Incomplete
+            Incomplete
           {{/if}}
         </td>
         <td>
@@ -52,14 +40,15 @@
 <br><br>
 
 <div class="create-session-student-record-container">
-  <!-- <p>To Create a New Session For {{student.first_name}} {{student.last_name}}, <input id="create-session-student-btn" type="button" value="Click Here" data-current-student-id="{{student.id}}"> -->
-  <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>:
-    <input id="create-session-student-btn" class="current" type="button" value="Click Here" data-current-student-id="{{session.student_id}}">
+  <h3>New Session</h3>
+  <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>, please click the button below:
+    <div class="create-session-student-btn-container">
+      <input id="create-session-student-btn" class="current" type="button" value="New Session" data-current-student-id="{{session.student_id}}">
+    </div>
   </p>
 </div>
 
 <br><br>
 <div class="dashboard-container">
   <input id="dashboard-home-btn" type="button" value="View Dashboard">
-  <input id="dashboard-new-session-btn" type="button" value="Create Session">
 </div>
