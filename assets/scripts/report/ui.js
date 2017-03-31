@@ -75,7 +75,7 @@ const getWriteupSuccess = () => {
     //   report: data.report
     // });
 
-    $("#generate-written-create-btn").remove();
+    // $("#generate-written-create-btn").remove();
     // $('.display-written-report-container').append(showWriteup);
     $('.report-summary-btn-container').append(generateWrittenUpdateBtn);
     $('.report-summary-btn-container').append(generateWrittenHideBtn);
@@ -85,8 +85,8 @@ const getWriteupSuccess = () => {
     $(".current").attr("data-current-report-id", store.currentReportId);
   }
 
-  $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
-  $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
+  // $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
+  // $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
 
   $(".current").attr("data-current-student-id", store.currentStudentId);
   $(".current").attr("data-current-session-id", store.currentSessionId);

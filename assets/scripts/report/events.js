@@ -90,34 +90,33 @@ const onGetObservationData = function() {
 //     .catch(uiReport.fail);
 // };
 
-const onGenerateWriteupForm = function(event) {
-  event.preventDefault();
-
-  apiReport.getWriteup()
-    // .catch(uiReport.createWriteupFailure)
-    .then((response) => {
-      store.doesReportExist = false;
-      store.currentReportLength = response.reports.length;
-
-      if (store.currentReportLength > 0 ) {
-        store.currentReportId = response.reports[0].id;
-        store.doesReportExist = true;
-
-        let showReport = displayWriteupReport({
-          report: response.report
-        });
-
-        $('.display-written-report-container').append(showReport);
-      } else {
-        $('.content').children().remove();
-        let createWriteupForm = displayWriteupCreateForm();
-        $(".content").append(createWriteupForm);
-        $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
-        $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
-        $('.current').attr("data-current-session-id", store.currentSessionId);
-      }
-
-    })
+// const onGenerateWriteupForm = function(event) {
+//   event.preventDefault();
+//
+//   apiReport.getWriteup()
+//     // .catch(uiReport.createWriteupFailure)
+//     .then((response) => {
+//       store.doesReportExist = false;
+//       store.currentReportLength = response.reports.length;
+//
+//       if (store.currentReportLength > 0 ) {
+//         store.currentReportId = response.reports[0].id;
+//         store.doesReportExist = true;
+//
+//         let showReport = displayWriteupReport({
+//           report: response.report
+//         });
+//
+//         $('.display-written-report-container').append(showReport);
+//       } else {
+//         $('.content').children().remove();
+//         let createWriteupForm = displayWriteupCreateForm();
+//         $(".content").append(createWriteupForm);
+//         $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
+//         $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
+//         $('.current').attr("data-current-session-id", store.currentSessionId);
+//       }
+//     });
 
 
   // store.currentStudentId = $(this).attr("data-current-student-id");
@@ -127,7 +126,7 @@ const onGenerateWriteupForm = function(event) {
   // $(".content").append(createWriteupForm);
   // $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
   // $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
-};
+// };
 
 const onCreateStatsReport = function(event) {
   event.preventDefault();
@@ -154,8 +153,8 @@ const onCreateStatsReport = function(event) {
   $('.content').append(showStatsReportHtml);
   onShowStudentSummary();
   onGetObservationData();
-  $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
-  $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
+  // $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
+  // $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
 };
 
 const getFormVals = function(event) {
@@ -235,7 +234,7 @@ const addHandlers = () => {
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
   $('.content').on('click', '#session-record-view-report', onCreateStatsReport);
-  $('.content').on('click', '#generate-written-create-btn', onGenerateWriteupForm);
+  // $('.content').on('click', '#generate-written-create-btn', onGenerateWriteupForm);
   $('.content').on('click', '#generate-written-update-btn', onEditWriteup);
   $('.content').on('submit', '#report-edit-writeup-form', onSubmitEdit);
   $('.content').on('click', '#generate-written-hide-btn', toggleHideShowReport);
