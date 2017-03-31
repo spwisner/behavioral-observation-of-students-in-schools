@@ -9,7 +9,8 @@ Link to the live application: [https://spw5235.github.io/behavioral-observation-
 Link to the API Source: [https://github.com/spw5235/behavioral-observation-of-students-in-schools-api](https://github.com/spw5235/behavioral-observation-of-students-in-schools-api).
 
 Application Screenshot
-https://cloud.githubusercontent.com/assets/13546265/24553244/8fa80edc-15f7-11e7-86a9-a9802a95f52c.png
+Inline-style:
+![alt text](https://cloud.githubusercontent.com/assets/13546265/24553244/8fa80edc-15f7-11e7-86a9-a9802a95f52c.png "Application Screenshot")
 
 ## Technologies Used
 
