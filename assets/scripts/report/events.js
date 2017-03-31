@@ -5,6 +5,7 @@ const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const displayStatsReportHtml = require('../templates/report/stats-report.handlebars');
 const displayWriteupCreateForm = require('../templates/report/report-create-form.handlebars');
+const displayWriteupReport = require('../templates/report/report-writeup.handlebars');
 
 // OBSERVATION EVENTS
 
@@ -68,16 +69,64 @@ const onGetObservationData = function() {
 //   onGetObservationData();
 // };
 
+// const onGenerateWriteupForm = function(event) {
+//   event.preventDefault();
+//   store.currentStudentId = $("#generate-written-create-btn").attr("data-current-student-id");
+//   store.currentSessionId = $("#generate-written-create-btn").attr("data-current-session-id");
+//   $('.content').children().remove();
+//   apiReport.getWriteup()
+//     // .catch(uiReport.createWriteupFailure)
+//     .then((response) => {
+//       console.log('geerate response');
+//       store.doesReportExist = false;
+//       store.currentReportLength = response.reports.length;
+//       if (store.currentReportLength >0 ) {
+//         store.currentReportId = response.reports[0].id;
+//         store.doesReportExist = true;
+//       }
+//       // store.currentReportId = response.report.id;
+//     })
+//     .done(uiReport.success)
+//     .catch(uiReport.fail);
+// };
 
 const onGenerateWriteupForm = function(event) {
   event.preventDefault();
-  store.currentStudentId = $(this).attr("data-current-student-id");
-  store.currentSessionId = $(this).attr("data-current-session-id");
-  $('.content').children().remove();
-  let createWriteupForm = displayWriteupCreateForm();
-  $(".content").append(createWriteupForm);
-  $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
-  $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
+
+  apiReport.getWriteup()
+    // .catch(uiReport.createWriteupFailure)
+    .then((response) => {
+      store.doesReportExist = false;
+      store.currentReportLength = response.reports.length;
+
+      if (store.currentReportLength > 0 ) {
+        store.currentReportId = response.reports[0].id;
+        store.doesReportExist = true;
+
+        let showReport = displayWriteupReport({
+          report: response.report
+        });
+
+        $('.display-written-report-container').append(showReport);
+      } else {
+        $('.content').children().remove();
+        let createWriteupForm = displayWriteupCreateForm();
+        $(".content").append(createWriteupForm);
+        $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
+        $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
+        $('.current').attr("data-current-session-id", store.currentSessionId);
+      }
+
+    })
+
+
+  // store.currentStudentId = $(this).attr("data-current-student-id");
+  // store.currentSessionId = $(this).attr("data-current-session-id");
+  // $('.content').children().remove();
+  // let createWriteupForm = displayWriteupCreateForm();
+  // $(".content").append(createWriteupForm);
+  // $("#create-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
+  // $("#create-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
 };
 
 const onCreateStatsReport = function(event) {
@@ -107,6 +156,30 @@ const onCreateStatsReport = function(event) {
   onGetObservationData();
   $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
   $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
+};
+
+const getFormVals = function(event) {
+  event.preventDefault();
+  let pi = $('.pi-input').val();
+  let cba = $('.cba-input').val();
+  let ss = $('.ss-input').val();
+  let aet = $('.aet-input').val();
+  let pet = $('.pet-input').val();
+  let oftm = $('.oftm-input').val();
+  let oftv = $('.oftv-input').val();
+  let oftp = $('.oftp-input').val();
+  let find = $('.find-input').val();
+  let cftone = $('.cftone-input').val();
+  let cfttwo = $('.cfttwo-input').val();
+  let cftthree = $('.cftthree-input').val();
+  let cfone = $('.cfone-input').val();
+  let cftwo = $('.cftwo-input').val();
+  let cfthree = $('.cfthree-input').val();
+  let rec = $('.rec-input').val();
+  let cn = $('.cn-input').val();
+  apiReport.createReportManually(pi, cba, ss, aet, pet, oftm, oftv, oftp, find, cfone, cftwo, cfthree, rec, cn, cftone, cfttwo, cftthree)
+    .done(uiReport.createWriteupSuccess)
+    .catch(uiReport.createWriteupFailure);
 };
 
 const onCreateWriteup = function(event) {
@@ -162,11 +235,12 @@ const addHandlers = () => {
   $('.get-writeup-btn-container').on('click', '#get-writeup-report-btn', onGetWriteup);
   $('.edit-report-btn-container').on('click', '#edit-report-btn', onEditWriteup);
   $('.content').on('click', '#session-record-view-report', onCreateStatsReport);
-  // $('.content').on('click', '#generate-written-create-btn', onGenerateWriteupForm);
+  $('.content').on('click', '#generate-written-create-btn', onGenerateWriteupForm);
   $('.content').on('click', '#generate-written-update-btn', onEditWriteup);
   $('.content').on('submit', '#report-edit-writeup-form', onSubmitEdit);
   $('.content').on('click', '#generate-written-hide-btn', toggleHideShowReport);
   $('.content').on('click', '#writeup-printer-friendly-btn', onPrinterFriendly);
+  $('.content').on('click', '#create-report-writeup-btn', getFormVals);
 };
 
 module.exports = {

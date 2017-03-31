@@ -9,12 +9,21 @@ const displayReportStudent = require('../templates/report/report-student-summary
 const displayWriteupReport = require('../templates/report/report-writeup.handlebars');
 const displayEditWriteupReport = require('../templates/report/report-edit-writeup.handlebars');
 const reportLogic = require('./logic');
+const sessionsApi = require('../sessions/api');
+const sessionsUi = require('../sessions/ui');
 
 // Report UI
 
+const success = () => {
+  $(".notification-container").children().text("");
+}
+
+const fail = () => {
+  $(".notification-container").children().text("");
+}
+
 const editWriteupSubmitSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('submit edit writeup successful');
   let generateBackToReportBtn = $('<button id="session-record-view-report" class="btn btn-success current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Back To Report</button>');
   let generateSuccessMessage = $('<p>Your Report Has Been Successfully Updated</p>');
   $("#report-edit-writeup-form").remove();
@@ -28,14 +37,12 @@ const editWriteupSubmitSuccess = () => {
 
 const editWriteupSubmitFailure = () => {
   $(".notification-container").children().text("");
-  console.log('submit edit writeup failure');
   $("#update-report-error").text("Error: Report not updated. Please ensure all required fields have values.");
 };
 
 
 const editWriteupSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('edit writeup successful');
   $('.content').children().remove();
   let data = store.editWriteupObject;
 
@@ -52,7 +59,6 @@ const editWriteupSuccess = () => {
 
 const editWriteupFailure = () => {
   $(".notification-container").children().text("");
-  console.log('edit writeup failure');
 };
 //Writeup
 
@@ -61,8 +67,6 @@ const getWriteupSuccess = () => {
   const writeupPrinterFriendlyBtn = $('<button id="writeup-printer-friendly-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Printer Frindely</button>');
   const generateWrittenUpdateBtn = $('<button id="generate-written-update-btn" class="btn btn-warning btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Click To Update</button>');
   const generateWrittenHideBtn = $('<button id="generate-written-hide-btn" class="btn btn-info btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Hide Report</button>');
-
-  console.log('create writeup successful');
   let data = store.getWriteupObject;
 
   if (data !== null) {
@@ -99,8 +103,17 @@ const getWriteupFailure = () => {
 
 };
 
-const createWriteupSuccess = () => {
+const createWriteupSuccess = (data) => {
   $(".notification-container").children().text("");
+  $('.content').children().remove();
+  // let showReport = displayWriteupReport({
+  //   report: data.report
+  // });
+  //
+  // $('.content').append(showReport);
+  sessionsApi.showSession()
+    .done(sessionsUi.showSessionSuccess)
+    .fail(sessionsUi.showSessionFailure);
 };
 
 const createWriteupFailure = () => {
@@ -168,4 +181,6 @@ module.exports = {
   editWriteupFailure,
   editWriteupSubmitSuccess,
   editWriteupSubmitFailure,
+  success,
+  fail,
 };

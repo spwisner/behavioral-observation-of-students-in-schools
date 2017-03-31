@@ -1,83 +1,194 @@
-
+<div class="create-writeup-form-container">
   <form id="report-writeup-form" name="report-writeup-form">
     <fieldset>
       <h1 class="form-h1">Create Writeup Form</h1>
-      <p id="create-report-error" class="warning form-error"></p>
-      <p>All fields are <u>optional</u> unless otherwise indicated</p>
+
       <p class="field-description">Presenting Issues</p>
-      <textarea class="field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>
+      <textarea class="field-input pi-input" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>
       <br>
 
       <p class="field-description">Class Behavioral Assessment</p>
-      <textarea class="field-input comments-input" name="report[class_behav_assess]" placeholder="Class Behavioral Assessment"></textarea>
+      <textarea class="field-input cba-input" name="report[class_behav_assess]" placeholder="Class Behavioral Assessment"></textarea>
       <br>
 
       <p class="field-description">Session Setting</p>
-      <textarea class="field-input comments-input" name="report[r_setting]" placeholder="Session Setting"></textarea>
+      <textarea class="field-input ss-input" name="report[r_setting]" placeholder="Session Setting"></textarea>
       <br>
 
       <p class="field-description">Active Engaged Time</p>
-      <textarea class="field-input comments-input" name="report[r_aet]" placeholder="Active Engaged Time"></textarea>
+      <textarea class="field-input aet-input" name="report[r_aet]" placeholder="Active Engaged Time"></textarea>
       <br>
 
       <p class="field-description">Passive Engaged Time</p>
-      <textarea class="field-input comments-input" name="report[r_pet]" placeholder="Passive Engaged Time"></textarea>
+      <textarea class="field-input pet-input" name="report[r_pet]" placeholder="Passive Engaged Time"></textarea>
       <br>
 
       <p class="field-description">Off-Task Motor Behavior</p>
-      <textarea class="field-input comments-input" name="report[r_oftm]" placeholder="Off-Task Motor Behavior"></textarea>
+      <textarea class="field-input oftm-input" name="report[r_oftm]" placeholder="Off-Task Motor Behavior"></textarea>
       <br>
 
       <p class="field-description">Off-Task Verbal Behavior</p>
-      <textarea class="field-input comments-input" name="report[r_oftv]" placeholder="Off-Task Verbal Behavior"></textarea>
+      <textarea class="field-input oftv-input" name="report[r_oftv]" placeholder="Off-Task Verbal Behavior"></textarea>
       <br>
 
       <p class="field-description">Off-Task Passive Behavior</p>
-      <textarea class="field-input comments-input" name="report[r_oftp]" placeholder="Off-Task Passive Behavior"></textarea>
+      <textarea class="field-input oftp-input" name="report[r_oftp]" placeholder="Off-Task Passive Behavior"></textarea>
       <br>
 
       <p class="field-description">Findings</p>
-      <textarea class="field-input comments-input" name="report[r_finding]" placeholder="Findings"></textarea>
+      <textarea class="field-input find-input" name="report[r_finding]" placeholder="Findings"></textarea>
       <br>
 
       <p class="field-description">Custom Field Title One</p>
-      <textarea class="field-input comments-input" name="report[custom_one_title]" placeholder="Custom Title One"></textarea>
+      <textarea class="field-input cftone-input" name="report[custom_one_title]" placeholder="Custom Title One"></textarea>
       <br>
 
       <p class="field-description">Custom Field One</p>
-      <textarea class="field-input comments-input" name="report[r_customone]" placeholder="Custom Field One"></textarea>
+      <textarea class="field-input cfone-input" name="report[r_customone]" placeholder="Custom Field One"></textarea>
       <br>
 
       <p class="field-description">Custom Field Title Two</p>
-      <textarea class="field-input comments-input" name="report[custom_two_title]" placeholder="Custom Title Two"></textarea>
+      <textarea class="field-input cfttwo-input" name="report[custom_two_title]" placeholder="Custom Title Two"></textarea>
       <br>
 
       <p class="field-description">Custom Field Two</p>
-      <textarea class="field-input comments-input" name="report[r_customtwo]" placeholder="Custom Field Two"></textarea>
+      <textarea class="field-input cftwo-input" name="report[r_customtwo]" placeholder="Custom Field Two"></textarea>
       <br>
 
       <p class="field-description">Custom Field Title Three</p>
-      <textarea class="field-input comments-input" name="report[custom_three_title]" placeholder="Custom Title Three"></textarea>
+      <textarea class="field-input cftthree-input" name="report[custom_three_title]" placeholder="Custom Title Three"></textarea>
       <br>
 
       <p class="field-description">Custom Field Three</p>
-      <textarea class="field-input comments-input" name="report[r_customthree]" placeholder="Custom Field Three"></textarea>
+      <textarea class="field-input cfthree-input" name="report[r_customthree]" placeholder="Custom Field Three"></textarea>
       <br>
 
       <p class="field-description">Recommendation</p>
-      <textarea class="field-input comments-input" name="report[r_recommendation]" placeholder="Recommendation"></textarea>
+      <textarea class="field-input rec-input" name="report[r_recommendation]" placeholder="Recommendation"></textarea>
       <br>
 
-      <p class="field-description">Observer's Name (required)</p>
-      <textarea class="field-input comments-input" name="report[counselor_name]" placeholder="Observer's Name"></textarea>
+      <p class="field-description">Observer's Name (i.e. Your Name)</p>
+      <textarea class="field-input cn-input" name="report[counselor_name]" placeholder="Observer's Name"></textarea>
       <br>
 
-      <input class="submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Submit Writeup" data-current-student-id="" data-current-session-id="">
+      <input class="btn btn-success submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Create Report" data-current-student-id="" data-current-session-id="" data-current-report-id="">
     </fieldset>
   </form>
+</div>
 
 
 <div class="dashboard-container">
   <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
   <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form id="report-writeup-form" name="report-writeup-form">
+  <fieldset>
+    <h1 class="form-h1">Create Writeup Form</h1>
+    <p id="create-report-error" class="warning form-error"></p>
+    <p>All fields are <u>optional</u> unless otherwise indicated</p>
+
+    <div class="form-group">
+      <label>Presenting Issues</label>
+      <textarea class="form-control field-input comments-input" id="presenting-issues-l" type="text" name="report[presenting_issue]" placeholder="Presenting Issue"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="class-behavioral-assess-l">Class Behavioral Assessment</label>
+      <textarea class="form-control field-input comments-input" id="class-behavioral-assess-l" type="text" name="report[class_behav_assess]" placeholder="Class Behavioral Assessment"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Session Setting</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_setting]" placeholder="Session Setting"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Active Engaged Time</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_aet]" placeholder="Active Engaged Time"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Passive Engaged Time</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_pet]" placeholder="Passive Engaged Time"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Motor Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftm]" placeholder="Off-Task Motor Behavior"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Verbal Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftv]" placeholder="Off-Task Verbal Behavior"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Passive Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftp]" placeholder="Off-Task Passive Behavior"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Findings</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_finding]" placeholder="Findings"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title One</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_one_title]" placeholder="Custom Title One">
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Content One</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customone]" placeholder="Custom Field One"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title Two</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_two_title]" placeholder="Custom Title Two">
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Two</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customtwo]" placeholder="Custom Field Two"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title Three</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_three_title]" placeholder="Custom Title Three">
+    </div>
+    <div class="form-group">
+      <label>Custom Field Three</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customthree]" placeholder="Custom Field Three"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Recommendation</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_recommendation]" placeholder="Recommendation"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Observer's Name (required field)</label>
+      <input class="form-control field-input comments-input" type="text" name="report[counselor_name]" placeholder="Your Name">
+    </div>
+
+    <div class="form-group">
+      <input class="btn btn-success submit-btn current" name="submit" id="create-report-writeup-btn" type="submit" value="Create Report" data-current-student-id="" data-current-session-id="" data-current-report-id="">
+    </div>
+  </fieldset>
+</form>
+
+
+<div class="dashboard-container">
+  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+</div> -->
