@@ -33,6 +33,31 @@ $one-hundred-color: rgba(231,24,24,1);
   display: none;
 }
 
+// Hide sign-out by default
+.failure {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+#sign-out {
+  visibility: hidden;
+}
+
+#change-password {
+  visibility: hidden;
+}
+
+.success-alert {
+  color: green;
+}
+
+.failure-alert {
+  color: red;
+}
+
 .observation-form-side {
   width: 200px;
 }

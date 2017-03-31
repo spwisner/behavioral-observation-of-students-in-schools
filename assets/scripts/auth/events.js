@@ -16,38 +16,74 @@ const onSignIn = function(event) {
       return store.user;
     })
     .done(uiAuth.signInSuccess)
-    .catch(uiAuth.onSignInFailure);
+    .catch(uiAuth.signInFailure);
 };
 
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  apiAuth.signUp(data)
-    .done(uiAuth.success)
-    .catch(uiAuth.failure);
+  console.log(data);
+
+  let passwordOne = data.credentials.password;
+  let passwordOneLength = passwordOne.split("").length;
+  let passwordTwo = data.credentials.password_confirmation;
+  let passwordTwoLength = passwordTwo.split("").length;
+
+  let passOneLengthCondition = (passwordOneLength > 0);
+  let passTwoLengthCondition = (passwordTwoLength > 0);
+  let passwordsEqualCondition = (passwordOne === passwordTwo);
+
+  if ( passOneLengthCondition &&  passTwoLengthCondition && passwordsEqualCondition) {
+    apiAuth.signUp(data)
+      .done(uiAuth.signUpSuccess)
+      .catch(uiAuth.signUpFailure);
+  } else {
+    $(".signup-failure").slideDown(300).text("Sign-up error. Please ensure that you are using a valid email and passwords match.");
+  }
 };
 
 const onSignOut = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
   apiAuth.signOut(data)
-    .done(uiAuth.success)
-    .fail(uiAuth.failure);
+    .done(uiAuth.signOutSuccess)
+    .fail(uiAuth.signOutFailure);
 };
 
 const onChangePassword = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
+
+  if ( $(".new-password").val() === "" ) {
+    $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').show(0).delay(5000).slideUp(500);
+  } else {
+    apiAuth.changePassword(data)
+      .then(uiAuth.cpSuccess)
+      .catch(uiAuth.cpFailure);
+  }
+
   apiAuth.changePassword(data)
     .done(uiAuth.success)
     .fail(uiAuth.failure);
 };
 
+const onShowChangePassword = function(event) {
+  event.preventDefault();
+  $("change-password-container").addClass("open");
+}
+
 const addHandlers = () => {
+  //   $('#sign-out').hide();
+  // $('#change-password').hide();
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
-  $('#sign-out').on('submit', onSignOut);
   $('#change-password').on('submit', onChangePassword);
+  $('#sign-out').on('submit', onSignOut);
+  // $('#sign-up').on('submit', onSignUp);
+  // $('#sign-in').on('submit', onSignIn);
+  // $('#sign-out').on('submit', onSignOut);
+  // $('#change-password-container').on('click', onShowChangePassword);
+  // $('#change-password').on('submit', onChangePassword);
 };
 
 module.exports = {
