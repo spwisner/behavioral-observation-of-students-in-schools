@@ -41,6 +41,21 @@ Based on the user-stories, mulitiple wireframes were created for this applicatio
 [Start New Session ](https://drive.google.com/open?id=0B_Hv9u6cm8IVeXA2NWtsek00UVk)
 [Past Session Report ](https://drive.google.com/open?id=0B_Hv9u6cm8IVR2loY054dkJHV1U)
 
+### Dependencies
+
+Chart.js was utiltized in this project for bar graphs comparing target students to random peers.  Charts.js is open source and provides detailed documentation with installation instructions:
+
+[http://www.chartjs.org/docs/](http://www.chartjs.org/docs/)
+
+
+Installation was completed via a single npm method:
+
+```
+npm install chart.js --save
+```
+
+After requiring the module in the index.js file, Chart.js could be used with their provided documentation.
+
 ### Application Limitations & Unresolved Problems
 
-TBD
+The primary limitation of this application is its scope.  Because four tables are required for this application (students, sessions observations, and reports), it can be challenging to includes values from different tables in one location.  Future attention should be paid to better structure the api.
