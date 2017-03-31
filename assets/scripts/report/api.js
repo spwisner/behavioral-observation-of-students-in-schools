@@ -88,6 +88,16 @@ const getWriteup = function() {
   });
 };
 
+const getWriteupById = function(student, session) {
+  return $.ajax({
+    url: config.apiOrigin + '/students/' + student + '/sessions/' + session + '/reports',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token,
+    },
+  });
+};
+
 
 const getStudentSummary = function() {
   return $.ajax({
@@ -107,4 +117,5 @@ module.exports = {
   getWriteup,
   updateWriteup,
   submitEditWriteup,
+  getWriteupById,
 };

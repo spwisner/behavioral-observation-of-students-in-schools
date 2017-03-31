@@ -2,18 +2,6 @@
 
 const displayDashboard = require('../templates/dashboard/dashboard-home.handlebars');
 
-// const success = (data) => {
-//   $(".notification-container").children().text("");
-//   console.log('success completed');
-//   console.log(data);
-// };
-//
-// const failure = (error) => {
-//   $(".notification-container").children().text("");
-//   console.error(error);
-//   console.log('error');
-// };
-
 const signInSuccess = function() {
   $(".notification-container").children().text("");
   $(".success-alert").text("You have successfully signed-in");
@@ -21,16 +9,10 @@ const signInSuccess = function() {
   $('#sign-up').hide();
   $("#sign-out").css("visibility", "visible");
   $("#change-password").css("visibility", "visible");
-
-
-  // $('#change-password-container').show();
   $(".content").children().remove();
-  // $(".student-record-table").remove();
   let dashboardHome = displayDashboard();
-  // $('.student-details-container').append(studentDetails);
   $('.content').append(dashboardHome);
   $(".form-clear").val('');
-// $('#change-password').show();
 };
 
 const signInFailure = function() {
@@ -46,10 +28,6 @@ const signUpSuccess = function() {
   $("#sign-up").removeClass("open");
   $("#sign-in").addClass("open");
   $(".signin-success").slideDown(300).text("You have successfully signed-up.  Please sign-in to continue").delay(3500).slideUp(300);
-  // $("#sign-up button").attr("aria-expanded", false);
-  // $("#sign-up").removeClass("open");
-  // $("#sign-in").addClass("open");
-  // $("#sign-in button").attr("aria-expanded", true);
 };
 
 const signUpFailure = function() {
@@ -60,8 +38,6 @@ const signUpFailure = function() {
 const signOutSuccess = function() {
   $(".notification-container").children().text("");
   $(".success-alert").text("You have successfully signed-out.  Please sign-in to continue");
-
-  // $("#change-password").hide();
   $('.content').children().remove();
   $("#sign-up").show();
   $("#sign-in").show();
@@ -86,12 +62,7 @@ const cpFailure = function() {
   $('.changepw-failure').text('Change password attempt failed. Make sure you correctly entered your original password.').show(0).delay(5000).slideUp(500);
 };
 
-
-
-
 module.exports = {
-  // success,
-  // failure,
   signInSuccess,
   signInFailure,
   signUpSuccess,

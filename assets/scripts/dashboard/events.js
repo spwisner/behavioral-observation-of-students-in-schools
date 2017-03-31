@@ -1,19 +1,14 @@
 'use strict';
-// const apiStudents = require('./api');
-// const uiStudents = require('./ui');
-// const getFormFields = require('../../../lib/get-form-fields');
+
 const store = require('../store');
 const displayNewSessionDash = require('../templates/session/new-session-home.handlebars');
 const apiStudents = require('../students/api');
 const uiDashBoard = require('./ui');
 const displaySessionCreateForm = require('../templates/session/new-session-form.handlebars');
-// Dashboard Events and UI
 
 const onShowCreateDash = function() {
   $(".content").children().remove();
-  // $(".student-record-table").remove();
   let showCreateDashHome = displayNewSessionDash();
-  // $('.student-details-container').append(studentDetails);
   $('.content').append(showCreateDashHome);
 };
 

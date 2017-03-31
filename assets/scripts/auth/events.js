@@ -22,7 +22,6 @@ const onSignIn = function(event) {
 const onSignUp = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
 
   let passwordOne = data.credentials.password;
   let passwordOneLength = passwordOne.split("").length;
@@ -68,17 +67,10 @@ const onChangePassword = function(event) {
 };
 
 const addHandlers = () => {
-  //   $('#sign-out').hide();
-  // $('#change-password').hide();
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
-  // $('#sign-up').on('submit', onSignUp);
-  // $('#sign-in').on('submit', onSignIn);
-  // $('#sign-out').on('submit', onSignOut);
-  // $('#change-password-container').on('click', onShowChangePassword);
-  // $('#change-password').on('submit', onChangePassword);
 };
 
 module.exports = {

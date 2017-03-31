@@ -14,7 +14,6 @@ const apiStudents = require('../students/api');
 
 const getSessionSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('get session success');
 
   $(".content").children().remove();
   let sessionDashboard = displaySessionsTable({
@@ -26,16 +25,12 @@ const getSessionSuccess = (data) => {
   // $("#current-student-ln").text(store.currentStudentLn);
 };
 
-const getSessionFailure = (data) => {
+const getSessionFailure = () => {
   $(".notification-container").children().text("");
-  console.log('get session failure');
-  console.log(data);
 };
 
 const showSessionSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('show session success');
-  console.log(data);
 
   $(".content").children().remove();
   let sessionDetails = displaySessionDetails({
@@ -47,10 +42,8 @@ const showSessionSuccess = (data) => {
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
-const showSessionFailure = (data) => {
+const showSessionFailure = () => {
   $(".notification-container").children().text("");
-  console.log('show session failure');
-  console.log(data);
 };
 
 // const generateTodaysDate = function() {
@@ -86,9 +79,7 @@ const generateCreateForm = () => {
 const generateUpdateForm = (data) => {
   $(".notification-container").children().text("");
   $(".content").children().remove();
-  console.log('edit session success');
   data.session.student_id = store.currentStudentId;
-  console.log(data);
   let generatedUpdateForm = displaySessionUpdateForm({
     session: data.session
   });
@@ -100,12 +91,11 @@ const generateUpdateForm = (data) => {
 
 const generateUpdateFormFailure = () => {
   $(".notification-container").children().text("");
-  console.log("generate update form failure");
+
 };
 
 const createLandingPage = function() {
   $(".content").children().remove();
-  console.log('landing-page success');
   let landingPage = displayObservationLandingPage();
   $('.content').append(landingPage);
   $(".current").attr("data-current-session-id", store.currentSessionId);
@@ -126,7 +116,6 @@ const createSessionSuccess = () => {
   $(".form-error").text("");
   $(".notification-container").children().text("");
   $(".success-alert").text("Session Successfully Created");
-  console.log('create session success');
   createLandingPage();
 
   // store.observationIdNum = 0;
@@ -140,16 +129,13 @@ const createSessionSuccess = () => {
   // $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
-const createSessionFailure = (data) => {
+const createSessionFailure = () => {
   $(".notification-container").children().text("");
   $("#create-session-error").text("Error creating session. Please check if all required fields are entered and number values fall within the listed range.");
-  console.log('create session failure');
-  console.log(data);
 };
 
 const deleteSessionSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('delete session success');
   // sessionsApi.getSessions()
   //   .done(getSessionSuccess)
   //   .fail(getSessionFailure);
@@ -160,14 +146,10 @@ const deleteSessionSuccess = () => {
 
 const deleteSessionFailure = (data) => {
   $(".notification-container").children().text("");
-  console.log('delete session failure');
-  console.log(data);
 };
 
 const updateSessionSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('update session success');
-  console.log(data);
   store.currentStudentId = data.session.id;
   $(".content").children().remove();
   let sessionDetails = displaySessionDetails({
@@ -181,8 +163,6 @@ const updateSessionSuccess = (data) => {
 const updateSessionFailure = (data) => {
   $(".notification-container").children().text("");
   $("#update-session-error").text("Error updating session. Please check if all required fields are entered and number values fall within the listed range.");
-  console.log('update session failure');
-  console.log(data);
 };
 
 module.exports = {

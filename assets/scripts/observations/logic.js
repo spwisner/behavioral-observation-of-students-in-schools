@@ -1,19 +1,15 @@
 'use strict';
 
-// const PlaySound = function(soundObj) {
-//   const sound = document.getElementById(soundObj);
-//   if (sound) {
-//     if (sound.object)
-//       //IE needs this
-//       sound.object.Play();
-//     else
-//       sound.Play();
-//   }
-// }
-// }
-
-
-
+const PlaySound = function(soundObj) {
+  const sound = document.getElementById(soundObj);
+  if (sound) {
+    if (sound.object)
+      //IE needs this
+      sound.object.Play();
+    else
+      sound.Play();
+  }
+}
 
   let x = document.getElementById("timer-warning-audio");
 

@@ -7,8 +7,6 @@ const displayExistingStudents = require('../templates/dashboard/existing-student
 
 const getExistingSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('get existing dashboard success');
-  console.log(data);
   store.currentStudentId = 0;
   store.currentSessionId = 0;
   $(".content").children().remove();
@@ -18,10 +16,8 @@ const getExistingSuccess = (data) => {
   $('.content').append(existingStudents);
 };
 
-const getExistingFailure = (data) => {
+const getExistingFailure = () => {
   $(".notification-container").children().text("");
-  console.log("get existing failure");
-  console.log(data);
 };
 
 module.exports = {

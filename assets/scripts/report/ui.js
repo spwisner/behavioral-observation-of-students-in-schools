@@ -20,7 +20,7 @@ const editWriteupSubmitSuccess = () => {
   $("#report-edit-writeup-form").remove();
   $(".successful-update-message-container").append(generateSuccessMessage);
   $(".successful-update-message-container").append(generateBackToReportBtn);
-  $(".current").attr("data-current-student-id", store.currentStudentId );
+  $(".current").attr("data-current-student-id", store.currentStudentId);
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-report-id", store.currentReportId);
   // $('.report-writeup-table').remove();
@@ -45,7 +45,7 @@ const editWriteupSuccess = () => {
   });
   $('.content').append(editWriteup);
 
-  $("#edit-report-writeup-btn").attr("data-current-student-id", store.currentStudentId );
+  $("#edit-report-writeup-btn").attr("data-current-student-id", store.currentStudentId);
   $("#edit-report-writeup-btn").attr("data-current-session-id", store.currentSessionId);
   $("#edit-report-writeup-btn").attr("data-current-report-id", store.currentReportId);
 };
@@ -58,33 +58,33 @@ const editWriteupFailure = () => {
 
 const getWriteupSuccess = () => {
   $(".notification-container").children().text("");
-  $("#writeup-printer-friendly-btn").hide();
-  $("#generate-written-hide-btn").hide();
-  $("#generate-written-update-btn").hide();
-  $("#generate-written-create-btn").hide();
+  const writeupPrinterFriendlyBtn = $('<button id="writeup-printer-friendly-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Printer Frindely</button>');
+  const generateWrittenUpdateBtn = $('<button id="generate-written-update-btn" class="btn btn-warning btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Click To Update</button>');
+  const generateWrittenHideBtn = $('<button id="generate-written-hide-btn" class="btn btn-info btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Hide Report</button>');
+
+  alert(store.getWriteupObject);
+
   console.log('create writeup successful');
   let data = store.getWriteupObject;
 
   if (data !== null) {
-    console.log(data);
-    let showWriteup = displayWriteupReport({
-      report: data.report
-    });
-    $('.display-written-report-container').append(showWriteup);
 
-    $("#writeup-printer-friendly-btn").show();
-    $("#generate-written-hide-btn").show();
-    $("#generate-written-update-btn").show();
-    $("#generate-written-create-btn").hide();
+    // let showWriteup = displayWriteupReport({
+    //   report: data.report
+    // });
+
+    $("#generate-written-create-btn").remove();
+    // $('.display-written-report-container').append(showWriteup);
+    $('.report-summary-btn-container').append(generateWrittenUpdateBtn);
+    $('.report-summary-btn-container').append(generateWrittenHideBtn);
+    $('.report-summary-btn-container').append(writeupPrinterFriendlyBtn);
 
     $("#generate-written-update-btn").attr("data-current-report-id", store.currentReportId);
     $(".current").attr("data-current-report-id", store.currentReportId);
-  } else {
-    $("#writeup-printer-friendly-btn").hide();
-    $("#generate-written-hide-btn").hide();
-    $("#generate-written-update-btn").hide();
-    $("#generate-written-create-btn").show();
   }
+
+  $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
+  $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
 
   $(".current").attr("data-current-student-id", store.currentStudentId);
   $(".current").attr("data-current-session-id", store.currentSessionId);
@@ -96,43 +96,32 @@ const getWriteupSuccess = () => {
 
 };
 
-const getWriteupFailure = (data) => {
+const getWriteupFailure = () => {
   $(".notification-container").children().text("");
-  console.log('create writeup successful');
-  console.log(data);
+
 };
 
-const createWriteupSuccess = (data) => {
+const createWriteupSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('create writeup successful');
-  console.log(data);
 };
 
-const createWriteupFailure = (data) => {
+const createWriteupFailure = () => {
   $(".notification-container").children().text("");
   $("#create-report-error").text("Error: Report not created. Please ensure all required fields have values.")
-  console.log('create writeup successful');
-  console.log(data);
 };
 //
 
 
-const onGetChartDataSuccess = (data) => {
+const onGetChartDataSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('get chart data success');
-  console.log(data);
 };
 
-const onGetChartDataFailure = (data) => {
+const onGetChartDataFailure = () => {
   $(".notification-container").children().text("");
-  console.log('get chart data failure');
-  console.log(data);
 };
 
 const onGetObservationTableSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log("tabledata")
-  console.log(data);
   // console.log('get observation table success');
   chart.getColumnSums(data);
   $(".obs-summary-table").remove();
@@ -149,26 +138,20 @@ const onGetObservationTableSuccess = (data) => {
   reportLogic.statsTableCountPercent(data);
 };
 
-const onGetObservationTableFailure = (data) => {
+const onGetObservationTableFailure = () => {
   $(".notification-container").children().text("");
-  console.log('get observation table failure');
-  console.log(data);
 };
 
 const showStudentSummarySuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('show student success');
-  console.log(data);
   let showStudentSummary = displayReportStudent({
     student: data.student
   });
   $('.display-student-summary-container').append(showStudentSummary);
 };
 
-const showStudentSummaryFailure = (data) => {
+const showStudentSummaryFailure = () => {
   $(".notification-container").children().text("");
-  console.log('show student failure');
-  console.log(data);
 };
 
 

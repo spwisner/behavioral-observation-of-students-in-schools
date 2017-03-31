@@ -78,7 +78,6 @@ const startSession = function() {
 
 const endObservationTimer = function(runTimer) {
   clearInterval(runTimer);
-  console.log("interval done");
 };
 
 const observationTimer = function() {
@@ -115,12 +114,12 @@ const observationTimer = function() {
       logicObservations.changeGradientClass(stageOneTime, stageTwoTime, stageThreeTime, stageFourTime, stageFiveTime, countUp);
       y.innerHTML = '' + x + '';
 
-      if (x > 0 && x <= 3) {
-        // audio.playAudio();
+      if (x > 0 && x <= 5) {
+        audio.playAudio();
       }
 
       if (x === 0) {
-        // audio.submitAudio();
+        audio.submitAudio();
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
 

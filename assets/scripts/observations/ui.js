@@ -13,29 +13,17 @@ const apiObservations = require('./api');
 const displayObsForm = require('../templates/observation/revised-new-obs-form.handlebars');
 // Observation UI
 
-const getObservationSuccess = (data) => {
+const getObservationSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('get observation success');
-  console.log(data);
-  // chart.getColumnSums(data);
-  // $(".obs-summary-table").remove();
-  // let showObservations = displayObservationsTemplate({
-  //   observations: data.observations
-  // });
-  // $('.display-observation-container').append(showObservations);
 };
 
-const getLastObservationFailure = (data) => {
+const getLastObservationFailure = () => {
   $(".notification-container").children().text("");
-  console.log("update last entry failure");
-  console.log(data);
 };
 
 
-const getObservationFailure = (data) => {
+const getObservationFailure = () => {
   $(".notification-container").children().text("");
-  console.log('get observation failure');
-  console.log(data);
 };
 
 const isDataSubmissionBlank = function(dataValue) {
@@ -77,17 +65,12 @@ const showObservationSuccess = (data) => {
   }
 };
 
-const showObservationFailure = (data) => {
+const showObservationFailure = () => {
   $(".notification-container").children().text("");
-  console.log('show observation failure');
-  console.log(data);
 };
 
 const getLastObservationSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log("successfully updated last entry");
-  console.log(data);
-  console.log(data.observation.id);
   let obsId = data.observation.id;
   apiObservations.showLastObservation(obsId)
     .done(showObservationSuccess)
@@ -96,19 +79,16 @@ const getLastObservationSuccess = (data) => {
 
 const getPastObsNumSuccess = function() {
   $(".notification-container").children().text("");
-  console.log("onGetPastObsNumSuccess Success");
   // events.onCreateObservation();
 };
 
 const getPastObsNumFailure = function() {
   $(".notification-container").children().text("");
-  console.log("getPastObsNumFailure Failure");
+
 };
 
 const createObservationSuccess = (response) => {
   $(".notification-container").children().text("");
-   console.log(response);
-   console.log('create observation success');
    $("#new-observation-form .field-checkbox").prop("checked", false);
    $("#create-obs-comment").val('');
    $("#interval-submitted-successfully").fadeIn(500).delay(1000).fadeOut(500);
@@ -123,43 +103,35 @@ const createObservationSuccess = (response) => {
 
 };
 
-const createObservationFailure = (data) => {
+const createObservationFailure = () => {
   $(".notification-container").children().text("");
   $(".failure-alert").text("Error: Observation Not Created.")
-  console.log('create observation failure');
-  console.log(data);
 };
 
 const onCreateObservationNumsFailure = function() {
   $(".notification-container").children().text("");
-  console.log('onCreateObservationNumsFailure failure');
+
 };
 
-const deleteObservationSuccess = (data) => {
+const deleteObservationSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('delete observation success');
-  console.log(data);
 };
 
-const deleteObservationFailure = (data) => {
+const deleteObservationFailure = () => {
   $(".notification-container").children().text("");
-  console.log('delete observation failure');
-  console.log(data);
 };
 
 const updateObservationSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('update observation success');
+
   $(".cancel-last-submission-edit").hide();
   $("#submit-last-edit-btn").hide();
   $(".edit-last-submission").show();
-  console.log(data);
+
 };
 
-const updateObservationFailure = (data) => {
+const updateObservationFailure = () => {
   $(".notification-container").children().text("");
-  console.log('update observation failure');
-  console.log(data);
 };
 
 const generateObservationForm = () => {

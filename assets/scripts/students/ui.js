@@ -26,7 +26,6 @@ const getSessionSuccess = (data) => {
 
 const getSessionFailure = () => {
   $(".notification-container").children().text("");
-  console.log('could not retrive sessions table');
 };
 
 const viewStudentRecordSuccess = (data) => {
@@ -47,7 +46,6 @@ const viewStudentRecordSuccess = (data) => {
 
 const viewStudentRecordFailure = () => {
   $(".notification-container").children().text("");
-  console.log("view student record failure");
 };
 
 const showStudentCreateForm = () => {
@@ -59,7 +57,6 @@ const showStudentCreateForm = () => {
 
 const getStudentSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log('get student dashboard success');
   store.currentStudentId = 0;
   store.currentSessionId = 0;
 
@@ -76,8 +73,6 @@ const getStudentSuccess = (data) => {
 const editStudentSuccess = (data) => {
   $(".notification-container").children().text("");
   $(".content").children().remove();
-  console.log('edit student success');
-  console.log(data);
 
   let editStudent = displayEditStudent({
     student: data.student
@@ -85,28 +80,20 @@ const editStudentSuccess = (data) => {
   $('.content').append(editStudent);
 };
 
-const editStudentFailure = (data) => {
+const editStudentFailure = () => {
   $(".notification-container").children().text("");
-  console.log('edit student failure');
-  console.log(data);
 };
 
-const getStudentFailure = (data) => {
+const getStudentFailure = () => {
   $(".notification-container").children().text("");
-  console.log('get student failure');
-  console.log(data);
 };
 
-const showStudentSuccess = (data) => {
+const showStudentSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('show student success');
-  console.log(data);
 };
 
-const showStudentFailure = (data) => {
+const showStudentFailure = () => {
   $(".notification-container").children().text("");
-  console.log('show student failure');
-  console.log(data);
 };
 
 const createStudentSuccess = () => {
@@ -128,33 +115,26 @@ const createStudentSuccess = () => {
   // $('.content').append(dashboardHomeBtn);
 };
 
-const createStudentFailure = (data) => {
+const createStudentFailure = () => {
   $(".notification-container").children().text("");
   $(".form-error").text("");
   $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
-  console.log('create student failure');
-  console.log(data);
 };
 
 const deleteStudentSuccess = () => {
   $(".notification-container").children().text("");
-  console.log('delete student success');
   apiStudents.getStudents()
     .done(getStudentSuccess)
     .fail(getStudentFailure);
 };
 
-const deleteStudentFailure = (data) => {
+const deleteStudentFailure = () => {
   $(".notification-container").children().text("");
-  console.log('delete student failure');
-  console.log(data);
 };
 
 const updateStudentSuccess = (data) => {
   $(".notification-container").children().text("");
   $(".success-alert").text("Student Has Been Successfully Updated");
-  console.log('update student success');
-  console.log(data);
   store.currentStudentId = data.student.id;
   $(".content").children().remove();
   // let studentDetails = displayStudentDetails({
@@ -171,8 +151,6 @@ const updateStudentSuccess = (data) => {
 const updateStudentFailure = (data) => {
   $(".notification-container").children().text("");
   $("#update-student-error").text("Error: Student not updated.  Please ensure all required fields have values");
-  console.log('update student failure');
-  console.log(data);
 };
 
 module.exports = {

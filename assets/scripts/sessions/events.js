@@ -55,7 +55,6 @@ const onDeleteSession = function(event) {
 const onUpdateSession = function(event) {
   event.preventDefault();
   let data = getFormFields(event.target);
-  console.log(data);
   sessionsApi.updateSession(data)
     .done(sessionsUi.updateSessionSuccess)
     .fail(sessionsUi.updateSessionFailure);
