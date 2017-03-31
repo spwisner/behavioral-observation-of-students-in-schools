@@ -36,9 +36,9 @@ const createStudent = function(data) {
   });
 };
 
-const deleteStudent = function() {
+const deleteStudent = function(id) {
   return $.ajax({
-    url: config.apiOrigin + '/students/' + store.currentStudentId,
+    url: config.apiOrigin + '/students/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token,

@@ -54,7 +54,7 @@ const onDeleteStudent = function(event) {
   event.preventDefault();
   store.currentStudentId= $("#student-record-delete").attr("data-current-student-id");
   // let data = getFormFields(event.target);
-  apiStudents.deleteStudent()
+  apiStudents.deleteStudent(store.currentStudentId)
     .done(uiStudents.deleteStudentSuccess)
     .fail(uiStudents.deleteStudentFailure);
 };

@@ -8,6 +8,9 @@ Link to the live application: [https://spw5235.github.io/behavioral-observation-
 
 Link to the API Source: [https://github.com/spw5235/behavioral-observation-of-students-in-schools-api](https://github.com/spw5235/behavioral-observation-of-students-in-schools-api).
 
+Application Screenshot
+[assets/img/screenshot.png]
+
 ## Technologies Used
 
 This SPA utilizes the following technologies
