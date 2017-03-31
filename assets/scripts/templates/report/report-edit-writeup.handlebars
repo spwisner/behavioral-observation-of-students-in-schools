@@ -2,6 +2,116 @@
   <fieldset>
     <h1 class="form-h1">Edit Writeup Form</h1>
     <p id="update-report-error" class="warning form-error"></p>
+    <div class="form-group">
+      <p>All fields are <u>optional</u> unless otherwise indicated</p>
+    </div>
+    <div class="form-group">
+      <label>Presenting Issues</label>
+      <textarea class="form-control field-input comments-input" id="presenting-issues-l" type="text" name="report[presenting_issue]" placeholder="Presenting Issue">{{report.presenting_issue}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="class-behavioral-assess-l">Class Behavioral Assessment</label>
+      <textarea class="form-control field-input comments-input" id="class-behavioral-assess-l" type="text" name="report[class_behav_assess]" placeholder="Class Behavioral Assessment">{{report.class_behav_assess}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Session Setting</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_setting]" placeholder="Session Setting">{{report.r_setting}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Active Engaged Time</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_aet]" placeholder="Active Engaged Time">{{report.r_aet}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Passive Engaged Time</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_pet]" placeholder="Passive Engaged Time">{{report.r_pet}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Motor Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftm]" placeholder="Off-Task Motor Behavior">{{report.r_oftm}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Verbal Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftv]" placeholder="Off-Task Verbal Behavior">{{report.r_oftv}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Off-Task Passive Behavior</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_oftp]" placeholder="Off-Task Passive Behavior">{{report.r_oftp}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Findings</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_finding]" placeholder="Findings">{{report.r_finding}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title One</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_one_title]" placeholder="Custom Title One" value="{{report.custom_one_title}}">
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Content One</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customone]" placeholder="Custom Field One">{{report.r_customone}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title Two</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_two_title]" placeholder="Custom Title Two" value="{{report.custom_two_title}}">
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Two</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customtwo]" placeholder="Custom Field Two">{{report.r_customtwo}}</textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Custom Field Title Three</label>
+      <input class="form-control field-input comments-input" type="text" name="report[custom_three_title]" placeholder="Custom Title Three" value="{{report.custom_three_title}}">
+    </div>
+    <div class="form-group">
+      <label>Custom Field Three</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_customthree]" placeholder="Custom Field Three">{{report.r_customthree}}</textarea>
+    </div>
+    <div class="form-group">
+      <label>Recommendation</label>
+      <textarea class="form-control field-input comments-input" type="text" name="report[r_recommendation]" placeholder="Recommendation">{{report.r_finding}}</textarea>
+    </div>
+    <div class="form-group">
+      <label>Observer's Name (required field)</label>
+      <input class="form-control field-input comments-input" type="text" name="report[counselor_name]" placeholder="Your Name" value="{{report.counselor_name}}">
+    </div>
+
+    <div class="form-group">
+      <input class="btn btn-success submit-btn current" name="submit" id="edit-report-writeup-btn" type="submit" value="Submit Update" data-current-student-id="" data-current-session-id="" data-current-report-id="">
+    </div>
+
+  </fieldset>
+</form>
+<br><br>
+
+<div class="successful-update-message-container">
+
+</div>
+
+<div class="dashboard-container">
+  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+</div>
+
+
+
+
+
+<!-- <form id="report-edit-writeup-form" name="report-writeup-form">
+  <fieldset>
+    <h1 class="form-h1">Edit Writeup Form</h1>
+    <p id="update-report-error" class="warning form-error"></p>
     <p>All fields are <u>optional</u> unless otherwise indicated</p>
     <p class="field-description">Presenting Issues</p>
     <textarea class="field-input comments-input" name="report[presenting_issue]" placeholder="Presenting Issue">{{report.presenting_issue}}</textarea>
@@ -82,5 +192,5 @@
 
 <div class="dashboard-container">
   <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-primary">Create Session</button>
-</div>
+  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+</div> -->

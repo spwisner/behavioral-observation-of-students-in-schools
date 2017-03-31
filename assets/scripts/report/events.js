@@ -8,6 +8,27 @@ const displayWriteupCreateForm = require('../templates/report/report-create-form
 
 // OBSERVATION EVENTS
 
+const toggleHideShowReport = function(event) {
+  event.preventDefault();
+  let currentStatus = $(".display-written-report-container").css("display");
+
+  if ( currentStatus === "none" ) {
+    $(".display-written-report-container").show();
+    $("#generate-written-hide-btn").text("Show Report");
+  } else {
+    $(".display-written-report-container").hide();
+    $("#generate-written-hide-btn").text("Hide Report");
+  }
+};
+
+const onPrinterFriendly = function(event) {
+  event.preventDefault();
+  $(".dashboard-container").hide();
+  $(".report-summary-btn-container").hide();
+  $("#change-password").hide();
+  $("#sign-out").hide();
+}
+
 const onShowStudentSummary = function() {
   // event.preventDefault();
   apiReport.getStudentSummary()
@@ -235,6 +256,8 @@ const addHandlers = () => {
   // $('.report-writeup-container').on('click', '.submit-edit-btn', onSubmitEdit);
   $('.content').on('click', '#generate-written-update-btn', onEditWriteup);
   $('.content').on('submit', '#report-edit-writeup-form', onSubmitEdit);
+  $('.content').on('click', '#generate-written-hide-btn', toggleHideShowReport);
+  $('.content').on('click', '#writeup-printer-friendly-btn', onPrinterFriendly);
 };
 
 module.exports = {

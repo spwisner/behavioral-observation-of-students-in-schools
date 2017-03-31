@@ -49,18 +49,13 @@
   </table>
 
   <div class="dashboard-session-btn-container">
-    <div class="session-record-btn">
-      <input id="session-record-btn-edit" class="current" type="button" value="Edit Session" data-current-student-id="" data-current-session-id="{{session.id}}">
-    </div>
-    <div class="session-record-btn">
-      <input id="session-record-view-report" class="current" type="button" value="View Reports" data-current-student-id="" data-current-session-id="{{session.id}}">
-    </div>
-    <div class="session-record-btn">
-      <input id="session-record-delete" class="current" type="button" value="Delete Session" data-current-student-id="" data-current-session-id="{{session.id}}">
-    </div>
+    <button id="session-record-view-report" type="button" class="btn btn-success current" data-current-student-id="" data-current-session-id="{{session.id}}">Create/View Report</button>
+    <button id="session-record-btn-edit" type="button" class="btn btn-warning current" data-current-student-id="" data-current-session-id="{{session.id}}">Edit Session</button>
+    <button id="session-record-delete" type="button" class="btn btn-danger current" data-current-student-id="" data-current-session-id="{{session.id}}">Delete Session</button>
   </div>
+
   <br><br>
   <div class="dashboard-container">
     <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-    <button id="dashboard-new-session-btn" type="button" class="btn btn-primary">Create Session</button>
+    <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
   </div>

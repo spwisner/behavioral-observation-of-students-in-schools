@@ -27,6 +27,27 @@ $one-hundred-color: rgba(231,24,24,1);
   /* FF3.6+ */
 }
 
+body {
+  margin: 10px;
+  padding: 5px;
+}
+
+.credentials-container {
+  text-align: right;
+}
+
+.sign-out {
+  height:33px;
+}
+
+.dashboard-session-btn-container {
+  text-align: center;
+}
+
+.dashboard-session-btn-container button {
+  margin: 0 auto;
+}
+
 .dashboard-container {
   border-top: 1px solid black;
   padding-top: 5px;

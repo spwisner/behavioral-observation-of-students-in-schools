@@ -33,8 +33,8 @@
         <td class="display-student-grade">
           {{student.grade}}
         </td>
-        <td class="display-obs-obs-comment">
-          <button type="button" class="btn btn-outline-success btn-sm dashboard-student-record-btn" data-current-student-id="{{student.id}}">View Student</button>
+        <td class="display-student-submit">
+          <button type="button" class="btn btn-info btn-sm dashboard-student-record-btn" data-current-student-id="{{student.id}}">View Student</button>
         </td>
       </tr>
     {{/each}}
@@ -42,5 +42,5 @@
 </table>
 <br><br>
 <div class="dashboard-container">
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-primary">Create Session</button>
+  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
 </div>

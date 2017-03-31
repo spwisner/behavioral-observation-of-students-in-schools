@@ -15,7 +15,7 @@ const reportLogic = require('./logic');
 const editWriteupSubmitSuccess = () => {
   $(".notification-container").children().text("");
   console.log('submit edit writeup successful');
-  let generateBackToReportBtn = $('<input id="session-record-view-report" class="current" type="button" value="View Reports" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
+  let generateBackToReportBtn = $('<button id="session-record-view-report" class="btn btn-success current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Back To Report</button>');
   let generateSuccessMessage = $('<p>Your Report Has Been Successfully Updated</p>');
   $("#report-edit-writeup-form").remove();
   $(".successful-update-message-container").append(generateSuccessMessage);
@@ -29,7 +29,7 @@ const editWriteupSubmitSuccess = () => {
 const editWriteupSubmitFailure = () => {
   $(".notification-container").children().text("");
   console.log('submit edit writeup failure');
-  $("#update-report-error").text("Error: Report not updated. Please ensure all required fields have values.")
+  $("#update-report-error").text("Error: Report not updated. Please ensure all required fields have values.");
 };
 
 
@@ -67,18 +67,19 @@ const getWriteupSuccess = () => {
       report: data.report
     });
     $('.display-written-report-container').append(showWriteup);
-    let generateWrittenHideBtn = $('<input id="generate-written-hide-empty-btn" class="current" type="button" value="Hide Written Report" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
-    let generateWrittenUpdateBtn = $('<input id="generate-written-update-btn" class="current" type="button" value="Click To Update" data-current-student-id="" data-current-session-id="" data-current-report-id="">');
-    $(".create-written-report-btn").append(generateWrittenUpdateBtn);
-    $(".create-written-report-btn").append(generateWrittenHideBtn);
 
-
+    $("#writeup-printer-friendly-btn").show();
+    $("#generate-written-hide-btn").show();
+    $("#generate-written-update-btn").show();
+    $("#generate-written-create-btn").hide();
 
     $("#generate-written-update-btn").attr("data-current-report-id", store.currentReportId);
     $(".current").attr("data-current-report-id", store.currentReportId);
   } else {
-    let generateWrittenFormBtn = $('<input id="generate-written-create-btn" class="current" type="button" value="Click To Create" data-current-student-id="" data-current-session-id="">');
-    $(".create-written-report-btn").append(generateWrittenFormBtn);
+    $("#writeup-printer-friendly-btn").hide();
+    $("#generate-written-hide-btn").hide();
+    $("#generate-written-update-btn").hide();
+    $("#generate-written-create-btn").show();
   }
 
   $(".current").attr("data-current-student-id", store.currentStudentId);

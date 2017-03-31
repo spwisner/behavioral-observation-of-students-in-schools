@@ -31,7 +31,7 @@
           {{/if}}
         </td>
         <td>
-          <button id="view-session-details-btn" type="button" class="btn btn-outline-success btn-sm current" data-current-session-id="{{session.id}}" data-current-student-id="{{session.student_id}}">View Session</button>
+          <button id="view-session-details-btn" type="button" class="btn btn-info btn-sm current" data-current-session-id="{{session.id}}" data-current-student-id="{{session.student_id}}">View Session</button>
         </td>
       </tr>
     </tbody>
@@ -43,7 +43,7 @@
   <h3>New Session</h3>
   <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>, please click the button below:
     <div class="create-session-student-btn-container">
-      <input id="create-session-student-btn" class="current" type="button" value="New Session" data-current-student-id="{{session.student_id}}">
+      <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">New Session</button>
     </div>
   </p>
 </div>

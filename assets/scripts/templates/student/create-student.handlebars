@@ -1,4 +1,4 @@
-<div class="create-student-form-container form-container">
+<div class="create-student-form-container form-container form-group">
   <p>Please note, in order to create an observation session, you must first create a student record.</p>
 
   <form class="form student-form" id="new-student-form" name="new-student-form">
@@ -6,25 +6,41 @@
       <legend>Create Student Form</legend>
       <p id="create-student-error" class="warning form-error"></p>
       <p>All fields are <u>optional</u> unless otherwise indicated</p>
-      <p class="field-description required-title">First Name (required)</p>
-      <input class="required-field" name="student[first_name]" placeholder="First Name" type="text">
-      <br>
-      <p class="field-description required-title">Last Name (required)</p>
-      <input class="required-field" name="student[last_name]" placeholder="Last Name" type="text">
-      <br>
-      <p class="field-description">Date of Birth</p>
-      <input name="student[born_on]" placeholder="Date of Birth" type="date">
-      <br>
-      <p class="field-description">School</p>
-      <input name="student[school]" placeholder="School" type="text">
-      <br>
-      <p class="field-description">Teacher</p>
-      <input name="student[teacher]" placeholder="Teacher" type="text">
-      <br>
-      <p class="field-description required-title">Grade (required)</p>
-      <input class="required-field" name="student[grade]" placeholder="Grade" type="text">
-      <br>
-      <input name="submit" id="create-student-btn" type="submit" value="Submit">
+
+
+      <div class="form-group">
+        <label>First Name (required)</label>
+        <input class="form-control required-field" name="student[first_name]" placeholder="First Name" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Last Name (required)</label>
+        <input class="form-control required-field" name="student[last_name]" placeholder="Last Name" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input class="form-control" name="student[born_on]" placeholder="Date of Birth" type="date">
+      </div>
+
+      <div class="form-group">
+        <label>School</label>
+        <input class="form-control" name="student[school]" placeholder="School" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Teacher</label>
+        <input class="form-control" name="student[teacher]" placeholder="Teacher" type="text">
+      </div>
+
+      <div class="form-group">
+        <label>Grade (required)</label>
+        <input class="form-control required-field" name="student[grade]" placeholder="Grade" type="text">
+      </div>
+
+      <div class="form-group">
+        <input class="btn btn-success submit-btn current" name="submit" id="create-student-btn" type="submit" value="Submit">
+      </div>
     </fieldset>
   </form>
   <br><br>
