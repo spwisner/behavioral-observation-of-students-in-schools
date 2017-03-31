@@ -1,5 +1,8 @@
 <div class="existing-student-selection-container">
 
+<h3>Student Selection</h3>
+<p>Please select the student whom you will be observing.</p>
+
 <table class="table existing-student-selection-table table-hover">
   <thead>
     <tr>
@@ -34,7 +37,7 @@
           {{student.grade}}
         </td>
         <td class="display-obs-obs-comment">
-          <input class="dashboard-existing-create-btn" type="button" value="Create Session" data-current-student-id="{{student.id}}">
+          <input class="btn btn-info btn-sm dashboard-existing-create-btn" type="button" value="Select Student" data-current-student-id="{{student.id}}">
         </td>
       </tr>
     {{/each}}
@@ -42,6 +45,6 @@
 </table>
 <br><br>
 <div class="dashboard-container">
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
 </div>
 </div>

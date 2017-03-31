@@ -3,28 +3,46 @@
     <legend>Create Session Form</legend>
     <p id="create-session-error" class="warning form-error"></p>
     <p>All fields are <u>optional</u> unless otherwise indicated</p>
-    <p class="field-description">Session Date</p>
-    <input id="session-date-create-field" name="session[obs_on]" placeholder="Session Date" type="date">
+
+    <div class="form-group">
+      <label>Session Date (Default Value is Today)</label>
+      <input id="session-date-create-field" class="form-control" name="session[obs_on]" placeholder="Session Date" type="date">
+    </div>
+
+    <div class="form-group">
+      <label>Session Setting (required)</label>
+      <input name="session[obs_setting]" class="form-control" placeholder="Session Setting" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Session Task (required)</label>
+      <input name="session[obs_task]" class="form-control" placeholder="Session Task" type="text">
+    </div>
+
+    <div class="form-group">
+      <label>Number of Intervals (required) - between 1 and 60</label>
+      <input id="interval-number-entry" class="form-control" name="session[int_num]" placeholder="Number of Intervals" type="text" value="40">
+    </div>
+
+    <div class="form-group">
+      <label>Length of Each Interval (required) - between 5 and 30 seconds</label>
+      <input id="interval-length-entry" class="form-control" name="session[obs_time]" placeholder="Time" type="text" value="15">
+    </div>
+
+    <div class="form-group">
+      <label>Session Comment</label>
+      <input name="session[comment]" class="form-control" placeholder="Comment" type="text">
+    </div>
+
     <br>
-    <p class="field-description">Session Setting (required)</p>
-    <input name="session[obs_setting]" placeholder="Session Setting" type="text">
-    <br>
-    <p class="field-description">Session Task (required)</p>
-    <input name="session[obs_task]" placeholder="Session Task" type="text">
-    <br>
-    <p class="field-description">Number of Intervals (required) <br>(between 1 and 60)</p>
-    <input id="interval-number-entry" name="session[int_num]" placeholder="Number of Intervals" type="text" value="40">
-    <br>
-    <p class="field-description">Length of Each Interval - in seconds (required) <br>(between 10 and 30)</p>
-    <input id="interval-length-entry" name="session[obs_time]" placeholder="Time" type="text" value="15">
-    <br>
-    <p class="field-description">Session Comment</p>
-    <input name="session[comment]" placeholder="Comment" type="text">
-    <br><br>
-    <p class="total-session-time">A session with <span class="number-of-intervals-entry">40</span> intervals measured every <span class="length-of-intervals-entry">15</span> seconds will take <span id="total-session-time-m">10</span> minutes and <span id="total-session-time-s">0</span> seconds
+    <p class="total-session-time">A session with <span class="number-of-intervals-entry">40</span> intervals measured every <span class="length-of-intervals-entry">15</span> seconds will take <span class="highlight-time"><span id="total-session-time-m">10</span> minutes and <span id="total-session-time-s">0</span> seconds</span>
       to complete.</p>
     <br>
-    <input id="create-session-btn" class="current" name="submit" type="submit" value="Submit" data-current-student-id="">
+
+    <div class="form-group">
+      <input id="create-session-btn" class="current btn btn-success submit-btn" name="submit" type="submit" value="Submit" data-current-student-id="">
+    </div>
+
   </fieldset>
 </form>
 

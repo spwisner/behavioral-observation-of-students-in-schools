@@ -58,6 +58,10 @@ const editWriteupFailure = () => {
 
 const getWriteupSuccess = () => {
   $(".notification-container").children().text("");
+  $("#writeup-printer-friendly-btn").hide();
+  $("#generate-written-hide-btn").hide();
+  $("#generate-written-update-btn").hide();
+  $("#generate-written-create-btn").hide();
   console.log('create writeup successful');
   let data = store.getWriteupObject;
 

@@ -139,6 +139,10 @@ const observationTimer = function() {
             $("#new-observation-form").addClass("obs-stg-done");
             endObservationTimer(runTimer);
             $(".interval-count").text(endInterval);
+            $("#cancel-session-btn").remove();
+            $(".time-until-submission").text("Session Complete!");
+            $("#interval-timer").remove();
+            $(".obs-comment-container").remove();
             return;
           }
         }
@@ -203,6 +207,9 @@ const updateFormGenerator = function(event) {
   generateWithCheck(oftmDataLocation, dataOftmEditHtml);
   generateWithCheck(oftvDataLocation, dataOftvEditHtml);
   generateWithCheck(oftpDataLocation, dataOftpEditHtml);
+  $(".cancel-last-submission-edit").show();
+  $("#submit-last-edit-btn").show();
+  $(".edit-last-submission").hide();
 };
 
 const cancelUpdateLastSubmission = function(event) {

@@ -32,6 +32,74 @@ body {
   padding: 5px;
 }
 
+.session-completed {
+  display: none;
+}
+
+.submit-last-warnings {
+  text-align: center;
+}
+
+.no-submission-warning {
+  background-color: white;
+  color: red;
+}
+
+.last-submission-table {
+  text-align: center;
+}
+
+.observation-form-center {
+  width: 70%;
+}
+
+.observation-form-side-left {
+  height: 50%;
+}
+
+#create-obs-comment {
+  width: 80%;
+}
+
+.redbc {
+  background-color:red;
+}
+
+.obs-comment-container input {
+  margin: 0 auto;
+}
+
+.last-submission-container {
+  text-align: center;
+  background-color: white;
+  height: 400px;
+}
+
+.last-submission-table {
+  padding: 5px;
+}
+
+.observation-form-side {
+  text-align: center;
+  width: 15%;
+}
+
+
+
+.timer-container {
+  margin: 5px;
+}
+
+.interval-confirmation-container {
+  height: 22px;
+  text-align: center;
+}
+
+.highlight-time {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
 .credentials-container {
   text-align: right;
 }
@@ -117,6 +185,10 @@ body {
   max-width: 100%;
 }
 
+#new-observation-form .entire-form-table {
+  width: 100%;
+}
+
 .obs-stg-one {
   @include timer-gradient($zero-color, $twenty-color, $forty-color);
 }
@@ -147,7 +219,7 @@ body {
   margin-left: 5px;
   display: none;
   padding: 2px;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .write-section-header {
@@ -164,51 +236,6 @@ body {
 .warning {
   background-color: red;
 }
-
-// Temp Hide
-// #new-observation-form,
-// #change-password,
-// #delete-observation-form,
-// #delete-session-form,
-// #delete-student-form,
-// #get-observations-form,
-// #get-sessions-form,
-// #new-session-form,
-// #show-observation-form,
-// #show-session-form,
-// #show-student-form,
-// #sign-out,
-// #sign-up,
-// #update-observation-form,
-// #update-session-form,
-// #update-student-form,
-// .dashboard-container,
-// .timer-container {
-//   display: none;
-// }
-// hide for testing:
-// #change-password,
-// #delete-observation-form,
-// #delete-session-form,
-// #delete-student-form,
-// #get-observations-form,
-// #get-sessions-form,
-// #new-session-form,
-// #show-observation-form,
-// #show-session-form,
-// #show-student-form,
-// #sign-out,
-// #sign-up,
-// #sign-in,
-// #new-student-form,
-// #get-students-form,
-// #update-observation-form,
-// #update-session-form,
-// #update-student-form,
-// .dashboard-container {
-//   display: none;
-// }
-///////////////////////
 
 /// Chart CSS
 
@@ -309,48 +336,3 @@ body {
 .cancel-session-notification {
   display: none;
 }
-
-
-
-
-// Header
-// h1
-// .sub-description-h1 {
-//   clear:both;
-// }
-//
-// // Login CSS
-// .login-form {
-//   display: none;
-// }
-//
-// .login-button-container {
-//   margin-top: 10px;
-//   text-align: center;
-// }
-//
-// .sub-image {
-//   max-width:100%;
-// }
-//
-// // .sub-description-container:nth-child(2n+1)
-// .sub-description-container {
-//   clear: both;
-// }
-//
-// .sub-image-container {
-//   max-width: 24%;
-// }
-//
-// .sub-description {
-//   max-width:75%;
-// }
-//
-// .float-r {
-//   float: right;
-// }
-//
-// .float-l {
-//   float: left;
-// }
-//Timer Gradient

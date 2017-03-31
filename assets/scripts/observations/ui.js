@@ -58,6 +58,10 @@ const showObservationSuccess = (data) => {
 
   // Testing for Blank and False Values
 
+  $(".cancel-last-submission-edit").hide();
+  $("#submit-last-edit-btn").hide();
+  $(".edit-last-submission").show();
+
   let aetValue = isDataSubmissionBlank(data.observation.aet);
   let petValue = isDataSubmissionBlank(data.observation.pet);
   let oftvValue = isDataSubmissionBlank(data.observation.oft_v);
@@ -66,10 +70,10 @@ const showObservationSuccess = (data) => {
 
   if ( aetValue && petValue && oftvValue && oftmValue && oftpValue) {
     $(".no-submission-warning").text("Warning: Empty Submission");
-    $(".last-submission-table").addClass("warning");
+    $(".last-submission-row").addClass("redbc");
   } else {
     $(".no-submission-warning").text("");
-    $(".last-submission-table").removeClass("warning");
+    $(".last-submission-row").removeClass("redbc");
   }
 };
 
@@ -146,6 +150,9 @@ const deleteObservationFailure = (data) => {
 const updateObservationSuccess = (data) => {
   $(".notification-container").children().text("");
   console.log('update observation success');
+  $(".cancel-last-submission-edit").hide();
+  $("#submit-last-edit-btn").hide();
+  $(".edit-last-submission").show();
   console.log(data);
 };
 
