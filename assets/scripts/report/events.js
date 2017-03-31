@@ -110,7 +110,6 @@ const onCreateStatsReport = function(event) {
 };
 
 const onCreateWriteup = function(event) {
-  alert('oncreate');
   event.preventDefault();
   store.currentStudentId = $(this).attr("data-current-student-id");
   store.currentSessionId = $(this).attr("data-current-session-id");

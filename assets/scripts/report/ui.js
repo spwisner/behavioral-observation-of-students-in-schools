@@ -62,8 +62,6 @@ const getWriteupSuccess = () => {
   const generateWrittenUpdateBtn = $('<button id="generate-written-update-btn" class="btn btn-warning btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Click To Update</button>');
   const generateWrittenHideBtn = $('<button id="generate-written-hide-btn" class="btn btn-info btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Hide Report</button>');
 
-  alert(store.getWriteupObject);
-
   console.log('create writeup successful');
   let data = store.getWriteupObject;
 
