@@ -4,7 +4,6 @@ const uiObservations = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const logicObservations = require('./logic');
-const audio = require('./audio');
 
 // OBSERVATION EVENTS
 
@@ -114,12 +113,7 @@ const observationTimer = function() {
       logicObservations.changeGradientClass(stageOneTime, stageTwoTime, stageThreeTime, stageFourTime, stageFiveTime, countUp);
       y.innerHTML = '' + x + '';
 
-      if (x > 0 && x <= 5) {
-        audio.playAudio();
-      }
-
       if (x === 0) {
-        audio.submitAudio();
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
 

@@ -11,7 +11,6 @@ const sessionEvents = require('./sessions/events.js');
 const studentsEvents = require('./students/events.js');
 const chartEvents = require('./report/events.js');
 const dashboardEvents = require('./dashboard/events.js');
-const audio = require('./observations/audio.js');
 
 
 $(() => {
@@ -21,8 +20,6 @@ $(() => {
   studentsEvents.addHandlers();
   chartEvents.addHandlers();
   dashboardEvents.addHandlers();
-  audio.playAudio();
-  audio.pauseAudio();
 });
 
 $(() => {

@@ -1,27 +1,5 @@
 'use strict';
 
-const PlaySound = function(soundObj) {
-  const sound = document.getElementById(soundObj);
-  if (sound) {
-    if (sound.object)
-      //IE needs this
-      sound.object.Play();
-    else
-      sound.Play();
-  }
-}
-
-  let x = document.getElementById("timer-warning-audio");
-
-  const playAudio = function () {
-    x.play();
-  };
-
-  const pauseAudio = function () {
-    x.pause();
-  };
-
-
 const studentToObserve = function(obs_num) {
   if (obs_num % 5 === 0) {
     $("#student-observed").text("Random Peer");
@@ -96,6 +74,4 @@ module.exports = {
   studentToObserve,
   gradientLogic,
   changeGradientClass,
-  playAudio,
-  pauseAudio,
 };
