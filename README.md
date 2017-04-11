@@ -4,9 +4,9 @@
 
 Behavioral Observation of Students in Schools (BOSS), is a tool used by school counselors to collect data on how a target student behaves in relation to other students in the class.  Using timed intervals, counselors can identify behavior as being either engaged or off-task.  Engaged behavior has two categories - actively engaged (aet) and passively engaged (pet).  Off-task behavior has three subcategories - off-task motor (oft-m), off-task verbal (oft-v) and off-task passive (oft-p).  This application allows counselors to make one of five selections during user set time intervals.  After an observation session is complete, users can have a report generated and can access reports using a user dashboard.
 
-Link to the live application: [https://spw5235.github.io/behavioral-observation-of-students-in-schools](https://spw5235.github.io/behavioral-observation-of-students-in-schools).
+Link to the live application: [https://spwisner.github.io/behavioral-observation-of-students-in-schools](https://spwisner.github.io/behavioral-observation-of-students-in-schools).
 
-Link to the API Source: [https://github.com/spw5235/behavioral-observation-of-students-in-schools-api](https://github.com/spw5235/behavioral-observation-of-students-in-schools-api).
+Link to the API Source: [https://github.com/spwisner/behavioral-observation-of-students-in-schools-api](https://github.com/spwisner/behavioral-observation-of-students-in-schools-api).
 
 Application Screenshot:
 ![alt text](https://cloud.githubusercontent.com/assets/13546265/24566758/bff45704-1628-11e7-9dcb-fd139a899935.png "Application Screenshot")
