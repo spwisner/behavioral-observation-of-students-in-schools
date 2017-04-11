@@ -13,6 +13,7 @@ const signInSuccess = function() {
   let dashboardHome = displayDashboard();
   $('.content').append(dashboardHome);
   $(".form-clear").val('');
+  $(".homepage-desc").hide();
 };
 
 const signInFailure = function() {
@@ -39,11 +40,10 @@ const signOutSuccess = function() {
   $(".notification-container").children().text("");
   $(".success-alert").text("You have successfully signed-out.  Please sign-in to continue");
   $('.content').children().remove();
-  $("#sign-up").show();
-  $("#sign-in").show();
   $("#sign-out").css("visibility", "hidden");
   $("#change-password").css("visibility", "hidden");
   $(".form-clear").val('');
+  $(".homepage-desc").show();
 };
 
 const signOutFailure = function() {

@@ -65,6 +65,14 @@ body {
   background-color:red;
 }
 
+// .credentials-container {
+//   visibility: hidden;
+// }
+.credentials-container {
+  display: none;
+  text-align: right;
+}
+
 .obs-comment-container input {
   margin: 0 auto;
 }
@@ -98,10 +106,6 @@ body {
 .highlight-time {
   text-decoration: underline;
   font-weight: 600;
-}
-
-.credentials-container {
-  text-align: right;
 }
 
 .sign-out {

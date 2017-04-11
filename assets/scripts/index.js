@@ -20,6 +20,7 @@ $(() => {
   studentsEvents.addHandlers();
   chartEvents.addHandlers();
   dashboardEvents.addHandlers();
+  $(".credentials-container").show();
 });
 
 $(() => {
