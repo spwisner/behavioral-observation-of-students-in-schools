@@ -117,7 +117,6 @@ body {
 }
 
 .dashboard-container {
-  border-top: 1px solid black;
   padding-top: 5px;
   text-align: center;
 }
@@ -163,6 +162,10 @@ body {
 
 #change-password {
   display: none;
+}
+
+#change-password button {
+  float: right;
 }
 
 .success-alert {

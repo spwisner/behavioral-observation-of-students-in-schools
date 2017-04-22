@@ -1,48 +1,61 @@
-<h1>Student Overview</h1>
+<div class="container">
 
-<h2 class="student-name-header" data-current-student-fn="{{student.first_name}}" data-current-student-ln="{{student.last_name}}">{{student.first_name}} {{student.last_name}}</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Student Overview</h1>
+      <h2 class="student-name-header" data-current-student-fn="{{student.first_name}}" data-current-student-ln="{{student.last_name}}">{{student.first_name}} {{student.last_name}}</h2>
+      <h3>Student Details</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table student-record-table table-hover">
+        <tbody>
+          <tr>
+            <td class="student-record-title student-record-dob">
+              Date of Birth:
+            </td>
+            <td class="display-student-dob">
+              {{student.born_on}}
+            </td>
+          </tr>
+          <tr>
+            <td class="student-record-title student-record-school">
+              School:
+            </td>
+            <td class="display-student-school">
+              {{student.school}}
+            </td>
+          </tr>
+          <tr>
+            <td class="student-record-title student-record-teacher">
+              Teacher:
+            </td>
+            <td class="display-student-teacher">
+              {{student.teacher}}
+            </td>
+          </tr>
+          <tr>
+            <td class="student-record-title student-record-grade">
+              Grade:
+            </td>
+            <td class="display-student-grade">
+              {{student.grade}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-<h3>Student Details</h3>
-<table class="table student-record-table table-hover">
-  <tbody>
-    <tr>
-      <td class="student-record-title student-record-dob">
-        Date of Birth:
-      </td>
-      <td class="display-student-dob">
-        {{student.born_on}}
-      </td>
-    </tr>
-    <tr>
-      <td class="student-record-title student-record-school">
-        School:
-      </td>
-      <td class="display-student-school">
-        {{student.school}}
-      </td>
-    </tr>
-    <tr>
-      <td class="student-record-title student-record-teacher">
-        Teacher:
-      </td>
-      <td class="display-student-teacher">
-        {{student.teacher}}
-      </td>
-    </tr>
-    <tr>
-      <td class="student-record-title student-record-grade">
-        Grade:
-      </td>
-      <td class="display-student-grade">
-        {{student.grade}}
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="dashboard-student-btn-container">
-  <div class="student-record-btn-options">
-    <button id="student-record-btn-edit" type="button" class="btn btn-warning" data-current-student-id="{{student.id}}">Edit Student Record</button>
-    <button id="student-record-delete" type="button" class="btn btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+  <div class="row">
+    <div class="md-col-12">
+      <div class="dashboard-student-btn-container">
+        <div class="student-record-btn-options">
+          <button id="student-record-btn-edit" type="button" class="btn btn-warning" data-current-student-id="{{student.id}}">Edit Student Record</button>
+          <button id="student-record-delete" type="button" class="btn btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

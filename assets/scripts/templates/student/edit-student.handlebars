@@ -1,33 +1,62 @@
-<div class="update-student-form-container form-container">
-<form class="form student-form" id="update-student-form" name="update-student-form">
-  <fieldset>
-    <legend>Update Student Form</legend>
-    <p id="update-student-error" class="warning form-error"></p>
-    <p>All fields are <u>optional</u> unless otherwise indicated</p>
-    <p class="field-description">First Name (required)</p>
-    <input name="student[first_name]" placeholder="First Name" type="text" value={{student.first_name}}>
-    <br>
-    <p class="field-description">Last Name (required)</p>
-    <input name="student[last_name]" placeholder="Last Name" type="text" value="{{student.last_name}}">
-    <br>
-    <p class="field-description">Date of Birth</p>
-    <input name="student[born_on]" placeholder="Date of Birth" type="date" value="{{student.born_on}}">
-    <br>
-    <p class="field-description">School</p>
-    <input name="student[school]" placeholder="School" type="text" value="{{student.school}}">
-    <br>
-    <p class="field-description">Teacher</p>
-    <input name="student[teacher]" placeholder="Teacher" type="text" value="{{student.teacher}}">
-    <br>
-    <p class="field-description">Grade (required)</p>
-    <input name="student[grade]" placeholder="Grade" type="text" value="{{student.grade}}">
-    <br>
-    <input name="submit" id="submit-student-update-btn" type="submit" value="Submit Update">
-  </fieldset>
-</form>
-<br><br>
-<div class="dashboard-container">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
-</div>
+<div class="container create-student-form-container form-container form-group">
+  <div class="row">
+    <div class="col-md-12">
+      <p>Please note, in order to create an observation session, you must first create a student record.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <form class="form student-form" id="update-student-form" name="new-student-form">
+        <fieldset>
+          <legend>Create Student Form</legend>
+          <p id="create-student-error" class="warning form-error"></p>
+          <p>All fields are <u>optional</u> unless otherwise indicated</p>
+
+
+          <div class="form-group">
+            <label>First Name (required)</label>
+            <input class="form-control required-field" name="student[first_name]" placeholder="First Name" type="text" value={{student.first_name}}>
+          </div>
+
+          <div class="form-group">
+            <label>Last Name (required)</label>
+            <input class="form-control required-field" name="student[last_name]" placeholder="Last Name" type="text" value="{{student.last_name}}">
+          </div>
+
+          <div class="form-group">
+            <label>Date of Birth</label>
+            <input class="form-control" name="student[born_on]" placeholder="Date of Birth" type="date" value="{{student.born_on}}">
+          </div>
+
+          <div class="form-group">
+            <label>School</label>
+            <input class="form-control" name="student[school]" placeholder="School" type="text" value="{{student.school}}">
+          </div>
+
+          <div class="form-group">
+            <label>Teacher</label>
+            <input class="form-control" name="student[teacher]" placeholder="Teacher" type="text" value="{{student.teacher}}">
+          </div>
+
+          <div class="form-group">
+            <label>Grade (required)</label>
+            <input class="form-control required-field" name="student[grade]" placeholder="Grade" type="text" value="{{student.grade}}">
+          </div>
+
+          <div class="form-group">
+            <input name="submit" class="btn btn-sucess" type="submit" value="Submit Update">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-container">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+        <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+      </div>
+    </div>
+  </div>
 </div>

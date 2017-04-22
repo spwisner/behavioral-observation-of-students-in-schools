@@ -1,46 +1,60 @@
-<h1>Student Dashboard</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Student Dashboard</h1>
+    </div>
+  </div>
 
-<table class="table student-summary-table table-hover">
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>DOB</th>
-      <th>School</th>
-      <th>Teacher</th>
-      <th>Grade</th>
-      <th>View Record</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each students as |student|}}
-      <tr>
-        <td class="display-student-fn">
-          {{student.first_name}}
-        </td>
-        <td class="display-student-ln">
-          {{student.last_name}}
-        </td>
-        <td class="display-student-dob">
-          {{student.born_on}}
-        </td>
-        <td class="display-student-school">
-          {{student.school}}
-        </td>
-        <td class="display-student-teacher">
-          {{student.teacher}}
-        </td>
-        <td class="display-student-grade">
-          {{student.grade}}
-        </td>
-        <td class="display-student-submit">
-          <button type="button" class="btn btn-info btn-sm dashboard-student-record-btn" data-current-student-id="{{student.id}}">View Student</button>
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-<br><br>
-<div class="dashboard-container">
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table student-summary-table table-hover">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>DOB</th>
+            <th>School</th>
+            <th>Teacher</th>
+            <th>Grade</th>
+            <th>View Record</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each students as |student|}}
+            <tr>
+              <td class="display-student-fn">
+                {{student.first_name}}
+              </td>
+              <td class="display-student-ln">
+                {{student.last_name}}
+              </td>
+              <td class="display-student-dob">
+                {{student.born_on}}
+              </td>
+              <td class="display-student-school">
+                {{student.school}}
+              </td>
+              <td class="display-student-teacher">
+                {{student.teacher}}
+              </td>
+              <td class="display-student-grade">
+                {{student.grade}}
+              </td>
+              <td class="display-student-submit">
+                <button type="button" class="btn btn-info btn-sm dashboard-student-record-btn" data-current-student-id="{{student.id}}">View Student</button>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 col-md-offset-5">
+      <div class="dashboard-container">
+        <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+      </div>
+    </div>
+  </div>
 </div>

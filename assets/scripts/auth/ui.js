@@ -41,9 +41,7 @@ const signOutSuccess = function() {
   $(".success-alert").text("You have successfully signed-out.  Please sign-in to continue");
   $('.content').children().remove();
   $("#sign-out").hide();
-  $("#change-password").show();
-  // $("#sign-out").css("visibility", "hidden");
-  // $("#change-password").css("visibility", "hidden");
+  $("#change-password").hide();
   $("#sign-in").show();
   $("#sign-up").show();
   $(".form-clear").val('');
