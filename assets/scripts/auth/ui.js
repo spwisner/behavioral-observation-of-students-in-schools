@@ -7,8 +7,8 @@ const signInSuccess = function() {
   $(".success-alert").text("You have successfully signed-in");
   $('#sign-in').hide();
   $('#sign-up').hide();
-  $("#sign-out").css("visibility", "visible");
-  $("#change-password").css("visibility", "visible");
+  $("#sign-out").show();
+  $("#change-password").show();
   $(".content").children().remove();
   let dashboardHome = displayDashboard();
   $('.content').append(dashboardHome);
@@ -40,8 +40,12 @@ const signOutSuccess = function() {
   $(".notification-container").children().text("");
   $(".success-alert").text("You have successfully signed-out.  Please sign-in to continue");
   $('.content').children().remove();
-  $("#sign-out").css("visibility", "hidden");
-  $("#change-password").css("visibility", "hidden");
+  $("#sign-out").hide();
+  $("#change-password").show();
+  // $("#sign-out").css("visibility", "hidden");
+  // $("#change-password").css("visibility", "hidden");
+  $("#sign-in").show();
+  $("#sign-up").show();
   $(".form-clear").val('');
   $(".homepage-desc").show();
 };

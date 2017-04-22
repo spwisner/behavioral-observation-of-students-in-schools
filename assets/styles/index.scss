@@ -65,11 +65,7 @@ body {
   background-color:red;
 }
 
-// .credentials-container {
-//   visibility: hidden;
-// }
 .credentials-container {
-  display: none;
   text-align: right;
 }
 
@@ -162,11 +158,11 @@ body {
 }
 
 #sign-out {
-  visibility: hidden;
+  display: none;
 }
 
 #change-password {
-  visibility: hidden;
+  display: none;
 }
 
 .success-alert {
