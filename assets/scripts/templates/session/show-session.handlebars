@@ -1,61 +1,78 @@
-<h1>Session Overview</h1>
-<p>Session Date: {{session.obs_on}}</p>
-<p>Session Status:
-  {{#if session.completed}}Complete{{else}}Incomplete{{/if}}
-
-  <table class="table session-record-table table-hover">
-    <tbody>
-      <tr>
-        <td class="session-record-title session-record-school">
-          Observation Setting:
-        </td>
-        <td class="display-session-school">
-          {{session.obs_setting}}
-        </td>
-      </tr>
-      <tr>
-        <td class="session-record-title session-record-teacher">
-          Observation Task:
-        </td>
-        <td class="display-session-teacher">
-          {{session.obs_task}}
-        </td>
-      </tr>
-      <tr>
-        <td class="session-record-title session-record-grade">
-          Number of Interval:
-        </td>
-        <td class="display-session-grade">
-          {{session.int_num}}
-        </td>
-      </tr>
-      <tr>
-        <td class="session-record-title session-record-grade">
-          Interval Length (seconds):
-        </td>
-        <td class="display-session-grade">
-          {{session.obs_time}}
-        </td>
-      </tr>
-      <tr>
-        <td class="session-record-title session-record-grade">
-          Session Comment:
-        </td>
-        <td class="display-session-grade">
-          {{session.comment}}
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="dashboard-session-btn-container">
-    <button id="session-record-view-report" type="button" class="btn btn-success current" data-current-student-id="" data-current-session-id="{{session.id}}">Generate Report</button>
-    <button id="session-record-btn-edit" type="button" class="btn btn-warning current" data-current-student-id="" data-current-session-id="{{session.id}}">Edit Session</button>
-    <button id="session-record-delete" type="button" class="btn btn-danger current" data-current-student-id="" data-current-session-id="{{session.id}}">Delete Session</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Session Overview</h1>
+      <p>Session Date: {{session.obs_on}}</p>
+      <p>Session Status:</p>
+      {{#if session.completed}}Complete{{else}}Incomplete{{/if}}
+    </div>
   </div>
 
-  <br><br>
-  <div class="dashboard-container">
-    <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-    <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table session-record-table table-hover">
+        <tbody>
+          <tr>
+            <td class="session-record-title session-record-school">
+              Observation Setting:
+            </td>
+            <td class="display-session-school">
+              {{session.obs_setting}}
+            </td>
+          </tr>
+          <tr>
+            <td class="session-record-title session-record-teacher">
+              Observation Task:
+            </td>
+            <td class="display-session-teacher">
+              {{session.obs_task}}
+            </td>
+          </tr>
+          <tr>
+            <td class="session-record-title session-record-grade">
+              Number of Interval:
+            </td>
+            <td class="display-session-grade">
+              {{session.int_num}}
+            </td>
+          </tr>
+          <tr>
+            <td class="session-record-title session-record-grade">
+              Interval Length (seconds):
+            </td>
+            <td class="display-session-grade">
+              {{session.obs_time}}
+            </td>
+          </tr>
+          <tr>
+            <td class="session-record-title session-record-grade">
+              Session Comment:
+            </td>
+            <td class="display-session-grade">
+              {{session.comment}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-session-btn-container">
+        <button id="session-record-view-report" type="button" class="btn btn-success current" data-current-student-id="" data-current-session-id="{{session.id}}">Generate Report</button>
+        <button id="session-record-btn-edit" type="button" class="btn btn-warning current" data-current-student-id="" data-current-session-id="{{session.id}}">Edit Session</button>
+        <button id="session-record-delete" type="button" class="btn btn-danger current" data-current-student-id="" data-current-session-id="{{session.id}}">Delete Session</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-container">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+        <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+      </div>
+    </div>
+  </div>
+</div>

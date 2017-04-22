@@ -1,54 +1,72 @@
-
-<h3>Student Sessions</h3>
-
-<table class="table session-summary-table table-hover">
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Setting</th>
-      <th>Task</th>
-      <th>Status</th>
-      <th>View</th>
-    </tr>
-  </thead>
-  {{#each sessions as |session|}}
-    <tbody>
-      <tr>
-        <td class="display-obs-num">
-          {{session.obs_on}}
-        </td>
-        <td class="display-obs-aet">
-          {{session.obs_setting}}
-        </td>
-        <td class="display-obs-pet">
-          {{session.obs_task}}
-        </td>
-        <td>
-          {{#if session.completed}}
-            Completed
-          {{else}}
-            Incomplete
-          {{/if}}
-        </td>
-        <td>
-          <button id="view-session-details-btn" type="button" class="btn btn-info btn-sm current" data-current-session-id="{{session.id}}" data-current-student-id="{{session.student_id}}">View Session</button>
-        </td>
-      </tr>
-    </tbody>
-  {{/each}}
-</table>
-<br><br>
-
-<div class="create-session-student-record-container">
-  <h3>New Session</h3>
-  <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>, please click the button below:
-    <div class="create-session-student-btn-container">
-      <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">New Session</button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Student Sessions</h1>
     </div>
-  </p>
-</div>
+  </div>
 
-<br><br>
-<div class="dashboard-container">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+  <div class="row">
+    <div class="col-md-12">
+
+      <table class="table session-summary-table table-hover">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Setting</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        {{#each sessions as |session|}}
+          <tbody>
+            <tr>
+              <td class="display-obs-num">
+                {{session.obs_on}}
+              </td>
+              <td class="display-obs-aet">
+                {{session.obs_setting}}
+              </td>
+              <td class="display-obs-pet">
+                {{session.obs_task}}
+              </td>
+              <td>
+                {{#if session.completed}}
+                  Completed
+                {{else}}
+                  Incomplete
+                {{/if}}
+              </td>
+              <td>
+                <button id="view-session-details-btn" type="button" class="btn btn-info btn-sm current" data-current-session-id="{{session.id}}" data-current-student-id="{{session.student_id}}">View Session</button>
+              </td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="create-session-student-record-container">
+        <h3>New Session</h3>
+        <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>, please click the button below:
+          <div class="create-session-student-btn-container">
+            <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">New Session</button>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="dashboard-container">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+      </div>
+    </div>
+  </div>
 </div>
