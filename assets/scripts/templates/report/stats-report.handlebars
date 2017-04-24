@@ -1,37 +1,58 @@
-<div class="stats-report-container">
-
+<!-- <div class="stats-report-container">
   <div class="create-written-report-btn">
     <div class="report-summary-btn-container">
-      <!-- <button id="writeup-printer-friendly-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Printer Frindely</button>
+      <button id="writeup-printer-friendly-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Printer Frindely</button>
       <button id="generate-written-hide-btn" class="btn btn-info btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Hide Report</button>
       <button id="generate-written-update-btn" class="btn btn-warning btn-sm current" type="button" data-current-student-id="" data-current-session-id="" data-current-report-id="">Click To Update</button>
-      <button id="generate-written-create-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="">Click To Create</button> -->
-      <!-- <button id="generate-written-create-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="">Click For Written Report</button> -->
+      <button id="generate-written-create-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="">Click To Create</button>
+      <button id="generate-written-create-btn" class="btn btn-success btn-sm current" type="button" data-current-student-id="" data-current-session-id="">Click For Written Report</button>
     </div>
   </div>
   <div class="display-written-report-container">
+  </div>
+</div> -->
 
-  </div>
-  <br>
-  <h3>Session Report</h1>
-  <div class="display-student-summary-container"></div>
-  <br><br>
-  <div class="display-stats-table-container"></div>
-  <br><br>
-  <div class="display-observation-container"></div>
-  <br><br>
-  <div class="chart-container">
-    <div class="et-container">
-      <canvas class="results-chart" id="et-chart" width="100" height="100"></canvas>
-    </div>
-    <div class="oft-container">
-      <canvas class="results-chart" id="oft-chart" width="100" height="100"></canvas>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Session Report</h1>
     </div>
   </div>
-  <br><br>
-<div class="clearfix"></div>
-</div>
-<div class="dashboard-container">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-  <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+
+  <div class="row">
+    <div class="col-xs-12 display-student-summary-container"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 display-stats-table-container"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 display-observation-container"></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 col-xs-12 et-chart-width">
+      <div class="et-container">
+        <canvas class="results-chart" id="et-chart" width="100" height="100"></canvas>
+      </div>
+    </div>
+
+    <div class="col-md-6 oft-chart-width">
+      <div class="oft-container">
+        <canvas class="results-chart" id="oft-chart" width="100" height="100"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="dashboard-container">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+        <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
+      </div>
+    </div>
+  </div>
 </div>

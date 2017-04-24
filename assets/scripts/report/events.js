@@ -28,7 +28,7 @@ const onPrinterFriendly = function(event) {
   $(".report-summary-btn-container").hide();
   $("#change-password").hide();
   $("#sign-out").hide();
-}
+};
 
 const onShowStudentSummary = function() {
   // event.preventDefault();
@@ -151,6 +151,16 @@ const onCreateStatsReport = function(event) {
   $(".content").children().remove();
   let showStatsReportHtml = displayStatsReportHtml();
   $('.content').append(showStatsReportHtml);
+
+  let windowHeight = window.innerHeight;
+  let scaledHeight = windowHeight * 0.75;
+  $("#et-chart").css("max-height", scaledHeight);
+  $("#et-chart").css("max-width", scaledHeight);
+  $("#oft-chart").css("max-height", scaledHeight);
+  $("#oft-chart").css("max-width", scaledHeight);
+  $("#oft-chart").css("margin", "0 auto");
+  $("#et-chart").css("margin", "0 auto");
+
   onShowStudentSummary();
   onGetObservationData();
   // $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
