@@ -1,20 +1,15 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Student Dashboard</h1>
-    </div>
-  </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-xs-12 col-lg-11">
+      <h1>Student Dashboard</h1>
       <table class="table student-summary-table table-hover">
         <thead>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>DOB</th>
-            <th>School</th>
-            <th>Teacher</th>
+            <th>Name</th>
+            <th class="hidden-xs">DOB</th>
+            <th class="hidden-sm hidden-xs">School</th>
+            <th class="hidden-xs">Teacher</th>
             <th>Grade</th>
             <th>View Record</th>
           </tr>
@@ -23,18 +18,15 @@
           {{#each students as |student|}}
             <tr>
               <td class="display-student-fn">
-                {{student.first_name}}
+                {{student.first_name}} {{student.last_name}}
               </td>
-              <td class="display-student-ln">
-                {{student.last_name}}
-              </td>
-              <td class="display-student-dob">
+              <td class="display-student-dob hidden-xs">
                 {{student.born_on}}
               </td>
-              <td class="display-student-school">
+              <td class="display-student-school hidden-sm hidden-xs">
                 {{student.school}}
               </td>
-              <td class="display-student-teacher">
+              <td class="display-student-teacher hidden-xs">
                 {{student.teacher}}
               </td>
               <td class="display-student-grade">
@@ -47,12 +39,7 @@
           {{/each}}
         </tbody>
       </table>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-      <div class="dashboard-container">
+      <div class="dashboard-container well">
         <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
       </div>
     </div>

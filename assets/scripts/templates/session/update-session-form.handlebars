@@ -1,60 +1,48 @@
-<div class="container update-sessions-form-container">
+<div class="container form-container form-group update-sessions-form-container">
   <div class="row">
-    <div class="col-md-12">
-      <p>Please note, in order to create an observation session, you must first create a student record.</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
+      <h1>Update Student Form</h1>
       <form class="form sessions-form" id="update-session-form" name="update-session-form">
         <fieldset>
-          <legend>Update Session Form</legend>
           <p id="update-session-error" class="warning form-error"></p>
           <p>All fields are <u>optional</u> unless otherwise indicated</p>
 
-
           <div class="form-group">
             <label>Session Date</label>
-            <input name="session[obs_on]" placeholder="Session Date" type="date" value="{{session.obs_on}}">
+            <input class="form-control" name="session[obs_on]" placeholder="Session Date" type="date" value="{{session.obs_on}}">
           </div>
 
           <div class="form-group">
             <label>Session Setting (required)</label>
-            <input name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
+            <input class="form-control" name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
           </div>
 
           <div class="form-group">
             <label>Session Task</label>
-            <input name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
+            <input class="form-control" name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
           </div>
 
           <div class="form-group">
             <label>Number of Intervals (read-only)</label>
-            <input class="read-only" name="session[int_num]" placeholder="Number of Intervals" type="text" value="{{session.int_num}}" readonly>
+            <input class="form-control read-only" name="session[int_num]" placeholder="Number of Intervals" type="text" value="{{session.int_num}}" readonly>
           </div>
 
           <div class="form-group">
             <label>Time of Intervals (in seconds) (read-only)</label>
-            <input class="read-only" name="session[obs_time]" type="text" placeholder="Time" value="{{session.obs_time}}" readonly>
+            <input class="form-control read-only" name="session[obs_time]" type="text" placeholder="Time" value="{{session.obs_time}}" readonly>
           </div>
 
           <div class="form-group">
             <label>Session Comments</label>
-            <input name="session[comment]" placeholder="Comment" type="text" value="{{session.comment}}">
+            <input class="form-control" name="session[comment]" placeholder="Comment" type="text" value="{{session.comment}}">
           </div>
 
           <div class="form-group">
-            <input name="submit" class="current" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
+            <input name="submit" class="current btn btn-success submit-btn" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
           </div>
         </fieldset>
       </form>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="dashboard-container">
+      <div class="dashboard-container well">
         <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
       </div>

@@ -7,7 +7,6 @@ $forty-color: rgba(235,235,20,1);
 $sixty-color: rgba(240,135,24,1);
 $eighty-color: rgba(207,47,19,0.89);
 $one-hundred-color: rgba(231,24,24,1);
-
 @mixin timer-gradient($color-one, $color-two, $color-three) {
   // default color
   background: white;
@@ -31,7 +30,34 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #333;
-  background-color: #fff;
+  background-color: #fffefe;
+}
+
+h1 {
+  font-size: 30px;
+  color: #62759c;
+}
+
+h2 {
+  font-size: 25px;
+  color: #8082a0;
+}
+
+h3 {
+  font-size: 20px;
+  color: #b7bae5;
+}
+
+.btn-bottom-margin {
+  margin-bottom: 20px;
+}
+
+.create-session-student-btn-container {
+  margin-bottom: 20px;
+}
+
+.underline-h {
+  text-decoration: underline;
 }
 
 .session-completed {
@@ -64,11 +90,12 @@ body {
 }
 
 .redbc {
-  background-color:red;
+  background-color: red;
 }
 
 .credentials-container {
-  text-align: right;
+  text-align: left;
+  margin: 10px 0;
 }
 
 .obs-comment-container input {
@@ -90,8 +117,6 @@ body {
   width: 15%;
 }
 
-
-
 .timer-container {
   margin: 5px;
 }
@@ -107,32 +132,16 @@ body {
 }
 
 .sign-out {
-  height:33px;
-}
-
-.dashboard-session-btn-container {
-  text-align: center;
-}
-
-.dashboard-session-btn-container button {
-  margin: 0 auto;
+  height: 33px;
 }
 
 .dashboard-container {
-  padding-top: 5px;
   text-align: center;
-}
-
-.student-record-btn-options {
-  text-align: center;
-}
-
-.student-record-btn-options {
-  margin: 0 auto;
 }
 
 .dashboard-container input {
   margin: 0 auto;
+  vertical-align: middle;
 }
 
 #update-session-form > fieldset > input:nth-child(18) {
@@ -140,15 +149,12 @@ body {
 }
 
 #update-session-form > fieldset > input:nth-child(15) {
-  border: 1px solid gold;;
+  border: 1px solid gold;
 }
-
 /////Testing new observation form styling
-
 #cancel-session-btn {
   display: none;
 }
-
 // Hide sign-out by default
 .failure {
   color: red;
@@ -160,6 +166,7 @@ body {
 
 #sign-out {
   display: none;
+  margin: 0 5px;
 }
 
 #change-password {
@@ -167,7 +174,7 @@ body {
 }
 
 #change-password button {
-  float: right;
+  float: left;
 }
 
 .success-alert {
@@ -232,7 +239,6 @@ body {
   font-weight: 700;
   text-decoration: underline;
 }
-
 // Hides submit button
 #submit-observation-btn {
   display: none;
@@ -241,16 +247,12 @@ body {
 .warning {
   background-color: red;
 }
-
 /// Chart CSS
-
 .results-chart {
   max-width: 250px;
   float: left;
 }
-
 ///
-
 #interval-timer {
   font-size: 20px;
   color: red;
@@ -271,8 +273,8 @@ body {
   font-size: 16px;
 }
 
-.interval-count,
-#interval-timer {
+#interval-timer,
+.interval-count {
   color: red;
 }
 
@@ -336,8 +338,13 @@ body {
 .check-clear {
   clear: both;
 }
-
 // Default hide session canceled notification
 .cancel-session-notification {
   display: none;
+}
+
+@media screen and (max-width: 421px) {
+  .new-line-btn {
+    margin-top: 5px;
+  }
 }

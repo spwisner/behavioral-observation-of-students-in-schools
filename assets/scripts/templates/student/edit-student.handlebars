@@ -1,18 +1,11 @@
 <div class="container create-student-form-container form-container form-group">
   <div class="row">
-    <div class="col-md-12">
-      <p>Please note, in order to create an observation session, you must first create a student record.</p>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
+    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
+      <h1>Update Student Form</h1>
       <form class="form student-form" id="update-student-form" name="new-student-form">
         <fieldset>
-          <legend>Create Student Form</legend>
           <p id="create-student-error" class="warning form-error"></p>
           <p>All fields are <u>optional</u> unless otherwise indicated</p>
-
 
           <div class="form-group">
             <label>First Name (required)</label>
@@ -45,15 +38,12 @@
           </div>
 
           <div class="form-group">
-            <input name="submit" class="btn btn-sucess" type="submit" value="Submit Update">
+            <input class="btn btn-success submit-btn" name="submit" id="create-student-btn" type="submit" value="Submit">
           </div>
         </fieldset>
       </form>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="dashboard-container">
+
+      <div class="dashboard-container well">
         <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
       </div>

@@ -1,19 +1,14 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <h1>Student Sessions</h1>
-    </div>
-  </div>
 
   <div class="row">
-    <div class="col-md-12">
-
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+      <h2 class="underline-h">Student Sessions</h2>
       <table class="table session-summary-table table-hover">
         <thead>
           <tr>
             <th>Date</th>
-            <th>Setting</th>
-            <th>Task</th>
+            <th class="hidden-xs">Setting</th>
+            <th class="hidden-xs">Task</th>
             <th>Status</th>
             <th>View</th>
           </tr>
@@ -21,13 +16,13 @@
         {{#each sessions as |session|}}
           <tbody>
             <tr>
-              <td class="display-obs-num">
+              <td>
                 {{session.obs_on}}
               </td>
-              <td class="display-obs-aet">
+              <td class="hidden-xs">
                 {{session.obs_setting}}
               </td>
-              <td class="display-obs-pet">
+              <td class="hidden-xs">
                 {{session.obs_task}}
               </td>
               <td>
@@ -44,29 +39,12 @@
           </tbody>
         {{/each}}
       </table>
+    <div class="create-session-student-btn-container">
+      <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">Create Session</button>
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-12">
-
-      <div class="create-session-student-record-container">
-        <h3>New Session</h3>
-        <p>To create a new session for <span class="current-student-fn"></span> <span class="current-student-ln"></span>, please click the button below:
-          <div class="create-session-student-btn-container">
-            <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">New Session</button>
-          </div>
-        </p>
-      </div>
+    <div class="dashboard-container well">
+      <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
     </div>
-  </div>
-
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="dashboard-container">
-        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-      </div>
     </div>
   </div>
 </div>

@@ -1,50 +1,48 @@
-<div class="existing-student-selection-container">
+<div class="container existing-student-selection-container">
 
-<h3>Student Selection</h3>
-<p>Please select the student whom you will be observing.</p>
-
-<table class="table existing-student-selection-table table-hover">
-  <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>DOB</th>
-      <th>School</th>
-      <th>Teacher</th>
-      <th>Grade</th>
-      <th>Session Target</th>
-    </tr>
-  </thead>
-  <tbody>
-    {{#each students as |student|}}
-      <tr>
-        <td class="display-student-fn">
-          {{student.first_name}}
-        </td>
-        <td class="display-student-ln">
-          {{student.last_name}}
-        </td>
-        <td class="display-student-dob">
-          {{student.born_on}}
-        </td>
-        <td class="display-student-school">
-          {{student.school}}
-        </td>
-        <td class="display-student-teacher">
-          {{student.teacher}}
-        </td>
-        <td class="display-student-grade">
-          {{student.grade}}
-        </td>
-        <td class="display-obs-obs-comment">
-          <input class="btn btn-info btn-sm dashboard-existing-create-btn" type="button" value="Select Student" data-current-student-id="{{student.id}}">
-        </td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
-<br><br>
-<div class="dashboard-container">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-</div>
+  <div class="row">
+    <div class="col-xs-12 col-lg-11">
+      <h1>Student Selection</h1>
+      <p class="lead">Please select the student whom you will be observing.</p>
+      <table class="table existing-student-selection-table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th class="hidden-xs">DOB</th>
+            <th class="hidden-sm hidden-xs">School</th>
+            <th class="hidden-xs">Teacher</th>
+            <th>Grade</th>
+            <th>Session Target</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each students as |student|}}
+            <tr>
+              <td class="display-student-fn">
+                {{student.first_name}} {{student.last_name}}
+              </td>
+              <td class="display-student-dob hidden-xs">
+                {{student.born_on}}
+              </td>
+              <td class="display-student-school hidden-sm hidden-xs">
+                {{student.school}}
+              </td>
+              <td class="display-student-teacher hidden-xs">
+                {{student.teacher}}
+              </td>
+              <td class="display-student-grade">
+                {{student.grade}}
+              </td>
+              <td class="display-obs-obs-comment">
+                <input class="btn btn-info btn-sm dashboard-existing-create-btn" type="button" value="Select Student" data-current-student-id="{{student.id}}">
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+      <div class="dashboard-container">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+      </div>
+    </div>
+  </div>
 </div>

@@ -1,49 +1,54 @@
-<table class="table obs-summary-table table-hover">
-  <thead>
-    <tr>
-      <th>Interval</th>
-      <th>AET</th>
-      <th>PET</th>
-      <th>OFT-M</th>
-      <th>OFT-V</th>
-      <th>OFT-P</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-  {{#each observations as |observation|}}
-    <tbody>
-      <tr>
-        <td class="display-obs-num">{{observation.obs_num}}</td>
-        <td class="display-obs-aet">
-          {{#if observation.aet}}
-            &#10004;
-          {{/if}}
-        </td>
-        <td class="display-obs-pet">
-          {{#if observation.pet}}
-            &#10004;
-          {{/if}}
-        </td>
-        <td class="display-obs-oft-m">
-          {{#if observation.oft_m}}
-            &#10004;
-          {{/if}}
-        </td>
-        <td class="display-obs-oft-v">
-          {{#if observation.oft_v}}
-            &#10004;
-          {{/if}}
-        </td>
-        <td class="display-obs-oft-p">
-          {{#if observation.oft_p}}
-            &#10004;
-          {{/if}}
-        </td>
-        <td class="display-obs-obs-comment">
-          {{observation.obs_comment}}
-        </td>
-      </tr>
-    </tbody>
-  {{/each}}
-</table>
-<br><br>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table obs-summary-table table-hover">
+        <thead>
+          <tr>
+            <th>Interval</th>
+            <th>AET</th>
+            <th>PET</th>
+            <th>OFT-M</th>
+            <th>OFT-V</th>
+            <th>OFT-P</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        {{#each observations as |observation|}}
+          <tbody>
+            <tr>
+              <td class="display-obs-num">{{observation.obs_num}}</td>
+              <td class="display-obs-aet">
+                {{#if observation.aet}}
+                  &#10004;
+                {{/if}}
+              </td>
+              <td class="display-obs-pet">
+                {{#if observation.pet}}
+                  &#10004;
+                {{/if}}
+              </td>
+              <td class="display-obs-oft-m">
+                {{#if observation.oft_m}}
+                  &#10004;
+                {{/if}}
+              </td>
+              <td class="display-obs-oft-v">
+                {{#if observation.oft_v}}
+                  &#10004;
+                {{/if}}
+              </td>
+              <td class="display-obs-oft-p">
+                {{#if observation.oft_p}}
+                  &#10004;
+                {{/if}}
+              </td>
+              <td class="display-obs-obs-comment">
+                {{observation.obs_comment}}
+              </td>
+            </tr>
+          </tbody>
+        {{/each}}
+      </table>
+    </div>
+  </div>
+</div>

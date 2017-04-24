@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>BOSS Application</title>
+  <title>BOSS App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -11,106 +11,114 @@
 
 <body class="container-fluid" style="display: none">
 
-<div class="credentials-container">
-  <div class="btn-group" id="sign-up">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <div class="container credentials-container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="btn-group" id="sign-up">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sign Up
       </button>
-      <div class="dropdown-menu">
-        <form class="auth">
-          <p class="failure signup-failure"></p>
-          <p class="success signup-success"></p>
-          <fieldset>
-            <label class="email">
+          <div class="dropdown-menu">
+            <form class="auth">
+              <p class="failure signup-failure"></p>
+              <p class="success signup-success"></p>
+              <fieldset>
+                <label class="email">
                   Email
                   <input class="form-clear signup-email" type="email" name="credentials[email]">
             </label>
 
-            <label class="password">
+                <label class="password">
                   Password
                   <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
             </label>
 
-            <label class="password_confirmation">
+                <label class="password_confirmation">
                   Password Confirmation
                   <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
             </label>
-            <input type="submit" class="btn btn-default" name="submit" value="Sign-up">
-          </fieldset>
-        </form>
-      </div>
-    </div>
+                <input type="submit" class="btn btn-default" name="submit" value="Sign-up">
+              </fieldset>
+            </form>
+          </div>
+        </div>
 
-    <div class="btn-group" id="sign-in">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="btn-group" id="sign-in">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sign In
       </button>
-      <div class="dropdown-menu">
-        <form class="auth">
-          <p class="failure signin-failure"></p>
-          <p class="success signin-success"></p>
-          <fieldset>
-            <label class="email">
+          <div class="dropdown-menu">
+            <form class="auth">
+              <p class="failure signin-failure"></p>
+              <p class="success signin-success"></p>
+              <fieldset>
+                <label class="email">
                 Email
-              <input type="email" name="credentials[email]" class="form-clear signin-email">
+              <input type="email" name="credentials[email]" class="form-clear signin-email" value="z@z">
             </label>
 
-            <label class="password">
+                <label class="password">
                 Password
-                <input type="password" name="credentials[password]" class="form-clear signin-password">
+                <input type="password" name="credentials[password]" class="form-clear signin-password" value="z">
             </label>
-            <input type="submit" class="btn btn-default" name="submit" value="Sign-in">
-          </fieldset>
-        </form>
-      </div>
-    </div>
-    <div class="btn-group" id="change-password">
-      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <input type="submit" class="btn btn-default" name="submit" value="Sign-in">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+        <div class="btn-group" id="change-password">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Change Password
       </button>
-      <div class="dropdown-menu changepw-dropdown">
-        <form class="auth">
-          <p class="failure changepw-failure"></p>
-          <p class="success changepw-success"></p>
-          <fieldset>
-            <label class="old">
+          <div class="dropdown-menu changepw-dropdown">
+            <form class="auth">
+              <p class="failure changepw-failure"></p>
+              <p class="success changepw-success"></p>
+              <fieldset>
+                <label class="old">
                   Old password
                   <input type="password" name="passwords[old]" class="form-clear old-password">
             </label>
 
-            <label class="new">
+                <label class="new">
                   New password
                   <input type="password" name="passwords[new]" class="form-clear new-password">
             </label>
 
-            <input type="submit" class="btn btn-default" name="submit" value="Change Password">
-          </fieldset>
-        </form>
+                <input type="submit" class="btn btn-default" name="submit" value="Change Password">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <div class="btn-group sign-out">
+          <form id="sign-out">
+            <button type="submit" class="btn btn-danger">Sign Out</button>
+          </form>
+          <p class="failure signout-failure"></p>
+          <p class="success signout-success"></p>
+        </div>
       </div>
     </div>
 
-    <div class="btn-group sign-out">
-      <form id="sign-out">
-          <button type="submit" class="btn btn-danger">Sign Out</button>
-      </form>
-      <p class="failure signout-failure"></p>
-      <p class="success signout-success"></p>
-    </div>
+    <div class="clearfix"></div>
+    <div class="notification-container">
+      <div class="success-alert">
 
-  <div class="clearfix"></div>
-  <div class="notification-container">
-    <div class="success-alert">
+      </div>
+      <div class="failure-alert">
 
-    </div>
-    <div class="failure-alert">
-
+      </div>
     </div>
   </div>
-</div>
 
-  <div class="homepage-desc">
-    <h3>Welcome</h3>
-    <p>Please sign-up and sign-in to continue</p>
+  <div class="container homepage-desc">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Welcome</h1>
+        <p>Please sign-up and sign-in to continue</p>
+      </div>
+    </div>
   </div>
 
   <div class="clearfix"></div>

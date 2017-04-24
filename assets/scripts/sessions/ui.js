@@ -85,8 +85,6 @@ const generateUpdateForm = (data) => {
   });
   $('.content').append(generatedUpdateForm);
   $(".current").attr("data-current-student-id", store.currentStudentId);
-  // let today = generateTodaysDate();
-  // $("#session-date-create-field").val(today);
 };
 
 const generateUpdateFormFailure = () => {

@@ -1,46 +1,63 @@
-<table class="table last-submission-table table-bordered">
-  <tr>
-    <th class="submit-last-warnings" colspan="2"><span class="no-submission-warning"></div></th>
-  </tr>
-  <tr>
-    <td>Last Submission</td>
-    <td>Entry</td>
-  </tr>
-  <tr class="last-submission-row">
-    <td>Interval</td>
-    <td>{{observation.obs_num}}</td>
-  </tr>
-  <tr class="last-aet-tr last-submission-row">
-    <td>AET</td>
-    <td class="last-submission-aet">
-      {{#if observation.aet}} &#10004; {{/if}}
-    </td>
-  </tr>
-  <tr class="last-pet-tr last-submission-row">
-    <td>PET</td>
-    <td class="last-submission-pet"> {{#if observation.pet}} &#10004; {{/if}}</td>
-  </tr>
-  <tr class="last-oft-m-tr last-submission-row">
-    <td>Oft-M</td>
-    <td class="last-submission-oft-m">{{#if observation.oft_m}} &#10004; {{/if}}</td>
-  </tr>
-  <tr class="last-oft-v-tr last-submission-row">
-    <td>Oft-V</td>
-    <td class="last-submission-oft-v">{{#if observation.oft_v}} &#10004; {{/if}}</td>
-  </tr>
-  <tr class="last-oft-p-tr last-submission-row">
-    <td>Oft-P</td>
-    <td class="last-submission-oft-p">{{#if observation.oft_p}} &#10004; {{/if}}</td>
-  </tr>
-  <tr>
-    <!-- <td>Comment</td>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table last-submission-table table-bordered">
+        <tr>
+          <th class="submit-last-warnings" colspan="2"><span class="no-submission-warning"></span></th>
+        </tr>
+        <tr>
+          <td>Last Submission</td>
+          <td>Entry</td>
+        </tr>
+        <tr class="last-submission-row">
+          <td>Interval</td>
+          <td>{{observation.obs_num}}</td>
+        </tr>
+        <tr class="last-aet-tr last-submission-row">
+          <td>AET</td>
+          <td class="last-submission-aet">
+            {{#if observation.aet}} &#10004; {{/if}}
+          </td>
+        </tr>
+        <tr class="last-pet-tr last-submission-row">
+          <td>PET</td>
+          <td class="last-submission-pet">
+            {{#if observation.pet}} &#10004; {{/if}}
+          </td>
+        </tr>
+        <tr class="last-oft-m-tr last-submission-row">
+          <td>Oft-M</td>
+          <td class="last-submission-oft-m">
+            {{#if observation.oft_m}} &#10004; {{/if}}
+          </td>
+        </tr>
+        <tr class="last-oft-v-tr last-submission-row">
+          <td>Oft-V</td>
+          <td class="last-submission-oft-v">
+            {{#if observation.oft_v}} &#10004; {{/if}}
+          </td>
+        </tr>
+        <tr class="last-oft-p-tr last-submission-row">
+          <td>Oft-P</td>
+          <td class="last-submission-oft-p">
+            {{#if observation.oft_p}} &#10004; {{/if}}
+          </td>
+        </tr>
+        <tr>
+          <!-- <td>Comment</td>
     <td>{{observation.obs_comment}}</td> -->
-  </tr>
-  <tr class="edit-last-submit-tr">
-    <td class="edit-last-submit-btn-td" colspan="2">
-      <button id="edit-last-submission" class="edit-last-submission btn btn-primary btn-sm" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.current_session_id}}" data-current-student-id="{{observation.current_student_id}}">Edit</button>
-      <button id="cancel-last-submission-edit-btn" class="cancel-last-submission-edit btn btn-danger btn-sm" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}" data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.current_session_id}}" data-current-student-id="{{observation.current_student_id}}">Cancel</button>
-      <button id="submit-last-edit-btn" class="btn btn-success btn-sm" type="button" data-id="{{observation.id}}" data-obs-comment="{{observation.obs_comment}}" data-current-student-id={{observation.current_student_id}} data-current-session-id="{{observation.current_session_id}}" data-current-student-id="{{observation.current_student_id}}">Submit Update</button>
-    </td>
-  </tr>
-</table>
+        </tr>
+        <tr class="edit-last-submit-tr">
+          <td class="edit-last-submit-btn-td" colspan="2">
+            <button id="edit-last-submission" class="edit-last-submission btn btn-primary btn-sm" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}"
+                data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.current_session_id}}" data-current-student-id="{{observation.current_student_id}}">Edit</button>
+            <button id="cancel-last-submission-edit-btn" class="cancel-last-submission-edit btn btn-danger btn-sm" data-id="{{observation.id}}" data-obs-num="{{observation.obs_num}}" data-aet="{{observation.aet}}" data-pet="{{observation.pet}}" data-oft-m="{{observation.oft_m}}"
+                data-oft-v="{{observation.oft_v}}" data-oft-p="{{observation.oft_p}}" data-obs-comment="{{observation.obs_comment}}" data-current-session-id="{{observation.current_session_id}}" data-current-student-id="{{observation.current_student_id}}">Cancel</button>
+            <button id="submit-last-edit-btn" class="btn btn-success btn-sm" type="button" data-id="{{observation.id}}" data-obs-comment="{{observation.obs_comment}}" data-current-student-id= {{observation.current_student_id}} data-current-session-id="{{observation.current_session_id}}"
+                data-current-student-id="{{observation.current_student_id}}">Submit Update</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,95 +1,95 @@
-<div class="full-observation-container">
-<div class="timer-container">
-  <div class="session-time-container">
-    <p>Time Remaining for Session: <span id="observation-timer"></span></p>
-    <button id="observation-timer-btn">Observation Timer Button</button>
-  </div>
-
-  <div class="interval-confirmation-container">
-    <div id="interval-submitted-successfully">Interval Submitted</div>
-  </div>
-
-  <div class="interval-time-count-container">
-    <p class="time-until-submission">Time Until Submission: <span id="interval-timer"></span>
-    <p class="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span></p>
-    <p class="cancel-session-notification">Your Session has been cancelled</p>
-
-    <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
-    <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
-    <p class="session-completed">Your session has been completed.  Return to the Dashboard to view results</p>
-    <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button>
-  </div>
-</div>
-
-<form class="form observation-form" id="new-observation-form" name="new-observation-form">
-  <fieldset>
-    <legend>Interval Recorder</legend>
-    <div class="after-completion"></div>
-    <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
-    <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
-    <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
-
-    <table class="entire-form-table">
-      <tr>
-        <td class="observation-form-side observation-form-side-left" rowspan="3">
-          <p class="field-description">AET</p>
-          <input name="observation[aet]" type="hidden" value="false">
-          <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true">
-        </td>
-        <td class="observation-form-center" rowspan="6">
-          <div class="last-submission-container">
-          </div>
-        </td>
-        <td class="observation-form-side observation-form-side-right" rowspan="2">
-          <p class="field-description">OFT_M</p>
-          <input name="observation[oft_m]" type="hidden" value="false">
-          <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
-        </td>
-      </tr>
-      <tr>
-      </tr>
-      <tr>
-        <td class="observation-form-side observation-form-side-right" rowspan="2">
-          <p class="field-description">OFT_V</p>
-          <input name="observation[oft_v]" type="hidden" value="false">
-          <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
-        </td>
-      </tr>
-      <tr>
-        <td class="observation-form-side observation-form-side-left" rowspan="3">
-          <p class="field-description">PET</p>
-          <input name="observation[pet]" type="hidden" value="false">
-          <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
-        </td>
-      </tr>
-      <tr>
-        <td class="observation-form-side observation-form-side-right" rowspan="2">
-          <p class="field-description">OFT_P</p>
-          <input name="observation[oft_p]" type="hidden" value="false">
-          <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
-        </td>
-      </tr>
-      <tr>
-      </tr>
-    </table>
-
-    <div class="form-group obs-comment-container">
-      <label> </label>
-      <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
+<div class="container full-observation-container">
+  <div class="timer-container">
+    <div class="session-time-container">
+      <p>Time Remaining for Session: <span id="observation-timer"></span></p>
+      <button id="observation-timer-btn">Observation Timer Button</button>
     </div>
 
+    <div class="interval-confirmation-container">
+      <div id="interval-submitted-successfully">Interval Submitted</div>
+    </div>
 
-    <!-- <div class="field-desc-container field-text">
+    <div class="interval-time-count-container">
+      <p class="time-until-submission">Time Until Submission: <span id="interval-timer"></span>
+        <p class="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span></p>
+        <p class="cancel-session-notification">Your Session has been cancelled</p>
+
+        <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
+        <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
+        <p class="session-completed">Your session has been completed. Return to the Dashboard to view results</p>
+        <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button>
+    </div>
+  </div>
+
+  <form class="form observation-form" id="new-observation-form" name="new-observation-form">
+    <fieldset>
+      <legend>Interval Recorder</legend>
+      <div class="after-completion"></div>
+      <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
+      <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
+      <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
+
+      <table class="entire-form-table">
+        <tr>
+          <td class="observation-form-side observation-form-side-left" rowspan="3">
+            <p class="field-description">AET</p>
+            <input name="observation[aet]" type="hidden" value="false">
+            <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true">
+          </td>
+          <td class="observation-form-center" rowspan="6">
+            <div class="last-submission-container">
+            </div>
+          </td>
+          <td class="observation-form-side observation-form-side-right" rowspan="2">
+            <p class="field-description">OFT_M</p>
+            <input name="observation[oft_m]" type="hidden" value="false">
+            <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
+          </td>
+        </tr>
+        <tr>
+        </tr>
+        <tr>
+          <td class="observation-form-side observation-form-side-right" rowspan="2">
+            <p class="field-description">OFT_V</p>
+            <input name="observation[oft_v]" type="hidden" value="false">
+            <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
+          </td>
+        </tr>
+        <tr>
+          <td class="observation-form-side observation-form-side-left" rowspan="3">
+            <p class="field-description">PET</p>
+            <input name="observation[pet]" type="hidden" value="false">
+            <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
+          </td>
+        </tr>
+        <tr>
+          <td class="observation-form-side observation-form-side-right" rowspan="2">
+            <p class="field-description">OFT_P</p>
+            <input name="observation[oft_p]" type="hidden" value="false">
+            <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
+          </td>
+        </tr>
+        <tr>
+        </tr>
+      </table>
+
+      <div class="form-group obs-comment-container">
+        <label> </label>
+        <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
+      </div>
+
+
+      <!-- <div class="field-desc-container field-text">
       <p class="field-description">Interval Comment</p>
       <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
     </div> -->
-    <div class="field-button-container">
-      <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
-    </div>
-  </fieldset>
-</form>
-<br><br>
-<div class="dashboard-container">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-  <!-- <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button> -->
-</div>
+      <div class="field-button-container">
+        <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
+      </div>
+    </fieldset>
+  </form>
+  <br><br>
+  <div class="dashboard-container">
+    <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+    <!-- <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button> -->
+  </div>
