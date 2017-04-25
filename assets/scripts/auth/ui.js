@@ -2,7 +2,24 @@
 
 const displayDashboard = require('../templates/dashboard/dashboard-home.handlebars');
 
+const blinkNotify = function(div, status) {
+  let blinkHtml = '<div id="processing">Processing...</div>';
+  $(div).append(blinkHtml);
+
+  const blinkAnimation = function() {
+    $("#processing").fadeIn(300);
+    $("#processing").fadeOut(500);
+  };
+
+  if (status === "start") {
+    setInterval(blinkAnimation, 0);
+  } else {
+    clearInterval(blinkAnimation);
+  }
+};
+
 const signInSuccess = function() {
+  $("#processing").remove();
   $(".notification-container").children().text("");
   $(".success-alert").text("You have successfully signed-in");
   $('#sign-in').hide();
@@ -73,4 +90,5 @@ module.exports = {
   signOutFailure,
   cpSuccess,
   cpFailure,
+  blinkNotify,
 };

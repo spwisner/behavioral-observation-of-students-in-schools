@@ -9,6 +9,8 @@ const store = require('../store');
 
 const onSignIn = function(event) {
   event.preventDefault();
+  let div = ".signin-success";
+  uiAuth.blinkNotify(div, "start");
   let data = getFormFields(event.target);
   apiAuth.signIn(data)
     .then((response) => {
