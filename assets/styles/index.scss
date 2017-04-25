@@ -360,6 +360,18 @@ h3 {
   margin: 2px;
 }
 
+.action-btn-container {
+  text-align: center;
+}
+
+.current-student-observed {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+  color: #62759c;
+};
+
 .legend-gradient {
   text-align: center;
 }
@@ -489,26 +501,27 @@ h3 {
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (min-width: 100px) {
   .switch {
-    height: 43px;
-    width: 150px;
+    height: 34px;
+    width: 140px;
   }
 
   .switch-label {
-    line-height: 42px;
-    width: 73px;
+    line-height: 34px;
+    width: 70px;
     font-size: 13px;
   }
 
   .switch-selection {
-    width: 73px;
-    height: 43px;
+    width: 70px;
+    height: 34px;
     top: 0;
     left: 0;
+    right: 0;
   }
 
   .switch-input:checked + .switch-label-on ~ .switch-selection {
-    left: 73px;
+    left: 68px;
   }
 }
