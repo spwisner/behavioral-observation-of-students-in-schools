@@ -61,6 +61,11 @@ h3 {
   margin-top: 20px;
 }
 
+.interval-comment-label {
+  text-align: center;
+  font-weight: bold;
+}
+
 .create-session-student-btn-container {
   margin-bottom: 20px;
 }
@@ -92,10 +97,6 @@ h3 {
 
 .observation-form-side-left {
   height: 50%;
-}
-
-#create-obs-comment {
-  width: 80%;
 }
 
 .redbc {
@@ -511,6 +512,8 @@ h3 {
     line-height: 34px;
     width: 70px;
     font-size: 13px;
+    text-shadow: none;
+    color: black;
   }
 
   .switch-selection {

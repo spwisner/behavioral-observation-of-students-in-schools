@@ -1,14 +1,14 @@
 <div class="container full-observation-container">
   <div class="row">
 
-    <div class="col-xs-4">
+    <!-- <div class="col-xs-4">
       <div class="current-student-observed">
         <p>Observing:</p>
         <div id="student-observed"></div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-xs-4">
+    <div class="col-xs-offset-4 col-xs-4">
       <div class="timer-container">
         <div class="interval-time-count-container">
           <p class="cancel-session-notification">Your Session has been cancelled</p>
@@ -16,7 +16,7 @@
           <div class="action-btn-container">
             <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button>
           </div>
-          <p class="time-until-submission">Time Until Submission: <span id="interval-timer"></span>
+          <p class="time-until-submission">Time Remaining: <span id="interval-timer"></span>
           <div class="action-btn-container">
             <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
           </div>
@@ -116,9 +116,9 @@
     </div>
 
     <div class="row">
-      <div class="hidden-xs col-sm-12">
+      <div class="hidden-xs col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <div class="form-group obs-comment-container">
-          <label>Interval Comment</label>
+          <p class="interval-comment-label">Interval Comment</p>
           <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
         </div>
       </div>
@@ -126,7 +126,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <div class="cancel-session-bt-container">
+        <div class="cancel-session-bt-container btn-top-margin">
           <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
         </div>
       </div>
@@ -204,6 +204,6 @@
     </fieldset>
   </form> -->
 <br><br>
-<div class="dashboard-container">
+<div class="dashboard-container btn-top-margin well">
   <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
 </div>
