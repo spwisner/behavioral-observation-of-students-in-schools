@@ -63,6 +63,12 @@ const showObservationSuccess = (data) => {
     $(".no-submission-warning").text("");
     $(".last-submission-row").removeClass("redbc");
   }
+
+  let submissionText = $(".no-submission-warning").text();
+
+  if ( submissionText === "" ) {
+    $(".submit-last-warning-tr").remove();
+  }
 };
 
 const showObservationFailure = () => {
@@ -89,7 +95,10 @@ const getPastObsNumFailure = function() {
 
 const createObservationSuccess = () => {
   $(".notification-container").children().text("");
-  $(".no-selected").prop("checked", true);
+   $(".no-selected").prop("checked", true);
+   $(".switch").removeClass("switch-green");
+   $(".switch").addClass("switch-red");
+
    $("#new-observation-form .field-checkbox").prop("checked", false);
    $("#create-obs-comment").val('');
    $("#interval-submitted-successfully").fadeIn(500).delay(1000).fadeOut(500);
@@ -97,9 +106,11 @@ const createObservationSuccess = () => {
    if (store.studentToObserve % 5 === 0) {
      $("#student-observed").text("Random Peer");
      $("#student-observed").addClass("random-peer");
+     $(".switch-container").css("background-color", "#ffc04c");
    } else {
      $("#student-observed").text("Target Student");
      $("#student-observed").addClass("target-student");
+     $(".switch-container").css("background-color", "#ffffff");
    }
 
 };

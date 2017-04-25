@@ -7,6 +7,7 @@ $forty-color: rgba(235,235,20,1);
 $sixty-color: rgba(240,135,24,1);
 $eighty-color: rgba(207,47,19,0.89);
 $one-hundred-color: rgba(231,24,24,1);
+
 @mixin timer-gradient($color-one, $color-two, $color-three) {
   // default color
   background: white;
@@ -359,6 +360,12 @@ h3 {
   margin: 2px;
 }
 
+.legend-gradient {
+  text-align: center;
+}
+.cancel-session-bt-container {
+  text-align: center;
+}
 
 
 // Slide Radio Buttons
@@ -420,7 +427,6 @@ h3 {
 
 .switch-input:checked + .switch-label-on ~ .switch-selection {
   left: 60px;
-  /* Note: left: 50%; doesn't transition in WebKit */
 }
 
 .switch-selection {
@@ -480,5 +486,29 @@ h3 {
 @media screen and (max-width: 421px) {
   .new-line-btn {
     margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .switch {
+    height: 43px;
+    width: 150px;
+  }
+
+  .switch-label {
+    line-height: 42px;
+    width: 73px;
+    font-size: 13px;
+  }
+
+  .switch-selection {
+    width: 73px;
+    height: 43px;
+    top: 0;
+    left: 0;
+  }
+
+  .switch-input:checked + .switch-label-on ~ .switch-selection {
+    left: 73px;
   }
 }

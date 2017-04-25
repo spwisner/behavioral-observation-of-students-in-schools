@@ -87,7 +87,7 @@ const observationTimer = function() {
 
   // Define Countup
   let countUp = 0;
-  $("#new-observation-form").addClass("obs-stg-one");
+  $(".legend-gradient").addClass("obs-stg-one");
   let totalIntervalLength = store.currentObsIntervalTime;
   // Define gradient intervals
   let stageOneTime = 0;
@@ -125,11 +125,11 @@ const observationTimer = function() {
           $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
           countUp = 0;
-          $("#new-observation-form").removeClass("obs-stg-five");
-          $("#new-observation-form").addClass("obs-stg-one");
+          $(".legend-gradient").removeClass("obs-stg-five");
+          $(".legend-gradient").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
-            $("#new-observation-form").removeClass("obs-stg-five");
-            $("#new-observation-form").addClass("obs-stg-done");
+            $(".legend-gradient").removeClass("obs-stg-five");
+            $(".legend-gradient").addClass("obs-stg-done");
             endObservationTimer(runTimer);
             $(".interval-count").text(endInterval);
             $("#cancel-session-btn").remove();

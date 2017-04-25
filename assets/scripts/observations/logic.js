@@ -53,20 +53,20 @@ const gradientLogic = function(stage, totalIntervalLength) {
 // Tests whether a new interval begins and applies classes based on outcome
 const changeGradientClass = function(stageOneTime, stageTwoTime, stageThreeTime, stageFourTime, stageFiveTime, countUp) {
   if (stageOneTime === countUp) {
-    $("#new-observation-form").removeClass("obs-stg-done");
-    $("#new-observation-form").addClass("obs-stg-one");
+    $(".legend-gradient").removeClass("obs-stg-done");
+    $(".legend-gradient").addClass("obs-stg-one");
   } else if (stageTwoTime === countUp) {
-    $("#new-observation-form").removeClass("obs-stg-one");
-    $("#new-observation-form").addClass("obs-stg-two");
+    $(".legend-gradient").removeClass("obs-stg-one");
+    $(".legend-gradient").addClass("obs-stg-two");
   } else if (stageThreeTime === countUp) {
-    $("#new-observation-form").removeClass("obs-stg-two");
-    $("#new-observation-form").addClass("obs-stg-three");
+    $(".legend-gradient").removeClass("obs-stg-two");
+    $(".legend-gradient").addClass("obs-stg-three");
   } else if (stageFourTime === countUp) {
-    $("#new-observation-form").removeClass("obs-stg-three");
-    $("#new-observation-form").addClass("obs-stg-four");
+    $(".legend-gradient").removeClass("obs-stg-three");
+    $(".legend-gradient").addClass("obs-stg-four");
   } else if (stageFiveTime === countUp) {
-    $("#new-observation-form").removeClass("obs-stg-four");
-    $("#new-observation-form").addClass("obs-stg-five");
+    $(".legend-gradient").removeClass("obs-stg-four");
+    $(".legend-gradient").addClass("obs-stg-five");
   }
 };
 
