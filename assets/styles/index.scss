@@ -512,9 +512,22 @@ h6 {
   max-width: 100%;
 }
 
+.highlight {
+  background-color: yellow;
+}
 
+.center-label {
+  text-align: center;
+  font-weight: bold;
+}
 
+.extra-padding-top {
+  padding-top: 10px;
+}
 
+.extra-padding-bottom {
+  padding-bottom: 10px;
+}
 
 // Media
 @media screen and (max-width: 421px) {
