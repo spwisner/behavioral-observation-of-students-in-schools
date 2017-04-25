@@ -21,6 +21,88 @@
     </div>
   </div>
 
+
+
+  <form class="form observation-form" id="new-observation-form" name="new-observation-form">
+    <fieldset>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <legend>Interval Recorder</legend>
+          <div class="after-completion"></div>
+          <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
+          <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
+          <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <p>AET</p>
+          <!-- $("input[type='radio'].switch-input:checked").val(); -->
+          <div class="switch switch-red">
+            <input type="radio" class="switch-input no-selected" name="observation[aet]" value="false" id="aetNo" checked>
+            <label class="switch-label switch-label-off">No</label>
+            <input type="radio" class="switch-input yes-selected" name="observation[aet]" value="true" id="aetYes">
+            <label class="switch-label switch-label-on">Yes</label>
+            <span class="switch-selection"></span>
+          </div>
+
+
+          <!-- <div class="btn-group aet-obs-container custom-radio-container" data-toggle="buttons">
+            <label class="btn btn-danger active">
+              <input type="radio" name="observation[aet]" id="aetNo" autocomplete="off" value="false" checked>No
+            </label>
+            <label class="btn btn-success">
+              <input type="radio"name="observation[aet]" id="aetYes" autocomplete="off" value="true">Yes
+            </label>
+          </div> -->
+<!--
+
+            <input name="observation[aet]" type="hidden" value="false">
+            <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true"> -->
+            <p>PET</p>
+            <input name="observation[pet]" type="hidden" value="false">
+            <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
+          </div>
+
+          <div class="col-xs-4">
+            <div class="last-submission-container">
+            </div>
+          </div>
+
+          <div class="col-xs-4">
+            <p class="field-description">OFT_M</p>
+            <input name="observation[oft_m]" type="hidden" value="false">
+            <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
+            <p class="field-description">OFT_V</p>
+            <input name="observation[oft_v]" type="hidden" value="false">
+            <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
+            <p class="field-description">OFT_P</p>
+            <input name="observation[oft_p]" type="hidden" value="false">
+            <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="form-group obs-comment-container">
+              <label>Interval Comment</label>
+              <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="field-button-container">
+              <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
+            </div>
+          </div>
+        </div>
+    </fieldset>
+  </form>
+  <!--
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">
     <fieldset>
       <legend>Interval Recorder</legend>
@@ -77,19 +159,12 @@
         <label> </label>
         <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
       </div>
-
-
-      <!-- <div class="field-desc-container field-text">
-      <p class="field-description">Interval Comment</p>
-      <input id="create-obs-comment" name="observation[obs_comment]" placeholder="Observation Comment" type="text">
-    </div> -->
       <div class="field-button-container">
         <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
       </div>
     </fieldset>
-  </form>
+  </form> -->
   <br><br>
   <div class="dashboard-container">
     <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
-    <!-- <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button> -->
   </div>

@@ -215,6 +215,25 @@ const onGenerateObsTable = function(event) {
   uiObservations.generateObservationForm();
 };
 
+const onAnimateSwitch = function(event) {
+  event.preventDefault();
+  console.log($(this).val());
+
+  let parentSelect = $(this).parent();
+
+  let isOnSelected = $(this).hasClass("switch-label-on");
+  let isOffSelected = $(this).hasClass("switch-label-off");
+
+  if (isOnSelected) {
+    $(parentSelect).children(".yes-selected").prop("checked", true);
+    $(parentSelect).removeClass("switch-red");
+  } else if (isOffSelected) {
+    $(parentSelect).children(".no-selected").prop("checked", true);
+    $(parentSelect).addClass("switch-red");
+  }
+
+};
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -231,6 +250,8 @@ const addHandlers = () => {
   // $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
   // $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
   // $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
+
+  $('.content').on('click', '.switch-label', onAnimateSwitch);
 
   $('.content').on('click', '.edit-last-submission', updateFormGenerator);
   $('.content').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);

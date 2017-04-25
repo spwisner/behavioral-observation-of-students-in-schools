@@ -1,16 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
+      <h2>Interval Results</h2>
       <table class="table obs-summary-table table-hover">
         <thead>
           <tr>
             <th>Interval</th>
             <th>AET</th>
             <th>PET</th>
-            <th>OFT-M</th>
-            <th>OFT-V</th>
-            <th>OFT-P</th>
-            <th>Comment</th>
+            <th>OFTM</th>
+            <th>OFTV</th>
+            <th>OFTP</th>
+            <th class="hidden-xs">Comment</th>
           </tr>
         </thead>
         {{#each observations as |observation|}}
@@ -42,7 +43,7 @@
                   &#10004;
                 {{/if}}
               </td>
-              <td class="display-obs-obs-comment">
+              <td class="hidden-xs display-obs-obs-comment">
                 {{observation.obs_comment}}
               </td>
             </tr>

@@ -5,7 +5,6 @@ const Chart = require('chart.js');
 
 // let chartDataObject = store.chartData;
 
-
 const createChart = function(targetFinalArr, randomFinalArr) {
   const etChart = document.getElementById("et-chart").getContext('2d');
   const oftChart = document.getElementById("oft-chart").getContext('2d');

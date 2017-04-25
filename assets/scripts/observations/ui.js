@@ -87,8 +87,9 @@ const getPastObsNumFailure = function() {
 
 };
 
-const createObservationSuccess = (response) => {
+const createObservationSuccess = () => {
   $(".notification-container").children().text("");
+  $(".no-selected").prop("checked", true);
    $("#new-observation-form .field-checkbox").prop("checked", false);
    $("#create-obs-comment").val('');
    $("#interval-submitted-successfully").fadeIn(500).delay(1000).fadeOut(500);
@@ -105,7 +106,7 @@ const createObservationSuccess = (response) => {
 
 const createObservationFailure = () => {
   $(".notification-container").children().text("");
-  $(".failure-alert").text("Error: Observation Not Created.")
+  $(".failure-alert").text("Error: Observation Not Created.");
 };
 
 const onCreateObservationNumsFailure = function() {
