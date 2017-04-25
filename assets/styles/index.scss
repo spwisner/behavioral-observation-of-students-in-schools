@@ -36,17 +36,36 @@ body {
 
 h1 {
   font-size: 30px;
-  color: #62759c;
+  color: #933346;
 }
 
 h2 {
   font-size: 25px;
-  color: #8082a0;
+  color: #334693;
 }
 
 h3 {
   font-size: 20px;
-  color: #b7bae5;
+  color: #5569BB;
+}
+
+h4 {
+  color: #C6CADB;
+}
+
+h5 {
+  color: #737DA5;
+}
+
+h6 {
+  color: #6A7DCB;;
+}
+
+#boss-main-img {
+  max-width: 400px;
+  float: right;
+  margin: 5px;
+  border: 1px solid #C6CADB
 }
 
 .comparison-center {
@@ -489,7 +508,9 @@ h3 {
 
 
 
-
+.benefit-image {
+  max-width: 100%;
+}
 
 
 
@@ -500,6 +521,21 @@ h3 {
   .new-line-btn {
     margin-top: 5px;
   }
+}
+
+@media screen and (max-width: 730px) {
+  .clear-image {
+    clear: both;
+    padding-top: 5px;
+  }
+
+  #boss-main-img {
+    float: none;
+    padding: 5px;
+    display: block;
+    margin: auto;
+  }
+
 }
 
 @media screen and (min-width: 100px) {
