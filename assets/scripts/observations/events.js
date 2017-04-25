@@ -227,8 +227,10 @@ const onAnimateSwitch = function(event) {
   if (isOnSelected) {
     $(parentSelect).children(".yes-selected").prop("checked", true);
     $(parentSelect).removeClass("switch-red");
+    $(parentSelect).addClass("switch-green");
   } else if (isOffSelected) {
     $(parentSelect).children(".no-selected").prop("checked", true);
+    $(parentSelect).removeClass("switch-green");
     $(parentSelect).addClass("switch-red");
   }
 

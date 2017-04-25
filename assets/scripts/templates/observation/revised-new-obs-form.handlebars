@@ -38,14 +38,16 @@
 
       <div class="row">
         <div class="col-xs-4">
-          <p>AET</p>
           <!-- $("input[type='radio'].switch-input:checked").val(); -->
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[aet]" value="false" id="aetNo" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[aet]" value="true" id="aetYes">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
+          <div class="switch-container">
+            <p>AET</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[aet]" value="false" id="aetNo" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[aet]" value="true" id="aetYes">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
           </div>
 
 
@@ -57,49 +59,49 @@
               <input type="radio"name="observation[aet]" id="aetYes" autocomplete="off" value="true">Yes
             </label>
           </div> -->
-<!--
+          <!--
 
             <input name="observation[aet]" type="hidden" value="false">
             <input name="observation[aet]" class="field-checkbox" placeholder="AET" type="checkbox" value="true"> -->
-            <p>PET</p>
-            <input name="observation[pet]" type="hidden" value="false">
-            <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
-          </div>
+          <p>PET</p>
+          <input name="observation[pet]" type="hidden" value="false">
+          <input name="observation[pet]" class="field-checkbox" placeholder="PET" type="checkbox" value="true">
+        </div>
 
-          <div class="col-xs-4">
-            <div class="last-submission-container">
-            </div>
-          </div>
-
-          <div class="col-xs-4">
-            <p class="field-description">OFT_M</p>
-            <input name="observation[oft_m]" type="hidden" value="false">
-            <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
-            <p class="field-description">OFT_V</p>
-            <input name="observation[oft_v]" type="hidden" value="false">
-            <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
-            <p class="field-description">OFT_P</p>
-            <input name="observation[oft_p]" type="hidden" value="false">
-            <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
+        <div class="col-xs-4">
+          <div class="last-submission-container">
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="form-group obs-comment-container">
-              <label>Interval Comment</label>
-              <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
-            </div>
-          </div>
+        <div class="col-xs-4">
+          <p class="field-description">OFT_M</p>
+          <input name="observation[oft_m]" type="hidden" value="false">
+          <input name="observation[oft_m]" class="field-checkbox" placeholder="OFT_M" type="checkbox" value="true">
+          <p class="field-description">OFT_V</p>
+          <input name="observation[oft_v]" type="hidden" value="false">
+          <input name="observation[oft_v]" class="field-checkbox" placeholder="OFT_V" type="checkbox" value="true">
+          <p class="field-description">OFT_P</p>
+          <input name="observation[oft_p]" type="hidden" value="false">
+          <input name="observation[oft_p]" class="field-checkbox" placeholder="OFT_P" type="checkbox" value="true">
         </div>
+      </div>
 
-        <div class="row">
-          <div class="col-xs-12">
-            <div class="field-button-container">
-              <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
-            </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group obs-comment-container">
+            <label>Interval Comment</label>
+            <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="field-button-container">
+            <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
+          </div>
+        </div>
+      </div>
     </fieldset>
   </form>
   <!--

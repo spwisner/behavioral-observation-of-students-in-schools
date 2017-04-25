@@ -351,6 +351,14 @@ h3 {
   display: none;
 }
 
+.switch-container {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 2px;
+  margin: 2px;
+}
+
 
 
 // Slide Radio Buttons
@@ -448,6 +456,16 @@ h3 {
   background-image: -ms-linear-gradient(top, #ff0000, #ff0000);
   background-image: -o-linear-gradient(top, #ff0000, #ff0000);
   background-image: linear-gradient(top, #ff0000, #ff0000);
+}
+
+.switch-green .switch-selection {
+  background-color: #008000;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #008000), color-stop(100%, #008000));
+  background-image: -webkit-linear-gradient(top, #008000, #008000);
+  background-image: -moz-linear-gradient(top, #008000, #008000);
+  background-image: -ms-linear-gradient(top, #008000, #008000);
+  background-image: -o-linear-gradient(top, #008000, #008000);
+  background-image: linear-gradient(top, #008000, #008000);
 }
 
 
