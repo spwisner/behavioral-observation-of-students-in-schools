@@ -14,11 +14,21 @@ const sessionsApi = require('../sessions/api');
 
 const getSessionSuccess = (data) => {
   $(".notification-container").children().text("");
+
   let sessionDashboard = displaySessionsTable({
     sessions: data.sessions
   });
-  // $('.student-dashboard-container').append(studentDashboard);
+
   $('.content').append(sessionDashboard);
+
+  let numberOfSessions = data.sessions.length;
+
+  if (numberOfSessions === 0) {
+    $(".session-list-row").remove();
+  } else {
+    $(".empty-session-table").remove();
+  }
+
   $(".current-student-fn").text(store.currentStudentFn);
   $(".current-student-ln").text(store.currentStudentLn);
   $("#create-session-student-btn").attr("data-current-student-id", store.currentStudentId);
@@ -69,6 +79,15 @@ const getStudentSuccess = (data) => {
   });
   // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(studentDashboard);
+
+  let numberOfStudents = data.students.length;
+
+  if (numberOfStudents === 0) {
+    $(".student-list-row").remove();
+    $("#dashboard-new-session-btn").remove();
+  } else {
+    $(".empty-student-table").remove();
+  }
   // $('.content').append(dashboardHomeBtn);
 };
 

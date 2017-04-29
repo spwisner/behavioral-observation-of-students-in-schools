@@ -3,6 +3,11 @@
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-lg-11">
       <h2 class="underline-h">Recorded Sessions</h2>
+    </div>
+  </div>
+
+  <div class="row session-list-row">
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
       <table class="table session-summary-table table-hover">
         <thead>
           <tr>
@@ -39,12 +44,23 @@
           </tbody>
         {{/each}}
       </table>
-    <div class="create-session-student-btn-container">
-      <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">Create Session</button>
     </div>
-    <div class="dashboard-container well">
-      <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Dashboard</button>
+  </div>
+
+  <div class="row empty-session-table">
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+      <p>No sessions exist for this student</p>
     </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+      <div class="create-session-student-btn-container">
+        <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">Create Session</button>
+      </div>
+      <div class="dashboard-container well">
+        <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
+      </div>
     </div>
   </div>
 </div>

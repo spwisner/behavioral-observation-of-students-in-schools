@@ -3,6 +3,11 @@
   <div class="row">
     <div class="col-xs-12 col-lg-11">
       <h1>Student Records</h1>
+    </div>
+  </div>
+
+  <div class="row student-list-row">
+    <div class="col-xs-12 col-lg-11">
       <table class="table student-summary-table table-hover">
         <thead>
           <tr>
@@ -39,7 +44,24 @@
           {{/each}}
         </tbody>
       </table>
+    </div>
+  </div>
+
+  <div class="row empty-student-table">
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+      <p>No students have been created. Create a student to get started.</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
       <div class="dashboard-container well">
+        <!-- <div class="create-session-student-btn-container">
+          <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">Create Session</button>
+        </div>
+        <div class="dashboard-container">
+          <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
+        </div> -->
         <button id="new-session-new-student" type="button" class="btn btn-primary">Create Student</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-info">Create Session</button>
       </div>
