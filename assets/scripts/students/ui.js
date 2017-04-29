@@ -145,14 +145,23 @@ const createStudentFailure = () => {
   let lnRequired = $(".ln-required").val().trim();
   let lnIsBlank = (lnRequired === "");
 
-  if (fnIsBlank && lnIsBlank) {
-    $(".failure-alert").text("Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.");
-  } else if (fnIsBlank) {
-    $(".failure-alert").text("Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.");
-  } else if (lnIsBlank) {
-    $(".failure-alert").text("Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.");
-  }
+  $(".submit-btn-container").children("p").remove();
 
+  if (fnIsBlank && lnIsBlank) {
+    $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
+    $(".fn-field-container input").addClass("border-highlight");
+    $(".ln-field-container input").addClass("border-highlight");
+  } else if (fnIsBlank) {
+    $(".ln-field-container input").removeClass("border-highlight");
+    $(".fn-field-container input").addClass("border-highlight");
+    $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
+  } else if (lnIsBlank) {
+    $(".fn-field-container input").removeClass("border-highlight");
+    $(".ln-field-container input").addClass("border-highlight");
+    $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
+  } else {
+    $(".submit-btn-container").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
+  }
 
   // $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
 };
@@ -184,8 +193,35 @@ const updateStudentSuccess = (data) => {
 
 };
 
-const updateStudentFailure = (data) => {
+const updateStudentFailure = () => {
   $(".notification-container").children().text("");
+
+  let fnRequired = $(".fn-required").val().trim();
+  let fnIsBlank = (fnRequired === "");
+  let lnRequired = $(".ln-required").val().trim();
+  let lnIsBlank = (lnRequired === "");
+
+  $(".submit-btn-container").children("p").remove();
+
+  if (fnIsBlank && lnIsBlank) {
+    $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
+    // $(".fn-field-container input").removeClass("border-highlight");
+    // $(".ln-field-container input").removeClass("border-highlight");
+    $(".fn-field-container input").addClass("border-highlight");
+    $(".ln-field-container input").addClass("border-highlight");
+  } else if (fnIsBlank) {
+    $(".ln-field-container input").removeClass("border-highlight");
+    $(".fn-field-container input").addClass("border-highlight");
+    $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
+  } else if (lnIsBlank) {
+    $(".fn-field-container input").removeClass("border-highlight");
+    $(".ln-field-container input").addClass("border-highlight");
+    $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
+  } else {
+    $(".submit-btn-container").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
+  }
+
+
   $("#update-student-error").text("Error: Student not updated.  Please ensure all required fields have values");
 };
 

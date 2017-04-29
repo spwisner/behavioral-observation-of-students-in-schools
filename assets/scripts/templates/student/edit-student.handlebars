@@ -7,14 +7,14 @@
           <p id="create-student-error" class="warning form-error"></p>
           <p>All fields are <u>optional</u> unless otherwise indicated</p>
 
-          <div class="form-group">
+          <div class="form-group fn-field-container">
             <label>First Name (required)</label>
-            <input class="form-control required-field" name="student[first_name]" placeholder="First Name" type="text" value={{student.first_name}}>
+            <input class="form-control fn-required required-field" name="student[first_name]" placeholder="First Name" type="text" value={{student.first_name}}>
           </div>
 
-          <div class="form-group">
+          <div class="form-group ln-field-container">
             <label>Last Name (required)</label>
-            <input class="form-control required-field" name="student[last_name]" placeholder="Last Name" type="text" value="{{student.last_name}}">
+            <input class="form-control ln-required required-field" name="student[last_name]" placeholder="Last Name" type="text" value="{{student.last_name}}">
           </div>
 
           <div class="form-group">
@@ -37,7 +37,7 @@
             <input class="form-control required-field" name="student[grade]" placeholder="Grade" type="text" value="{{student.grade}}">
           </div>
 
-          <div class="form-group">
+          <div class="form-group submit-btn-container">
             <input class="btn btn-success submit-btn" name="submit" type="submit" value="Submit">
             <button class="btn btn-danger submit-btn current student-cancel-btn" data-current-student-id="{{student.id}}">Cancel</button>
           </div>
