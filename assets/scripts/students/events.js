@@ -72,18 +72,6 @@ const onShowStudentCreateForm = function(event) {
   uiStudents.showStudentCreateForm();
 };
 
-const onShowDeleteConfirmation = function(event) {
-  event.preventDefault();
-  $(".delete-confirmation-row").show();
-  $("#student-record-show-delete").hide();
-};
-
-const onHideDeleteConfirmation = function() {
-  event.preventDefault();
-  $(".delete-confirmation-row").hide();
-  $("#student-record-show-delete").show();
-};
-
 const addHandlers = () => {
   // $('#dashboard-home-btn').on('click', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
@@ -97,8 +85,6 @@ const addHandlers = () => {
   $('.content').on('click', '#new-session-new-student', onShowStudentCreateForm);
   // $('.student-dashboard-container').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
-  $('.content').on('click', '#student-delete-cancel', onHideDeleteConfirmation);
-  $('.content').on('click', '#student-record-show-delete', onShowDeleteConfirmation);
   $('.content').on('click', '#dashboard-home-btn', onGetStudents);
   $('.content').on('click', '#student-record-delete', onDeleteStudent);
 };

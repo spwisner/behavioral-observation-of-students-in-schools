@@ -29,10 +29,24 @@ const onCreateFromExisting = function(event) {
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
+const onShowDeleteConfirmation = function(event) {
+  event.preventDefault();
+  $(".delete-confirmation-row").slideDown(300);
+  $(".show-record-delete").hide(0);
+};
+
+const onHideDeleteConfirmation = function() {
+  event.preventDefault();
+  $(".delete-confirmation-row").slideUp(300);
+  $(".show-record-delete").delay(300).show(0);
+};
+
 const addHandlers = () => {
   // $('#dashboard-new-session-btn').on('click', onShowCreateDash);
   $('.content').on('click', '#dashboard-new-session-btn', onShowCreateDash);
   $('.content').on('click', '#new-session-existing-student', onExistingStudent);
+  $('.content').on('click', '.session-delete-cancel', onHideDeleteConfirmation);
+  $('.content').on('click', '.show-record-delete', onShowDeleteConfirmation);
 };
 
 module.exports = {

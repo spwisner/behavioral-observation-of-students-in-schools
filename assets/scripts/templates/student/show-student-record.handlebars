@@ -50,7 +50,7 @@
       </table>
       <div class="student-record-btn-options">
         <button id="student-record-btn-edit" type="button" class="btn btn-warning" data-current-student-id="{{student.id}}">Edit Student Record</button>
-        <button id="student-record-show-delete" type="button" class="btn btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+        <button type="button" class="btn show-record-delete btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
       </div>
     </div>
   </div>
@@ -63,7 +63,7 @@
           <label>Would you like to continue?</label>
           <br>
           <button id="student-record-delete" type="button" class="btn btn-danger current" data-current-student-id="{{student.id}}">Yes</button>
-          <button id="student-delete-cancel" type="button" class="btn btn-primary current" data-current-student-id="{{student.id}}">Cancel</button>
+          <button type="button" class="btn btn-primary session-delete-cancel current" data-current-student-id="{{student.id}}">Cancel</button>
         </div>
       </div>
     </div>
