@@ -30,6 +30,8 @@ const getSessionFailure = () => {
 
 const viewStudentRecordSuccess = (data) => {
   $(".notification-container").children().text("");
+  $(".delete-confirmation-row").hide();
+  $("#student-record-show-delete").show();
   $(".content").children().remove();
   // $(".student-record-table").remove();
   let studentDetails = displayStudentDetails({

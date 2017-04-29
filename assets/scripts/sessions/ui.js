@@ -64,16 +64,26 @@ const showSessionFailure = () => {
 //   return today;
 // };
 
+// Setting required functions
+
+const defaultDate = function() {
+  let d = new Date();
+  let month = d.getMonth() + 1;
+  let day = d.getDate();
+  let output = d.getFullYear() + '-' +
+    (month < 10 ? '0' : '') + month + '-' +
+    (day < 10 ? '0' : '') + day;
+  return output;
+};
+
 const generateCreateForm = () => {
   $(".content").children().remove();
   let showCreateForm = displaySessionCreateForm();
   $('.content').append(showCreateForm);
+  let todaysDate = defaultDate();
+  $("#session-date-create-field").val(todaysDate);
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
-  // let today = generateTodaysDate();
-
-  // let today = moment().format('YYYY-MM-DD');
-  // document.getElementById("session-date-create-field").value = today;
 };
 
 const generateUpdateForm = (data) => {

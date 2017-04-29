@@ -33,7 +33,6 @@ const addHandlers = () => {
   // $('#dashboard-new-session-btn').on('click', onShowCreateDash);
   $('.content').on('click', '#dashboard-new-session-btn', onShowCreateDash);
   $('.content').on('click', '#new-session-existing-student', onExistingStudent);
-  $('.content').on('click', '.dashboard-existing-create-btn', onCreateFromExisting);
 };
 
 module.exports = {

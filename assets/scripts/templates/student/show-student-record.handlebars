@@ -2,10 +2,18 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-8 col-lg-6">
-      <h1 class="student-name-header" data-current-student-fn="{{student.first_name}}" data-current-student-ln="{{student.last_name}}">{{student.first_name}} {{student.last_name}}</h1>
-      <h2 class="underline-h">Student Details</h2>
+      <!-- <h1 class="student-name-header" data-current-student-fn="{{student.first_name}}" data-current-student-ln="{{student.last_name}}">{{student.first_name}} {{student.last_name}}</h1> -->
+      <h2 class="underline-h">Student Information</h2>
       <table class="table student-record-table table-hover">
         <tbody>
+          <tr>
+            <td class="student-record-title student-name-header">
+              Name:
+            </td>
+            <td class="display-student-dob">
+              {{student.first_name}} {{student.last_name}}
+            </td>
+          </tr>
           <tr>
             <td class="student-record-title student-record-dob">
               Date of Birth:
@@ -42,7 +50,21 @@
       </table>
       <div class="student-record-btn-options">
         <button id="student-record-btn-edit" type="button" class="btn btn-warning" data-current-student-id="{{student.id}}">Edit Student Record</button>
-        <button id="student-record-delete" type="button" class="btn btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+        <button id="student-record-show-delete" type="button" class="btn btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+      </div>
+    </div>
+  </div>
+  <div class="row delete-confirmation-row">
+    <div class="col-xs-12">
+      <div class="delete-confirmation-contain">
+        <div class="form-group delete-confirmation">
+          <h3>Warning:</h3>
+          <p>Deleting this student will also delete all associated records (e.g. sessions, observations, reports, etc.)</p>
+          <label>Would you like to continue?</label>
+          <br>
+          <button id="student-record-delete" type="button" class="btn btn-danger current" data-current-student-id="{{student.id}}">Yes</button>
+          <button id="student-delete-cancel" type="button" class="btn btn-primary current" data-current-student-id="{{student.id}}">Cancel</button>
+        </div>
       </div>
     </div>
   </div>
