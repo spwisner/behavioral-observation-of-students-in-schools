@@ -139,7 +139,22 @@ const createStudentSuccess = () => {
 const createStudentFailure = () => {
   $(".notification-container").children().text("");
   $(".form-error").text("");
-  $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
+
+  let fnRequired = $(".fn-required").val().trim();
+  let fnIsBlank = (fnRequired === "");
+  let lnRequired = $(".ln-required").val().trim();
+  let lnIsBlank = (lnRequired === "");
+
+  if (fnIsBlank && lnIsBlank) {
+    $(".failure-alert").text("Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.");
+  } else if (fnIsBlank) {
+    $(".failure-alert").text("Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.");
+  } else if (lnIsBlank) {
+    $(".failure-alert").text("Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.");
+  }
+
+
+  // $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
 };
 
 const deleteStudentSuccess = () => {
