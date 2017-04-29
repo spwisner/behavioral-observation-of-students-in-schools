@@ -146,16 +146,20 @@ const createStudentFailure = () => {
   let lnIsBlank = (lnRequired === "");
 
   $(".submit-btn-container").children("p").remove();
+  $("#create-student-error").children("p").remove();
 
   if (fnIsBlank && lnIsBlank) {
     $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
+    $("#create-student-error").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
     $(".fn-field-container input").addClass("border-highlight");
     $(".ln-field-container input").addClass("border-highlight");
   } else if (fnIsBlank) {
     $(".ln-field-container input").removeClass("border-highlight");
     $(".fn-field-container input").addClass("border-highlight");
     $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
+    $("#create-student-error").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
   } else if (lnIsBlank) {
+    $("#create-student-error").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
     $(".fn-field-container input").removeClass("border-highlight");
     $(".ln-field-container input").addClass("border-highlight");
     $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
@@ -202,27 +206,27 @@ const updateStudentFailure = () => {
   let lnIsBlank = (lnRequired === "");
 
   $(".submit-btn-container").children("p").remove();
+  $("#update-student-error").children("p").remove();
 
   if (fnIsBlank && lnIsBlank) {
     $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
-    // $(".fn-field-container input").removeClass("border-highlight");
-    // $(".ln-field-container input").removeClass("border-highlight");
+    $("#update-student-error").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
     $(".fn-field-container input").addClass("border-highlight");
     $(".ln-field-container input").addClass("border-highlight");
   } else if (fnIsBlank) {
     $(".ln-field-container input").removeClass("border-highlight");
     $(".fn-field-container input").addClass("border-highlight");
     $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
+    $("#update-student-error").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
   } else if (lnIsBlank) {
+    $("#update-student-error").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
     $(".fn-field-container input").removeClass("border-highlight");
     $(".ln-field-container input").addClass("border-highlight");
     $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
   } else {
     $(".submit-btn-container").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
+    $("#update-student-error").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
   }
-
-
-  $("#update-student-error").text("Error: Student not updated.  Please ensure all required fields have values");
 };
 
 module.exports = {
