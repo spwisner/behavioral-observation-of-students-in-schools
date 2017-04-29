@@ -1,7 +1,6 @@
 'use strict';
 
 const store = require('../store');
-const sessionsApi = require('./api');
 const displaySessionCreateForm = require('../templates/session/new-session-form.handlebars');
 const displayObservationLandingPage = require('../templates/observation/obs-landing.handlebars');
 const displaySessionsTable = require('../templates/session/get-sessions.handlebars');
@@ -11,6 +10,36 @@ const uiStudents = require('../students/ui');
 const apiStudents = require('../students/api');
 
 // Session UI
+
+const isFieldANum = function(className) {
+  let classNumjQuery = "." + className;
+  let classVal = $(classNumjQuery).val().trim();
+  let classValArr = classVal.split("");
+
+  for (let i = 0; i < classValArr.length; i++) {
+    let currentVal = classValArr[i];
+
+    let isANum = (parseInt(currentVal) >= 0);
+
+    if (isANum === false) {
+
+      return false;
+    }
+  }
+
+  return true;
+};
+
+const removeErrorFormatting = function() {
+  $(".submit-btn-container").children("p").remove();
+  $("#create-session-error").children("p").remove();
+  $(".task-field-notification").children().remove();
+  $(".intervals-field-notification").children().remove();
+  $(".length-field-notification").children().remove();
+  $(".setting-field-notification").children().remove();
+  $("input").removeClass("border-highlight");
+  $("#update-session-error").children("p").remove();
+};
 
 const getSessionSuccess = (data) => {
   $(".notification-container").children().text("");
@@ -45,24 +74,6 @@ const showSessionSuccess = (data) => {
 const showSessionFailure = () => {
   $(".notification-container").children().text("");
 };
-
-// const generateTodaysDate = function() {
-//   let today = new Date();
-//   let dd = today.getDate();
-//   let mm = today.getMonth()+1;
-//   let yyyy = today.getFullYear();
-//
-//   if (dd < 10) {
-//       dd='0'+dd;
-//     }
-//
-//   if(mm<10) {
-//       mm='0'+mm;
-//   }
-//
-//   today = yyyy+'/'+mm+'/'+dd;
-//   return today;
-// };
 
 // Setting required functions
 
@@ -110,36 +121,59 @@ const createLandingPage = function() {
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
-// const beginObservations = (data) => {
-//   console.log(data);
-//   store.observationIdNum = 0;
-//   $("#new-observation-form").show();
-//   $("#interval-total").text(store.currentNumofIntervals);
-//   $("#student-observed").html('<span id="target-student">Target Student</span>');
-//   $(".current").attr("data-current-session-id", store.currentSessionId);
-//   $(".current").attr("data-current-student-id", store.currentStudentId);
-// }
-
 const createSessionSuccess = () => {
   $(".form-error").text("");
   $(".notification-container").children().text("");
   $(".success-alert").text("Session Successfully Created");
   createLandingPage();
-
-  // store.observationIdNum = 0;
-  // $("#new-session-form").hide();
-  // $("#new-observation-form").show();
-  // $("#interval-total").text(store.currentNumofIntervals);
-  // // $(".interval-count").text(store.currentObsNum);
-  // $("#student-observed").html('<span id="target-student">Target Student</span>');
-  //
-  // $(".current").attr("data-current-session-id", store.currentSessionId);
-  // $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
 const createSessionFailure = () => {
   $(".notification-container").children().text("");
-  $("#create-session-error").text("Error creating session. Please check if all required fields are entered and number values fall within the listed range.");
+
+    let settingRequired = $(".setting-required").val().trim();
+    let settingIsBlank = (settingRequired === "");
+    let taskRequired = $(".task-required").val().trim();
+    let taskIsBlank = (taskRequired === "");
+
+    let intervalsRequired = $(".intervals-required").val().trim();
+    let intervalsIsBlank = (intervalsRequired === "");
+
+    let intervalIsNumber = isFieldANum("intervals-required");
+
+    let lengthRequired = $(".length-required").val().trim();
+    let lengthIsBlank = (lengthRequired === "");
+    let lengthIsNumber = isFieldANum("length-required");
+
+    $(".submit-btn-container").children("p").remove();
+    $("#create-session-error").children("p").remove();
+
+    removeErrorFormatting();
+
+    if (settingIsBlank) {
+      $(".setting-field-notification").prepend('<p class="highlight-red">Error: The session setting is a required field and must be completed before continuing.</p>');
+      $(".setting-field-container input").addClass("border-highlight");
+    }
+
+    if (taskIsBlank) {
+      $(".task-field-notification").prepend('<p class="highlight-red">Error: The session task is a required field and must be completed before continuing.</p>');
+      $(".task-field-container input").addClass("border-highlight");
+    }
+
+    console.log(intervalsIsBlank);
+    console.log(!intervalIsNumber);
+    if (intervalsIsBlank || !intervalIsNumber) {
+      $(".intervals-field-notification").prepend('<p class="highlight-red">Error: The number of intervals is a required field and must a number between 1 and 60. No text is permitted in this form field.</p>');
+      $(".intervals-field-container input").addClass("border-highlight");
+    }
+
+    if (lengthIsBlank || !lengthIsNumber) {
+      $(".length-field-notification").prepend('<p class="highlight-red">Error: The interval length is a required field and must a number between 5 and 30. No text is permitted in this form field.</p>');
+      $(".length-field-container input").addClass("border-highlight");
+    }
+
+  $("#create-session-error").prepend('<p class="highlight-red">Error creating session. Please check if all required fields are entered and number values fall within the listed range.</p>');
+  $('.submit-btn-container').prepend('<p class="highlight-red">Error creating session. Please check if all required fields are entered and number values fall within the listed range.</p>');
 };
 
 const deleteSessionSuccess = () => {
@@ -152,25 +186,48 @@ const deleteSessionSuccess = () => {
     .fail(uiStudents.viewStudentRecordFailure);
 };
 
-const deleteSessionFailure = (data) => {
+const deleteSessionFailure = () => {
   $(".notification-container").children().text("");
 };
 
 const updateSessionSuccess = (data) => {
   $(".notification-container").children().text("");
-  store.currentStudentId = data.session.id;
+  console.log(store.currentStudentId);
+  store.currentSessionId = data.session.id;
   $(".content").children().remove();
   let sessionDetails = displaySessionDetails({
     session: data.session
   });
   // $('.student-details-container').append(studentDetails);
   $('.content').append(sessionDetails);
-
+  $(".dashboard-student-record-btn").attr("data-current-student-id", store.currentStudentId);
 };
 
 const updateSessionFailure = (data) => {
   $(".notification-container").children().text("");
-  $("#update-session-error").text("Error updating session. Please check if all required fields are entered and number values fall within the listed range.");
+
+    let settingRequired = $(".setting-required").val().trim();
+    let settingIsBlank = (settingRequired === "");
+    let taskRequired = $(".task-required").val().trim();
+    let taskIsBlank = (taskRequired === "");
+
+    $(".submit-btn-container").children("p").remove();
+    $("#update-session-error").children("p").remove();
+
+    removeErrorFormatting();
+
+    if (settingIsBlank) {
+      $(".setting-field-notification").prepend('<p class="highlight-red">Error: The session setting is a required field and must be completed before continuing.</p>');
+      $(".setting-field-container input").addClass("border-highlight");
+    }
+
+    if (taskIsBlank) {
+      $(".task-field-notification").prepend('<p class="highlight-red">Error: The session task is a required field and must be completed before continuing.</p>');
+      $(".task-field-container input").addClass("border-highlight");
+    }
+
+  $("#update-session-error").prepend('<p class="highlight-red">Error creating session. Please check if all required fields are entered and number values fall within the listed range.</p>');
+  $('.submit-btn-container').prepend('<p class="highlight-red">Error creating session. Please check if all required fields are entered and number values fall within the listed range.</p>');
 };
 
 module.exports = {
@@ -186,5 +243,6 @@ module.exports = {
   deleteSessionFailure,
   generateCreateForm,
   generateUpdateForm,
-  generateUpdateFormFailure
+  generateUpdateFormFailure,
+  isFieldANum,
 };

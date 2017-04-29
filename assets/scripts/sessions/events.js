@@ -30,25 +30,34 @@ const onShowSession = function(event) {
 
 const onCreateSession = function(event) {
   event.preventDefault();
+
+  let isIntervalANum = sessionsUi.isFieldANum("intervals-required");
+  let isLengthANum = sessionsUi.isFieldANum("length-required");
+
   let data = getFormFields(event.target);
-  sessionsApi.createSession(data)
-    .then((response) => {
-      store.currentSessionId = response.session.id;
-      store.currentNumofIntervals = response.session.int_num;
-      // alert(store.currentNumofIntervals);
-      // console.log(store.currentNumofIntervals);
-      store.currentObsIntervalTime = response.session.obs_time;
-      // store.currentObsNum = 1;
-      // return store.currentSession;
-    })
-    .done(sessionsUi.createSessionSuccess)
-    .fail(sessionsUi.createSessionFailure);
+
+  if (isIntervalANum && isLengthANum) {
+    sessionsApi.createSession(data)
+      .then((response) => {
+        store.currentSessionId = response.session.id;
+        store.currentNumofIntervals = response.session.int_num;
+        // alert(store.currentNumofIntervals);
+        // console.log(store.currentNumofIntervals);
+        store.currentObsIntervalTime = response.session.obs_time;
+        // store.currentObsNum = 1;
+        // return store.currentSession;
+      })
+      .done(sessionsUi.createSessionSuccess)
+      .fail(sessionsUi.createSessionFailure);
+  } else {
+    sessionsUi.createSessionFailure();
+  }
 };
 
 const onDeleteSession = function(event) {
   event.preventDefault();
-  store.currentSessionId= $("#session-record-delete").attr("data-current-session-id");
-  store.currentStudentId =$("#session-record-delete").attr("data-current-student-id");
+  store.currentSessionId = $("#session-record-delete").attr("data-current-session-id");
+  store.currentStudentId = $("#session-record-delete").attr("data-current-student-id");
   sessionsApi.deleteSession()
     .done(sessionsUi.deleteSessionSuccess)
     .fail(sessionsUi.deleteSessionFailure);
@@ -56,10 +65,13 @@ const onDeleteSession = function(event) {
 
 const onUpdateSession = function(event) {
   event.preventDefault();
+  store.currentSessionId = parseInt($(".update-session-submit").attr("data-current-session-id"));
+  store.currentStudentId = parseInt($("#update-session-submit").attr("data-current-student-id"));
+  console.log(store.currentStudentId);
   let data = getFormFields(event.target);
-  sessionsApi.updateSession(data)
-    .done(sessionsUi.updateSessionSuccess)
-    .fail(sessionsUi.updateSessionFailure);
+    sessionsApi.updateSession(data)
+      .done(sessionsUi.updateSessionSuccess)
+      .fail(sessionsUi.updateSessionFailure);
 };
 
 // Calculates total time of session
@@ -97,6 +109,7 @@ const onGenerateCreateForm = function(event) {
 const onEditSession = function(event) {
   event.preventDefault();
   store.currentStudentId = $(this).attr("data-current-student-id");
+  console.log(store.currentStudentId);
   store.currentSessionId = $(this).attr("data-current-session-id");
   sessionsApi.showSession()
     .done(sessionsUi.generateUpdateForm)
@@ -109,7 +122,7 @@ const onCancelSessionForm = function(event) {
   let currentStudentId = parseInt($(".session-cancel-btn").attr("data-current-student-id"));
   let currentSessionId = parseInt($(".session-cancel-btn").attr("data-current-session-id"));
 
-  if ( currentSessionId === 0 ) {
+  if (currentSessionId === 0) {
     store.currentStudentId = currentStudentId;
     apiStudents.showStudent()
       .done(uiStudents.viewStudentRecordSuccess)
@@ -121,7 +134,7 @@ const onCancelSessionForm = function(event) {
       .done(sessionsUi.showSessionSuccess)
       .fail(sessionsUi.showSessionFailure);
   }
-}
+};
 
 const addHandlers = () => {
   $('#delete-session-form').on('submit', onDeleteSession);

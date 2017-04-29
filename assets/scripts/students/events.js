@@ -24,7 +24,7 @@ const onShowStudent = function(event) {
 
 const onViewStudentRecord = function(event) {
   event.preventDefault();
-  store.currentStudentId = $(this).attr("data-current-student-id");
+  store.currentStudentId = parseInt($(this).attr("data-current-student-id"));
   apiStudents.showStudent()
     .done(uiStudents.viewStudentRecordSuccess)
     .fail(uiStudents.viewStudentRecordFailure);

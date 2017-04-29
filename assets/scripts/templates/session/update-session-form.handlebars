@@ -4,7 +4,7 @@
       <h1>Update Student Form</h1>
       <form class="form sessions-form" id="update-session-form" name="update-session-form">
         <fieldset>
-          <p id="update-session-error" class="warning form-error"></p>
+          <p id="update-session-error"></p>
           <p>All fields are <u>optional</u> unless otherwise indicated</p>
 
           <div class="form-group">
@@ -12,14 +12,16 @@
             <input class="form-control" name="session[obs_on]" placeholder="Session Date" type="date" value="{{session.obs_on}}">
           </div>
 
-          <div class="form-group">
+          <div class="form-group setting-field-container">
             <label>Session Setting (required)</label>
-            <input class="form-control" name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
+            <div class="setting-field-notification"></div>
+            <input class="form-control setting-required" name="session[obs_setting]" placeholder="Session Setting" type="text" value="{{session.obs_setting}}">
           </div>
 
-          <div class="form-group">
-            <label>Session Task</label>
-            <input class="form-control" name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
+          <div class="form-group task-field-container">
+            <label>Session Task (required)</label>
+            <div class="task-field-notification"></div>
+            <input class="form-control task-required" name="session[obs_task]" placeholder="Session Task" type="text" value="{{session.obs_task}}">
           </div>
 
           <div class="form-group">
@@ -37,9 +39,9 @@
             <input class="form-control" name="session[comment]" placeholder="Comment" type="text" value="{{session.comment}}">
           </div>
 
-          <div class="form-group">
-            <input name="submit" class="current btn btn-success session-cancel-btn submit-btn" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
-            <button class="btn btn-danger submit-btn current session-cancel-btn" data-current-student-id="" data-current-session-id="0">Cancel</button>
+          <div class="form-group submit-btn-container">
+            <input name="submit" id="update-session-submit" class="current btn btn-success submit-btn update-session-submit" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
+            <button class="btn btn-danger submit-btn current session-cancel-btn" data-current-student-id="" data-current-session-id="{{session.id}}">Cancel</button>
           </div>
         </fieldset>
       </form>
