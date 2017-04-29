@@ -72,6 +72,24 @@ const onShowStudentCreateForm = function(event) {
   uiStudents.showStudentCreateForm();
 };
 
+const onCancelStudentForm = function(event) {
+  event.preventDefault();
+
+  let currentStudentId = parseInt($(".student-cancel-btn").attr("data-current-student-id"));
+  console.log(currentStudentId);
+
+  if ( currentStudentId === 0 ) {
+    apiStudents.getStudents()
+      .done(uiStudents.getStudentSuccess)
+      .fail(uiStudents.getStudentFailure);
+  } else {
+    store.currentStudentId = $(".student-cancel-btn").attr("data-current-student-id");
+    apiStudents.showStudent()
+      .done(uiStudents.viewStudentRecordSuccess)
+      .fail(uiStudents.viewStudentRecordFailure);
+  }
+};
+
 const addHandlers = () => {
   // $('#dashboard-home-btn').on('click', onGetStudents);
   $('#show-student-form').on('submit', onShowStudent);
@@ -87,6 +105,8 @@ const addHandlers = () => {
   $('.content').on('click', '.dashboard-student-record-btn', onViewStudentRecord);
   $('.content').on('click', '#dashboard-home-btn', onGetStudents);
   $('.content').on('click', '#student-record-delete', onDeleteStudent);
+  $('.content').on('click', '.student-cancel-btn', onCancelStudentForm);
+
 };
 
 module.exports = {

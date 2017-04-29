@@ -3,6 +3,8 @@ const sessionsApi = require('./api');
 const sessionsUi = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
+const apiStudents = require('../students/api');
+const uiStudents = require('../students/ui');
 // const logic = require('./logic');
 
 // SETTING EVENTS
@@ -101,6 +103,26 @@ const onEditSession = function(event) {
     .fail(sessionsUi.generateUpdateFormFailure);
 };
 
+const onCancelSessionForm = function(event) {
+  event.preventDefault();
+
+  let currentStudentId = parseInt($(".session-cancel-btn").attr("data-current-student-id"));
+  let currentSessionId = parseInt($(".session-cancel-btn").attr("data-current-session-id"));
+
+  if ( currentSessionId === 0 ) {
+    store.currentStudentId = currentStudentId;
+    apiStudents.showStudent()
+      .done(uiStudents.viewStudentRecordSuccess)
+      .fail(uiStudents.viewStudentRecordFailure);
+  } else {
+    store.currentStudentId = currentStudentId;
+    store.currentSessionId = currentSessionId;
+    sessionsApi.showSession()
+      .done(sessionsUi.showSessionSuccess)
+      .fail(sessionsUi.showSessionFailure);
+  }
+}
+
 const addHandlers = () => {
   $('#delete-session-form').on('submit', onDeleteSession);
   $('#get-sessions-form').on('submit', onGetSessions);
@@ -118,6 +140,7 @@ const addHandlers = () => {
   $('.content').on('click', '#session-record-delete', onDeleteSession);
   $('.content').on('click', '#create-session-student-btn', onGenerateCreateForm);
   $('.content').on('click', '.dashboard-existing-create-btn', onGenerateCreateForm);
+  $('.content').on('click', '.session-cancel-btn', onCancelSessionForm);
 
 };
 

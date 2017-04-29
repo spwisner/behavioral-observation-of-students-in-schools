@@ -38,7 +38,8 @@
           </div>
 
           <div class="form-group">
-            <input name="submit" class="current btn btn-success submit-btn" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
+            <input name="submit" class="current btn btn-success session-cancel-btn submit-btn" type="submit" value="Submit Update" data-obs-time="{{session.obs_time}}" data-int-num="{{session.int_num}}" data-current-student-id="" data-current-session-id="{{session.id}}">
+            <button class="btn btn-danger submit-btn current session-cancel-btn" data-current-student-id="" data-current-session-id="0">Cancel</button>
           </div>
         </fieldset>
       </form>
