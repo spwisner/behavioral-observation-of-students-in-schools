@@ -9,6 +9,7 @@ const store = require('../store');
 
 const onSignIn = function(event) {
   event.preventDefault();
+  $(".disable-btn").prop("disabled",true);
   let div = ".signin-success";
   uiAuth.blinkNotify(div, "start");
   let data = getFormFields(event.target);
@@ -68,11 +69,16 @@ const onChangePassword = function(event) {
     .fail(uiAuth.failure);
 };
 
+const onBtnOptions = function() {
+  $(".disable-btn").prop("disabled",false);
+};
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp);
   $('#sign-in').on('submit', onSignIn);
   $('#change-password').on('submit', onChangePassword);
   $('#sign-out').on('submit', onSignOut);
+  $('.dropdown-toggle').on('click', onBtnOptions);
 };
 
 module.exports = {
