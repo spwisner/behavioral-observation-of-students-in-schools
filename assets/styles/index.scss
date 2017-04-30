@@ -44,6 +44,21 @@ h2 {
   color: #334693;
 }
 
+.time-bar-container {
+  width: 100%;
+  background-color: lightgray;
+  height: 20px;
+  margin: 10px;
+}
+
+#time-bar {
+  height: 20px;
+  margin: -30px 10px 10px 10px;
+  background-color: green;
+  width: 50%;
+
+}
+
 .highlight-red {
   color: red;
 }
