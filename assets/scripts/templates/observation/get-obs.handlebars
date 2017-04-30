@@ -1,11 +1,11 @@
-<div class="container">
+
   <div class="row">
     <div class="col-xs-12">
       <h2>Interval Results</h2>
       <table class="table obs-summary-table table-hover">
         <thead>
           <tr>
-            <th>Interval</th>
+            <th class="phone-hidden">Interval</th>
             <th>AET</th>
             <th>PET</th>
             <th>OFTM</th>
@@ -17,7 +17,7 @@
         {{#each observations as |observation|}}
           <tbody>
             <tr>
-              <td class="display-obs-num">{{observation.obs_num}}</td>
+              <td class="display-obs-num phone-hidden">{{observation.obs_num}}</td>
               <td class="display-obs-aet">
                 {{#if observation.aet}}
                   &#10004;
@@ -52,4 +52,3 @@
       </table>
     </div>
   </div>
-</div>

@@ -51,6 +51,10 @@ h2 {
   margin: 10px;
 }
 
+.student-record-btn-options {
+  text-align: center;
+}
+
 #time-bar {
   height: 30px;
   margin: -40px 10px 10px 10px;
@@ -407,6 +411,10 @@ h6 {
   margin: 2px;
 }
 
+.dropdown-menu {
+  padding: 5px;
+}
+
 .action-btn-container {
   text-align: center;
 }
@@ -565,21 +573,60 @@ h6 {
 
 @media screen and (max-width: 730px) {
   .time-bar-container {
-    width: 100%;
+    width: 90%;
     background-color: lightgray;
     height: 20px;
-    margin: 10px;
+    margin: 10px 0;
+  }
+
+  .btn-bottom-margin-mobile {
+    margin-bottom: 5px;
+  }
+
+  .dashboard-session-btn-container {
+    text-align: center;
+  }
+
+  .btn-top-margin-mobile {
+    margin-bottom: 5px;
+  }
+
+  .new-session-home-container {
+    text-align: center;
   }
 
   #time-bar {
     height: 20px;
-    margin: -30px 10px 10px 10px;
+    margin-top: -30px;
     background-color: green;
-    width: 100%;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .phone-hidden {
+    display: none;
+  }
+
+  .phone-center {
+    text-align: center;
+  }
+
+  .create-session-student-btn-container {
+    text-align: center;
+  }
+
+  .submit-btn-container {
+    text-align: center;
+  }
+
+  .credentials-container input {
+    border: 1px solid lightgray;
   }
 }
 
 @media screen and (max-width: 730px) {
+
   .clear-image {
     clear: both;
     padding-top: 5px;
