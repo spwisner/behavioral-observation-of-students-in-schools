@@ -412,7 +412,7 @@ h6 {
   text-align: center;
   background-color: white;
   padding: 2px;
-  margin: 2px;
+  // margin: 2px;
 }
 
 .dropdown-menu {
@@ -576,14 +576,17 @@ h6 {
     width: 300px;
     background-color: lightgray;
     height: 20px;
-    margin: 0 auto;
   }
 
   #time-bar {
     height: 20px;
-    margin: -20px auto;
+    margin-top: -30px;
     background-color: green;
     width: 300px;
+  }
+
+  #interval-remaining {
+    text-align: center;
   }
 
   .btn-bottom-margin-mobile {
@@ -618,10 +621,6 @@ h6 {
 
   .submit-btn-container {
     text-align: center;
-  }
-
-  #new-observation-form {
-    margin-top: 25px;
   }
 
   .credentials-container input {
@@ -676,27 +675,27 @@ h6 {
 
 @media screen and (max-width: 415px) {
   .switch {
-    height: 28px;
-    width: 100px;
+    height: 35px;
+    width: 120px;
   }
 
   .switch-label {
-    line-height: 28px;
-    width: 50px;
+    line-height: 35px;
+    width: 60px;
     font-size: 12px;
     text-shadow: none;
     color: black;
   }
 
   .switch-selection {
-    width: 50px;
-    height: 28px;
+    width: 60px;
+    height: 35px;
     top: 0;
     left: 0;
     right: 0;
   }
 
   .switch-input:checked + .switch-label-on ~ .switch-selection {
-    left: 50px;
+    left: 60px;
   }
 }
