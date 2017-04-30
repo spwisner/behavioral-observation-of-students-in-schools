@@ -14,8 +14,8 @@
               <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
             </div>
         </div>
-        <div class="time-bar-container"></div>
-        <div id="time-bar"></div>
+        <!-- <div class="time-bar-container"></div>
+        <div id="time-bar" class="legend-gradient"></div> -->
       </div>
     </div>
 
@@ -25,118 +25,125 @@
       </div>
     </div>
   </div>
-</div>
 
-<form class="form observation-form" id="new-observation-form" name="new-observation-form">
-  <fieldset>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <legend class="legend-gradient" id="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span></legend>
-        <!-- <legend id="legend-gradient"><span id="interval-submitted-successfully">Submitted</span></legend> -->
-        <div class="after-completion"></div>
-        <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
-        <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
-        <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
-      </div>
+  <div class="row">
+    <div class="xs-col-8 xs-col-offset-2">
+      <div class="time-bar-container"></div>
+      <div id="time-bar" class="legend-gradient"></div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="col-xs-6 col-sm-4">
 
-        <!-- $("input[type='radio'].switch-input:checked").val(); -->
-        <div class="switch-container">
-          <p>AET</p>
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[aet]" value="false" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[aet]" value="true">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
+  <form class="form observation-form" id="new-observation-form" name="new-observation-form">
+    <fieldset>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <legend id="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span></legend>
+          <!-- <legend id="legend-gradient"><span id="interval-submitted-successfully">Submitted</span></legend> -->
+          <div class="after-completion"></div>
+          <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
+          <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">
+          <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+
+          <!-- $("input[type='radio'].switch-input:checked").val(); -->
+          <div class="switch-container">
+            <p>AET</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[aet]" value="false" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[aet]" value="true">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
+
+          <div class="switch-container">
+            <p>PET</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[pet]" value="false" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[pet]" value="true">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
           </div>
         </div>
 
-        <div class="switch-container">
-          <p>PET</p>
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[pet]" value="false" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[pet]" value="true">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
+        <div class="hidden-xs col-sm-4">
+          <div class="last-submission-container">
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+
+          <div class="switch-container">
+            <p>OFT-M</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[oft_m]" value="false" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[oft_m]" value="true">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
+
+          <div class="switch-container">
+            <p>OFT-V</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[oft_v]" value="false" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[oft_v]" value="true">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
+          </div>
+
+          <div class="switch-container">
+            <p>OFT-P</p>
+            <div class="switch switch-red">
+              <input type="radio" class="switch-input no-selected" name="observation[oft_p]" value="false" checked>
+              <label class="switch-label switch-label-off">No</label>
+              <input type="radio" class="switch-input yes-selected" name="observation[oft_p]" value="true">
+              <label class="switch-label switch-label-on">Yes</label>
+              <span class="switch-selection"></span>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="hidden-xs col-sm-4">
-        <div class="last-submission-container">
-        </div>
-      </div>
-
-      <div class="col-xs-6 col-sm-4">
-
-        <div class="switch-container">
-          <p>OFT-M</p>
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[oft_m]" value="false" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[oft_m]" value="true">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
-          </div>
-        </div>
-
-        <div class="switch-container">
-          <p>OFT-V</p>
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[oft_v]" value="false" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[oft_v]" value="true">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
-          </div>
-        </div>
-
-        <div class="switch-container">
-          <p>OFT-P</p>
-          <div class="switch switch-red">
-            <input type="radio" class="switch-input no-selected" name="observation[oft_p]" value="false" checked>
-            <label class="switch-label switch-label-off">No</label>
-            <input type="radio" class="switch-input yes-selected" name="observation[oft_p]" value="true">
-            <label class="switch-label switch-label-on">Yes</label>
-            <span class="switch-selection"></span>
+      <div class="row">
+        <div class="hidden-xs col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+          <div class="form-group obs-comment-container">
+            <p class="interval-comment-label">Interval Comment</p>
+            <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="hidden-xs col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-        <div class="form-group obs-comment-container">
-          <p class="interval-comment-label">Interval Comment</p>
-          <input id="create-obs-comment" class="form-control" name="observation[obs_comment]" placeholder="Enter Interval Comment Here" type="text">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="cancel-session-bt-container btn-top-margin">
+            <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="cancel-session-bt-container btn-top-margin">
-          <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="field-button-container">
+            <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="field-button-container">
-          <input name="submit" class="current" id="submit-observation-btn" type="submit" value="Submit Observation" data-current-student-id="" data-current-session-id="">
-        </div>
-      </div>
-    </div>
-  </fieldset>
-</form>
-<!--
+    </fieldset>
+  </form>
+  <!--
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">
     <fieldset>
       <legend>Interval Recorder</legend>
@@ -198,7 +205,8 @@
       </div>
     </fieldset>
   </form> -->
-<br><br>
-<div class="dashboard-container btn-top-margin well">
-  <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
+  <br><br>
+  <div class="dashboard-container btn-top-margin well">
+    <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
+  </div>
 </div>

@@ -104,6 +104,18 @@ const observationTimer = function() {
 
   let intervalCount = 0;
   let intervalPrint = 1;
+
+  // Timer Bar Start
+
+  const currentBarPercentage = function(x, max) {
+    let currentPercentage = parseInt((x / max) * 100);
+    let percentageWithSymbol = currentPercentage.toString() + "%";
+    console.log(percentageWithSymbol);
+
+    $("#time-bar").css("width", percentageWithSymbol);
+  };
+
+  // Timer Bar End
   const runTimer = setInterval(function() {
     let endInterval = parseInt(store.currentNumofIntervals);
 
@@ -112,6 +124,8 @@ const observationTimer = function() {
       countUp++;
       logicObservations.changeGradientClass(stageOneTime, stageTwoTime, stageThreeTime, stageFourTime, stageFiveTime, countUp);
       y.innerHTML = '' + x + '';
+
+      currentBarPercentage(x, max);
 
       if (x === 0) {
         intervalCount = intervalCount + 1;

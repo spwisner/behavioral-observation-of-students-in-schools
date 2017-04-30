@@ -47,16 +47,15 @@ h2 {
 .time-bar-container {
   width: 100%;
   background-color: lightgray;
-  height: 20px;
+  height: 30px;
   margin: 10px;
 }
 
 #time-bar {
-  height: 20px;
-  margin: -30px 10px 10px 10px;
+  height: 30px;
+  margin: -40px 10px 10px 10px;
   background-color: green;
-  width: 50%;
-
+  width: 100%;
 }
 
 .highlight-red {
@@ -561,6 +560,22 @@ h6 {
 @media screen and (max-width: 421px) {
   .new-line-btn {
     margin-top: 5px;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .time-bar-container {
+    width: 100%;
+    background-color: lightgray;
+    height: 20px;
+    margin: 10px;
+  }
+
+  #time-bar {
+    height: 20px;
+    margin: -30px 10px 10px 10px;
+    background-color: green;
+    width: 100%;
   }
 }
 
