@@ -7,7 +7,6 @@ $forty-color: rgba(235,235,20,1);
 $sixty-color: rgba(240,135,24,1);
 $eighty-color: rgba(207,47,19,0.89);
 $one-hundred-color: rgba(231,24,24,1);
-
 @mixin timer-gradient($color-one, $color-two, $color-three) {
   // default color
   background: white;
@@ -57,7 +56,7 @@ h2 {
 
 #time-bar {
   height: 30px;
-  margin: -40px 10px 10px 10px;
+  margin: -40px 10px 10px;
   background-color: green;
   width: 100%;
 }
@@ -84,7 +83,7 @@ h5 {
 }
 
 h6 {
-  color: #6A7DCB;;
+  color: #6A7DCB;
 }
 
 .delete-confirmation-row {
@@ -96,7 +95,7 @@ h6 {
   width: 100%;
   float: right;
   margin: 5px;
-  border: 1px solid #C6CADB
+  border: 1px solid #C6CADB;
 }
 
 .comparison-center {
@@ -165,7 +164,7 @@ h6 {
 .last-submission-container {
   text-align: center;
   background-color: white;
-  width:100%;
+  width: 100%;
 }
 
 .last-submission-table {
@@ -212,10 +211,12 @@ h6 {
   border: 1px solid gold;
 }
 /////Testing new observation form styling
+
 #cancel-session-btn {
   display: none;
 }
 // Hide sign-out by default
+
 .failure {
   color: red;
 }
@@ -300,6 +301,7 @@ h6 {
   text-decoration: underline;
 }
 // Hides submit button
+
 #submit-observation-btn {
   display: none;
 }
@@ -313,6 +315,7 @@ h6 {
 //   float: left;
 // }
 ///
+
 #interval-timer {
   font-size: 20px;
   color: red;
@@ -399,6 +402,7 @@ h6 {
   clear: both;
 }
 // Default hide session canceled notification
+
 .cancel-session-notification {
   display: none;
 }
@@ -430,11 +434,10 @@ h6 {
 .legend-gradient {
   text-align: center;
 }
+
 .cancel-session-bt-container {
   text-align: center;
 }
-
-
 // Slide Radio Buttons
 .switch {
   position: relative;
@@ -541,8 +544,6 @@ h6 {
   background-image: linear-gradient(top, #008000, #008000);
 }
 
-
-
 .benefit-image {
   max-width: 100%;
 }
@@ -563,7 +564,6 @@ h6 {
 .extra-padding-bottom {
   padding-bottom: 10px;
 }
-
 // Media
 @media screen and (max-width: 421px) {
   .new-line-btn {
@@ -571,12 +571,19 @@ h6 {
   }
 }
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 415px) {
   .time-bar-container {
-    width: 90%;
+    width: 300px;
     background-color: lightgray;
     height: 20px;
-    margin: 10px 0;
+    margin: 0 auto;
+  }
+
+  #time-bar {
+    height: 20px;
+    margin: -20px auto;
+    background-color: green;
+    width: 300px;
   }
 
   .btn-bottom-margin-mobile {
@@ -593,13 +600,6 @@ h6 {
 
   .new-session-home-container {
     text-align: center;
-  }
-
-  #time-bar {
-    height: 20px;
-    margin-top: -30px;
-    background-color: green;
-    width: 90%;
   }
 }
 
@@ -620,13 +620,21 @@ h6 {
     text-align: center;
   }
 
+  #new-observation-form {
+    margin-top: 25px;
+  }
+
   .credentials-container input {
     border: 1px solid lightgray;
   }
+
+  // .row {
+  //   margin-left: 0;
+  //   margin-right: 0;
+  // }
+
 }
-
 @media screen and (max-width: 730px) {
-
   .clear-image {
     clear: both;
     padding-top: 5px;
@@ -639,32 +647,56 @@ h6 {
     display: block;
     margin: auto;
   }
-
 }
 
-@media screen and (min-width: 100px) {
+.switch {
+  height: 34px;
+  width: 140px;
+}
+
+.switch-label {
+  line-height: 34px;
+  width: 70px;
+  font-size: 13px;
+  text-shadow: none;
+  color: black;
+}
+
+.switch-selection {
+  width: 70px;
+  height: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+  left: 68px;
+}
+
+@media screen and (max-width: 415px) {
   .switch {
-    height: 34px;
-    width: 140px;
+    height: 28px;
+    width: 100px;
   }
 
   .switch-label {
-    line-height: 34px;
-    width: 70px;
-    font-size: 13px;
+    line-height: 28px;
+    width: 50px;
+    font-size: 12px;
     text-shadow: none;
     color: black;
   }
 
   .switch-selection {
-    width: 70px;
-    height: 34px;
+    width: 50px;
+    height: 28px;
     top: 0;
     left: 0;
     right: 0;
   }
 
   .switch-input:checked + .switch-label-on ~ .switch-selection {
-    left: 68px;
+    left: 50px;
   }
 }
