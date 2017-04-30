@@ -65,7 +65,7 @@ const onDeleteSession = function(event) {
 
 const onUpdateSession = function(event) {
   event.preventDefault();
-  store.currentSessionId = parseInt($(".update-session-submit").attr("data-current-session-id"));
+  store.currentSessionId = parseInt($("#update-session-submit").attr("data-current-session-id"));
   store.currentStudentId = parseInt($("#update-session-submit").attr("data-current-student-id"));
   console.log(store.currentStudentId);
   let data = getFormFields(event.target);

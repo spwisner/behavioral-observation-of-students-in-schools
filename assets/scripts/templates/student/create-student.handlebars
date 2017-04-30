@@ -2,7 +2,6 @@
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
       <h1>Create Student Form</h1>
-      <p class="lead">Please note, in order to create an observation session, you must first create a student record.</p>
       <form class="form student-form" id="new-student-form" name="new-student-form">
         <fieldset>
           <p id="create-student-error"></p>
@@ -10,11 +9,13 @@
 
           <div class="form-group fn-field-container">
             <label>First Name (required)</label>
+            <div class="fn-field-notification"></div>
             <input class="form-control required-field fn-required" name="student[first_name]" placeholder="First Name" type="text">
           </div>
 
           <div class="form-group ln-field-container">
             <label>Last Name (required)</label>
+            <div class="ln-field-notification"></div>
             <input class="form-control required-field ln-required" name="student[last_name]" placeholder="Last Name" type="text">
           </div>
 

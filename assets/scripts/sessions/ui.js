@@ -145,8 +145,8 @@ const createSessionFailure = () => {
     let lengthIsBlank = (lengthRequired === "");
     let lengthIsNumber = isFieldANum("length-required");
 
-    $(".submit-btn-container").children("p").remove();
-    $("#create-session-error").children("p").remove();
+    // $(".submit-btn-container").children("p").remove();
+    // $("#create-session-error").children("p").remove();
 
     removeErrorFormatting();
 
@@ -160,8 +160,6 @@ const createSessionFailure = () => {
       $(".task-field-container input").addClass("border-highlight");
     }
 
-    console.log(intervalsIsBlank);
-    console.log(!intervalIsNumber);
     if (intervalsIsBlank || !intervalIsNumber) {
       $(".intervals-field-notification").prepend('<p class="highlight-red">Error: The number of intervals is a required field and must a number between 1 and 60. No text is permitted in this form field.</p>');
       $(".intervals-field-container input").addClass("border-highlight");
@@ -203,7 +201,7 @@ const updateSessionSuccess = (data) => {
   $(".dashboard-student-record-btn").attr("data-current-student-id", store.currentStudentId);
 };
 
-const updateSessionFailure = (data) => {
+const updateSessionFailure = () => {
   $(".notification-container").children().text("");
 
     let settingRequired = $(".setting-required").val().trim();
