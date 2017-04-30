@@ -106,11 +106,11 @@ const createObservationSuccess = () => {
    if (store.studentToObserve % 5 === 0) {
      $("#student-observed").text("Random Peer");
      $("#student-observed").addClass("random-peer");
-     $(".switch-container").css("background-color", "#ffc04c");
+     $("#new-observation-form").css("background-color", "#ffc04c");
    } else {
      $("#student-observed").text("Target Student");
      $("#student-observed").addClass("target-student");
-     $(".switch-container").css("background-color", "#ffffff");
+     $("#new-observation-form").css("background-color", "#ffffff");
    }
 
 };
