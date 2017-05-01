@@ -41,6 +41,10 @@ const onHideDeleteConfirmation = function() {
   $(".show-record-delete").delay(300).show(0);
 };
 
+$('input, select, textarea').on('focus blur', function(event) {
+    $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type === 'blur' ? 10 : 1));
+});
+
 const addHandlers = () => {
   // $('#dashboard-new-session-btn').on('click', onShowCreateDash);
   $('.content').on('click', '#dashboard-new-session-btn', onShowCreateDash);
