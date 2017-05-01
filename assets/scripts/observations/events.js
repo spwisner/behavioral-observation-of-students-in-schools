@@ -1,6 +1,8 @@
 'use strict';
 const apiObservations = require('./api');
 const uiObservations = require('./ui');
+const apiSessions = require('../sessions/api');
+const uiSessions = require('../sessions/ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const logicObservations = require('./logic');
@@ -112,7 +114,6 @@ const observationTimer = function() {
   const currentBarPercentage = function(x, max) {
     let currentPercentage = parseInt((x / max) * 100);
     let percentageWithSymbol = currentPercentage.toString() + "%";
-    console.log(percentageWithSymbol);
 
     $("#time-bar").css("width", percentageWithSymbol);
   };
@@ -163,10 +164,16 @@ const observationTimer = function() {
   // if cancel button clicked
   $("#cancel-session-btn").click(function () {
     endObservationTimer(runTimer);
+    let currentSessionId = $(this).attr("data-current-session-id");
+    console.log(currentSessionId);
+    store.currentSessionId = currentSessionId;
     $(".time-until-submission").hide();
     $(".interval-remaining").hide();
     $(".cancel-session-notification").show();
     $(this).remove();
+    apiSessions.showSession()
+      .done(uiSessions.showSessionSuccess)
+      .fail(uiSessions.showSessionFailure);
   });
 };
 
@@ -281,6 +288,15 @@ const onHideEditMobile = function(event) {
   $("#show-edit-mobile").delay(300).show();
 };
 
+// const onCancelEntireSession = function(event) {
+//   event.preventDefault();
+//   endObservationTimer(runTimer);
+//   $(".time-until-submission").hide();
+//   $(".interval-remaining").hide();
+//   $(".cancel-session-notification").show();
+//   $(this).remove();
+// };
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -307,10 +323,11 @@ const addHandlers = () => {
   $('.content').on('click', '#show-edit-mobile', onShowEditMobile);
   $('.content').on('click', '.hide-edit-mobile-btn', onHideEditMobile);
   $('.content').on('click', '#cancel-last-submission-edit-btn', onHideEditMobile);
-  $('.content').on('click', '#hide-edit-mobile', onHideEditMobile)
+  $('.content').on('click', '#hide-edit-mobile', onHideEditMobile);
+  // $('.content').on('click', '#cancel-session-btn', onCancelEntireSession);
 };
 
 module.exports = {
   addHandlers,
-  onGetObservations,
+  // onGetObservations,
 };

@@ -159,6 +159,7 @@ const generateObservationForm = () => {
   $("#student-observed").html('<span id="target-student">Target Student</span>');
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
+  $("#cancel-session-btn").attr("data-current-session-id", store.currentSessionId);
 };
 
 module.exports = {
