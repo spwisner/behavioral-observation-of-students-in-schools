@@ -26,7 +26,28 @@ const appendTablejQuery = function(divClass, completeArr) {
   }
 };
 
+const isANumberArr = function(arr) {
+  console.log(arr);
+  let revisedArr = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentNum = parseInt(arr[i]);
+    if (currentNum >= 0) {
+      revisedArr.push(currentNum);
+    } else {
+      revisedArr.push(0);
+    }
+  }
+  console.log(revisedArr);
+
+  return revisedArr;
+};
+
 const generateStatsTable = function(countArrTS, percentageArrTS, countArrRP, percentageArrRP, totalTSIntervals, totalRPIntervals) {
+
+  percentageArrTS = isANumberArr(percentageArrTS);
+  percentageArrRP = isANumberArr(percentageArrRP);
+
 
   let aetCompleteArr = [countArrTS[0], percentageArrTS[0], countArrRP[0], percentageArrRP[0]];
   let petCompleteArr = [countArrTS[1], percentageArrTS[1], countArrRP[1], percentageArrRP[1]];

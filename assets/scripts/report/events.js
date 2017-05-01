@@ -163,8 +163,12 @@ const onCreateStatsReport = function(event) {
 
   onShowStudentSummary();
   onGetObservationData();
+
+  $(".current").attr("data-current-student-id", store.currentStudentId);
+  $(".current").attr("data-current-session-id", store.currentSessionId);
   // $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
   // $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
+
 };
 
 const getFormVals = function(event) {
