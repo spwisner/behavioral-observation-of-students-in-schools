@@ -44,7 +44,6 @@ h2 {
 }
 
 .time-bar-container {
-  width: 100%;
   background-color: lightgray;
   height: 30px;
   margin: 10px;
@@ -58,7 +57,6 @@ h2 {
   height: 30px;
   margin: -40px 10px 10px;
   background-color: green;
-  width: 100%;
 }
 
 .highlight-red {
@@ -573,7 +571,7 @@ h6 {
 
 @media screen and (max-width: 415px) {
   .time-bar-container {
-    width: 300px;
+    // width: 300px;
     background-color: lightgray;
     height: 20px;
   }
@@ -582,7 +580,7 @@ h6 {
     height: 20px;
     margin-top: -30px;
     background-color: green;
-    width: 300px;
+    // width: 300px;
   }
 
   #interval-remaining {
@@ -679,10 +677,16 @@ h6 {
 }
 
 .switch-input:checked + .switch-label-on ~ .switch-selection {
-  left: 68px;
+  left: 70px;
 }
 
 @media screen and (max-width: 415px) {
+
+  .last-submission-table input[type="checkbox"]{
+    zoom: 1;
+    width: 25px;
+    height: 25px;
+  }
 
   .switch {
     height: 35px;
