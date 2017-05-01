@@ -153,8 +153,15 @@ const observationTimer = function() {
             $(".interval-count").text(endInterval);
             $("#cancel-session-btn").remove();
             $(".time-until-submission").text("Session Complete!");
+            $(".time-bar-container").remove();
             $("#interval-timer").remove();
             $(".obs-comment-container").remove();
+            $(".hide-generate-report").children().remove();
+            $(".hide-generate-report").append('<button id="end-session-generate-report" class="btn btn-success btn-md" data-current-session-id="" data-current-student-id="">View Session Report</button>');
+            // $(".action-btn-container").append('<button id="end-session-generate-report" class="btn btn-success btn-md" data-current-session-id="" data-current-student-id="">View Session Report</button>');
+            $("#end-session-generate-report").attr("data-current-session-id", store.currentSessionId);
+            $("#end-session-generate-report").attr("data-current-student-id", store.currentStudentId);
+            $(".hide-generate-report").css("text-align", "center");
             return;
           }
         }
@@ -324,6 +331,7 @@ const addHandlers = () => {
   $('.content').on('click', '.hide-edit-mobile-btn', onHideEditMobile);
   $('.content').on('click', '#cancel-last-submission-edit-btn', onHideEditMobile);
   $('.content').on('click', '#hide-edit-mobile', onHideEditMobile);
+
   // $('.content').on('click', '#cancel-session-btn', onCancelEntireSession);
 };
 

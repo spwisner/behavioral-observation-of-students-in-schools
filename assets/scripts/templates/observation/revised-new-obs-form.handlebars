@@ -1,14 +1,23 @@
 <div class="full-observation-container">
   <div class="row">
 
+    <!-- <div class="col-sm-4 col-xs-12 col-xs-offset-0"> -->
     <div class="col-sm-offset-4 col-sm-4 col-xs-12 col-xs-offset-0">
+      <div class="interval-confirmation-container">
+        <div id="interval-submitted-successfully">Interval Submitted</div>
+      </div>
+    </div>
+
+    <div class="col-sm-4 col-xs-12 col-xs-offset-0">
+    <!-- <div class="col-sm-offset-4 col-sm-4 col-xs-12 col-xs-offset-0"> -->
       <div class="timer-container">
         <div class="interval-time-count-container">
           <p class="cancel-session-notification">Your Session has been cancelled</p>
           <p class="session-completed">Your session has been completed. Return to the Dashboard to view results</p>
-          <div class="action-btn-container">
-            <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button>
-          </div>
+          <!-- <div class="action-btn-container"> -->
+            <!-- <button id="end-session-generate-report" class="btn btn-success btn-md">View Session Report</button> -->
+            <!-- <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button> -->
+          <!-- </div> -->
           <p class="time-until-submission">Time Remaining: <span id="interval-timer"></span>
             <div class="action-btn-container">
               <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
@@ -16,12 +25,6 @@
         </div>
         <!-- <div class="time-bar-container"></div>
         <div id="time-bar" class="legend-gradient"></div> -->
-      </div>
-    </div>
-
-    <div class="col-sm-4 col-xs-12 col-xs-offset-0">
-      <div class="interval-confirmation-container">
-        <div id="interval-submitted-successfully">Interval Submitted</div>
       </div>
     </div>
   </div>
@@ -59,7 +62,7 @@
 
 
 
-      <div class="row">
+      <div class="row hide-generate-report">
         <div class="col-xs-6 col-sm-4">
 
           <!-- $("input[type='radio'].switch-input:checked").val(); -->
