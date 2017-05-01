@@ -434,7 +434,7 @@ h6 {
   text-align: center;
 }
 
-.cancel-session-bt-container {
+.cancel-session-btn-container {
   text-align: center;
 }
 // Slide Radio Buttons
@@ -673,6 +673,7 @@ h6 {
 }
 
 @media screen and (max-width: 415px) {
+
   .switch {
     height: 35px;
     width: 120px;
@@ -707,4 +708,14 @@ h6 {
 
 #interval-remaining {
   text-align: center;
+}
+
+#hide-edit-mobile {
+  display: none;
+  margin-bottom: 5px;
+}
+
+#show-edit-mobile {
+  display: none;
+  margin-bottom: 5px;
 }

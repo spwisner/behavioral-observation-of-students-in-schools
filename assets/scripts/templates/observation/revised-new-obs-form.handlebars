@@ -40,7 +40,8 @@
         <div class="col-xs-12">
           <legend id="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span>
           <br>
-
+          <span class="show-edit-mobile-container"><button class="btn btn-primary btn-sm" id="show-edit-mobile">Edit Last Submission</button></span>
+          <span class="hide-edit-mobile-container"><button class="btn btn-warning btn-sm" id="hide-edit-mobile">Hide Edit Menu</button></span>
         </legend>
           <div class="after-completion"></div>
           <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
@@ -48,6 +49,15 @@
           <input name="observation[obs_num]" id="create-observation-number" type="hidden" value="1">
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <div id="show-edit-mobile-content"></div>
+        </div>
+      </div>
+
+
+
 
       <div class="row">
         <div class="col-xs-6 col-sm-4">
@@ -129,8 +139,8 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <div class="cancel-session-bt-container btn-top-margin">
-            <button id="cancel-session-btn" class="btn btn-warning btn-md">Cancel Session</button>
+          <div class="cancel-session-btn-container btn-top-margin">
+            <button id="cancel-session-btn" class="btn btn-danger btn-md">Cancel Session</button>
           </div>
         </div>
       </div>

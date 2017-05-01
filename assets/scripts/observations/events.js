@@ -66,6 +66,8 @@ const onUpdateLastSubmission = function(event) {
   let oftmValue = table.children(".last-oft-m-tr").children(".last-submission-oft-m").children("input").prop('checked');
   let oftvValue = table.children(".last-oft-v-tr").children(".last-submission-oft-v").children("input").prop('checked');
   let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input").prop('checked');
+  $("#hide-edit-mobile").hide();
+  $("#show-edit-mobile").show();
   apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
     .done(uiObservations.getLastObservationSuccess)
     .fail(uiObservations.getLastObservationFailure);
@@ -139,6 +141,8 @@ const observationTimer = function() {
           $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
           countUp = 0;
+          $("#show-edit-mobile").show();
+          $("#hide-edit-mobile").hide();
           $(".legend-gradient").removeClass("obs-stg-five");
           $(".legend-gradient").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
@@ -185,15 +189,8 @@ const updateFormGenerator = function(event) {
   event.preventDefault();
 
   store.lastFormHtml = $(".last-submission-container").html();
+  $(".hide-edit-mobile-btn").remove();
 
-  // let dataId = $(this).attr("data-id");
-  // let dataObsNum = $(this).attr("data-obs-num");
-  // let dataAet = $(this).attr("data-aet");
-  // let dataPet = $(this).attr("data-pet");
-  // let dataOftM = $(this).attr("data-oft_m");
-  // let dataOftV = $(this).attr("data-oft_v");
-  // let dataOftP = $(this).attr("data-oft-p");
-  // let dataComment = $(this).attr("data-obs-comment");
 
   let dataAetEditHtml = $('<input class="edit-input-aet" name="observation[aet]" placeholder="aet" type="checkbox">');
   let dataPetEditHtml = $('<input class="edit-input-pet" name="observation[pet]" placeholder="pet" type="checkbox">');
@@ -250,6 +247,40 @@ const onAnimateSwitch = function(event) {
 
 };
 
+const onShowEditMobile = function(event) {
+  event.preventDefault();
+  $(this).hide();
+
+  $("#show-edit-mobile-content").empty();
+
+  const valExists = $(".last-submission-container").children().length > 0;
+  let tableHTML;
+
+  if (valExists) {
+    tableHTML = $(".last-submission-container").html();
+    store.lastRecordedSubmission = tableHTML;
+  } else {
+    tableHTML = store.lastRecordedSubmission;
+  }
+
+  $(".last-submission-container").children().remove();
+  $("#show-edit-mobile-content").hide();
+  $("#show-edit-mobile-content").append(tableHTML);
+  $(".edit-last-submit-btn-td").prepend('<button class="btn btn-warning btn-sm hide-edit-mobile-btn">Hide</button>');
+  $("#hide-edit-mobile").show();
+  $("#show-edit-mobile-content").slideDown(300);
+
+  console.log(tableHTML);
+};
+
+const onHideEditMobile = function(event) {
+  event.preventDefault();
+  $("#hide-edit-mobile").hide();
+  $("#show-edit-mobile-content").slideUp(300);
+  $("#show-edit-mobile-content").children().remove();
+  $("#show-edit-mobile").delay(300).show();
+};
+
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
@@ -273,6 +304,10 @@ const addHandlers = () => {
   $('.content').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
   $('.content').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
   $('.content').on('click', '#obs-landing-begin-observation', onGenerateObsTable);
+  $('.content').on('click', '#show-edit-mobile', onShowEditMobile);
+  $('.content').on('click', '.hide-edit-mobile-btn', onHideEditMobile);
+  $('.content').on('click', '#cancel-last-submission-edit-btn', onHideEditMobile);
+  $('.content').on('click', '#hide-edit-mobile', onHideEditMobile)
 };
 
 module.exports = {

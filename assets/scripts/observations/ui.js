@@ -59,9 +59,11 @@ const showObservationSuccess = (data) => {
   if ( aetValue && petValue && oftvValue && oftmValue && oftpValue) {
     $(".no-submission-warning").text("Warning: Empty Submission");
     $(".last-submission-row").addClass("redbc");
+    $(".show-edit-mobile-container button").removeClass("btn-primary").addClass("btn-danger");
   } else {
     $(".no-submission-warning").text("");
     $(".last-submission-row").removeClass("redbc");
+    $(".show-edit-mobile-container button").removeClass("btn-danger").addClass("btn-primary");
   }
 
   let submissionText = $(".no-submission-warning").text();
