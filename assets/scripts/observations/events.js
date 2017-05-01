@@ -142,11 +142,22 @@ const observationTimer = function() {
           $("#create-observation-number").val(store.observationIdNum);
           $("#new-observation-form").submit();
           countUp = 0;
-          $("#show-edit-mobile").show();
-          $("#hide-edit-mobile").hide();
+
+          let isMobileDevice = uiObservations.isMobileWidth();
+
+          if (isMobileDevice) {
+            $("#show-edit-mobile").show();
+            $("#hide-edit-mobile").hide();
+          }
+
+          // $("#show-edit-mobile").show();
+          // $("#hide-edit-mobile").hide();
           $(".legend-gradient").removeClass("obs-stg-five");
           $(".legend-gradient").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
+            if (!isMobileDevice) {
+              $("#show-edit-mobile").remove();
+            }
             $(".legend-gradient").removeClass("obs-stg-five");
             $(".legend-gradient").addClass("obs-stg-done");
             endObservationTimer(runTimer);

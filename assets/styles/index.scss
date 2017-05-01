@@ -289,7 +289,8 @@ h6 {
 #interval-submitted-successfully {
   color: green;
   border: 1px dotted green;
-  margin-left: 5px;
+  margin-left: 35%;
+  margin-right:35%;
   display: none;
   padding: 2px;
   font-size: 16px;
@@ -633,6 +634,15 @@ h6 {
 
 }
 @media screen and (max-width: 730px) {
+  #interval-submitted-successfully {
+    color: green;
+    border: 1px dotted green;
+    margin:0;
+    display: none;
+    padding: 2px;
+    font-size: 16px;
+  }
+
   .clear-image {
     clear: both;
     padding-top: 5px;
