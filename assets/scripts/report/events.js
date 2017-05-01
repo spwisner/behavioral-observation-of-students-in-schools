@@ -53,7 +53,6 @@ const onGetObservationData = function() {
 //     .then((response) => {
 //       // onGetObservations(store.currentSessionId);
 //       store.getWriteupObject = response;
-//       console.log("writeupdata");
 //       store.currentReportId = response.report.id;
 //     })
 //     .done(uiReport.getWriteupSuccess)
@@ -77,7 +76,6 @@ const onGetObservationData = function() {
 //   apiReport.getWriteup()
 //     // .catch(uiReport.createWriteupFailure)
 //     .then((response) => {
-//       console.log('geerate response');
 //       store.doesReportExist = false;
 //       store.currentReportLength = response.reports.length;
 //       if (store.currentReportLength >0 ) {
@@ -140,7 +138,6 @@ const onCreateStatsReport = function(event) {
   // apiReport.getWriteup()
   //   .then((response) => {
   //     store.getWriteupObjectLength = response.report.length;
-  //     console.log(response);
   //     // onGetObservations(store.currentSessionId);
   //     store.getWriteupObject = response;
   //     store.currentReportId = response.report.id;

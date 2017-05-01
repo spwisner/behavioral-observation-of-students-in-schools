@@ -41,7 +41,6 @@ const onCreateSession = function(event) {
       .then((response) => {
         store.currentSessionId = response.session.id;
         store.currentNumofIntervals = response.session.int_num;
-        // alert(store.currentNumofIntervals);
         // console.log(store.currentNumofIntervals);
         store.currentObsIntervalTime = response.session.obs_time;
         // store.currentObsNum = 1;
@@ -67,7 +66,6 @@ const onUpdateSession = function(event) {
   event.preventDefault();
   store.currentSessionId = parseInt($("#update-session-submit").attr("data-current-session-id"));
   store.currentStudentId = parseInt($("#update-session-submit").attr("data-current-student-id"));
-  console.log(store.currentStudentId);
   let data = getFormFields(event.target);
     sessionsApi.updateSession(data)
       .done(sessionsUi.updateSessionSuccess)
@@ -94,7 +92,6 @@ const totalTime = function(numberOfIntervalsEntry, intervalLengthEntry) {
 const totalTimeCalculator = function() {
   let numberOfIntervalsEntry = $("#interval-number-entry").val();
   let intervalLengthEntry = $("#interval-length-entry").val();
-  // alert(intervalLengthEntry);
   $(".number-of-intervals-entry").text(numberOfIntervalsEntry);
   $(".length-of-intervals-entry").text(intervalLengthEntry);
   totalTime(numberOfIntervalsEntry, intervalLengthEntry);
@@ -109,7 +106,6 @@ const onGenerateCreateForm = function(event) {
 const onEditSession = function(event) {
   event.preventDefault();
   store.currentStudentId = $(this).attr("data-current-student-id");
-  console.log(store.currentStudentId);
   store.currentSessionId = $(this).attr("data-current-session-id");
   sessionsApi.showSession()
     .done(sessionsUi.generateUpdateForm)

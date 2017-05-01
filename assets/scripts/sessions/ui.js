@@ -190,7 +190,6 @@ const deleteSessionFailure = () => {
 
 const updateSessionSuccess = (data) => {
   $(".notification-container").children().text("");
-  console.log(store.currentStudentId);
   store.currentSessionId = data.session.id;
   $(".content").children().remove();
   let sessionDetails = displaySessionDetails({

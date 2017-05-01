@@ -27,7 +27,6 @@ const appendTablejQuery = function(divClass, completeArr) {
 };
 
 const isANumberArr = function(arr) {
-  console.log(arr);
   let revisedArr = [];
 
   for (let i = 0; i < arr.length; i++) {
@@ -38,7 +37,6 @@ const isANumberArr = function(arr) {
       revisedArr.push(0);
     }
   }
-  console.log(revisedArr);
 
   return revisedArr;
 };

@@ -76,7 +76,6 @@ const onCancelStudentForm = function(event) {
   event.preventDefault();
 
   let currentStudentId = parseInt($(".student-cancel-btn").attr("data-current-student-id"));
-  console.log(currentStudentId);
 
   if ( currentStudentId === 0 ) {
     apiStudents.getStudents()

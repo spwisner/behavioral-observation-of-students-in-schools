@@ -19,13 +19,10 @@ const getObservationSuccess = () => {
 
 const isMobileWidth = function() {
   const width = $(window).width();
-  console.log(width);
 
   if (width < 425) {
-    console.log('mobile');
     return true;
   } else {
-    console.log('not mobile');
     return false;
   }
 };

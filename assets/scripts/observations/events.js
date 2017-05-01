@@ -183,7 +183,6 @@ const observationTimer = function() {
   $("#cancel-session-btn").click(function () {
     endObservationTimer(runTimer);
     let currentSessionId = $(this).attr("data-current-session-id");
-    console.log(currentSessionId);
     store.currentSessionId = currentSessionId;
     $(".time-until-submission").hide();
     $(".interval-remaining").hide();
@@ -253,7 +252,6 @@ const onGenerateObsTable = function(event) {
 
 const onAnimateSwitch = function(event) {
   event.preventDefault();
-  console.log($(this).val());
 
   let parentSelect = $(this).parent();
 
@@ -295,7 +293,6 @@ const onShowEditMobile = function(event) {
   $("#hide-edit-mobile").show();
   $("#show-edit-mobile-content").slideDown(300);
 
-  console.log(tableHTML);
 };
 
 const onHideEditMobile = function(event) {
