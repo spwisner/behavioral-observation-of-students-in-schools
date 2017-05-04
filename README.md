@@ -17,7 +17,9 @@ This SPA utilizes the following technologies
 
 -   HTML
 -   CSS
--   Pure JavaScript
+-   Bootstrap
+-   Sass
+-   JavaScript
 -   jQuery
 -   Ajax
 -   Ruby on Rails
