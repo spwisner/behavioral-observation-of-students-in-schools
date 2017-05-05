@@ -3,7 +3,7 @@
 
 <head>
   <title>BOSS App</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
   <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -12,9 +12,9 @@
 
 <body class="container-fluid" style="display: none">
 
-  <div class="credentials-container">
-    <div class="row">
-      <div class="col-xs-12">
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+      <div class="credentials-container">
         <div class="btn-group" id="sign-up">
           <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Sign Up
@@ -100,22 +100,21 @@
           <p class="success signout-success"></p>
         </div>
       </div>
-    </div>
-
-    <div class="clearfix"></div>
-    <div class="notification-container">
-      <div class="success-alert">
-
+        <div class="notification-container">
+          <div class="success-alert">
+          </div>
+          <div class="failure-alert">
+          </div>
       </div>
-      <div class="failure-alert">
 
-      </div>
     </div>
   </div>
 
+  <div class="clearfix"></div>
+
   <div class="homepage-desc">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10">
         <h1>BOSS Web Application</h1>
         <div class="boss-image-container">
           <img id="boss-main-img" src="https://cloud.githubusercontent.com/assets/13546265/25396927/6ab6c836-29b4-11e7-9140-d0ad73e7ec3a.png" alt="boss-screenshot">
@@ -136,22 +135,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10">
         <p>Next, in order to be able to compare the target student to the rest of the class, data needs to be collected for random peers as well. For this reason, at every 5th interval, the observer directs his attention to a random student and categorizes
           his or her behavior during that interval.</p>
         <p>For example, the individual being observed for the first 10 intervals would be:</p>
       </div>
     </div>
     <div class="row extra-padding-top">
-      <div class="col-xs-6">
+      <div class="col-sm-5 col-sm-offset-1 col-xs-offset-0 col-xs-12">
         <p class="center-label">TS = Target Student</p>
       </div>
-      <div class="col-xs-6">
+      <div class="col-sm-5 col-sm-offset-1 col-xs-offset-0 col-xs-12">
         <p class="center-label">RP = Random Peer</p>
       </div>
     </div>
     <div class="row extra-padding-bottom">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
         <table class="table">
           <tr>
             <td>Interval</td>
@@ -182,12 +181,13 @@
         </table>
 
         <p>At the end of the 10 minutes, the observer will have 40 data points of behavior. 32 of the data points reflect the behavior of the target student and 8 of the data points (which was collected every 5th interval) represent the behavior of random
-          peers.</p>
+          peers.
+        </p>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-xs-offset-0">
         <h2>Benefits of the App</h2>
         <p>Conducting BOSS with a timer, pen, and paper can be challenging. It is difficult to monitor a student’s behavior while keeping track of time and marking down results. This web application attempts to simplify the data collection process by having
           observations automatically submitted at the end of a time interval. In addition, this application eliminates the tedious process of compiling results. At the end of a session, a statistical report is automatically generated.</p>
@@ -195,17 +195,17 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-5 col-sm-offset-1 col-xs-offset-0 col-xs-12">
         <img class="benefit-image" id="benefit-table" src="https://cloud.githubusercontent.com/assets/13546265/25397923/1294c15e-29b8-11e7-8f82-f2de244b1bf1.png" alt="BOSS Table">
       </div>
-      <div class="col-sm-6 col-xs-12">
+      <div class="col-sm-5 col-xs-12">
         <img class="benefit-image" id="benefit-graph" src="https://cloud.githubusercontent.com/assets/13546265/25398294/73f775b2-29b9-11e7-9594-22fc6aeaa593.png" alt="BOSS App Graph">
       </div>
     </div>
-</div>
-    <div class="clearfix"></div>
-    <div class="content">
-    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="content">
+  </div>
 
 </body>
 
