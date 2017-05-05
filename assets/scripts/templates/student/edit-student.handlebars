@@ -1,8 +1,8 @@
 <div class="create-student-form-container form-container form-group">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-9 col-lg-8">
+    <div class="max-xs col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-11 col-md-offset-1 col-md-10">
       <h1>Update Student Form</h1>
-      <form class="form student-form" id="update-student-form" name="new-student-form">
+      <form class="form student-form max-xs" id="update-student-form" name="new-student-form">
         <fieldset>
           <p id="update-student-error"></p>
           <p>All fields are <u>optional</u> unless otherwise indicated</p>
@@ -35,7 +35,7 @@
           </div>
 
           <div class="form-group">
-            <label>Grade (required)</label>
+            <label>Grade</label>
             <input class="form-control required-field" name="student[grade]" placeholder="Grade" type="text" value="{{student.grade}}">
           </div>
 

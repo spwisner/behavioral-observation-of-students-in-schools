@@ -1,22 +1,20 @@
-
-
   <div class="row">
-    <div class="col-xs-12 col-lg-11">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
       <h1>Student Records</h1>
     </div>
   </div>
 
   <div class="row student-list-row">
-    <div class="col-xs-12 col-lg-11">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
       <table class="table student-summary-table table-hover">
         <thead>
           <tr>
             <th>Name</th>
-            <th class="hidden-xs">DOB</th>
+            <th class="hidden-xs hidden-sm">DOB</th>
             <th class="hidden-sm hidden-xs">School</th>
             <th class="hidden-xs">Teacher</th>
-            <th>Grade</th>
-            <th>View Record</th>
+            <th class="hidden-phone">Grade</th>
+            <th class="center">View Record</th>
           </tr>
         </thead>
         <tbody>
@@ -25,7 +23,7 @@
               <td class="display-student-fn">
                 {{student.first_name}} {{student.last_name}}
               </td>
-              <td class="display-student-dob hidden-xs">
+              <td class="display-student-dob hidden-xs hidden-sm">
                 {{student.born_on}}
               </td>
               <td class="display-student-school hidden-sm hidden-xs">
@@ -34,10 +32,10 @@
               <td class="display-student-teacher hidden-xs">
                 {{student.teacher}}
               </td>
-              <td class="display-student-grade">
+              <td class="display-student-grade hidden-phone">
                 {{student.grade}}
               </td>
-              <td class="display-student-submit">
+              <td class="display-student-submit center">
                 <button type="button" class="btn btn-info btn-sm dashboard-student-record-btn" data-current-student-id="{{student.id}}">View Student</button>
               </td>
             </tr>
@@ -48,20 +46,14 @@
   </div>
 
   <div class="row empty-student-table">
-    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
       <p>No students have been created. Create a student to get started.</p>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-xs-offset-0 col-lg-11">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
       <div class="dashboard-container well">
-        <!-- <div class="create-session-student-btn-container">
-          <button id="create-session-student-btn" class="btn btn-success current" type="button" data-current-student-id="{{session.student_id}}">Create Session</button>
-        </div>
-        <div class="dashboard-container">
-          <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
-        </div> -->
         <button id="new-session-new-student" type="button" class="btn btn-primary">Create Student</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-info">Create Session</button>
       </div>

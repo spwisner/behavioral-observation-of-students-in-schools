@@ -1,10 +1,9 @@
 
 
   <div class="row">
-    <div class="col-xs-12 col-sm-offset-1 col-sm-8 col-lg-6">
-      <!-- <h1 class="student-name-header" data-current-student-fn="{{student.first_name}}" data-current-student-ln="{{student.last_name}}">{{student.first_name}} {{student.last_name}}</h1> -->
+    <div class="col-xs-12 col-sm-offset-1 col-sm-8 col-lg-6 max-xs">
       <h2 class="underline-h">Student Information</h2>
-      <table class="table student-record-table table-hover">
+      <table class="table student-record-table">
         <tbody>
           <tr>
             <td class="student-record-title student-name-header">
@@ -48,14 +47,14 @@
           </tr>
         </tbody>
       </table>
-      <div class="student-record-btn-options">
-        <button id="student-record-btn-edit" type="button" class="btn btn-warning btn-bottom-margin-mobile" data-current-student-id="{{student.id}}">Edit Student Record</button>
-        <button type="button" class="btn show-record-delete btn-danger" data-current-student-id="{{student.id}}">Delete Student Record</button>
+      <div>
+        <button id="student-record-btn-edit" type="button" class="btn btn-warning" data-current-student-id="{{student.id}}">Edit Record</button>
+        <button type="button" class="btn show-record-delete btn-danger" data-current-student-id="{{student.id}}">Delete Record</button>
       </div>
     </div>
   </div>
   <div class="row delete-confirmation-row">
-    <div class="col-xs-12">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
       <div class="delete-confirmation-contain phone-center">
         <div class="form-group delete-confirmation">
           <h3>Warning:</h3>

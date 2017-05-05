@@ -49,10 +49,6 @@ h2 {
   margin: 10px;
 }
 
-.student-record-btn-options {
-  text-align: center;
-}
-
 #time-bar {
   height: 30px;
   margin: -40px 10px 10px;
@@ -693,7 +689,29 @@ h6 {
   left: 70px;
 }
 
+// @media screen and (min-width: 1100px) {
+//   .td-value {
+//     width: 75%;
+//   }
+// }
+
+.td-value {
+  min-width: 50%;
+}
+
+.max-xs {
+  max-width: 768px;
+}
+
 @media screen and (max-width: 415px) {
+
+  // .td-value {
+  //   width: 75%;
+  // }
+
+  .hidden-phone {
+    display: none;
+  }
 
   .last-submission-table input[type="checkbox"]{
     zoom: 1;
@@ -752,8 +770,8 @@ h6 {
 }
 
 .student-summary-name {
-  text-align: center;
   font-size: 18px;
+  font-weight: bold;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {

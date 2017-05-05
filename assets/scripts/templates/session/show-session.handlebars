@@ -1,7 +1,7 @@
 
 
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-lg-6">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-8 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-6 col-xl-offset-1 col-xl-5 max-xs">
       <h1>Session Overview</h1>
       <p>Session Date: {{session.obs_on}}</p>
       <p><span class="highlight-red">Session Status: {{#if session.completed}}Complete{{else}}Incomplete{{/if}}</span></p>
@@ -11,7 +11,7 @@
             <td class="session-record-title session-record-school">
               Observation Setting:
             </td>
-            <td class="display-session-school">
+            <td class="display-session-school td-value">
               {{session.obs_setting}}
             </td>
           </tr>
@@ -19,7 +19,7 @@
             <td class="session-record-title session-record-teacher">
               Observation Task:
             </td>
-            <td class="display-session-teacher">
+            <td class="display-session-teacher td-value">
               {{session.obs_task}}
             </td>
           </tr>
@@ -27,7 +27,7 @@
             <td class="session-record-title session-record-grade">
               Number of Interval:
             </td>
-            <td class="display-session-grade">
+            <td class="display-session-grade td-value">
               {{session.int_num}}
             </td>
           </tr>
@@ -35,7 +35,7 @@
             <td class="session-record-title session-record-grade">
               Interval Length (seconds):
             </td>
-            <td class="display-session-grade">
+            <td class="display-session-grade td-value">
               {{session.obs_time}}
             </td>
           </tr>
@@ -43,13 +43,13 @@
             <td class="session-record-title session-record-grade">
               Session Comment:
             </td>
-            <td class="display-session-grade">
+            <td class="display-session-grade td-value">
               {{session.comment}}
             </td>
           </tr>
         </tbody>
       </table>
-      <div class="dashboard-session-btn-container btn-bottom-margin center">
+      <div class="dashboard-session-btn-container btn-bottom-margin center max-xs">
         <button type="button" class="btn dashboard-student-record-btn btn-info current" data-current-student-id="" data-current-session-id="{{session.id}}">Student Record</button>
         <button id="session-record-view-report" type="button" class="btn btn-success current" data-current-student-id="" data-current-session-id="{{session.id}}">Generate Report</button>
         <button id="session-record-btn-edit" type="button" class="btn btn-warning current" data-current-student-id="" data-current-session-id="{{session.id}}">Edit Session</button>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="row delete-confirmation-row">
-        <div class="col-xs-12">
+        <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-8 col-md-offset-1 col-md-7 col-lg-offset-1 col-lg-6 col-xl-offset-1 col-xl-5 max-xs">
           <div class="delete-confirmation-contain phone-center">
             <div class="form-group delete-confirmation">
               <h3>Delete Confirmation:</h3>
@@ -70,7 +70,7 @@
         </div>
       </div>
 
-      <div class="dashboard-container well">
+      <div class="dashboard-container well max-xs">
         <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
       </div>
