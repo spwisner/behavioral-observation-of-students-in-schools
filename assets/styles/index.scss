@@ -43,6 +43,42 @@ h2 {
   color: #334693;
 }
 
+#tutorial-btn {
+  margin-top: 10px;
+}
+
+.tutorial-btn-container {
+  display: none;
+}
+
+.tutorial-image-container {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px;
+  text-align: center;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.hr-divide {
+ padding: 0 20px;
+ border-top: 1px solid #8c8b8b;
+}
+
+.image-caption {
+  text-align: center;
+  font-weight: bold;
+}
+
+.tutorial-image-container img {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 .time-bar-container {
   background-color: lightgray;
   height: 30px;

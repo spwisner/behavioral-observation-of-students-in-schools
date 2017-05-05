@@ -31,6 +31,7 @@ const signInSuccess = function() {
   $('.content').append(dashboardHome);
   $(".form-clear").val('');
   $(".homepage-desc").hide();
+  $(".tutorial-btn-container").show();
 };
 
 const signInFailure = function() {
@@ -67,6 +68,7 @@ const signOutSuccess = function() {
   $("#sign-up").show();
   $(".form-clear").val('');
   $(".homepage-desc").show();
+  $(".tutorial-btn-container").hide();
 };
 
 const signOutFailure = function() {
