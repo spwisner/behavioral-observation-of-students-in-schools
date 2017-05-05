@@ -68,8 +68,18 @@ const onUpdateLastSubmission = function(event) {
   let oftmValue = table.children(".last-oft-m-tr").children(".last-submission-oft-m").children("input").prop('checked');
   let oftvValue = table.children(".last-oft-v-tr").children(".last-submission-oft-v").children("input").prop('checked');
   let oftpValue = table.children(".last-oft-p-tr").children(".last-submission-oft-p").children("input").prop('checked');
-  $("#hide-edit-mobile").hide();
-  $("#show-edit-mobile").show();
+
+  let isMobileDevice = uiObservations.isBelowXs();
+
+  if (isMobileDevice) {
+    $("#show-edit-mobile").show();
+    $("#hide-edit-mobile").hide();
+  }
+  //
+  // $("#hide-edit-mobile").hide();
+  //
+  // // Insert here
+  // $("#show-edit-mobile").show();
   apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
     .done(uiObservations.getLastObservationSuccess)
     .fail(uiObservations.getLastObservationFailure);
