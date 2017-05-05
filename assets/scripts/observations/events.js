@@ -143,7 +143,7 @@ const observationTimer = function() {
           $("#new-observation-form").submit();
           countUp = 0;
 
-          let isMobileDevice = uiObservations.isMobileWidth();
+          let isMobileDevice = uiObservations.isBelowXs();
 
           if (isMobileDevice) {
             $("#show-edit-mobile").show();

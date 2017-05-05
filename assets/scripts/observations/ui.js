@@ -27,6 +27,15 @@ const isMobileWidth = function() {
   }
 };
 
+const isBelowXs = function() {
+  const width = $(window).width();
+  if (width < 768) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 const getLastObservationFailure = () => {
   $(".notification-container").children().text("");
 };
@@ -190,4 +199,5 @@ module.exports = {
   getLastObservationFailure,
   generateObservationForm,
   isMobileWidth,
+  isBelowXs,
 };
