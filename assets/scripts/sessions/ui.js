@@ -68,6 +68,16 @@ const showSessionSuccess = (data) => {
   // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(sessionDetails);
 
+  let isSessionComplete = $(".session-status").text().trim();
+
+  if (isSessionComplete === "Complete") {
+    $('.session-status').removeClass("highlight-red");
+    $('.session-status').addClass("highlight-green");
+  } else {
+    $('.session-status').removeClass("highlight-green");
+    $('.session-status').addClass("highlight-red");
+  }
+
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
 
