@@ -28,7 +28,7 @@ $one-hundred-color: rgba(231,24,24,1);
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   color: #333;
   background-color: #fffefe;
 }
@@ -92,6 +92,12 @@ h2 {
 .hr-divide {
   padding: 0 20px;
   border-top: 1px solid #8c8b8b;
+}
+
+.total-session-time-calculator label {
+  color: #933346;
+  text-decoration: underline;
+  font-size: 16px;
 }
 
 .image-caption {
@@ -161,6 +167,10 @@ h6 {
   text-align: center;
 }
 
+#hidden-generate-report {
+  display: none;
+}
+
 .btn-bottom-margin {
   margin-bottom: 20px;
 }
@@ -180,6 +190,7 @@ h6 {
 
 .underline-h {
   text-decoration: underline;
+  font-weight: bold;
 }
 
 .session-completed {
@@ -796,7 +807,6 @@ h6 {
   display: none;
   margin-bottom: 5px;
 }
-
 // @media screen and (min-width: 767px) {
 //   //hides edit button unless mobile version
 //   #show-edit-mobile {
@@ -813,7 +823,6 @@ h6 {
 .target-student {
   text-color: green;
 }
-
 @media screen and (max-width: 415px) {
   // .td-value {
   //   width: 75%;

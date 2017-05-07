@@ -11,7 +11,7 @@
       <ol>
         <li>Create a Student</li>
         <li>Create a Session</li>
-        <li>Collect Observations</li>
+        <li>Observe Student</li>
         <li>Generate Report</li>
       </ol>
     </div>
@@ -24,7 +24,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
-      <h2>Create a Student</h2>
+      <h2>Step 1 - Create a Student</h2>
       <p>All sessions and observations must be associated with a student. Therefore, the first step is to create a student. When completing the create student form, a user must include a student's first name and last name. All other fields are optional.</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
@@ -43,10 +43,10 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
-      <h2>Create a Session</h2>
-      <p>After a student record has been created, a user needs to create a session before collecting observations. There are two ways in which a session can be created.</p>
+      <h2>Step 2 - Create a Session</h2>
+      <p>All observation sessions are associated with a student record.  <span class="highlight-red">A student can have many sessions associated with his or her account</span>.  To create a session, a user must complete the create session form. In this form, the session setting, session task, number of intervals, and length of intervals (in seconds) are required. In addition, a total session time calculator is provided at the bottom of this form for the user's convenience. It is recommended that at least 40 intervals be measured at 15-second intervals to ensure that the data is valid and reliable.  There are two ways in which to create a session:</p>
       <h3>Create Session - Option 1</h3>
-      <p>First, you can view the student record for the student whom you wish to observe. Then, select the "Create Session" button below the student record (as indicated in the image).</p>
+      <p>First, you can view the record of the student whom you wish to observe. Then, select the "Create Session" button below the student record (as indicated in the image).</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -59,10 +59,10 @@
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
       <h3>Create Session - Option 2</h3>
-      <p>The second option is to go to the Student Record homepage where all student records are listed. Then, two steps need to be completed</p>
+      <p>The second option is to go to the Student Record homepage where all student records are listed. Then, two additional steps are required:</p>
       <p>First, click on the "Create Sessions" button (Option 2 - Part A).</p>
-      <p>After you complete this task, you will see a page which offers two options. The first is to create a student, which is required if there is no student record created for individual you will be observing. However, if a student record already exists,
-        you can click "Existing Student". This display a list of all student records. From here, simply click "Select Student" for the row of the studen whom you will be observing (Option 2 - Part B).</p>
+      <p>After you complete this task, you will see a page which offers two options. The first is to create a student, which is required if there is no student record created for the individual you will be observing. However, if a student record already exists,
+        you can click "Existing Student". This displays a list of all student records. From here, simply click "Select Student" from the row of the student whom you will be observing (Option 2 - Part B).</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -84,18 +84,17 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
-      <h2>Collect Observations</h3>
+      <h2>Step 3 - Observe Student</h3>
       <p>After creating a session record, you are ready to start observing.</p>
       <h3>Submitting an Observation</h3>
-      <p>All <span class="highlight-red">observations are automatically submitted at the end of a session</span>. In other words, no action is required in order to record an observation</span> because of the built-in auto-submit feature, which occurs when no
-        time remains in a given interval.</p>
+      <p>Please note that <span class="highlight-red">all observations are automatically submitted at the end of each interval</span>.  Therefore, no action is required to store the results of an interval.</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
       <h3>Start Timer</h3>
-      <p>When you are ready to begin, click the "Start Timer" button to begin. At this point, the timer will start counting down by the interval you included in the sessions create form.</p>
+      <p>When you are ready to begin observing, click the "Start Timer" button. When clicked, the timer will start counting down by the interval you included in the sessions create form.</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -121,10 +120,10 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
-      <h3>Target vs. Random Peer Indicators</h3>
+      <h3>Target Student vs. Random Peer Indicators</h3>
       <p>BOSS requires that a random peer be observed every 5th interval. There are two indicators to help the observer montor which student to observe. First, either "Observing: Target Student" or "Observing: Random Peer" will appear above the timer countdown.
         In addition, <span class="highlight-red">the background color changes to orange
-        whenever a random peer is the student being observed during an interval</span>. This decreases the likelihood that the observer will make an error in observing the wrong student during an interval.</p>
+        when a random peer is the individual being observed during an interval</span>. This decreases the likelihood that the observer will make an error in observing the wrong student.</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -136,9 +135,16 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
-      <h3>Updating a Submission</h3>
-      <p>If an error is made by the observer when recording the observed behavior, the user can update the previous interval's submission. This can be accomplished by clicking the "edit" button for the last submission table. At this point, the observe
-        can check a box if a behavior was observed, or uncheck a box if the behavior was not observed.</p>
+      <h3>Updating the Last Submission</h3>
+      <p>If an error is made by the observer when recording the observed behavior, the user can update the previous interval's submission.</p>
+      <p class="underline-h">Desktop Versions</p>
+      <p>Updating he previous interval's enry can be accomplished by clicking the "edit" button for the last submission table. At this point, the observer
+        can check a box if a behavior was observed, or uncheck a box if the behavior was not observed.  <span class="highlight-red">In order for the update to be saved, he observer must click the "submit" button
+        below he update form</span>.</p>
+      <p class="underline-h">Mobile Version</p>
+      <p>Updating the last entry on a phone or table requires a user to click the
+      "Edit Last Submission" button.  When clicked, a dropdown will appear and the observer can update the last entry by selecting or deselecting a box.  Please note
+      that <span class="highlight-red">an observer must click the "Submit" button in order for the update to be saved</span>.</p>
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -150,8 +156,13 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
-      <h3>No Submission Warning</h3>
-      <p>If an interval ends without at least one category being selected, the background for the last entry table turns red. This increases the likelihood that an observe will notice that nothing was submitted for a previous interval.</p>
+      <h3>Nothing Selected Warning</h3>
+      <p>The web application warns a user if an interval was submitted without any category being selected.  The warning differs depending on whether the observer is using the desktop or mobile version.</p>
+      <p class="underline-h">Desktop Versions</p>
+      <p>If an interval ends without at least one category being selected, <span class="highlight-red">the background of the last entry table turns red</span>. This increases the likelihood that an observe will notice that nothing was submitted for a previous interval. If this occurs, the observer can update the last submission as described above.</p>
+      <p class="underline-h">Mobile Version</p>
+      <p>For the mobile version, the user is notified by the color of the button for updating the last submission.  Specifically, <span class="highlight-red">the "Edit Last Submission" button turns red</span>.  If this occurs, the observer can update the last submission as described above.</p>
+
     </div>
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-0 col-sm-5">
       <div class="tutorial-image-container">
@@ -169,7 +180,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
-      <h2>Generate Report</h2>
+      <h2>Step 4 - Generate Report</h2>
       <p>If an interval ends without at least one category being selected, the background for the last entry table turns red. This increases the likelihood that an observe will notice that nothing was submitted for a previous interval.</p>
     </div>
   </div>
