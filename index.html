@@ -13,6 +13,114 @@
 <body class="container-fluid" style="display: none">
 
   <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10 center-mobile">
+
+    <div class="credentials-notification-container">
+      <div class="credentials-container">
+        <div class="btn-group" id="sign-up">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign Up
+      </button>
+          <div class="dropdown-menu">
+            <form class="auth">
+              <p class="failure signup-failure"></p>
+              <p class="success signup-success"></p>
+              <fieldset>
+                <label class="email">
+                  Email
+                  <input class="form-clear signup-email" type="email" name="credentials[email]">
+            </label>
+
+                <label class="password">
+                  Password
+                  <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
+            </label>
+
+                <label class="password_confirmation">
+                  Password Confirmation
+                  <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
+            </label>
+                <input type="submit" class="btn disable-btn btn-default" name="submit" value="Submit">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <div class="btn-group" id="sign-in">
+          <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign In
+      </button>
+          <div class="dropdown-menu">
+            <form class="auth">
+              <p class="failure signin-failure"></p>
+              <p class="success signin-success"></p>
+              <fieldset>
+                <label class="email">
+                Email
+              <input type="email" name="credentials[email]" class="form-clear signin-email">
+            </label>
+
+                <label class="password">
+                Password
+                <input type="password" name="credentials[password]" class="form-clear signin-password">
+            </label>
+                <input type="submit" class="btn btn-default disable-btn" name="submit" value="Submit">
+              </fieldset>
+            </form>
+          </div>
+        </div>
+
+        <div class="post-sign-in-container">
+          <div class="btn-group" id="change-password">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change Password
+        </button>
+            <div class="dropdown-menu changepw-dropdown">
+              <form class="auth">
+                <p class="failure changepw-failure"></p>
+                <p class="success changepw-success"></p>
+                <fieldset>
+                  <label class="old">
+                    Old password
+                    <input type="password" name="passwords[old]" class="form-clear old-password">
+              </label>
+
+                  <label class="new">
+                    New password
+                    <input type="password" name="passwords[new]" class="form-clear new-password">
+              </label>
+
+                  <input type="submit" class="btn btn-default" name="submit" value="Change Password">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="btn-group sign-out">
+            <form id="sign-out">
+              <button type="submit" class="btn btn-danger">Sign Out</button>
+            </form>
+            <p class="failure signout-failure"></p>
+            <p class="success signout-success"></p>
+          </div>
+        </div>
+      </div>
+        <div class="notification-container">
+          <div class="success-alert">
+          </div>
+          <div class="failure-alert">
+          </div>
+        </div>
+      </div>
+      <div class="tutorial-btn-container">
+        <button id="tutorial-btn" class="btn btn-success tutorial-btn">Show Tutorial</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-5">
       <div class="credentials-container">
         <div class="btn-group" id="sign-up">
@@ -113,7 +221,7 @@
         <button id="tutorial-btn" class="btn btn-success tutorial-btn">Show Tutorial</button>
       </div>
     </div>
-  </div>
+  </div> -->
 
   <div class="clearfix"></div>
 

@@ -69,6 +69,14 @@ h2 {
   margin: 0 auto;
 }
 
+.credentials-notification-container {
+  float: left;
+}
+
+.tutorial-btn-container {
+  float: right;
+}
+
 .tutorial-image-container {
   padding: 10px;
   border: 1px solid black;
@@ -240,6 +248,7 @@ h6 {
 
 .sign-out {
   height: 33px;
+  float: left;
 }
 
 .dashboard-container {
@@ -280,10 +289,11 @@ h6 {
 
 #change-password {
   display: none;
+  float:left;
 }
 
 #change-password button {
-  float: left;
+  // float: left;
 }
 
 .success-alert {
@@ -762,11 +772,22 @@ h6 {
 .xs-only {
   max-width: 500px;
 }
+
 @media screen and (min-width: 769px) {
   .xs-only {
     display: none;
   }
 }
+
+@media screen and (max-width: 400px) {
+.tutorial-btn-container {
+  float: none;
+  }
+.center-mobile {
+  text-align: center;
+}
+}
+
 @media screen and (max-width: 415px) {
   // .td-value {
   //   width: 75%;
