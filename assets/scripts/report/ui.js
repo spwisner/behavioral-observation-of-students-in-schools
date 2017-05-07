@@ -9,6 +9,7 @@ const displayReportStudent = require('../templates/report/report-student-summary
 const displayWriteupReport = require('../templates/report/report-writeup.handlebars');
 const displayEditWriteupReport = require('../templates/report/report-edit-writeup.handlebars');
 const reportLogic = require('./logic');
+const observationLogic = require('../observations/logic');
 const sessionsApi = require('../sessions/api');
 const sessionsUi = require('../sessions/ui');
 
@@ -146,6 +147,7 @@ const onGetObservationTableSuccess = (data) => {
   });
   $('.display-stats-table-container').append(showStatistics);
   $('.display-observation-container').append(showObservations);
+  observationLogic.sortTable();
   reportLogic.statsTableCountPercent(data);
 };
 

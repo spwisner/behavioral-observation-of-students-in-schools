@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xs-12">
       <h2>Interval Results</h2>
-      <table class="table obs-summary-table table-hover">
+      <table id="interval-results-summary" class="table obs-summary-table table-hover">
         <thead>
           <tr>
             <th class="phone-hidden">Interval</th>
@@ -14,8 +14,8 @@
             <th class="hidden-xs">Comment</th>
           </tr>
         </thead>
+        <tbody>
         {{#each observations as |observation|}}
-          <tbody>
             <tr>
               <td class="display-obs-num phone-hidden">{{observation.obs_num}}</td>
               <td class="display-obs-aet">
@@ -47,8 +47,8 @@
                 {{observation.obs_comment}}
               </td>
             </tr>
-          </tbody>
         {{/each}}
+        </tbody>
       </table>
     </div>
   </div>
