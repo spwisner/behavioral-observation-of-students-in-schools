@@ -96,6 +96,7 @@ const endObservationTimer = function(runTimer) {
 const observationTimer = function() {
   $(this).remove();
   $(".timer-observer-container").slideDown(500);
+
   $("#cancel-session-btn").show();
 
   // Countup stopwatch for gradients

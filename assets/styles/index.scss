@@ -97,6 +97,9 @@ h2 {
 .image-caption {
   text-align: center;
   font-weight: bold;
+  border-bottom: 1px solid #334693;
+  color: #334693;
+  padding-bottom: 5px;
 }
 
 .tutorial-image-container img {
@@ -289,7 +292,7 @@ h6 {
 
 #change-password {
   display: none;
-  float:left;
+  float: left;
 }
 
 #change-password button {
@@ -494,7 +497,6 @@ h6 {
 }
 
 .current-student-observed {
-  color: black;
   text-align: center;
   font-size: 16px;
   margin-top: 10px;
@@ -766,7 +768,6 @@ h6 {
 .max-xs {
   max-width: 768px;
 }
-
 @media screen and (max-width: 768px) {
   .xs-hide {
     display: none;
@@ -776,20 +777,41 @@ h6 {
 .xs-only {
   max-width: 500px;
 }
-
 @media screen and (min-width: 769px) {
   .xs-only {
     display: none;
   }
 }
-
 @media screen and (max-width: 400px) {
-.tutorial-btn-container {
-  float: none;
+  .tutorial-btn-container {
+    float: none;
   }
-.center-mobile {
-  text-align: center;
+
+  .center-mobile {
+    text-align: center;
+  }
 }
+
+#show-edit-mobile {
+  display: none;
+  margin-bottom: 5px;
+}
+
+// @media screen and (min-width: 767px) {
+//   //hides edit button unless mobile version
+//   #show-edit-mobile {
+//     display: none;
+//     margin-bottom: 5px;
+//   }
+// }
+
+.random-peer {
+  color: #FF8C00;
+  text-decoration: underline;
+}
+
+.target-student {
+  text-color: green;
 }
 
 @media screen and (max-width: 415px) {
@@ -801,7 +823,7 @@ h6 {
   }
 
   .last-submission-table input[type="checkbox"] {
-    zoom: 1;
+    zoom: 1.2;
     width: 25px;
     height: 25px;
   }
@@ -843,11 +865,6 @@ h6 {
 }
 
 #hide-edit-mobile {
-  display: none;
-  margin-bottom: 5px;
-}
-
-#show-edit-mobile {
   display: none;
   margin-bottom: 5px;
 }

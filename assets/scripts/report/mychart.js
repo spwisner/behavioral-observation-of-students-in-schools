@@ -24,11 +24,11 @@ const createChart = function(targetFinalArr, randomFinalArr) {
         datasets: [{
           label: 'Target',
           data: targetEtArr,
-          backgroundColor: "rgba(153,255,51,1)"
+          backgroundColor: "rgba(147,51,70,1)"
         }, {
           label: 'Random',
           data: randomEtArr,
-          backgroundColor: "rgba(255,153,0,1)"
+          backgroundColor: "rgba(85,105,187,.2)"
         }]
       }
     });
@@ -40,11 +40,11 @@ const createChart = function(targetFinalArr, randomFinalArr) {
         datasets: [{
           label: 'Target',
           data: targetOftArr,
-          backgroundColor: "rgba(153,255,51,1)"
+          backgroundColor: "rgba(147,51,70,1)"
         }, {
           label: 'Random',
           data: randomOftArr,
-          backgroundColor: "rgba(255,153,0,1)"
+          backgroundColor: "rgba(85,105,187,.5)"
         }]
       }
     });
