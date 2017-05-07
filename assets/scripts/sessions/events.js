@@ -30,7 +30,6 @@ const onShowSession = function(event) {
 
 const onCreateSession = function(event) {
   event.preventDefault();
-
   let isIntervalANum = sessionsUi.isFieldANum("intervals-required");
   let isLengthANum = sessionsUi.isFieldANum("length-required");
 

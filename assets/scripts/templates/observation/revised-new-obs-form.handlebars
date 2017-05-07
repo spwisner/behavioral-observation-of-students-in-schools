@@ -15,11 +15,13 @@
           <p class="cancel-session-notification">Your Session has been cancelled</p>
           <p class="session-completed">Your session has been completed. Return to the Dashboard to view results</p>
           <!-- <div class="action-btn-container"> -->
-            <!-- <button id="end-session-generate-report" class="btn btn-success btn-md">View Session Report</button> -->
-            <!-- <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button> -->
+          <!-- <button id="end-session-generate-report" class="btn btn-success btn-md">View Session Report</button> -->
+          <!-- <button id="session-completed-btn" class="btn btn-success btn-md session-completed">Return to Dashboard</button> -->
           <!-- </div> -->
-          <span class="observing-name">Observing: </span><span class="observing-name" id="student-observed"></span>
-          <p class="time-until-submission">Time Remaining: <span id="interval-timer"></span>
+          <div class="timer-observer-container">
+            <p class="observing-name-container"><span class="observing-name">Observing: </span><span class="observing-name" id="student-observed"></span></p>
+            <p class="time-until-submission">Time Remaining: <span id="interval-timer">N/A</span></p>
+          </div>
             <div class="action-btn-container">
               <button id="begin-session-btn" class="btn btn-success btn-md">Start Timer!</button>
             </div>
@@ -32,11 +34,11 @@
 
   <!-- <div class="row time-bar-row">
     <div class="sm-col-8 sm-col-offset-2 xs-col-12 xs-col-offset-0"> -->
-    <div class="time-container">
-      <div class="time-bar-container"></div>
-      <div id="time-bar" class="legend-gradient"></div>
-    </div>
-    <!-- </div>
+  <div class="time-container">
+    <div class="time-bar-container"></div>
+    <div id="time-bar" class="legend-gradient"></div>
+  </div>
+  <!-- </div>
   </div> -->
 
   <form class="form observation-form" id="new-observation-form" name="new-observation-form">
@@ -45,10 +47,10 @@
       <div class="row">
         <div class="col-xs-12">
           <legend id="interval-remaining">Interval: <span class="interval-count">1</span> / <span id="interval-total"></span>
-          <br>
-          <span class="show-edit-mobile-container"><button class="btn btn-primary btn-sm" id="show-edit-mobile">Edit Last Submission</button></span>
-          <span class="hide-edit-mobile-container"><button class="btn btn-warning btn-sm" id="hide-edit-mobile">Hide Edit Menu</button></span>
-        </legend>
+            <br>
+            <span class="show-edit-mobile-container"><button class="btn btn-primary btn-sm" id="show-edit-mobile">Edit Last Submission</button></span>
+            <span class="hide-edit-mobile-container"><button class="btn btn-warning btn-sm" id="hide-edit-mobile">Hide Edit Menu</button></span>
+          </legend>
           <div class="after-completion"></div>
           <input class="current" name="observation[student_id]" id="create-observation-stud-id" type="hidden" data-current-student-id="" data-current-session-id="">
           <input class="current" name="observation[session_id]" id="create-observation-session-id" type="hidden" data-current-student-id="" data-current-session-id="">

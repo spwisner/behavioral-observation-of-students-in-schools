@@ -117,6 +117,7 @@ const createLandingPage = function() {
   $(".content").children().remove();
   let landingPage = displayObservationLandingPage();
   $('.content').append(landingPage);
+  $(".timer-observer-container").show();
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-student-id", store.currentStudentId);
 };
