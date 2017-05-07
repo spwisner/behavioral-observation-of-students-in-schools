@@ -43,12 +43,30 @@ h2 {
   color: #334693;
 }
 
+.image-padding {
+  margin-top: 15px;
+}
+
 #tutorial-btn {
   margin-top: 10px;
 }
 
 .tutorial-btn-container {
   display: none;
+}
+
+.xs-only {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.tutorial-img {
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
 }
 
 .tutorial-image-container {
@@ -64,8 +82,8 @@ h2 {
 }
 
 .hr-divide {
- padding: 0 20px;
- border-top: 1px solid #8c8b8b;
+  padding: 0 20px;
+  border-top: 1px solid #8c8b8b;
 }
 
 .image-caption {
@@ -320,7 +338,7 @@ h6 {
   color: green;
   border: 1px dotted green;
   margin-left: 35%;
-  margin-right:35%;
+  margin-right: 35%;
   display: none;
   padding: 2px;
   font-size: 16px;
@@ -477,6 +495,7 @@ h6 {
   text-align: center;
 }
 // Slide Radio Buttons
+
 .switch {
   position: relative;
   height: 26px;
@@ -613,7 +632,6 @@ h6 {
     margin-top: 5px;
   }
 }
-
 @media screen and (max-width: 415px) {
   .time-bar-container {
     // width: 300px;
@@ -648,7 +666,6 @@ h6 {
     text-align: center;
   }
 }
-
 @media screen and (max-width: 415px) {
   .phone-hidden {
     display: none;
@@ -669,18 +686,16 @@ h6 {
   .credentials-container input {
     border: 1px solid lightgray;
   }
-
   // .row {
   //   margin-left: 0;
   //   margin-right: 0;
   // }
-
 }
 @media screen and (max-width: 730px) {
   #interval-submitted-successfully {
     color: green;
     border: 1px dotted green;
-    margin:0;
+    margin: 0;
     display: none;
     padding: 2px;
     font-size: 16px;
@@ -724,7 +739,6 @@ h6 {
 .switch-input:checked + .switch-label-on ~ .switch-selection {
   left: 70px;
 }
-
 // @media screen and (min-width: 1100px) {
 //   .td-value {
 //     width: 75%;
@@ -739,17 +753,29 @@ h6 {
   max-width: 768px;
 }
 
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 768px) {
+  .xs-hide {
+    display: none;
+  }
+}
 
+.xs-only {
+  max-width: 500px;
+}
+@media screen and (min-width: 769px) {
+  .xs-only {
+    display: none;
+  }
+}
+@media screen and (max-width: 415px) {
   // .td-value {
   //   width: 75%;
   // }
-
   .hidden-phone {
     display: none;
   }
 
-  .last-submission-table input[type="checkbox"]{
+  .last-submission-table input[type="checkbox"] {
     zoom: 1;
     width: 25px;
     height: 25px;
@@ -781,7 +807,7 @@ h6 {
   }
 }
 
-.last-submission-table input[type="checkbox"]{
+.last-submission-table input[type="checkbox"] {
   zoom: 1;
   width: 20px;
   height: 20px;
@@ -802,27 +828,25 @@ h6 {
 }
 
 .interval-confirmation-container {
-  margin-top:5px;
+  margin-top: 5px;
 }
 
 .student-summary-name {
   font-size: 18px;
   font-weight: bold;
 }
-
 @media screen and (-webkit-min-device-pixel-ratio:0) {
+  input:focus,
   select:focus,
-  textarea:focus,
-  input:focus {
+  textarea:focus {
     font-size: 16px;
     background: #eee;
   }
 }
-
 @media screen and (-webkit-min-device-pixel-ratio:0) {
+  input,
   select,
-  textarea,
-  input {
+  textarea {
     font-size: 16px;
   }
 }

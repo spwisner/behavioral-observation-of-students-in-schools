@@ -174,6 +174,7 @@ const observationTimer = function() {
             $(".interval-count").text(endInterval);
             $("#cancel-session-btn").remove();
             $(".time-until-submission").text("Session Complete!");
+            $(".observing-name").remove();
             $(".time-bar-container").remove();
             $("#interval-timer").remove();
             $(".obs-comment-container").remove();
