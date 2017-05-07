@@ -134,6 +134,13 @@ const createObservationSuccess = () => {
      $("#new-observation-form").css("background-color", "#ffffff");
    }
 
+   let isOver = store.isOver;
+
+   if (isOver === true) {
+     $('#end-session-generate-report').click();
+     store.isOver = false;
+   }
+
 };
 
 const createObservationFailure = () => {

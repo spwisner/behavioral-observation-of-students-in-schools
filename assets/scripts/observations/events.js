@@ -143,6 +143,7 @@ const observationTimer = function() {
       currentBarPercentage(x, max);
 
       if (x === 0) {
+
         intervalCount = intervalCount + 1;
         intervalPrint = intervalPrint + 1;
 
@@ -167,6 +168,7 @@ const observationTimer = function() {
           $(".legend-gradient").removeClass("obs-stg-five");
           $(".legend-gradient").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
+            store.isOver = true;
             if (!isMobileDevice) {
               $("#show-edit-mobile").remove();
             }
@@ -186,6 +188,7 @@ const observationTimer = function() {
             $("#end-session-generate-report").attr("data-current-session-id", store.currentSessionId);
             $("#end-session-generate-report").attr("data-current-student-id", store.currentStudentId);
             $(".hide-generate-report").css("text-align", "center");
+
             return;
           }
         }
