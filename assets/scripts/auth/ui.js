@@ -1,6 +1,9 @@
 'use strict';
 
 const displayDashboard = require('../templates/dashboard/dashboard-home.handlebars');
+const store = require('../store');
+const apiAuth = require('./api');
+const displayTutorial = require('../templates/tutorial/tutorial.handlebars');
 
 const blinkNotify = function(div, status) {
   let blinkHtml = '<div id="processing">Processing...</div>';
@@ -34,6 +37,30 @@ const signInSuccess = function() {
   $(".tutorial-btn-container").show();
 };
 
+const signUpSignInSuccess = function() {
+  $("#processing").remove();
+  $(".notification-container").children().text("");
+  $(".success-alert").text("You have successfully sign-up and signed-in");
+  $('#sign-in').hide();
+  $('#sign-up').hide();
+  $("#sign-out").show();
+  $("#change-password").show();
+  $(".content").children().remove();
+  let dashboardHome = displayDashboard();
+  $('.content').append(dashboardHome);
+  $(".form-clear").val('');
+  $(".homepage-desc").hide();
+  $(".tutorial-btn-container").show();
+  $("#tutorial-btn").removeClass("btn-success");
+  $("#tutorial-btn").addClass("btn-warning");
+  $("#tutorial-btn").text("Close Tutorial");
+  $('.content').hide();
+  let showTutorial = displayTutorial();
+  $('.tutorial-index-container').append(showTutorial);
+  $(".sign-up-welcome").show();
+};
+
+
 const signInFailure = function() {
   $(".notification-container").children().text("");
   $(".disable-btn").prop("disabled",false);
@@ -44,11 +71,23 @@ const signInFailure = function() {
 const signUpSuccess = function() {
   $(".signup-failure").text("");
   $(".notification-container").children().text("");
-  let transferEmail = $("#sign-up .signup-email").val();
-  $("#sign-in .signin-email").val(transferEmail);
-  $("#sign-up").removeClass("open");
-  $("#sign-in").addClass("open");
-  $(".signin-success").slideDown(300).text("You have successfully signed-up.  Please sign-in to continue").delay(3500).slideUp(300);
+
+  let data = store.signUpData;
+
+  apiAuth.signIn(data)
+    .then((response) => {
+      store.user = response.user;
+      return store.user;
+    })
+    .done(signUpSignInSuccess)
+    .catch(signInFailure);
+
+
+  // let transferEmail = $("#sign-up .signup-email").val();
+  // $("#sign-in .signin-email").val(transferEmail);
+  // $("#sign-up").removeClass("open");
+  // $("#sign-in").addClass("open");
+  // $(".signin-success").slideDown(300).text("You have successfully signed-up.  Please sign-in to continue").delay(3500).slideUp(300);
 };
 
 const signUpFailure = function() {

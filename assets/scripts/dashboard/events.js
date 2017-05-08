@@ -60,6 +60,7 @@ const onTutorial = function(event) {
     $('.content').hide();
     let showTutorial = displayTutorial();
     $('.tutorial-index-container').append(showTutorial);
+    $('.sign-up-welcome').hide();
   } else {
     $("#tutorial-btn").removeClass("btn-warning");
     $("#tutorial-btn").addClass("btn-success");

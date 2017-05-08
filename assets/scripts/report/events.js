@@ -251,7 +251,7 @@ const addHandlers = () => {
   $('.content').on('click', '#generate-written-hide-btn', toggleHideShowReport);
   $('.content').on('click', '#writeup-printer-friendly-btn', onPrinterFriendly);
   $('.content').on('click', '#create-report-writeup-btn', getFormVals);
-  $('.content').on('click', '#end-session-generate-report', onCreateStatsReport)
+  $('.content').on('click', '#end-session-generate-report', onCreateStatsReport);
 };
 
 module.exports = {

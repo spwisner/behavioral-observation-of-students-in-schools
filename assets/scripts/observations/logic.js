@@ -9,7 +9,7 @@ const sortTable = function() {
     console.log(sortnr);
     if (!isNaN(sortnr)) {
       store.push([sortnr, row])
-    };
+    }
   }
   store.sort(function(x, y) {
     return x[0] - y[0];
@@ -23,9 +23,11 @@ const sortTable = function() {
 const studentToObserve = function(obs_num) {
   if (obs_num % 5 === 0) {
     $("#student-observed").text("Random Peer");
+    $("#student-observed").removeClass("target-student");
     $("#student-observed").addClass("random-peer");
   } else {
     $("#student-observed").text("Target Student");
+    $("#student-observed").removeClass("random-peer");
     $("#student-observed").addClass("target-student");
   }
 };

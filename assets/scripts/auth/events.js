@@ -36,6 +36,8 @@ const onSignUp = function(event) {
   let passwordsEqualCondition = (passwordOne === passwordTwo);
 
   if ( passOneLengthCondition &&  passTwoLengthCondition && passwordsEqualCondition) {
+    store.signUpData = data;
+
     apiAuth.signUp(data)
       .done(uiAuth.signUpSuccess)
       .catch(uiAuth.signUpFailure);

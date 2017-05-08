@@ -167,6 +167,10 @@ h6 {
   text-align: center;
 }
 
+.sign-up-welcome {
+  display: none;
+}
+
 .highlight-green {
   color: green;
 }
@@ -827,6 +831,7 @@ h6 {
 .target-student {
   text-color: green;
 }
+
 @media screen and (max-width: 415px) {
   // .td-value {
   //   width: 75%;
