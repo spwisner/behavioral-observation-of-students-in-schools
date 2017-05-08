@@ -5,7 +5,6 @@ const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
 const apiStudents = require('../students/api');
 const uiStudents = require('../students/ui');
-// const logic = require('./logic');
 
 // SETTING EVENTS
 
@@ -21,8 +20,6 @@ const onShowSession = function(event) {
   event.preventDefault();
   store.currentStudentId = $(this).attr("data-current-student-id");
   store.currentSessionId = $(this).attr("data-current-session-id");
-  // store.currentStudentFn = $(".student-name-tr").attr("data-current-student-fn");
-  // store.currentStudentLn = $(".student-name-tr").attr("data-current-student-ln");
   sessionsApi.showSession()
     .done(sessionsUi.showSessionSuccess)
     .fail(sessionsUi.showSessionFailure);
@@ -40,10 +37,7 @@ const onCreateSession = function(event) {
       .then((response) => {
         store.currentSessionId = response.session.id;
         store.currentNumofIntervals = response.session.int_num;
-        // console.log(store.currentNumofIntervals);
         store.currentObsIntervalTime = response.session.obs_time;
-        // store.currentObsNum = 1;
-        // return store.currentSession;
       })
       .done(sessionsUi.createSessionSuccess)
       .fail(sessionsUi.createSessionFailure);

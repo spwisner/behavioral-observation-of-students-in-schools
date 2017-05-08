@@ -20,16 +20,6 @@ const onExistingStudent = function(event) {
     .fail(uiDashBoard.getExistingFailure);
 };
 
-const onCreateFromExisting = function(event) {
-  event.preventDefault();
-  store.currentStudentId = $(this).attr("data-current-student-id");
-  $(".content").children().remove();
-  let showCreateForm = displaySessionCreateForm();
-  $('.content').append(showCreateForm);
-  $(".current").attr("data-current-session-id", store.currentSessionId);
-  $(".current").attr("data-current-student-id", store.currentStudentId);
-};
-
 const onShowDeleteConfirmation = function(event) {
   event.preventDefault();
   $(".delete-confirmation-row").slideDown(300);
@@ -42,16 +32,10 @@ const onHideDeleteConfirmation = function() {
   $(".show-record-delete").delay(300).show(0);
 };
 
-// $('input, select, textarea').on('focus blur', function(event) {
-//     $('meta[name=viewport]').attr('content', 'width=device-width,initial-scale=1,maximum-scale=' + (event.type === 'blur' ? 10 : 1));
-// });
-
 const onTutorial = function(event) {
   event.preventDefault();
 
   let currentTutorialDisplay = $(".tutorial-index-container").children().length;
-
-  console.log(currentTutorialDisplay);
 
   if (currentTutorialDisplay === 0) {
     $("#tutorial-btn").removeClass("btn-success");
@@ -71,7 +55,6 @@ const onTutorial = function(event) {
 };
 
 const addHandlers = () => {
-  // $('#dashboard-new-session-btn').on('click', onShowCreateDash);
   $('.content').on('click', '#dashboard-new-session-btn', onShowCreateDash);
   $('.content').on('click', '#new-session-existing-student', onExistingStudent);
   $('.content').on('click', '.session-delete-cancel', onHideDeleteConfirmation);

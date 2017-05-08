@@ -48,10 +48,7 @@ const getSessionSuccess = (data) => {
   let sessionDashboard = displaySessionsTable({
     sessions: data.sessions
   });
-  // $('.student-dashboard-container').append(studentDashboard);
   $('.content').append(sessionDashboard);
-  // $("#current-student-fn").text(store.currentStudentFn);
-  // $("#current-student-ln").text(store.currentStudentLn);
 };
 
 const getSessionFailure = () => {
@@ -65,7 +62,7 @@ const showSessionSuccess = (data) => {
   let sessionDetails = displaySessionDetails({
     session: data.session
   });
-  // $('.student-dashboard-container').append(studentDashboard);
+
   $('.content').append(sessionDetails);
 
   let isSessionComplete = $(".session-status").text().trim();
@@ -156,9 +153,6 @@ const createSessionFailure = () => {
     let lengthIsBlank = (lengthRequired === "");
     let lengthIsNumber = isFieldANum("length-required");
 
-    // $(".submit-btn-container").children("p").remove();
-    // $("#create-session-error").children("p").remove();
-
     removeErrorFormatting();
 
     if (settingIsBlank) {
@@ -187,9 +181,7 @@ const createSessionFailure = () => {
 
 const deleteSessionSuccess = () => {
   $(".notification-container").children().text("");
-  // sessionsApi.getSessions()
-  //   .done(getSessionSuccess)
-  //   .fail(getSessionFailure);
+
   apiStudents.showStudent()
     .done(uiStudents.viewStudentRecordSuccess)
     .fail(uiStudents.viewStudentRecordFailure);
@@ -206,7 +198,7 @@ const updateSessionSuccess = (data) => {
   let sessionDetails = displaySessionDetails({
     session: data.session
   });
-  // $('.student-details-container').append(studentDetails);
+
   $('.content').append(sessionDetails);
   $(".dashboard-student-record-btn").attr("data-current-student-id", store.currentStudentId);
 };

@@ -75,11 +75,7 @@ const onUpdateLastSubmission = function(event) {
     $("#show-edit-mobile").show();
     $("#hide-edit-mobile").hide();
   }
-  //
-  // $("#hide-edit-mobile").hide();
-  //
-  // // Insert here
-  // $("#show-edit-mobile").show();
+
   apiObservations.updateLastObservation(id, aetValue, petValue, oftmValue, oftvValue, oftpValue, comment)
     .done(uiObservations.getLastObservationSuccess)
     .fail(uiObservations.getLastObservationFailure);
@@ -163,8 +159,6 @@ const observationTimer = function() {
             $("#hide-edit-mobile").hide();
           }
 
-          // $("#show-edit-mobile").show();
-          // $("#hide-edit-mobile").hide();
           $(".legend-gradient").removeClass("obs-stg-five");
           $(".legend-gradient").addClass("obs-stg-one");
           if (intervalCount === endInterval) {
@@ -209,11 +203,6 @@ const observationTimer = function() {
       .fail(uiSessions.showSessionFailure);
   });
 };
-
-// Test Button for Webpage Testing
-// const testButton = function() {
-//   $("#test-sign-in").click();
-// };
 
 const generateWithCheck = function(dataLocation, inputHtml) {
   let trimText = dataLocation.text().trim();
@@ -319,34 +308,15 @@ const onHideEditMobile = function(event) {
   $("#show-edit-mobile").delay(300).show();
 };
 
-// const onCancelEntireSession = function(event) {
-//   event.preventDefault();
-//   endObservationTimer(runTimer);
-//   $(".time-until-submission").hide();
-//   $(".interval-remaining").hide();
-//   $(".cancel-session-notification").show();
-//   $(this).remove();
-// };
-
 const addHandlers = () => {
   $('#get-observations-form').on('submit', onGetObservations);
   $('#show-observation-form').on('submit', onShowObservation);
-  // $('#new-observation-form').on('submit', onCreateObservation);
   $('#delete-observation-form').on('submit', onDeleteObservation);
   $('#update-observation-form').on('submit', onUpdateObservation);
   $('#new-session-btn').on('click', startSession);
   $('.content').on('click', '#begin-session-btn', observationTimer);
-  // $('#begin-session-btn').on('click', observationTimer);
-  // $('#cancel-session-btn').on('click', cancelObservationTimer);
-  // $('#test-button-submit').on('click', testButton);
-  // $(".edit-last-submission").on('click', updateFormGenerator);
   $('.content').on('submit', '#new-observation-form', onCreateObservation);
-  // $('.last-submission-container').on('click', '.edit-last-submission', updateFormGenerator);
-  // $('.last-submission-container').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
-  // $('.last-submission-container').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
-
   $('.content').on('click', '.switch-label', onAnimateSwitch);
-
   $('.content').on('click', '.edit-last-submission', updateFormGenerator);
   $('.content').on('click', '#submit-last-edit-btn', onUpdateLastSubmission);
   $('.content').on('click', '.cancel-last-submission-edit', cancelUpdateLastSubmission);
@@ -355,11 +325,8 @@ const addHandlers = () => {
   $('.content').on('click', '.hide-edit-mobile-btn', onHideEditMobile);
   $('.content').on('click', '#cancel-last-submission-edit-btn', onHideEditMobile);
   $('.content').on('click', '#hide-edit-mobile', onHideEditMobile);
-
-  // $('.content').on('click', '#cancel-session-btn', onCancelEntireSession);
 };
 
 module.exports = {
   addHandlers,
-  // onGetObservations,
 };

@@ -1,18 +1,12 @@
 'use strict';
 
-// const store = require('../store');
-// const eventsObservations = require('./events');
-// const apiObservations = require('./api');
-// const displayObservationsTemplate = require('../templates/get-obs.handlebars');
-// const displayLastSubmit = require('../templates/observation/last-submission.handlebars');
 const displayLastSubmit = require('../templates/observation/revised-last-submission.handlebars');
 const store = require('../store');
 const chart = require('../report/mychart');
 const apiObservations = require('./api');
-// const displayObsForm = require('../templates/observation/new-obs-form.handlebars');
 const displayObsForm = require('../templates/observation/revised-new-obs-form.handlebars');
-// Observation UI
 
+// Observation UI
 const getObservationSuccess = () => {
   $(".notification-container").children().text("");
 };
@@ -64,7 +58,6 @@ const showObservationSuccess = (data) => {
   $('.last-submission-container').append(showLastSubmission);
 
   // Testing for Blank and False Values
-
   $(".cancel-last-submission-edit").hide();
   $("#submit-last-edit-btn").hide();
   $(".edit-last-submission").show();
@@ -163,13 +156,11 @@ const deleteObservationFailure = () => {
   $(".notification-container").children().text("");
 };
 
-const updateObservationSuccess = (data) => {
+const updateObservationSuccess = () => {
   $(".notification-container").children().text("");
-
   $(".cancel-last-submission-edit").hide();
   $("#submit-last-edit-btn").hide();
   $(".edit-last-submission").show();
-
 };
 
 const updateObservationFailure = () => {

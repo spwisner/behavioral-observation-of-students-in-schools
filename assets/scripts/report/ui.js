@@ -6,7 +6,6 @@ const store = require('../store');
 const displayObservationsTemplate = require('../templates/observation/get-obs.handlebars');
 const displayReportStats = require('../templates/report/report-stats.handlebars');
 const displayReportStudent = require('../templates/report/report-student-summary.handlebars');
-const displayWriteupReport = require('../templates/report/report-writeup.handlebars');
 const displayEditWriteupReport = require('../templates/report/report-edit-writeup.handlebars');
 const reportLogic = require('./logic');
 const observationLogic = require('../observations/logic');
@@ -17,11 +16,11 @@ const sessionsUi = require('../sessions/ui');
 
 const success = () => {
   $(".notification-container").children().text("");
-}
+};
 
 const fail = () => {
   $(".notification-container").children().text("");
-}
+};
 
 const editWriteupSubmitSuccess = () => {
   $(".notification-container").children().text("");
@@ -33,7 +32,6 @@ const editWriteupSubmitSuccess = () => {
   $(".current").attr("data-current-student-id", store.currentStudentId);
   $(".current").attr("data-current-session-id", store.currentSessionId);
   $(".current").attr("data-current-report-id", store.currentReportId);
-  // $('.report-writeup-table').remove();
 };
 
 const editWriteupSubmitFailure = () => {
@@ -47,7 +45,6 @@ const editWriteupSuccess = () => {
   $('.content').children().remove();
   let data = store.editWriteupObject;
 
-  // $('.report-writeup-table').remove();
   let editWriteup = displayEditWriteupReport({
     report: data.report
   });
@@ -61,6 +58,7 @@ const editWriteupSuccess = () => {
 const editWriteupFailure = () => {
   $(".notification-container").children().text("");
 };
+
 //Writeup
 
 const getWriteupSuccess = () => {
@@ -72,12 +70,6 @@ const getWriteupSuccess = () => {
 
   if (data !== null) {
 
-    // let showWriteup = displayWriteupReport({
-    //   report: data.report
-    // });
-
-    // $("#generate-written-create-btn").remove();
-    // $('.display-written-report-container').append(showWriteup);
     $('.report-summary-btn-container').append(generateWrittenUpdateBtn);
     $('.report-summary-btn-container').append(generateWrittenHideBtn);
     $('.report-summary-btn-container').append(writeupPrinterFriendlyBtn);
@@ -86,17 +78,8 @@ const getWriteupSuccess = () => {
     $(".current").attr("data-current-report-id", store.currentReportId);
   }
 
-  // $("#generate-written-create-btn").attr("data-current-student-id", store.currentStudentId);
-  // $("#generate-written-create-btn").attr("data-current-session-id", store.currentSessionId);
-
   $(".current").attr("data-current-student-id", store.currentStudentId);
   $(".current").attr("data-current-session-id", store.currentSessionId);
-  // $('.report-writeup-table').remove();
-  // let showWriteup = displayWriteupReport({
-  //   report: data.report
-  // });
-  // $('.report-writeup-container').append(showWriteup);
-
 };
 
 const getWriteupFailure = () => {
@@ -104,14 +87,10 @@ const getWriteupFailure = () => {
 
 };
 
-const createWriteupSuccess = (data) => {
+const createWriteupSuccess = () => {
   $(".notification-container").children().text("");
   $('.content').children().remove();
-  // let showReport = displayWriteupReport({
-  //   report: data.report
-  // });
-  //
-  // $('.content').append(showReport);
+
   sessionsApi.showSession()
     .done(sessionsUi.showSessionSuccess)
     .fail(sessionsUi.showSessionFailure);
@@ -119,10 +98,8 @@ const createWriteupSuccess = (data) => {
 
 const createWriteupFailure = () => {
   $(".notification-container").children().text("");
-  $("#create-report-error").text("Error: Report not created. Please ensure all required fields have values.")
+  $("#create-report-error").text("Error: Report not created. Please ensure all required fields have values.");
 };
-//
-
 
 const onGetChartDataSuccess = () => {
   $(".notification-container").children().text("");
@@ -134,11 +111,8 @@ const onGetChartDataFailure = () => {
 
 const onGetObservationTableSuccess = (data) => {
   $(".notification-container").children().text("");
-  // console.log('get observation table success');
   chart.getColumnSums(data);
   $(".obs-summary-table").remove();
-  // console.log("getdata");
-  // console.log(data);
   let showObservations = displayObservationsTemplate({
     observations: data.observations
   });

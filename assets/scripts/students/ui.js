@@ -72,12 +72,11 @@ const getStudentSuccess = (data) => {
   store.currentStudentId = 0;
   store.currentSessionId = 0;
 
-  // $(".student-summary-table").remove();
   $(".content").children().remove();
   let studentDashboard = displayStudentDashboard({
     students: data.students
   });
-  // $('.student-dashboard-container').append(studentDashboard);
+
   $('.content').append(studentDashboard);
 
   let numberOfStudents = data.students.length;
@@ -88,7 +87,7 @@ const getStudentSuccess = (data) => {
   } else {
     $(".empty-student-table").remove();
   }
-  // $('.content').append(dashboardHomeBtn);
+
 };
 
 const editStudentSuccess = (data) => {
@@ -130,10 +129,6 @@ const createStudentSuccess = () => {
   apiStudents.showStudent()
     .done(viewStudentRecordSuccess)
     .fail(viewStudentRecordFailure);
-  // $("#create-session-stud-id").attr("value", store.currentStudentId);
-  // $(".current").attr("data-current-student-id", store.currentStudentId);
-  // let dashboardHomeBtn = displayDashboard();
-  // $('.content').append(dashboardHomeBtn);
 };
 
 const removeErrorFormatting = function() {
@@ -169,28 +164,6 @@ const createStudentFailure = () => {
   $("#create-student-error").prepend('<p class="highlight-red">Error creating student. Please check if all required fields are complete.</p>');
   $('.submit-btn-container').prepend('<p class="highlight-red">Error creating student. Please check if all required fields are complete.</p>');
 
-
-  //
-  // if (fnIsBlank && lnIsBlank) {
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
-  //   $("#create-student-error").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
-  //   $(".fn-field-container input").addClass("border-highlight");
-  //   $(".ln-field-container input").addClass("border-highlight");
-  // } else if (fnIsBlank) {
-  //   $(".ln-field-container input").removeClass("border-highlight");
-  //   $(".fn-field-container input").addClass("border-highlight");
-  //   $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
-  //   $("#create-student-error").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
-  // } else if (lnIsBlank) {
-  //   $("#create-student-error").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
-  //   $(".fn-field-container input").removeClass("border-highlight");
-  //   $(".ln-field-container input").addClass("border-highlight");
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
-  // } else {
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
-  // }
-
-  // $("#create-student-error").text("Error: Student not created.  Please ensure all required fields have values");
 };
 
 const deleteStudentSuccess = () => {
@@ -209,11 +182,7 @@ const updateStudentSuccess = (data) => {
   $(".success-alert").text("Student Has Been Successfully Updated");
   store.currentStudentId = data.student.id;
   $(".content").children().remove();
-  // let studentDetails = displayStudentDetails({
-  //   student: data.student
-  // });
-  // $('.student-details-container').append(studentDetails);
-  // $('.content').append(studentDetails);
+
   apiStudents.showStudent()
     .done(viewStudentRecordSuccess)
     .fail(viewStudentRecordFailure);
@@ -243,34 +212,6 @@ const updateStudentFailure = () => {
   $("#update-student-error").prepend('<p class="highlight-red">Error creating student. Please check if all required fields are complete.</p>');
   $('.submit-btn-container').prepend('<p class="highlight-red">Error creating student. Please check if all required fields are complete.</p>');
 
-
-  // let fnRequired = $(".fn-required").val().trim();
-  // let fnIsBlank = (fnRequired === "");
-  // let lnRequired = $(".ln-required").val().trim();
-  // let lnIsBlank = (lnRequired === "");
-  //
-  // $(".submit-btn-container").children("p").remove();
-  // $("#update-student-error").children("p").remove();
-  //
-  // if (fnIsBlank && lnIsBlank) {
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
-  //   $("#update-student-error").prepend('<p class="highlight-red">Error: Student not created.  The first name and last name fields are currently empty.  Please complete these required fields before continuing.</p>');
-  //   $(".fn-field-container input").addClass("border-highlight");
-  //   $(".ln-field-container input").addClass("border-highlight");
-  // } else if (fnIsBlank) {
-  //   $(".ln-field-container input").removeClass("border-highlight");
-  //   $(".fn-field-container input").addClass("border-highlight");
-  //   $(".submit-btn-container").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
-  //   $("#update-student-error").prepend('<p class="highlight-red"> Error: Student not created.  The first name field is currently empty.  Please complete this required field before continuing.</p>');
-  // } else if (lnIsBlank) {
-  //   $("#update-student-error").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
-  //   $(".fn-field-container input").removeClass("border-highlight");
-  //   $(".ln-field-container input").addClass("border-highlight");
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">Error: Student not created.  The last name field is currently empty.  Please complete this required field before continuing.</p>');
-  // } else {
-  //   $(".submit-btn-container").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
-  //   $("#update-student-error").prepend('<p class="highlight-red">An error has occured.  Please try again.</p>');
-  // }
 };
 
 module.exports = {

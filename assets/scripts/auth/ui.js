@@ -82,13 +82,6 @@ const signUpSuccess = function() {
     })
     .done(signUpSignInSuccess)
     .catch(signInFailure);
-
-
-  // let transferEmail = $("#sign-up .signup-email").val();
-  // $("#sign-in .signin-email").val(transferEmail);
-  // $("#sign-up").removeClass("open");
-  // $("#sign-in").addClass("open");
-  // $(".signin-success").slideDown(300).text("You have successfully signed-up.  Please sign-in to continue").delay(3500).slideUp(300);
 };
 
 const signUpFailure = function() {

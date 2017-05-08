@@ -6,7 +6,6 @@ const sortTable = function() {
   for (let i = 0, len = tbl.rows.length; i < len; i++) {
     let row = tbl.rows[i];
     let sortnr = parseFloat(row.cells[0].textContent || row.cells[0].innerText);
-    console.log(sortnr);
     if (!isNaN(sortnr)) {
       store.push([sortnr, row])
     }

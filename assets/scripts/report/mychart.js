@@ -3,8 +3,6 @@
 const store = require('../store');
 const Chart = require('chart.js');
 
-// let chartDataObject = store.chartData;
-
 const createChart = function(targetFinalArr, randomFinalArr) {
   const etChart = document.getElementById("et-chart").getContext('2d');
   const oftChart = document.getElementById("oft-chart").getContext('2d');
@@ -136,11 +134,6 @@ const getColumnSums = function(data) {
   randomFinalArr.push(randomOftVDataCount);
   randomFinalArr.push(randomOftMDataCount);
   randomFinalArr.push(randomOftPDataCount);
-
-  // console.log("targetFinalArr");
-  // console.log(targetFinalArr);
-  // console.log("randomFinalArr");
-  // console.log(randomFinalArr);
 
   createChart(targetFinalArr, randomFinalArr);
 };

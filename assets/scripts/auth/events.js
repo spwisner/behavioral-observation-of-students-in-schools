@@ -3,7 +3,6 @@ const apiAuth = require('./api');
 const uiAuth = require('./ui');
 const getFormFields = require('../../../lib/get-form-fields');
 const store = require('../store');
-// const logic = require('./logic');
 
 // LOGIN EVENTS
 
