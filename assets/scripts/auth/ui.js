@@ -35,12 +35,13 @@ const signInSuccess = function() {
   $(".form-clear").val('');
   $(".homepage-desc").hide();
   $(".tutorial-btn-container").show();
+  $('.content').show();
 };
 
 const signUpSignInSuccess = function() {
   $("#processing").remove();
   $(".notification-container").children().text("");
-  $(".success-alert").text("You have successfully sign-up and signed-in");
+  $(".success-alert").text("You have successfully signed-up and signed-in");
   $('#sign-in').hide();
   $('#sign-up').hide();
   $("#sign-out").show();
@@ -94,7 +95,7 @@ const signUpFailure = function() {
   $(".notification-container").children().text("");
   $("#processing").remove();
   $(".disable-btn").prop("disabled",false);
-  $(".signup-failure").slideDown(300).text("Sign-up error. Please ensure that you are using a valid email and passwords match.");
+  $(".signup-failure").slideDown(300).text("Sign-up error. This account may already exist. Otherwise, please ensure that you are using a valid email and that passwords match.");
 };
 
 const signOutSuccess = function() {
@@ -107,6 +108,10 @@ const signOutSuccess = function() {
   $("#sign-up").show();
   $(".form-clear").val('');
   $(".homepage-desc").show();
+  $(".tutorial-index-container").children().remove();
+  $("#tutorial-btn").removeClass("btn-warning");
+  $("#tutorial-btn").addClass("btn-success");
+  $("#tutorial-btn").text("Show Tutorial");
   $(".tutorial-btn-container").hide();
 };
 

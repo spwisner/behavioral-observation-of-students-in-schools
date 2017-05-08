@@ -42,7 +42,7 @@ const onSignUp = function(event) {
       .done(uiAuth.signUpSuccess)
       .catch(uiAuth.signUpFailure);
   } else {
-    $(".signup-failure").slideDown(300).text("Sign-up error. Please ensure that you are using a valid email and passwords match.");
+    $(".signup-failure").slideDown(300).text("Sign-up error. This account may already exist. Otherwise, please ensure that you are using a valid email and that passwords match.");
   }
 };
 

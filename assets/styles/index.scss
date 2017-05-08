@@ -81,8 +81,26 @@ h2 {
   padding: 10px;
   border: 1px solid black;
   border-radius: 6px;
-  margin: 10px;
+  margin: 10px auto;
   text-align: center;
+}
+
+.tutorial-image-container-single {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px auto;
+  text-align: center;
+  width: 600px
+}
+
+.tutorial-image-container-mobile {
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 10px auto;
+  text-align: center;
+  width: 300px
 }
 
 .underline {
@@ -91,7 +109,12 @@ h2 {
 
 .hr-divide {
   padding: 0 20px;
-  border-top: 1px solid #8c8b8b;
+  border-top: 2px solid #334693;
+}
+
+.hr-sub-divide {
+  padding: 0 20px;
+  border-top: 1px dotted #8c8b8b;
 }
 
 .total-session-time-calculator label {
@@ -108,9 +131,8 @@ h2 {
   padding-bottom: 5px;
 }
 
-.tutorial-image-container img {
+.tutorial-image-container img, .tutorial-image-container-single img {
   width: 100%;
-  max-width: 350px;
   margin: 0 auto;
 }
 
@@ -140,7 +162,8 @@ h3 {
 }
 
 h4 {
-  color: #C6CADB;
+  color: #69bb55;
+  font-size: 18px;
 }
 
 h5 {
@@ -156,11 +179,13 @@ h6 {
 }
 
 #boss-main-img {
-  max-width: 400px;
+  max-width: 500px;
   width: 100%;
-  float: right;
   margin: 5px;
-  border: 1px solid #C6CADB;
+}
+
+.boss-image-text {
+  text-align: left;
 }
 
 .comparison-center {
@@ -174,7 +199,6 @@ h6 {
 .highlight-green {
   color: green;
 }
-
 // #hidden-generate-report-btn {
 //   display: none;
 // }
@@ -483,6 +507,13 @@ h6 {
   width: 100px;
 }
 
+.boss-image-container {
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 6px;
+  float: right;
+}
+
 .check-clear {
   clear: both;
 }
@@ -735,6 +766,9 @@ h6 {
     padding: 2px;
     font-size: 16px;
   }
+}
+
+@media screen and (max-width: 960px) {
 
   .clear-image {
     clear: both;
@@ -742,11 +776,20 @@ h6 {
   }
 
   #boss-main-img {
-    float: none;
     width: 100%;
     padding: 5px;
     display: block;
-    margin: auto;
+    margin: 0 auto;
+  }
+
+  .boss-image-container {
+      float: none;
+      max-width:80%;
+      margin: 0 auto;
+    }
+
+  .boss-image-center {
+    text-align: center;
   }
 }
 
@@ -796,7 +839,75 @@ h6 {
 .xs-only {
   max-width: 500px;
 }
-@media screen and (min-width: 769px) {
+
+// @media screen and (min-width: 768px) {
+//   .tutorial-image-container,
+//   .tutorial-image-container img {
+//     width: 100%;
+//     max-width: 425px;
+//   }
+// }
+
+@media screen and (max-width: 415px) {
+  .tutorial-image-container-mobile {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tutorial-image-container-mobile img{
+    width: 50%;
+  }
+
+  .tutorial-image-container, .tutorial-image-container-single {
+    width: 100%;
+  }
+
+  .tutorial-image-container img, .tutorial-image-container-single img {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 416px) and (max-width: 767px) {
+  .tutorial-image-container, .tutorial-image-container-single {
+    width: 75%;
+  }
+
+  .tutorial-image-container img, .tutorial-image-container-single img {
+    width: 100%;
+  }
+
+  .tutorial-image-container-mobile {
+    width: 90%;
+    text-align: center;
+  }
+
+  .tutorial-image-container-mobile img{
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1999px) {
+  .tutorial-image-container, .tutorial-image-container img, .tutorial-image-container-single img {
+    width: 100%;
+  }
+
+  .tutorial-image-container-single {
+    width: 50%;
+    max-width: 600px
+  }
+
+  .tutorial-image-container-mobile {
+    width: 100%;
+    text-align: center;
+  }
+
+  .tutorial-image-container-mobile img{
+    width: 100%;
+  }
+
+  }
+
+@media screen and (min-width: 992px) {
   .xs-only {
     display: none;
   }
@@ -831,7 +942,6 @@ h6 {
 .target-student {
   text-color: green;
 }
-
 @media screen and (max-width: 415px) {
   // .td-value {
   //   width: 75%;
