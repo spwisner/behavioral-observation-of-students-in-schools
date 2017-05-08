@@ -1,14 +1,93 @@
 <div class="dashboard-description-container">
+
   <div class="row">
     <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
-      <h2>Required Steps</h3>
+      <h1>Welcome!</h1>
+      <p>To learn about this web application and to fully benefit from its features, view the BOSS App Tutorial by clicking the "Show Tutorial" button at the top of this page.
+         Otherwise, scroll to the bottom of this page to view student records or to begin an observation session.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
+
+      <h2>What is Behavior Observation of Students in Schools (BOSS)?</h2>
+      <p>BOSS is a systematic observation method that is conducted by categorizing behavior at a specific interval of time. The process is best illustrated using an example. When a school counselor is asked to observe a particular student using BOSS, the observer enters the classroom with the
+        goal of making an observation every 15 seconds over 40 intervals (i.e., a 10 minute session). At the end of each 15-second interval, the counselor categories the student’s behavior into at least one of the following behavior categories:
+      </p>
+      <ol>
+        <li>Actively Engaged Time (AET) - e.g. answering a teacher’s question</li>
+        <li>Passively Engaged Time (PET) - e.g. reading an assigned passage</li>
+        <li>Off-Task Motor (OFT-M) - e.g. tapping a pen</li>
+        <li>Off-Task Verbal (OFT-V) - e.g. talking to a friend
+        </li>
+        <li>Off-Task Passive (OFT-P) - e.g. staring out the window</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-offset-1 col-sm-10">
+      <p>Next, in order to be able to compare the target student to the rest of the class, data needs to be collected for random peers as well. For this reason, at every 5th interval, the observer directs his attention to a random student and categorizes
+        his or her behavior during that interval.</p>
+      <p>For example, the individual being observed for the first 10 intervals would be:</p>
+    </div>
+  </div>
+  <div class="row extra-padding-top">
+    <div class="col-sm-5 col-sm-offset-1 col-xs-offset-0 col-xs-12">
+      <p class="center-label">TS = Target Student</p>
+    </div>
+    <div class="col-sm-5 col-sm-offset-1 col-xs-offset-0 col-xs-12">
+      <p class="center-label">RP = Random Peer</p>
+    </div>
+  </div>
+  <div class="row extra-padding-bottom">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
+      <table class="table">
+        <tr>
+          <td>Interval</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td class="highlight">5</td>
+          <td class="hidden-xs">6</td>
+          <td class="hidden-xs">7</td>
+          <td class="hidden-xs">8</td>
+          <td class="hidden-xs">9</td>
+          <td class="hidden-xs highlight">10</td>
+        </tr>
+        <tr>
+          <td>Student</td>
+          <td>TS</td>
+          <td>TS</td>
+          <td>TS</td>
+          <td>TS</td>
+          <td class="highlight">RP</td>
+          <td class="hidden-xs">TS</td>
+          <td class="hidden-xs">TS</td>
+          <td class="hidden-xs">TS</td>
+          <td class="hidden-xs">TS</td>
+          <td class="hidden-xs highlight">RP</td>
+        </tr>
+      </table>
+
+      <p>At the end of the 10 minutes, the observer will have 40 data points of behavior. 32 of the data points reflect the behavior of the target student and 8 of the data points (which was collected every 5th interval) represent the behavior of random
+        peers.
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10">
+      <h2>Web Application Required Steps</h2>
       <ol>
         <li>Create a Student</li>
         <li>Create a Session</li>
         <li>Observe Student</li>
         <li>Generate Report</li>
       </ol>
-      <p>To view an existing student or session reports, click "View Students". Otherwise, select "Create Session" to get started.</p>
+      <p>To view an existing student record or session report, click "View Students". Otherwise, select "Create Session" to get started.</p>
       <div class="dashboard-container">
         <button id="dashboard-home-btn" type="button" class="btn btn-primary">View Students</button>
         <button id="dashboard-new-session-btn" type="button" class="btn btn-success">Create Session</button>
