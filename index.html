@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>BOSS App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid" style="display: none">
+
+  <div class="row">
+    <div class="col-xs-12 col-xs-offset-0 col-sm-offset-1 col-sm-10 center-mobile">
+
+      <div class="credentials-notification-container">
+        <div class="credentials-container">
+          <div class="btn-group" id="sign-up">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign Up
+      </button>
+            <div class="dropdown-menu">
+              <form class="auth">
+                <p class="failure signup-failure"></p>
+                <p class="success signup-success"></p>
+                <fieldset>
+                  <label class="email">
+                  Email
+                  <input class="form-clear signup-email" type="email" name="credentials[email]">
+            </label>
+
+                  <label class="password">
+                  Password
+                  <input id="password" type="password" name="credentials[password]" class="form-clear signup-password">
+            </label>
+
+                  <label class="password_confirmation">
+                  Password Confirmation
+                  <input id="password_confirmation" type="password" name="credentials[password_confirmation]" class="form-clear signup-password signup-password-confirm">
+            </label>
+                  <input type="submit" class="btn disable-btn btn-default" name="submit" value="Submit">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="btn-group" id="sign-in">
+            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Sign In
+      </button>
+            <div class="dropdown-menu">
+              <form class="auth">
+                <p class="failure signin-failure"></p>
+                <p class="success signin-success"></p>
+                <fieldset>
+                  <label class="email">
+                Email
+              <input type="email" name="credentials[email]" class="form-clear signin-email">
+            </label>
+
+                  <label class="password">
+                Password
+                <input type="password" name="credentials[password]" class="form-clear signin-password">
+            </label>
+                  <input type="submit" class="btn btn-default disable-btn" name="submit" value="Submit">
+                </fieldset>
+              </form>
+            </div>
+          </div>
+
+          <div class="post-sign-in-container">
+            <div class="btn-group" id="change-password">
+              <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Change Password
+        </button>
+              <div class="dropdown-menu changepw-dropdown">
+                <form class="auth">
+                  <p class="failure changepw-failure"></p>
+                  <p class="success changepw-success"></p>
+                  <fieldset>
+                    <label class="old">
+                    Old password
+                    <input type="password" name="passwords[old]" class="form-clear old-password">
+              </label>
+
+                    <label class="new">
+                    New password
+                    <input type="password" name="passwords[new]" class="form-clear new-password">
+              </label>
+
+                    <input type="submit" class="btn btn-default" name="submit" value="Change Password">
+                  </fieldset>
+                </form>
+              </div>
+            </div>
+
+            <div class="btn-group sign-out">
+              <form id="sign-out">
+                <button type="submit" class="btn btn-danger">Sign Out</button>
+              </form>
+              <p class="failure signout-failure"></p>
+              <p class="success signout-success"></p>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="notification-container">
+          <div class="success-alert">
+          </div>
+          <div class="failure-alert">
+          </div>
+        </div>
+      </div>
+      <div class="tutorial-btn-container">
+        <button id="tutorial-btn" type="button" class="btn btn-success tutorial-btn">Show Tutorial</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="clearfix"></div>
+
+  <div class="tutorial-index-container"></div>
+
+  <div class="homepage-desc">
+    <div class="row">
+      <div class="col-xs-12 col-sm-offset-1 col-sm-10 boss-image-center">
+        <h1>BOSS Web Application</h1>
+        <div class="boss-image-container">
+          <img id="boss-main-img" src="https://cloud.githubusercontent.com/assets/13546265/25793535/faae26c4-339a-11e7-9e04-7dc97c6535d2.png" alt="boss-screenshot">
+        </div>
+        <div class="boss-image-text">
+          <h2>What is BOSS?</h2>
+          <p class="clear-image">Behavioral Observation of Students in Schools (BOSS) is a research-based systematic observation method. BOSS allows observers, such as school counselors, to compare the behavior of a target student to that of his peers. This method is an effective
+            tool to objectively determine if problem behavior exists.</p>
+          <h2>Benefits of this App</h2>
+          <p>Conducting BOSS with a timer, pen, and paper can be challenging. It is difficult to monitor a student’s behavior while keeping track of time and marking down results. This web application attempts to simplify the data collection process by having
+            observations automatically submitted at the end of a time interval. In addition, this application eliminates the tedious process of compiling results. At the end of a session, a statistical report is automatically generated.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1 col-xs-offset-0 col-xs-12 col-xl-offset-1 col-xl-5">
+        <img class="benefit-image" id="benefit-table" src="https://cloud.githubusercontent.com/assets/13546265/25794261/25d7b146-339e-11e7-80f5-a6a394272b4b.png" alt="BOSS Table">
+      </div>
+      <div class="col-sm-10 col-sm-offset-1 col-xs-offset-0 col-xs-12 col-xl-5 col-xl-offset-0">
+        <img class="benefit-image" id="benefit-graph" src="https://cloud.githubusercontent.com/assets/13546265/25794260/25d608f0-339e-11e7-93dc-98ab670d3b3e.png" alt="BOSS App Graph">
+      </div>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div class="content">
+  </div>
+
+</body>
+
+</html>
