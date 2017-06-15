@@ -23,6 +23,9 @@ const onSignIn = function(event) {
 
 const onSignUp = function(event) {
   event.preventDefault();
+  $(".disable-btn").prop("disabled",true);
+  let div = ".signup-success";
+  uiAuth.blinkNotify(div, "start");
   let data = getFormFields(event.target);
 
   let passwordOne = data.credentials.password;
